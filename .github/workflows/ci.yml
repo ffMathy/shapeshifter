@@ -284,6 +284,14 @@ jobs:
       - name: Install a virtual X server
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
+      - name: Allow Shapeshifter.app Accessibility access
+        # What users do in System Settings > Privacy & Security > Accessibility. Without it the app stops at its
+        # "needs Accessibility access" message. A bare executable started from the shell has the runner's own access.
+        if: runner.os == 'macOS'
+        run: |
+          now=$(date +%s)
+          sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" \
+            "INSERT OR REPLACE INTO access VALUES('kTCCServiceAccessibility','app.shapeshifter.Shapeshifter',0,2,4,1,NULL,NULL,0,'UNUSED',NULL,0,$now,NULL,NULL,'UNUSED',$now);"
       - name: Start every download
         shell: bash
         run: |
