@@ -12,8 +12,8 @@
   var BUILDS = {
     'win-x64': { os: 'windows', name: 'Windows', arch: 'x64', file: 'Shapeshifter-win-x64.exe' },
     'win-arm64': { os: 'windows', name: 'Windows', arch: 'Arm64', file: 'Shapeshifter-win-arm64.exe' },
-    'osx-arm64': { os: 'macos', name: 'Mac', arch: 'Apple silicon', file: 'Shapeshifter-osx-arm64' },
-    'osx-x64': { os: 'macos', name: 'Mac', arch: 'Intel', file: 'Shapeshifter-osx-x64' },
+    'osx-arm64': { os: 'macos', name: 'Mac', arch: 'Apple silicon', file: 'Shapeshifter-osx-arm64.app.zip' },
+    'osx-x64': { os: 'macos', name: 'Mac', arch: 'Intel', file: 'Shapeshifter-osx-x64.app.zip' },
     'linux-x64': { os: 'linux', name: 'Linux', arch: 'x64', file: 'Shapeshifter-linux-x64' },
     'linux-arm64': { os: 'linux', name: 'Linux', arch: 'Arm64', file: 'Shapeshifter-linux-arm64' }
   };
@@ -135,7 +135,7 @@
   }
 
   // Every download is the app itself, a single file: an .exe on Windows, an executable on macOS and Linux.
-  function extension(file) { return /\.exe$/.test(file) ? '.exe' : 'single file'; }
+  function extension(file) { return /\.exe$/.test(file) ? '.exe' : /\.app\.zip$/.test(file) ? '.app in a .zip' : 'single file'; }
 
   function showBuild(id) {
     var build = BUILDS[id];
