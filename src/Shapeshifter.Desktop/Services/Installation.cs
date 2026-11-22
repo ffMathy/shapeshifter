@@ -18,6 +18,8 @@ internal static class Installation
         GitHubRepository = "Shapeshifter",
         // Release assets, see .github/workflows/ci.yml: Shapeshifter-win-x64.exe, Shapeshifter-linux-arm64, …
         ExecutableAssetName = rid => "Shapeshifter-" + rid + (rid.StartsWith("win-", StringComparison.Ordinal) ? ".exe" : string.Empty),
+        // A copy running from the released Shapeshifter.app updates from the same zip (scripts/make-macos-app.sh).
+        MacBundleAssetName = rid => "Shapeshifter-" + rid + ".app.zip",
         DesktopEntryId = "shapeshifter",
         DesktopEntryLines = ["Categories=Utility;", "StartupWMClass=Shapeshifter", "X-GNOME-UsesNotifications=true"],
         BundleIdentifier = "app.shapeshifter.Shapeshifter",

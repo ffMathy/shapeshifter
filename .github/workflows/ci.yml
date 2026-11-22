@@ -244,15 +244,60 @@ jobs:
             exit 1
           fi
           mv "${files[0]}" "Shapeshifter-${{ matrix.rid }}${{ matrix.ext }}"
+      - name: Package the macOS app bundle
+        # A bare executable downloaded with a browser has no executable bit, so Finder opens it in TextEdit. The
+        # zipped Shapeshifter.app is what Mac users download (and what the app updates itself from); the bare
+        # executable stays for versions that update from it.
+        if: runner.os == 'macOS'
+        run: |
+          version="${VERSION_ARGS#-p:Version=}"
+          scripts/make-macos-app.sh "Shapeshifter-${{ matrix.rid }}" "${version:-0.0.0}" "Shapeshifter-${{ matrix.rid }}.app.zip"
       - uses: actions/upload-artifact@v7
         with:
           name: Shapeshifter-${{ matrix.rid }}
-          path: Shapeshifter-${{ matrix.rid }}${{ matrix.ext }}
+          path: Shapeshifter-${{ matrix.rid }}*
+          if-no-files-found: error
+
+  smoke:
+    name: Start the release build (${{ matrix.rid }})
+    # Starts each file a user can download, on its own operating system and architecture, the way a user would: the
+    # macOS app bundle is unzipped and opened through Launch Services like a double-click in Finder. Passes once the
+    # app reports that it is ready and keeps running. See scripts/smoke-test-release.sh.
+    needs: publish
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { rid: win-x64, os: windows-latest }
+          - { rid: win-arm64, os: windows-11-arm }
+          - { rid: osx-arm64, os: macos-latest }
+          - { rid: osx-x64, os: macos-15-intel }
+          - { rid: linux-x64, os: ubuntu-latest }
+          - { rid: linux-arm64, os: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: Shapeshifter-${{ matrix.rid }}
+          path: dist
+      - name: Install a virtual X server
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends xvfb
+      - name: Start every download
+        shell: bash
+        run: |
+          ls -la dist
+          for file in dist/*; do
+            echo "::group::$(basename "$file")"
+            scripts/smoke-test-release.sh "$file"
+            echo "::endgroup::"
+          done
 
   release:
     name: GitHub release
     if: needs.version.outputs.tag != ''
-    needs: [version, build, e2e-linux, e2e-windows, publish]
+    needs: [version, build, e2e-linux, e2e-windows, publish, smoke]
     runs-on: ubuntu-latest
     permissions:
       contents: write
