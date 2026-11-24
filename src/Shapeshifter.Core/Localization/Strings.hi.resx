@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>इस टेक्स्ट को एक .txt फ़ाइल में सहेजता है और फ़ाइल चिपकाता है।</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>कंप्रेस किए गए फ़ोल्डर के रूप में कॉपी करें</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>कंप्रेस की गई फ़ाइल के रूप में पेस्ट करें</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>इन फ़ाइलों को कंप्रेस किए गए (.zip) फ़ोल्डर के रूप में क्लिपबोर्ड पर कॉपी करें।</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>इन फ़ाइलों को एक .zip फ़ाइल में कंप्रेस करके उसे पेस्ट करता है।</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>लिंक से छवि कॉपी करें</value>

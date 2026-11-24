@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Зберігає цей текст у файл .txt і вставляє файл.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Копіювати як стиснуту папку</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Вставити як стиснутий файл</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Копіює ці файли в буфер обміну як стиснуту папку (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Стискає ці файли в один файл .zip і вставляє його.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Копіювати зображення за посиланням</value>

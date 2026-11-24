@@ -224,11 +224,11 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Menyimpan teks ini ke file .txt dan menempelkan file tersebut.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Salin sebagai folder terkompresi</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Tempel sebagai file terkompresi</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Salin file-file ini ke papan klip sebagai folder terkompresi (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Mengompresi file-file ini menjadi satu file .zip dan menempelkannya.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Salin gambar dari tautan</value>

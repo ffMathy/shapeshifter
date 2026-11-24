@@ -62,16 +62,16 @@ public sealed class PasteAsFileAction : IClipboardAction
         item.Kind == ClipboardContentKind.Image && item.Snapshot.Image is { Length: > 0 };
 }
 
-/// <summary>Compresses the copied files and folders into a .zip archive and copies the archive.</summary>
-public sealed class ZipFilesAction : IClipboardAction
+/// <summary>Compresses the copied files and folders into a .zip file in the temporary folder and pastes that file.</summary>
+public sealed class PasteAsZipAction : IClipboardAction
 {
-    public string Id => "copy-as-zip";
+    public string Id => "paste-as-zip";
 
     public int Order => 75;
 
-    public string GetTitle(ClipboardItem item) => Strings.ActionCopyAsZip;
+    public string GetTitle(ClipboardItem item) => Strings.ActionPasteAsZip;
 
-    public string GetDescription(ClipboardItem item) => Strings.ActionCopyAsZipDescription;
+    public string GetDescription(ClipboardItem item) => Strings.ActionPasteAsZipDescription;
 
     public bool CanExecute(ClipboardItem item)
     {
@@ -86,7 +86,7 @@ public sealed class ZipFilesAction : IClipboardAction
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
         var archive = await Task.Run(() => CreateArchive(item.Snapshot.Files, context.Paths.TempDirectory, cancellationToken), cancellationToken).ConfigureAwait(false);
-        await context.CopyNewContentAsync(new ClipboardSnapshot { Files = [archive] }, cancellationToken).ConfigureAwait(false);
+        await context.WriteAndPasteAsync(new ClipboardSnapshot { Files = [archive] }, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>Creates the archive and returns its path. Folders are added recursively.</summary>
@@ -94,7 +94,7 @@ public sealed class ZipFilesAction : IClipboardAction
     {
         ArgumentNullException.ThrowIfNull(paths);
         var name = GetArchiveName(paths);
-        var folder = Path.Combine(temporaryRoot, "Compressed folders", Guid.NewGuid().ToString("N")[..8]);
+        var folder = Path.Combine(temporaryRoot, "Compressed files", Guid.NewGuid().ToString("N")[..8]);
         Directory.CreateDirectory(folder);
         var archivePath = Path.Combine(folder, name + ".zip");
 

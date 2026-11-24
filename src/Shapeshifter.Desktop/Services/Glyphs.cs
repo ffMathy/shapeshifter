@@ -65,7 +65,7 @@ public static class Glyphs
         {
             "toggle-pin" => unpins ? Unpin : Pin,
             "paste-plain-text" => PlainText,
-            "copy-as-zip" => Archive,
+            "paste-as-zip" => Archive,
             "upload-image" => Upload,
             "paste-as-file" => PasteAsFile,
             "copy-image-from-link" => Image,

@@ -21,14 +21,14 @@ node OfferedActions : flow   level: experience
       Given an image was copied
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"
-    Scenario: a file offers Paste, Copy as compressed folder and Pin
+    Scenario: a file offers Paste, Paste as compressed file and Pin
       Given one file was copied in a file manager
       When the user opens its actions
-      Then they are "Paste", "Copy as compressed folder", "Pin to clipboard"
+      Then they are "Paste", "Paste as compressed file", "Pin to clipboard"
     Scenario: several files offer the same as one file
       Given two files were copied together
       When the user opens their actions
-      Then they are "Paste", "Copy as compressed folder", "Pin to clipboard"
+      Then they are "Paste", "Paste as compressed file", "Pin to clipboard"
     Scenario: other data offers only Paste and Pin
       Given something that is neither text, an image nor files was copied
       When the user opens its actions
@@ -38,7 +38,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Copy image from link", "Open links", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Upload and paste link, Copy as compressed folder, Copy image from link, Open link or Open links, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Upload and paste link, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -53,7 +53,7 @@ node OfferedActions : flow   level: experience
     action.pasteFile        "Paste as file"                "Saves this text to a .txt file and pastes the file." / "Saves this image to a .{ext} file and pastes the file."
     action.plain            "Paste as plain text"          "Pastes clipboard contents as plain text with no formatting."
     action.upload           "Upload and paste link"        "Uploads this image to Catbox and pastes a public link to it."
-    action.zip              "Copy as compressed folder"    "Copy these files to the clipboard as a compressed (.zip) folder."
+    action.zip              "Paste as compressed file"     "Compresses these files into one .zip file and pastes it."
     action.imageFromLink    "Copy image from link"         "Downloads the linked image and copies the image itself to the clipboard."
     action.openLink         "Open link" / "Open links"     "Opens the link in your browser." / "Opens the links in your browser (at most 10)."
     action.pin              "Pin to clipboard"             "Pins this item so that it always stays at the top, and saves it to your computer so that it is there the next time you open Shapeshifter."

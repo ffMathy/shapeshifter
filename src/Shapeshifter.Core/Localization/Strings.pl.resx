@@ -224,11 +224,11 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Zapisuje ten tekst w pliku .txt i wkleja plik.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiuj jako folder skompresowany</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Wklej jako plik skompresowany</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopiuje te pliki do schowka jako folder skompresowany (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Kompresuje te pliki do jednego pliku .zip i wkleja go.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Kopiuj obraz z linku</value>

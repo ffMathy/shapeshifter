@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>يحفظ هذا النص في ملف .txt ويلصق الملف.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>نسخ كمجلد مضغوط</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>لصق كملف مضغوط</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>نسخ هذه الملفات إلى الحافظة كمجلد مضغوط (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>يضغط هذه الملفات في ملف .zip واحد ويلصقه.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>نسخ الصورة من الرابط</value>

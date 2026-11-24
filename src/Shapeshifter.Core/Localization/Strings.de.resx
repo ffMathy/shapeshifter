@@ -224,11 +224,11 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Speichert diesen Text in einer .txt-Datei und fügt die Datei ein.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Als ZIP-komprimierten Ordner kopieren</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Als komprimierte Datei einfügen</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopiert diese Dateien als ZIP-komprimierten Ordner (.zip) in die Zwischenablage.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Komprimiert diese Dateien in eine .zip-Datei und fügt sie ein.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Bild aus Link kopieren</value>

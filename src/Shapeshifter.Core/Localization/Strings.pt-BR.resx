@@ -224,11 +224,11 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Salva este texto em um arquivo .txt e cola o arquivo.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copiar como pasta compactada</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Colar como arquivo compactado</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copia estes arquivos para a área de transferência como uma pasta compactada (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Compacta estes arquivos em um único arquivo .zip e o cola.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copiar imagem do link</value>

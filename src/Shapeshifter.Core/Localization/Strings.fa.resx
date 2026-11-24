@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>این متن را در یک فایل .txt ذخیره می‌کند و فایل را می‌چسباند.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>کپی به‌صورت پوشه فشرده</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>چسباندن به‌صورت فایل فشرده</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>این فایل‌ها را به‌صورت پوشه فشرده (.zip) در کلیپ‌بورد کپی کنید.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>این فایل‌ها را در یک فایل .zip فشرده می‌کند و آن را می‌چسباند.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>کپی تصویر از پیوند</value>

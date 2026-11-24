@@ -224,11 +224,11 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Enregistre ce texte dans un fichier .txt et colle le fichier.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copier en tant que dossier compressé</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Coller en tant que fichier compressé</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copie ces fichiers dans le Presse-papiers sous forme de dossier compressé (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Compresse ces fichiers dans un seul fichier .zip et le colle.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copier l’image du lien</value>

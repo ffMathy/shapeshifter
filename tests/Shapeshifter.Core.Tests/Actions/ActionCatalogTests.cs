@@ -7,7 +7,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "upload-image", "copy-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "upload-image", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
     ];
 
     [Fact]
@@ -87,9 +87,9 @@ public sealed class ActionCatalogTests
         { "empty-text+html", ["paste", "paste-plain-text", "toggle-pin"] },
         { "rtf-only", ["paste", "toggle-pin"] },  // RTF without text has no plain text to offer
         { "image", ["paste", "paste-as-file", "upload-image", "toggle-pin"] },
-        { "file", ["paste", "copy-as-zip", "toggle-pin"] },
-        { "files", ["paste", "copy-as-zip", "toggle-pin"] },
-        { "file+html", ["paste", "copy-as-zip", "toggle-pin"] },
+        { "file", ["paste", "paste-as-zip", "toggle-pin"] },
+        { "files", ["paste", "paste-as-zip", "toggle-pin"] },
+        { "file+html", ["paste", "paste-as-zip", "toggle-pin"] },
         { "other", ["paste", "toggle-pin"] },
         { "empty", ["paste", "toggle-pin"] },
         { "link", ["paste", "paste-as-file", "open-links", "toggle-pin"] },
@@ -129,7 +129,7 @@ public sealed class ActionCatalogTests
     {
         IClipboardAction[] actions =
         [
-            new PasteAsPlainTextAction(), new PasteAsFileAction(), new ZipFilesAction(), new CopyImageFromLinkAction(),
+            new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
             new OpenLinksAction(), new UploadImageAction(),
         ];
 
@@ -157,7 +157,7 @@ public sealed class ActionCatalogTests
         Assert.Equal("Paste", new PasteAction().GetTitle(item));
         Assert.Equal("Paste as plain text", new PasteAsPlainTextAction().GetTitle(item));
         Assert.Equal("Paste as file", new PasteAsFileAction().GetTitle(item));
-        Assert.Equal("Copy as compressed folder", new ZipFilesAction().GetTitle(item));
+        Assert.Equal("Paste as compressed file", new PasteAsZipAction().GetTitle(item));
         Assert.Equal("Copy image from link", new CopyImageFromLinkAction().GetTitle(item));
         Assert.Equal("Upload and paste link", new UploadImageAction().GetTitle(item));
     }

@@ -224,11 +224,11 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Bu metni bir .txt dosyasına kaydeder ve dosyayı yapıştırır.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Sıkıştırılmış klasör olarak kopyala</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Sıkıştırılmış dosya olarak yapıştır</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Bu dosyaları panoya sıkıştırılmış (.zip) klasör olarak kopyalar.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Bu dosyaları tek bir .zip dosyasına sıkıştırır ve yapıştırır.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Bağlantıdaki görüntüyü kopyala</value>

@@ -224,11 +224,11 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Gemmer denne tekst i en .txt-fil og indsætter filen.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiér som komprimeret mappe</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Indsæt som komprimeret fil</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopierer disse filer til udklipsholderen som en komprimeret (.zip) mappe.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Komprimerer disse filer til én .zip-fil og indsætter den.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Kopiér billede fra link</value>

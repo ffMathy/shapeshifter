@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>এই টেক্সট একটি .txt ফাইলে সংরক্ষণ করে ফাইলটি আটকায়।</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>সংকুচিত ফোল্ডার হিসেবে কপি করুন</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>সংকুচিত ফাইল হিসেবে পেস্ট করুন</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>এই ফাইলগুলি একটি সংকুচিত (.zip) ফোল্ডার হিসেবে ক্লিপবোর্ডে কপি করুন।</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>এই ফাইলগুলি একটি .zip ফাইলে সংকুচিত করে সেটি পেস্ট করে।</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>লিঙ্ক থেকে ছবি কপি করুন</value>

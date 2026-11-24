@@ -224,11 +224,11 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Slaat deze tekst op in een .txt-bestand en plakt het bestand.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiëren als gecomprimeerde map</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Plakken als gecomprimeerd bestand</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopieert deze bestanden naar het klembord als gecomprimeerde (.zip-)map.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprimeert deze bestanden tot één .zip-bestand en plakt het.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Afbeelding kopiëren via link</value>
