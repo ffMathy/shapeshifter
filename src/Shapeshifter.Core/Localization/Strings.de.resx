@@ -31,7 +31,7 @@
     <value>Projektseite</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Wie gewohnt kopieren. Um ein älteres Element einzufügen, {0} gedrückt halten und V drücken: {0} weiter gedrückt halten, um den Verlauf zu sehen, erneut V (oder ↑/↓ oder 1–9) drücken, um ein Element auszuwählen, → um festzulegen, was damit geschehen soll, Entf zum Entfernen und Esc zum Abbrechen. {0} loslassen, um einzufügen.</value>
+    <value>Wie gewohnt kopieren. Um ein älteres Element einzufügen, {0}+V gedrückt halten, bis der Verlauf erscheint, dann {0} weiter gedrückt halten: erneut V (oder ↑/↓ oder 1–9) drücken, um ein Element auszuwählen, → um festzulegen, was damit geschehen soll, Entf zum Entfernen und Esc zum Abbrechen. {0} loslassen, um einzufügen.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Verlauf</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Wie gewohnt kopieren – Shapeshifter behält alles, was kopiert wird.
 
-Um etwas einzufügen, das früher kopiert wurde, {0} gedrückt halten und V drücken. {0} weiter gedrückt halten, um den Verlauf zu sehen, mit V oder den Pfeiltasten auswählen und {0} loslassen, um einzufügen.</value>
+Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der Verlauf erscheint. {0} weiter gedrückt halten, mit V oder den Pfeiltasten auswählen und {0} loslassen, um einzufügen.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Aktionen</value>
@@ -224,11 +224,11 @@ Um etwas einzufügen, das früher kopiert wurde, {0} gedrückt halten und V drü
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Speichert diesen Text in einer .txt-Datei und fügt die Datei ein.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Als ZIP-komprimierten Ordner kopieren</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Als komprimierte Datei einfügen</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopiert diese Dateien als ZIP-komprimierten Ordner (.zip) in die Zwischenablage.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Komprimiert diese Dateien in eine .zip-Datei und fügt sie ein.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Bild aus Link kopieren</value>
@@ -352,21 +352,6 @@ Um etwas einzufügen, das früher kopiert wurde, {0} gedrückt halten und V drü
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>In {0} zuerst mehrere Dinge kopieren, dann in {2} {1}+V gedrückt halten und eins nach dem anderen aus dem Verlauf auswählen.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Zu {0} hochladen?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Dieses Bild zu {0} hochladen?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>Das Bild wird an {0} (catbox.moe) gesendet, einen kostenlosen Bildhoster ohne Werbung, und jeder mit dem Link kann es sehen. Uploads können nicht gelöscht werden. Nichts anderes, was kopiert wird, verlässt jemals diesen Computer.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter fragt nicht noch einmal. Diesmal wird der Link kopiert: {0}+V drücken, um ihn einzufügen.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Zu {0} hochladen</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Abbrechen</value>

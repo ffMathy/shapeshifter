@@ -31,7 +31,7 @@
     <value>プロジェクトページ</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>いつもどおりにコピーしてください。以前の項目を貼り付けるには、{0} を押したまま V を押します。{0} を押したままにすると履歴が表示され、もう一度 V（または ↑/↓、1–9）を押して項目を選び、→ で操作を選択、Delete で削除、Esc でキャンセルします。{0} を離すと貼り付けられます。</value>
+    <value>いつもどおりにコピーしてください。以前の項目を貼り付けるには、履歴が表示されるまで {0}+V を押し続けます。そのまま {0} を押した状態で、もう一度 V（または ↑/↓、1–9）を押して項目を選び、→ で操作を選択、Delete で削除、Esc でキャンセルします。{0} を離すと貼り付けられます。</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>履歴</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>いつもどおりにコピーすれば、Shapeshifter がコピーしたものをすべて保持します。
 
-以前にコピーしたものを貼り付けるには、{0} を押したまま V を押します。{0} を押したままにすると履歴が表示されます。V または矢印キーで選び、{0} を離すと貼り付けられます。</value>
+以前にコピーしたものを貼り付けるには、履歴が表示されるまで {0}+V を押し続けます。{0} を押したまま、V または矢印キーで選び、{0} を離すと貼り付けられます。</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>操作</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>このテキストを .txt ファイルに保存し、そのファイルを貼り付けます。</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>圧縮フォルダーとしてコピー</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>圧縮ファイルとして貼り付け</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>これらのファイルを圧縮 (.zip) フォルダーとしてクリップボードにコピーします。</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>これらのファイルを 1 つの .zip ファイルに圧縮して貼り付けます。</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>リンクから画像をコピー</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>先に {0} で複数の項目をコピーしておき、{2} で {1}+V を押したままにすると、履歴から 1 つずつ選べます。</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>{0} にアップロードしますか？</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>この画像を {0} にアップロードしますか？</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>画像は広告のない無料の画像ホスティングサービス {0} (catbox.moe) に送信され、リンクを知っている人は誰でも見ることができます。アップロードしたものは削除できません。それ以外にコピーしたものがコンピューターの外に送られることはありません。</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter が再度確認することはありません。今回はリンクがコピーされました。{0}+V を押して貼り付けてください。</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>{0} にアップロード</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>キャンセル</value>

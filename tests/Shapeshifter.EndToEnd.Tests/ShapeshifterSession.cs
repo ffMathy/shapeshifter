@@ -127,6 +127,19 @@ public sealed class ShapeshifterSession : IAsyncLifetime
         return await WaitForStateAsync(state => state.Kinds.Count > 0 && state.Kinds[0] != "Text", $"capture of the '{scenario}' image");
     }
 
+    /// <summary>Puts the target's test image on the clipboard as a bitmap and waits until Shapeshifter captured an image.</summary>
+    internal async Task<AppState> CopyBitmapAsync()
+    {
+        await ExpectOkAsync("copy-bitmap");
+        return await WaitForStateAsync(state => state.Kinds.Count > 0 && state.Kinds[0] == "Image", "capture of the bitmap");
+    }
+
+    /// <summary>Has the target read the clipboard's image, as an application pasting it does: <c>IMAGE WxH</c> or <c>NONE</c>.</summary>
+    public async Task<string> ReadImageAsync() => await target!.SendAsync("read-image");
+
+    /// <summary>Whether Shapeshifter is still running.</summary>
+    public bool IsShapeshifterRunning => shapeshifter is { HasExited: false };
+
     /// <summary>Deletes the temporary file of the <c>firefox</c> image scenario.</summary>
     public async Task DeleteTemporaryImageAsync() => await ExpectOkAsync("delete-temp");
 
@@ -266,6 +279,16 @@ public sealed class ShapeshifterSession : IAsyncLifetime
     public async Task PressModifierAsync() => await KeyAsync(Modifier, down: true);
 
     public async Task ReleaseModifierAsync() => await KeyAsync(Modifier, down: false);
+
+    /// <summary>
+    /// With the modifier held, holds V until the picker shows and releases it. A quick V would paste instead (issue #639).
+    /// </summary>
+    public async Task HoldVUntilThePickerShowsAsync()
+    {
+        await KeyAsync(KeyCode.VcV, down: true);
+        await WaitForStateAsync(state => state.PickerVisible, "picker after holding V");
+        await KeyAsync(KeyCode.VcV, down: false);
+    }
 
     public async Task TapAsync(KeyCode key, int holdMilliseconds = 30)
     {

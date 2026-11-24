@@ -31,7 +31,7 @@
     <value>Страница проекта</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Копируйте как обычно. Чтобы вставить более ранний элемент, удерживайте {0} и нажмите V: не отпускайте {0}, чтобы увидеть историю, снова нажмите V (или ↑/↓, или 1–9), чтобы выбрать элемент, → — чтобы выбрать действие с ним, Delete — чтобы удалить его, Esc — чтобы отменить. Отпустите {0}, чтобы вставить.</value>
+    <value>Копируйте как обычно. Чтобы вставить более ранний элемент, удерживайте {0}+V, пока не появится история, затем не отпускайте {0}: снова нажмите V (или ↑/↓, или 1–9), чтобы выбрать элемент, → — чтобы выбрать действие с ним, Delete — чтобы удалить его, Esc — чтобы отменить. Отпустите {0}, чтобы вставить.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>История</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Копируйте как обычно — Shapeshifter сохранит всё, что вы копируете.
 
-Чтобы вставить то, что вы скопировали раньше, удерживайте {0} и нажмите V. Не отпускайте {0}, чтобы увидеть историю, нажимайте V или клавиши со стрелками для выбора и отпустите {0}, чтобы вставить.</value>
+Чтобы вставить то, что вы скопировали раньше, удерживайте {0}+V, пока не появится история. Не отпускайте {0}, нажимайте V или клавиши со стрелками для выбора и отпустите {0}, чтобы вставить.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Действия</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Сохраняет этот текст в файл .txt и вставляет файл.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Копировать как сжатую папку</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Вставить как сжатый файл</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Копирует эти файлы в буфер обмена в виде сжатой папки (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Сжимает эти файлы в один файл .zip и вставляет его.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Копировать изображение по ссылке</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Можно сначала скопировать несколько фрагментов в приложении {0}, а затем удерживать {1}+V в приложении {2}, чтобы выбрать каждый из истории.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Загрузить на {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Загрузить это изображение на {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>Изображение отправляется на сервис {0} (catbox.moe) — бесплатный хостинг изображений без рекламы, — и его сможет увидеть любой, у кого есть ссылка. Загруженные файлы нельзя удалить. Ничто другое из того, что вы копируете, никогда не покидает ваш компьютер.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter больше не будет спрашивать. В этот раз ссылка скопирована: нажмите {0}+V, чтобы вставить её.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Загрузить на {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Отмена</value>

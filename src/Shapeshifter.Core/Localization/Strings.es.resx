@@ -31,7 +31,7 @@
     <value>Página del proyecto</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Copia como siempre. Para pegar un elemento anterior, mantén pulsada {0} y pulsa V: sigue manteniendo {0} para ver el historial, vuelve a pulsar V (o ↑/↓, o 1–9) para elegir un elemento, → para elegir qué hacer con él, Supr para eliminarlo y Esc para cancelar. Suelta {0} para pegar.</value>
+    <value>Copia como siempre. Para pegar un elemento anterior, mantén pulsadas {0}+V hasta que aparezca el historial y luego sigue manteniendo {0}: vuelve a pulsar V (o ↑/↓, o 1–9) para elegir un elemento, → para elegir qué hacer con él, Supr para eliminarlo y Esc para cancelar. Suelta {0} para pegar.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Historial</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Copia como siempre y Shapeshifter guardará todo lo que copies.
 
-Para pegar algo que copiaste antes, mantén pulsada {0} y pulsa V. Sigue manteniendo {0} para ver el historial, pulsa V o las teclas de flecha para elegir y suelta {0} para pegar.</value>
+Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el historial. Sigue manteniendo {0}, pulsa V o las teclas de flecha para elegir y suelta {0} para pegar.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Acciones</value>
@@ -224,11 +224,11 @@ Para pegar algo que copiaste antes, mantén pulsada {0} y pulsa V. Sigue manteni
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Guarda este texto en un archivo .txt y pega el archivo.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copiar como carpeta comprimida</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Pegar como archivo comprimido</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copia estos archivos al portapapeles como una carpeta comprimida (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprime estos archivos en un único archivo .zip y lo pega.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copiar imagen del enlace</value>
@@ -352,21 +352,6 @@ Para pegar algo que copiaste antes, mantén pulsada {0} y pulsa V. Sigue manteni
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Puedes copiar primero varias cosas de {0} y luego mantener pulsado {1}+V en {2} para elegir cada una de tu historial.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>¿Subir a {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>¿Subir esta imagen a {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>La imagen se envía a {0} (catbox.moe), un alojamiento de imágenes gratuito y sin anuncios, y cualquiera que tenga el enlace puede verla. Las subidas no se pueden eliminar. Nada más de lo que copias sale nunca de tu equipo.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter no volverá a preguntar. Esta vez el enlace se copia: pulsa {0}+V para pegarlo.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Subir a {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Cancelar</value>

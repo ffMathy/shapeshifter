@@ -31,7 +31,7 @@
     <value>Projectpagina</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Kopieer zoals gewoonlijk. Om een ouder item te plakken, houd je {0} ingedrukt en druk je op V: houd {0} ingedrukt om de geschiedenis te zien, druk nogmaals op V (of ↑/↓, of 1–9) om een item te kiezen, op → om te kiezen wat je ermee wilt doen, op Del om het te verwijderen en op Esc om te annuleren. Laat {0} los om te plakken.</value>
+    <value>Kopieer zoals gewoonlijk. Om een ouder item te plakken, houd je {0}+V ingedrukt tot de geschiedenis verschijnt en houd je daarna {0} ingedrukt: druk nogmaals op V (of ↑/↓, of 1–9) om een item te kiezen, op → om te kiezen wat je ermee wilt doen, op Del om het te verwijderen en op Esc om te annuleren. Laat {0} los om te plakken.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Geschiedenis</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Kopieer zoals gewoonlijk; Shapeshifter bewaart alles wat je kopieert.
 
-Om iets te plakken dat je eerder hebt gekopieerd, houd je {0} ingedrukt en druk je op V. Houd {0} ingedrukt om de geschiedenis te zien, kies met V of de pijltoetsen en laat {0} los om te plakken.</value>
+Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de geschiedenis verschijnt. Houd {0} ingedrukt, kies met V of de pijltoetsen en laat {0} los om te plakken.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Acties</value>
@@ -224,11 +224,11 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0} ingedrukt en druk 
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Slaat deze tekst op in een .txt-bestand en plakt het bestand.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiëren als gecomprimeerde map</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Plakken als gecomprimeerd bestand</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopieert deze bestanden naar het klembord als gecomprimeerde (.zip-)map.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprimeert deze bestanden tot één .zip-bestand en plakt het.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Afbeelding kopiëren via link</value>
@@ -352,21 +352,6 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0} ingedrukt en druk 
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Je kunt eerst meerdere dingen uit {0} kopiëren en daarna in {2} {1}+V ingedrukt houden om ze een voor een uit je geschiedenis te kiezen.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Uploaden naar {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Deze afbeelding uploaden naar {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>De afbeelding wordt naar {0} (catbox.moe) gestuurd, een gratis afbeeldingshost zonder advertenties, en iedereen met de link kan hem zien. Uploads kunnen niet worden verwijderd. Niets anders dat je kopieert verlaat ooit je computer.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter vraagt het niet opnieuw. Deze keer is de link gekopieerd: druk op {0}+V om hem te plakken.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Uploaden naar {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Annuleren</value>

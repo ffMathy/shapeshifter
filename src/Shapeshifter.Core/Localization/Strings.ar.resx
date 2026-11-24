@@ -31,7 +31,7 @@
     <value>صفحة المشروع</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>انسخ كالمعتاد. للصق عنصر أقدم، اضغط باستمرار على {0} ثم اضغط V: أبقِ {0} مضغوطًا لعرض المحفوظات، واضغط V مرة أخرى (أو ↑/↓ أو 1–9) لاختيار عنصر، و→ لاختيار ما تفعله به، وDelete لإزالته، وEsc للإلغاء. حرّر {0} للصق.</value>
+    <value>انسخ كالمعتاد. للصق عنصر أقدم، اضغط باستمرار على {0}+V حتى تظهر المحفوظات، ثم أبقِ {0} مضغوطًا: اضغط V مرة أخرى (أو ↑/↓ أو 1–9) لاختيار عنصر، و→ لاختيار ما تفعله به، وDelete لإزالته، وEsc للإلغاء. حرّر {0} للصق.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>المحفوظات</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>انسخ كالمعتاد، وسيحتفظ Shapeshifter بكل ما تنسخه.
 
-للصق شيء نسخته سابقًا، اضغط باستمرار على {0} ثم اضغط V. أبقِ {0} مضغوطًا لعرض المحفوظات، واضغط V أو مفاتيح الأسهم للاختيار، ثم حرّر {0} للصق.</value>
+للصق شيء نسخته سابقًا، اضغط باستمرار على {0}+V حتى تظهر المحفوظات. أبقِ {0} مضغوطًا، واضغط V أو مفاتيح الأسهم للاختيار، ثم حرّر {0} للصق.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>الإجراءات</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>يحفظ هذا النص في ملف .txt ويلصق الملف.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>نسخ كمجلد مضغوط</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>لصق كملف مضغوط</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>نسخ هذه الملفات إلى الحافظة كمجلد مضغوط (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>يضغط هذه الملفات في ملف .zip واحد ويلصقه.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>نسخ الصورة من الرابط</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>يمكنك نسخ عدة أشياء من {0} أولًا، ثم الضغط باستمرار على {1}+V في {2} لاختيار كل منها من المحفوظات.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>الرفع إلى {0}؟</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>هل تريد رفع هذه الصورة إلى {0}؟</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>تُرسَل الصورة إلى {0} (catbox.moe)، وهو موقع مجاني لاستضافة الصور بلا إعلانات، ويمكن لأي شخص لديه الرابط رؤيتها. لا يمكن حذف الصور المرفوعة. لا يغادر أي شيء آخر تنسخه الكمبيوتر أبدًا.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>لن يسألك Shapeshifter مرة أخرى. هذه المرة تم نسخ الرابط: اضغط {0}+V للصقه.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>رفع إلى {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>إلغاء</value>

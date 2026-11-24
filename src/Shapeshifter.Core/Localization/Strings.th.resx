@@ -31,7 +31,7 @@
     <value>หน้าโปรเจกต์</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>คัดลอกตามปกติ หากต้องการวางรายการที่เก่ากว่า ให้กด {0} ค้างไว้แล้วกด V: กด {0} ค้างไว้เพื่อดูประวัติ กด V อีกครั้ง (หรือ ↑/↓ หรือ 1–9) เพื่อเลือกรายการ กด → เพื่อเลือกสิ่งที่จะทำกับรายการนั้น กด Delete เพื่อลบ และกด Esc เพื่อยกเลิก ปล่อย {0} เพื่อวาง</value>
+    <value>คัดลอกตามปกติ หากต้องการวางรายการที่เก่ากว่า ให้กด {0}+V ค้างไว้จนกว่าประวัติจะปรากฏ แล้วกด {0} ค้างไว้ต่อ: กด V อีกครั้ง (หรือ ↑/↓ หรือ 1–9) เพื่อเลือกรายการ กด → เพื่อเลือกสิ่งที่จะทำกับรายการนั้น กด Delete เพื่อลบ และกด Esc เพื่อยกเลิก ปล่อย {0} เพื่อวาง</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>ประวัติ</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>คัดลอกตามปกติ แล้ว Shapeshifter จะเก็บทุกอย่างที่คุณคัดลอกไว้
 
-หากต้องการวางสิ่งที่คัดลอกไว้ก่อนหน้า ให้กด {0} ค้างไว้แล้วกด V กด {0} ค้างไว้เพื่อดูประวัติ กด V หรือปุ่มลูกศรเพื่อเลือก แล้วปล่อย {0} เพื่อวาง</value>
+หากต้องการวางสิ่งที่คัดลอกไว้ก่อนหน้า ให้กด {0}+V ค้างไว้จนกว่าประวัติจะปรากฏ กด {0} ค้างไว้ต่อ กด V หรือปุ่มลูกศรเพื่อเลือก แล้วปล่อย {0} เพื่อวาง</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>การดำเนินการ</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>บันทึกข้อความนี้เป็นไฟล์ .txt แล้ววางไฟล์นั้น</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>คัดลอกเป็นโฟลเดอร์บีบอัด</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>วางเป็นไฟล์บีบอัด</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>คัดลอกไฟล์เหล่านี้ไปยังคลิปบอร์ดเป็นโฟลเดอร์บีบอัด (.zip)</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>บีบอัดไฟล์เหล่านี้เป็นไฟล์ .zip ไฟล์เดียวแล้ววาง</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>คัดลอกรูปภาพจากลิงก์</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>คุณสามารถคัดลอกหลายอย่างจาก {0} ก่อน แล้วกด {1}+V ค้างไว้ใน {2} เพื่อเลือกแต่ละรายการจากประวัติ</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>อัปโหลดไปยัง {0} ไหม</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>อัปโหลดรูปภาพนี้ไปยัง {0} ไหม</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>รูปภาพจะถูกส่งไปยัง {0} (catbox.moe) ซึ่งเป็นบริการฝากรูปภาพฟรีที่ไม่มีโฆษณา และทุกคนที่มีลิงก์จะเห็นรูปภาพได้ รูปภาพที่อัปโหลดแล้วจะลบไม่ได้ สิ่งอื่นที่คุณคัดลอกจะไม่ออกจากคอมพิวเตอร์ของคุณเลย</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter จะไม่ถามอีก ครั้งนี้ลิงก์ถูกคัดลอกไว้แล้ว: กด {0}+V เพื่อวาง</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>อัปโหลดไปยัง {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>ยกเลิก</value>

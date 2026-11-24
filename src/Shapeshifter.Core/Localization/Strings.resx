@@ -37,7 +37,7 @@
     <comment>Link to the project's GitHub page.</comment>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Copy as usual. To paste an older item, hold {0} and press V: keep {0} held to see the history, press V again (or ↑/↓, or 1–9) to pick an item, → to choose what to do with it, Delete to remove it and Esc to cancel. Release {0} to paste.</value>
+    <value>Copy as usual. To paste an older item, hold {0}+V until the history appears, then keep {0} held: press V again (or ↑/↓, or 1–9) to pick an item, → to choose what to do with it, Delete to remove it and Esc to cancel. Release {0} to paste.</value>
     <comment>How to use the app, at the top of the settings window. {0} is the modifier key name (Ctrl, or Cmd on macOS). Keep V, ↑/↓, 1–9, →, Delete and Esc as key names (you may use the local name of the Delete and Esc keys).</comment>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
@@ -135,7 +135,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Copy as usual, and Shapeshifter keeps everything you copy.
 
-To paste something you copied earlier, hold {0} and press V. Keep holding {0} to see the history, press V or the arrow keys to choose, and release {0} to paste.</value>
+To paste something you copied earlier, hold {0}+V until the history appears. Keep holding {0}, press V or the arrow keys to choose, and release {0} to paste.</value>
     <comment>Shown in the empty picker. {0} is the modifier key (Ctrl or Cmd). Keep the \n\n paragraph break.</comment>
   </data>
   <data name="PickerActions" xml:space="preserve">
@@ -294,12 +294,12 @@ To paste something you copied earlier, hold {0} and press V. Keep holding {0} to
     <value>Saves this text to a .txt file and pastes the file.</value>
     <comment>Action description.</comment>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copy as compressed folder</value>
-    <comment>Action title: zip the copied files.</comment>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Paste as compressed file</value>
+    <comment>Action title: zip the copied files into one file and paste that file.</comment>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copy these files to the clipboard as a compressed (.zip) folder.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Compresses these files into one .zip file and pastes it.</value>
     <comment>Action description.</comment>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
@@ -465,26 +465,6 @@ To paste something you copied earlier, hold {0} and press V. Keep holding {0} to
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>You can copy several things from {0} first, then hold {1}+V in {2} to pick each one from your history.</value>
     <comment>Tip shown when the user switches back and forth between two apps to copy and paste; {0} and {2} are application names, {1} is the modifier key (Ctrl or Cmd).</comment>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Upload to {0}?</value>
-    <comment>Title of a dialog that asks before an image is uploaded; {0} is the image host (Catbox).</comment>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Upload this image to {0}?</value>
-    <comment>Heading of the dialog; {0} is the image host (Catbox).</comment>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>The image is sent to {0} (catbox.moe), a free image host without ads, and anyone with the link can see it. Uploads can't be deleted. Nothing else you copy ever leaves your computer.</value>
-    <comment>Body of the dialog; {0} is the image host (Catbox). Keep catbox.moe as is.</comment>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter won't ask again. This time the link is copied: press {0}+V to paste it.</value>
-    <comment>Note in the dialog; {0} is the modifier key (Ctrl or Cmd).</comment>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Upload to {0}</value>
-    <comment>Button that agrees to the upload; {0} is the image host (Catbox).</comment>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Cancel</value>

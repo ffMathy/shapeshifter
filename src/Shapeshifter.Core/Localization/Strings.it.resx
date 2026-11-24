@@ -31,7 +31,7 @@
     <value>Pagina del progetto</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Copia come al solito. Per incollare un elemento precedente, tieni premuto {0} e premi V: continua a tenere premuto {0} per vedere la cronologia, premi di nuovo V (oppure ↑/↓ o 1–9) per scegliere un elemento, → per scegliere cosa farne, Canc per rimuoverlo ed Esc per annullare. Rilascia {0} per incollare.</value>
+    <value>Copia come al solito. Per incollare un elemento precedente, tieni premuti {0}+V finché non appare la cronologia, poi continua a tenere premuto {0}: premi di nuovo V (oppure ↑/↓ o 1–9) per scegliere un elemento, → per scegliere cosa farne, Canc per rimuoverlo ed Esc per annullare. Rilascia {0} per incollare.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Cronologia</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Copia come al solito: Shapeshifter conserva tutto ciò che copi.
 
-Per incollare qualcosa che hai copiato in precedenza, tieni premuto {0} e premi V. Continua a tenere premuto {0} per vedere la cronologia, premi V o i tasti freccia per scegliere e rilascia {0} per incollare.</value>
+Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finché non appare la cronologia. Continua a tenere premuto {0}, premi V o i tasti freccia per scegliere e rilascia {0} per incollare.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Azioni</value>
@@ -224,11 +224,11 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuto {0} e premi 
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Salva questo testo in un file .txt e incolla il file.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copia come cartella compressa</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Incolla come file compresso</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copia questi file negli Appunti come cartella compressa (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprime questi file in un unico file .zip e lo incolla.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copia immagine dal link</value>
@@ -352,21 +352,6 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuto {0} e premi 
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Puoi prima copiare più cose da {0}, poi tenere premuto {1}+V in {2} per scegliere ciascuna dalla cronologia.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Caricare su {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Caricare questa immagine su {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>L’immagine viene inviata a {0} (catbox.moe), un servizio di hosting di immagini gratuito e senza pubblicità, e chiunque abbia il link può vederla. I caricamenti non possono essere eliminati. Nient’altro di ciò che copi lascia mai il tuo computer.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter non lo chiederà più. Questa volta il link viene copiato: premi {0}+V per incollarlo.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Carica su {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Annulla</value>

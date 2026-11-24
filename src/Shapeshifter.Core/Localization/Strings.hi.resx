@@ -31,7 +31,7 @@
     <value>प्रोजेक्ट पेज</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>हमेशा की तरह कॉपी करें। कोई पुराना आइटम चिपकाने के लिए, {0} दबाकर रखें और V दबाएँ: इतिहास देखने के लिए {0} दबाए रखें, आइटम चुनने के लिए V फिर से (या ↑/↓, या 1–9) दबाएँ, उसके साथ क्या करना है यह चुनने के लिए →, उसे हटाने के लिए Delete और रद्द करने के लिए Esc दबाएँ। चिपकाने के लिए {0} छोड़ें।</value>
+    <value>हमेशा की तरह कॉपी करें। कोई पुराना आइटम चिपकाने के लिए, इतिहास दिखने तक {0}+V दबाकर रखें, फिर {0} दबाए रखें: आइटम चुनने के लिए V फिर से (या ↑/↓, या 1–9) दबाएँ, उसके साथ क्या करना है यह चुनने के लिए →, उसे हटाने के लिए Delete और रद्द करने के लिए Esc दबाएँ। चिपकाने के लिए {0} छोड़ें।</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>इतिहास</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>हमेशा की तरह कॉपी करें, और Shapeshifter आपकी कॉपी की गई हर चीज़ रखता है।
 
-पहले कॉपी की गई कोई चीज़ चिपकाने के लिए, {0} दबाकर रखें और V दबाएँ। इतिहास देखने के लिए {0} दबाए रखें, चुनने के लिए V या तीर कुंजियाँ दबाएँ, और चिपकाने के लिए {0} छोड़ें।</value>
+पहले कॉपी की गई कोई चीज़ चिपकाने के लिए, इतिहास दिखने तक {0}+V दबाकर रखें। {0} दबाए रखें, चुनने के लिए V या तीर कुंजियाँ दबाएँ, और चिपकाने के लिए {0} छोड़ें।</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>क्रियाएँ</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>इस टेक्स्ट को एक .txt फ़ाइल में सहेजता है और फ़ाइल चिपकाता है।</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>कंप्रेस किए गए फ़ोल्डर के रूप में कॉपी करें</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>कंप्रेस की गई फ़ाइल के रूप में पेस्ट करें</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>इन फ़ाइलों को कंप्रेस किए गए (.zip) फ़ोल्डर के रूप में क्लिपबोर्ड पर कॉपी करें।</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>इन फ़ाइलों को एक .zip फ़ाइल में कंप्रेस करके उसे पेस्ट करता है।</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>लिंक से छवि कॉपी करें</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>आप पहले {0} से कई चीज़ें कॉपी कर सकते हैं, फिर {2} में {1}+V दबाकर रखें और हर एक को अपने इतिहास से चुनें।</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>{0} पर अपलोड करें?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>इस छवि को {0} पर अपलोड करें?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>छवि {0} (catbox.moe) को भेजी जाती है, जो बिना विज्ञापनों वाला एक मुफ़्त इमेज होस्ट है, और लिंक वाला कोई भी व्यक्ति इसे देख सकता है। अपलोड हटाए नहीं जा सकते। आपकी कॉपी की गई कोई और चीज़ कभी आपके कंप्यूटर से बाहर नहीं जाती।</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter दोबारा नहीं पूछेगा। इस बार लिंक कॉपी हो गया है: इसे चिपकाने के लिए {0}+V दबाएँ।</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>{0} पर अपलोड करें</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>रद्द करें</value>

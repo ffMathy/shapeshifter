@@ -31,7 +31,7 @@
     <value>Page du projet</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Copiez comme d’habitude. Pour coller un élément plus ancien, maintenez {0} enfoncée et appuyez sur V : gardez {0} enfoncée pour voir l’historique, appuyez à nouveau sur V (ou ↑/↓, ou 1–9) pour choisir un élément, sur → pour choisir quoi en faire, sur Suppr pour le supprimer et sur Échap pour annuler. Relâchez {0} pour coller.</value>
+    <value>Copiez comme d’habitude. Pour coller un élément plus ancien, maintenez {0}+V enfoncées jusqu’à ce que l’historique apparaisse, puis gardez {0} enfoncée : appuyez à nouveau sur V (ou ↑/↓, ou 1–9) pour choisir un élément, sur → pour choisir quoi en faire, sur Suppr pour le supprimer et sur Échap pour annuler. Relâchez {0} pour coller.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Historique</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Copiez comme d’habitude : Shapeshifter conserve tout ce que vous copiez.
 
-Pour coller quelque chose que vous avez copié auparavant, maintenez {0} enfoncée et appuyez sur V. Gardez {0} enfoncée pour voir l’historique, appuyez sur V ou sur les flèches pour choisir, puis relâchez {0} pour coller.</value>
+Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfoncées jusqu’à ce que l’historique apparaisse. Gardez {0} enfoncée, appuyez sur V ou sur les flèches pour choisir, puis relâchez {0} pour coller.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Actions</value>
@@ -224,11 +224,11 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0} enfonc�
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Enregistre ce texte dans un fichier .txt et colle le fichier.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copier en tant que dossier compressé</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Coller en tant que fichier compressé</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copie ces fichiers dans le Presse-papiers sous forme de dossier compressé (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Compresse ces fichiers dans un seul fichier .zip et le colle.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copier l’image du lien</value>
@@ -352,21 +352,6 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0} enfonc�
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Vous pouvez d’abord copier plusieurs éléments depuis {0}, puis maintenir {1}+V dans {2} pour choisir chacun d’eux dans votre historique.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Mettre en ligne sur {0} ?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Mettre cette image en ligne sur {0} ?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>L’image est envoyée à {0} (catbox.moe), un hébergeur d’images gratuit et sans publicité, et toute personne disposant du lien peut la voir. Les images mises en ligne ne peuvent pas être supprimées. Rien d’autre de ce que vous copiez ne quitte jamais votre ordinateur.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter ne vous le demandera plus. Cette fois, le lien est copié : appuyez sur {0}+V pour le coller.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Mettre en ligne sur {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Annuler</value>

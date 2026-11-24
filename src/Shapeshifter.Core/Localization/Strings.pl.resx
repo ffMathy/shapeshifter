@@ -31,7 +31,7 @@
     <value>Strona projektu</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Kopiuj jak zwykle. Aby wkleić starszy element, przytrzymaj {0} i naciśnij V: trzymaj {0}, aby zobaczyć historię, naciśnij ponownie V (albo ↑/↓ lub 1–9), aby wybrać element, →, aby wybrać, co z nim zrobić, Delete, aby go usunąć, i Esc, aby anulować. Puść {0}, aby wkleić.</value>
+    <value>Kopiuj jak zwykle. Aby wkleić starszy element, przytrzymaj {0}+V, aż pojawi się historia, a potem trzymaj {0}: naciśnij ponownie V (albo ↑/↓ lub 1–9), aby wybrać element, →, aby wybrać, co z nim zrobić, Delete, aby go usunąć, i Esc, aby anulować. Puść {0}, aby wkleić.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Historia</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Kopiuj jak zwykle, a Shapeshifter zachowa wszystko, co skopiujesz.
 
-Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0} i naciśnij V. Trzymaj {0}, aby zobaczyć historię, naciskaj V lub strzałki, aby wybrać, i puść {0}, aby wkleić.</value>
+Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się historia. Trzymaj {0}, naciskaj V lub strzałki, aby wybrać, i puść {0}, aby wkleić.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Akcje</value>
@@ -224,11 +224,11 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0} i naciśnij V. Trzymaj
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Zapisuje ten tekst w pliku .txt i wkleja plik.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiuj jako folder skompresowany</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Wklej jako plik skompresowany</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopiuje te pliki do schowka jako folder skompresowany (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Kompresuje te pliki do jednego pliku .zip i wkleja go.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Kopiuj obraz z linku</value>
@@ -352,21 +352,6 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0} i naciśnij V. Trzymaj
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Możesz najpierw skopiować kilka rzeczy w aplikacji {0}, a potem przytrzymać {1}+V w aplikacji {2}, aby wybrać każdą z nich z historii.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Przesłać do serwisu {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Przesłać ten obraz do serwisu {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>Obraz zostanie wysłany do serwisu {0} (catbox.moe), darmowego hostingu obrazów bez reklam, i każdy, kto ma link, będzie mógł go zobaczyć. Przesłanych plików nie można usunąć. Nic innego, co kopiujesz, nigdy nie opuszcza twojego komputera.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Aplikacja Shapeshifter nie zapyta ponownie. Tym razem link został skopiowany: naciśnij {0}+V, aby go wkleić.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Prześlij do serwisu {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Anuluj</value>

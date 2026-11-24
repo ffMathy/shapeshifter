@@ -31,7 +31,7 @@
     <value>প্রকল্পের পাতা</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>সাধারণভাবে কপি করুন। পুরোনো কোনো আইটেম আটকাতে {0} ধরে রেখে V চাপুন: ইতিহাস দেখতে {0} ধরে রাখুন, আইটেম বাছতে আবার V (বা ↑/↓, বা 1–9) চাপুন, সেটি দিয়ে কী করবেন তা বাছতে →, সরাতে Delete এবং বাতিল করতে Esc চাপুন। আটকাতে {0} ছেড়ে দিন।</value>
+    <value>সাধারণভাবে কপি করুন। পুরোনো কোনো আইটেম আটকাতে ইতিহাস না দেখা পর্যন্ত {0}+V ধরে রাখুন, তারপর {0} ধরে রাখুন: আইটেম বাছতে আবার V (বা ↑/↓, বা 1–9) চাপুন, সেটি দিয়ে কী করবেন তা বাছতে →, সরাতে Delete এবং বাতিল করতে Esc চাপুন। আটকাতে {0} ছেড়ে দিন।</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>ইতিহাস</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>সাধারণভাবে কপি করুন, আর আপনি যা কিছু কপি করেন Shapeshifter সব রেখে দেয়।
 
-আগে কপি করা কিছু আটকাতে {0} ধরে রেখে V চাপুন। ইতিহাস দেখতে {0} ধরে রাখুন, বাছতে V বা তীর কী চাপুন, আর আটকাতে {0} ছেড়ে দিন।</value>
+আগে কপি করা কিছু আটকাতে ইতিহাস না দেখা পর্যন্ত {0}+V ধরে রাখুন। {0} ধরে রাখুন, বাছতে V বা তীর কী চাপুন, আর আটকাতে {0} ছেড়ে দিন।</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>কাজ</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>এই টেক্সট একটি .txt ফাইলে সংরক্ষণ করে ফাইলটি আটকায়।</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>সংকুচিত ফোল্ডার হিসেবে কপি করুন</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>সংকুচিত ফাইল হিসেবে পেস্ট করুন</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>এই ফাইলগুলি একটি সংকুচিত (.zip) ফোল্ডার হিসেবে ক্লিপবোর্ডে কপি করুন।</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>এই ফাইলগুলি একটি .zip ফাইলে সংকুচিত করে সেটি পেস্ট করে।</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>লিঙ্ক থেকে ছবি কপি করুন</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>আপনি প্রথমে {0} থেকে কয়েকটি জিনিস কপি করতে পারেন, তারপর {2}-এ {1}+V ধরে রেখে আপনার ইতিহাস থেকে প্রতিটি বেছে নিতে পারেন।</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>{0}-এ আপলোড করবেন?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>এই ছবিটি {0}-এ আপলোড করবেন?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>ছবিটি {0} (catbox.moe)-এ পাঠানো হয়, যা বিজ্ঞাপনহীন একটি বিনামূল্যের ছবি হোস্ট, এবং লিঙ্কটি যার কাছে আছে সে-ই এটি দেখতে পারবে। আপলোড মোছা যায় না। আপনি আর যা কিছু কপি করেন তা কখনো আপনার কম্পিউটারের বাইরে যায় না।</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter আর জিজ্ঞাসা করবে না। এবার লিঙ্কটি কপি করা হয়েছে: আটকাতে {0}+V চাপুন।</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>{0}-এ আপলোড করুন</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>বাতিল</value>

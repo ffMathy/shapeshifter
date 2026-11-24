@@ -31,7 +31,7 @@
     <value>Projektside</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Kopiér som normalt. Hvis du vil indsætte et ældre element, skal du holde {0} nede og trykke på V: Bliv ved med at holde {0} nede for at se historikken, tryk på V igen (eller ↑/↓ eller 1–9) for at vælge et element, → for at vælge, hvad der skal ske med det, Delete for at fjerne det og Esc for at annullere. Slip {0} for at indsætte.</value>
+    <value>Kopiér som normalt. Hvis du vil indsætte et ældre element, skal du holde {0}+V nede, til historikken vises, og derefter blive ved med at holde {0} nede: Tryk på V igen (eller ↑/↓ eller 1–9) for at vælge et element, → for at vælge, hvad der skal ske med det, Delete for at fjerne det og Esc for at annullere. Slip {0} for at indsætte.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Historik</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Kopiér som normalt, så gemmer Shapeshifter alt, hvad du kopierer.
 
-Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0} nede og trykke på V. Bliv ved med at holde {0} nede for at se historikken, tryk på V eller piletasterne for at vælge, og slip {0} for at indsætte.</value>
+Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede, til historikken vises. Bliv ved med at holde {0} nede, tryk på V eller piletasterne for at vælge, og slip {0} for at indsætte.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Handlinger</value>
@@ -224,11 +224,11 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0} nede o
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Gemmer denne tekst i en .txt-fil og indsætter filen.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Kopiér som komprimeret mappe</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Indsæt som komprimeret fil</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Kopierer disse filer til udklipsholderen som en komprimeret (.zip) mappe.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Komprimerer disse filer til én .zip-fil og indsætter den.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Kopiér billede fra link</value>
@@ -352,21 +352,6 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0} nede o
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Du kan først kopiere flere ting fra {0} og derefter holde {1}+V nede i {2} for at vælge hver af dem fra din historik.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Upload til {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Upload dette billede til {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>Billedet sendes til {0} (catbox.moe), en gratis billedtjeneste uden reklamer, og alle med linket kan se det. Uploads kan ikke slettes. Intet andet, du kopierer, forlader nogensinde din computer.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter spørger ikke igen. Denne gang er linket kopieret: Tryk på {0}+V for at indsætte det.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Upload til {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Annuller</value>

@@ -47,6 +47,12 @@ Every change to behaviour should come with tests. Most logic lives in `Shapeshif
 dotnet test --project tests/Shapeshifter.Core.Tests
 ```
 
+`tests/Shapeshifter.Desktop.Tests` checks the picker window itself on Avalonia's headless platform, with no desktop needed:
+
+```bash
+dotnet test --project tests/Shapeshifter.Desktop.Tests
+```
+
 The end-to-end tests start Shapeshifter and a separate target application, copy through the real clipboard and press real keys. They need a desktop session:
 
 - **Linux:** `scripts/run-e2e-linux.sh` runs them under Xvfb with openbox (install `xvfb openbox x11-utils`).
@@ -104,7 +110,7 @@ website/preview.sh    # then open http://localhost:8000
 
 ## Releasing
 
-Every merge to `master` is released (merges that land while a release is being built are released together). CI builds and tests the merge, publishes all six platforms and creates a GitHub release with the six executables attached as they are, one single file per platform (`Shapeshifter-win-x64.exe`, `Shapeshifter-osx-arm64`, `Shapeshifter-linux-x64` and so on; no archives), which the app also downloads when it updates itself, plus `SHA256SUMS.txt`, and release notes generated from the merged pull requests.
+Every merge to `master` is released (merges that land while a release is being built are released together). CI builds and tests the merge, publishes all six platforms and creates a GitHub release with the six executables attached as they are, one single file per platform (`Shapeshifter-win-x64.exe`, `Shapeshifter-osx-arm64`, `Shapeshifter-linux-x64` and so on), which the app also downloads when it updates itself, plus the macOS builds as zipped app bundles (`Shapeshifter-osx-arm64.app.zip`, `Shapeshifter-osx-x64.app.zip`, made by `scripts/make-macos-app.sh`), which is what Mac users download: a bare executable downloaded with a browser has no executable bit, so Finder opens it in TextEdit. Before releasing, CI starts every one of these files on its own operating system and architecture (`scripts/smoke-test-release.sh`; the macOS bundle is opened through Launch Services, like a double-click) and checks that the app comes up. The release also holds `SHA256SUMS.txt` and release notes generated from the merged pull requests.
 
 The version is worked out by `scripts/next-version.sh`: the newest `v*` tag with its patch number increased (v7.1.0 → v7.1.1), or the `<Version>` in `Directory.Build.props` when that is newer. To release a new minor or major version, raise `<Version>` in the pull request (for example to `7.2.0` or `8.0.0`).
 

@@ -17,7 +17,7 @@ public sealed class ActionCatalog
         new PasteAsFileAction(),
         new PasteAsPlainTextAction(),
         new UploadImageAction(),
-        new ZipFilesAction(),
+        new PasteAsZipAction(),
         new CopyImageFromLinkAction(),
         new OpenLinksAction(),
         new TogglePinAction(),

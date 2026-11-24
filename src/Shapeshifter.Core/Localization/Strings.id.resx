@@ -31,7 +31,7 @@
     <value>Halaman proyek</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>Salin seperti biasa. Untuk menempelkan item lama, tahan {0} lalu tekan V: tetap tahan {0} untuk melihat riwayat, tekan V lagi (atau ↑/↓, atau 1–9) untuk memilih item, → untuk memilih tindakan untuknya, Delete untuk menghapusnya, dan Esc untuk membatalkan. Lepaskan {0} untuk menempel.</value>
+    <value>Salin seperti biasa. Untuk menempelkan item lama, tahan {0}+V sampai riwayat muncul, lalu tetap tahan {0}: tekan V lagi (atau ↑/↓, atau 1–9) untuk memilih item, → untuk memilih tindakan untuknya, Delete untuk menghapusnya, dan Esc untuk membatalkan. Lepaskan {0} untuk menempel.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>Riwayat</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>Salin seperti biasa, dan Shapeshifter menyimpan semua yang Anda salin.
 
-Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0} lalu tekan V. Tetap tahan {0} untuk melihat riwayat, tekan V atau tombol panah untuk memilih, lalu lepaskan {0} untuk menempel.</value>
+Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat muncul. Tetap tahan {0}, tekan V atau tombol panah untuk memilih, lalu lepaskan {0} untuk menempel.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>Tindakan</value>
@@ -224,11 +224,11 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0} lalu tekan V. Te
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Menyimpan teks ini ke file .txt dan menempelkan file tersebut.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Salin sebagai folder terkompresi</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Tempel sebagai file terkompresi</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Salin file-file ini ke papan klip sebagai folder terkompresi (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Mengompresi file-file ini menjadi satu file .zip dan menempelkannya.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Salin gambar dari tautan</value>
@@ -352,21 +352,6 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0} lalu tekan V. Te
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>Anda bisa menyalin beberapa hal dari {0} terlebih dahulu, lalu tahan {1}+V di {2} untuk memilih masing-masing dari riwayat Anda.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>Unggah ke {0}?</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>Unggah gambar ini ke {0}?</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>Gambar dikirim ke {0} (catbox.moe), layanan hosting gambar gratis tanpa iklan, dan siapa pun yang memiliki tautannya dapat melihatnya. Unggahan tidak dapat dihapus. Tidak ada hal lain yang Anda salin yang pernah meninggalkan komputer Anda.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter tidak akan bertanya lagi. Kali ini tautan sudah disalin: tekan {0}+V untuk menempelkannya.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>Unggah ke {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>Batal</value>

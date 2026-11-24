@@ -31,7 +31,7 @@
     <value>صفحه پروژه</value>
   </data>
   <data name="SettingsUsage" xml:space="preserve">
-    <value>مثل همیشه کپی کنید. برای چسباندن مورد قدیمی‌تر، {0} را نگه دارید و V را فشار دهید: {0} را نگه دارید تا تاریخچه را ببینید، دوباره V (یا ↑/↓ یا 1–9) را برای انتخاب مورد فشار دهید، → را برای انتخاب کاری که با آن انجام می‌شود، Delete را برای حذف آن و Esc را برای لغو. برای چسباندن، {0} را رها کنید.</value>
+    <value>مثل همیشه کپی کنید. برای چسباندن مورد قدیمی‌تر، {0}+V را نگه دارید تا تاریخچه ظاهر شود، سپس {0} را نگه دارید: دوباره V (یا ↑/↓ یا 1–9) را برای انتخاب مورد فشار دهید، → را برای انتخاب کاری که با آن انجام می‌شود، Delete را برای حذف آن و Esc را برای لغو. برای چسباندن، {0} را رها کنید.</value>
   </data>
   <data name="SettingsHistoryGroup" xml:space="preserve">
     <value>تاریخچه</value>
@@ -105,7 +105,7 @@
   <data name="PickerEmptyHint" xml:space="preserve">
     <value>مثل همیشه کپی کنید؛ Shapeshifter هر چیزی را که کپی می‌کنید نگه می‌دارد.
 
-برای چسباندن چیزی که قبلاً کپی کرده‌اید، {0} را نگه دارید و V را فشار دهید. {0} را نگه دارید تا تاریخچه را ببینید، با V یا کلیدهای جهت‌نما انتخاب کنید و برای چسباندن {0} را رها کنید.</value>
+برای چسباندن چیزی که قبلاً کپی کرده‌اید، {0}+V را نگه دارید تا تاریخچه ظاهر شود. {0} را نگه دارید و با V یا کلیدهای جهت‌نما انتخاب کنید و برای چسباندن {0} را رها کنید.</value>
   </data>
   <data name="PickerActions" xml:space="preserve">
     <value>کنش‌ها</value>
@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>این متن را در یک فایل .txt ذخیره می‌کند و فایل را می‌چسباند.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>کپی به‌صورت پوشه فشرده</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>چسباندن به‌صورت فایل فشرده</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>این فایل‌ها را به‌صورت پوشه فشرده (.zip) در کلیپ‌بورد کپی کنید.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>این فایل‌ها را در یک فایل .zip فشرده می‌کند و آن را می‌چسباند.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>کپی تصویر از پیوند</value>
@@ -352,21 +352,6 @@
   </data>
   <data name="TipCopyBackAndForthMessage" xml:space="preserve">
     <value>می‌توانید ابتدا چند چیز را از {0} کپی کنید، سپس در {2} کلید {1}+V را نگه دارید تا هر کدام را از تاریخچه انتخاب کنید.</value>
-  </data>
-  <data name="UploadConsentTitle" xml:space="preserve">
-    <value>بارگذاری در {0}؟</value>
-  </data>
-  <data name="UploadConsentQuestion" xml:space="preserve">
-    <value>این تصویر در {0} بارگذاری شود؟</value>
-  </data>
-  <data name="UploadConsentExplanation" xml:space="preserve">
-    <value>تصویر به {0} (catbox.moe) فرستاده می‌شود، که میزبان رایگان تصویر و بدون تبلیغات است، و هر کسی که پیوند را داشته باشد می‌تواند آن را ببیند. بارگذاری‌ها قابل حذف نیستند. هیچ چیز دیگری که کپی می‌کنید هرگز از رایانه شما خارج نمی‌شود.</value>
-  </data>
-  <data name="UploadConsentAskOnce" xml:space="preserve">
-    <value>Shapeshifter دیگر نمی‌پرسد. این بار پیوند کپی شده است: برای چسباندن آن {0}+V را فشار دهید.</value>
-  </data>
-  <data name="UploadConsentUpload" xml:space="preserve">
-    <value>بارگذاری در {0}</value>
   </data>
   <data name="DialogCancel" xml:space="preserve">
     <value>لغو</value>
