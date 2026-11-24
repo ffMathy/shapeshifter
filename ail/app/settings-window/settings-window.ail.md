@@ -19,6 +19,11 @@ node SettingsWindow : view   level: experience
       Then it shows the delay 300, items to remember 50, "Remember history after restart" off,
         copy notifications on, tips on, start at login as it is, and automatic updates on
       And there is no "Shortcut" row, as Linux offers no other shortcut
+    Scenario: a copy from an app store leaves out updating
+      Given Shapeshifter was installed from the Microsoft Store
+      When the settings window opens
+      Then there is no "Automatic updates" row and no "Check for updates" button
+      And start at login, clear history and open log folder are shown as in any copy
   look
     window      titled with the "title" copy, 540 wide, as tall as its content, not resizable, centred on the screen
     hero        the app icon, the app's name in bold and under it the version with three links: copy version,
@@ -32,6 +37,8 @@ node SettingsWindow : view   level: experience
     buttons     a wrapping row of rounded buttons with an icon: clear history, check for updates, open log folder
     disabled    the start-at-login switch is greyed when the platform has none; the updates switch is greyed, still showing
                 its saved state, when this copy cannot update itself, and its description then says why
+    store copy  in a copy an app store installed (the Microsoft Store or the Mac App Store), the "Automatic updates" row,
+                its hairline and the "Check for updates" button are left out: the store updates that copy
     each look   Windows, Mac and Linux style the same layout their own way (on Linux: the GNOME settings dialog, no row icons)
   copy
     title                "Shapeshifter Settings"
@@ -56,6 +63,9 @@ node SettingsWindow : view   level: experience
   how
     decide the version and the "Copy version" link sit at the top of the settings
       because people could not find the version to report a bug (#342)
+    decide a store copy's settings leave out the update row and "Check for updates"
+      because the store updates that copy, so both could only ever say it cannot update itself
+      rejected showing them greyed, as for a build from source, because store customers never update by hand
     decide the window is as tall as its content, with no scrolling
       because "unknown, confirm with the owner: keep this? on a screen lower than about 860 pixels (driven at 1280×800) the bottom row of buttons is cut off and 'Open log folder' cannot be clicked"
     decide the buttons wrap onto a second row
