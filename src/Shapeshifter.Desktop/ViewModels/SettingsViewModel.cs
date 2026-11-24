@@ -129,6 +129,12 @@ public sealed partial class SettingsViewModel : ObservableObject
     /// <summary>What the updater is doing, or why this copy cannot update itself.</summary>
     public string UpdateStatus => updater?.StatusText ?? Strings.UpdateAutomatic;
 
+    /// <summary>
+    /// Whether the settings offer updates at all. A copy that an app store installed is updated by the store, so the
+    /// update setting and "Check for updates" would only ever say it cannot update itself: they are left out.
+    /// </summary>
+    public bool ShowsUpdates { get; init; } = !StoreInstall.IsActive;
+
     /// <summary>Whether this copy can download and install updates (single-file release builds in a writable folder).</summary>
     public bool CanUpdate => updater?.IsSupported == true;
 

@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Copia di tutto e incolla solo ciò che ti serve. Tieni premuto Ctrl+V e compare la cronologia degli Appunti: scegli un elemento, rilascia ed è incollato. Testi, immagini e file restano esattamente come li hai copiati, e niente di ciò che copi lascia il tuo computer.",
+  "description": "Copia di tutto. Incolla ciò che vuoi.\n\nUn tocco su Ctrl+V incolla come sempre. Continua a tenere premuto Ctrl e compare la cronologia degli Appunti. Premi V per scendere nell’elenco e rilascia per incollare. Shapeshifter non ti disturba finché non ti serve.\n\nMolto più del testo normale\nTesto formattato, HTML, immagini, file e formati specifici delle app vengono conservati e incollati esattamente come li hai copiati. Premi la freccia destra per scegliere cosa fare con un elemento:\n• Incolla come testo normale, senza formattazione\n• Incolla un’immagine o un testo come file, o più file come un unico file compresso\n• Apri un link copiato o copia l’immagine a cui rimanda\n• Fissa un elemento perché resti in cima, anche dopo un riavvio\n\nRitrova ciò che hai copiato tempo fa\nPremi S mentre la cronologia è aperta e digita qualche parola. Invio incolla ciò che hai trovato. Con 1–9 passi direttamente a un elemento, Canc ne rimuove uno, Esc annulla. Premi Spazio per tenere aperta la cronologia e guardarti intorno con calma.\n\nPrivacy fin dalla progettazione\nNiente di ciò che copi lascia il tuo computer. I contenuti che i password manager contrassegnano come sensibili non vengono mai registrati. Solo se scegli «Carica e incolla il link» per un’immagine, quell’unica immagine viene caricata, così da poterne incollare il link.\n\nSi integra alla perfezione\nShapeshifter segue il colore principale e la modalità chiara o scura, e parla 22 lingue. Preferisci un’altra scorciatoia? Usa invece Win+V, al posto della cronologia degli Appunti di Windows.\n\nShapeshifter è open source (github.com/ffMathy/Shapeshifter). Acquistandolo qui ne sostieni lo sviluppo.",
+  "releaseNotes": "Prima versione nel Microsoft Store.",
+  "additionalLicenseTerms": "Il codice sorgente di Shapeshifter è pubblicato con licenza Creative Commons Attribution-NonCommercial 4.0 (Attribuzione - Non commerciale; https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Tieni premuto Ctrl+V per vedere la cronologia degli Appunti; rilascia per incollare l’elemento scelto",
+    "Conserva testo formattato, HTML, immagini, file e formati specifici delle app esattamente come li hai copiati",
+    "Incolla come testo normale, come file o come file compresso",
+    "Cerca nella cronologia: premi S e digita qualche parola",
+    "Fissa gli elementi che incolli spesso; quelli fissati restano anche dopo un riavvio",
+    "Ignora le password che i password manager contrassegnano come sensibili",
+    "Niente di ciò che copi lascia il tuo computer",
+    "Segue il colore principale e la modalità chiara o scura di Windows, in 22 lingue"
+  ],
+  "searchTerms": [
+    "appunti",
+    "gestore appunti",
+    "cronologia appunti",
+    "copia incolla",
+    "clipboard manager",
+    "appunti multipli",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Copia di tutto. Incolla ciò che vuoi.",
+      "subline": "Tieni premuto Ctrl+V e compare la cronologia degli Appunti. Scegli un elemento, rilascia ed è incollato.",
+      "caption": "Tenendo premuto Ctrl+V vedi tutto ciò che hai copiato, dal più recente, con un’anteprima di ogni elemento."
+    },
+    "actions": {
+      "headline": "Incolla come ti serve",
+      "subline": "Premi la freccia destra per incollare come testo normale o come file, o per fissare un elemento per dopo.",
+      "caption": "La freccia destra mostra cosa puoi fare con l’elemento selezionato, ad esempio incollarlo come testo normale."
+    },
+    "search": {
+      "headline": "Ritrova ciò che hai copiato",
+      "subline": "Premi S mentre la cronologia è aperta e digita qualche parola. Invio incolla ciò che hai trovato.",
+      "caption": "Ricerca nella cronologia: digita qualche parola e vedrai solo ciò che corrisponde."
+    },
+    "settings": {
+      "headline": "Su misura per te",
+      "subline": "Scegli la scorciatoia, quanti elementi conservare e se la cronologia resta dopo un riavvio.",
+      "caption": "Scegli la scorciatoia, quanta cronologia conservare, le notifiche e i suggerimenti."
+    },
+    "dark": {
+      "headline": "Chiaro o scuro, con i tuoi colori",
+      "subline": "Shapeshifter segue il colore principale e la modalità chiara o scura di Windows.",
+      "caption": "Shapeshifter in modalità scura, nel colore principale che hai scelto per Windows."
+    }
+  }
+}

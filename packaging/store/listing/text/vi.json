@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Sao chép nhiều thứ, dán bất kỳ thứ nào. Giữ Ctrl+V là lịch sử bảng tạm hiện ra: chọn một mục, thả phím, và mục đó được dán. Văn bản, hình ảnh và tệp được giữ nguyên như khi sao chép, và không gì bạn sao chép rời khỏi máy tính của bạn.",
+  "description": "Sao chép nhiều thứ. Dán bất kỳ thứ nào.\n\nNhấn nhanh Ctrl+V là dán như bình thường. Tiếp tục giữ Ctrl là lịch sử bảng tạm hiện ra. Nhấn V để di chuyển xuống danh sách, thả ra để dán. Shapeshifter không làm phiền bạn cho đến khi bạn cần.\n\nKhông chỉ là văn bản thuần\nVăn bản có định dạng, HTML, hình ảnh, tệp và các định dạng riêng của ứng dụng được giữ lại và dán ra đúng như khi bạn sao chép. Nhấn phím mũi tên phải để chọn thao tác với một mục:\n• Dán dưới dạng văn bản thuần, không có định dạng\n• Dán hình ảnh hoặc văn bản dưới dạng tệp, hoặc nhiều tệp thành một tệp nén\n• Mở liên kết đã sao chép, hoặc sao chép hình ảnh từ liên kết\n• Ghim một mục để nó luôn ở trên cùng, kể cả sau khi khởi động lại\n\nTìm lại thứ bạn đã sao chép từ trước\nNhấn S khi lịch sử đang mở và gõ vài từ. Enter dán nội dung bạn tìm được. 1–9 nhảy thẳng đến một mục, Del xóa một mục, Esc để hủy. Nhấn Space để giữ lịch sử luôn mở và thong thả xem.\n\nRiêng tư ngay từ thiết kế\nKhông gì bạn sao chép rời khỏi máy tính của bạn. Nội dung mà trình quản lý mật khẩu đánh dấu là nhạy cảm sẽ không bao giờ được ghi lại. Chỉ khi bạn chọn \"Tải lên và dán liên kết\" cho một hình ảnh thì riêng hình ảnh đó mới được tải lên, để có thể dán liên kết đến nó.\n\nHòa hợp với máy của bạn\nShapeshifter theo màu nhấn và chế độ sáng hoặc tối của bạn, và hỗ trợ 22 ngôn ngữ. Muốn dùng phím tắt khác? Hãy dùng Win+V, thay cho lịch sử bảng tạm của Windows.\n\nShapeshifter là phần mềm mã nguồn mở (github.com/ffMathy/Shapeshifter). Mua ứng dụng tại đây là bạn đang ủng hộ việc phát triển nó.",
+  "releaseNotes": "Phiên bản đầu tiên trên Microsoft Store.",
+  "additionalLicenseTerms": "Mã nguồn của Shapeshifter được phát hành theo giấy phép Creative Commons Attribution-NonCommercial 4.0 (Ghi công - Phi thương mại) (https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Giữ Ctrl+V để xem lịch sử bảng tạm; thả ra để dán mục bạn đã chọn",
+    "Giữ nguyên văn bản có định dạng, HTML, hình ảnh, tệp và định dạng riêng của ứng dụng như khi sao chép",
+    "Dán dưới dạng văn bản thuần, dưới dạng tệp hoặc dưới dạng tệp nén",
+    "Tìm kiếm trong lịch sử: nhấn S và gõ vài từ",
+    "Ghim các mục bạn hay dán; mục đã ghim vẫn còn sau khi khởi động lại",
+    "Bỏ qua mật khẩu mà trình quản lý mật khẩu đánh dấu là nhạy cảm",
+    "Không gì bạn sao chép rời khỏi máy tính của bạn",
+    "Theo màu nhấn và chế độ sáng hoặc tối của bạn, với 22 ngôn ngữ"
+  ],
+  "searchTerms": [
+    "quản lý clipboard",
+    "lịch sử clipboard",
+    "sao chép dán",
+    "bảng tạm",
+    "lịch sử bảng tạm",
+    "copy nhiều lần",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Sao chép nhiều thứ. Dán thứ bạn cần.",
+      "subline": "Giữ Ctrl+V là lịch sử bảng tạm hiện ra. Chọn một mục, thả phím, và mục đó được dán.",
+      "caption": "Khi giữ Ctrl+V, mọi thứ bạn đã sao chép hiện ra, mới nhất ở trên cùng, kèm bản xem trước của từng mục."
+    },
+    "actions": {
+      "headline": "Dán theo cách bạn cần",
+      "subline": "Nhấn phím mũi tên phải để dán dưới dạng văn bản thuần, dưới dạng tệp, hoặc ghim một mục để dùng sau.",
+      "caption": "Phím mũi tên phải cho thấy các thao tác với mục đang chọn, chẳng hạn dán dưới dạng văn bản thuần."
+    },
+    "search": {
+      "headline": "Tìm lại thứ bạn đã sao chép",
+      "subline": "Nhấn S khi lịch sử đang mở và gõ vài từ. Enter dán nội dung bạn tìm được.",
+      "caption": "Tìm kiếm trong lịch sử: gõ vài từ và chỉ những mục khớp được hiển thị."
+    },
+    "settings": {
+      "headline": "Tùy chỉnh theo ý bạn",
+      "subline": "Chọn phím tắt, số mục cần giữ và có ghi nhớ lịch sử sau khi khởi động lại hay không.",
+      "caption": "Chọn phím tắt, lượng lịch sử cần giữ, thông báo và mẹo."
+    },
+    "dark": {
+      "headline": "Sáng hay tối, theo màu của bạn",
+      "subline": "Shapeshifter theo màu nhấn và chế độ sáng hoặc tối của Windows.",
+      "caption": "Shapeshifter ở chế độ tối, với màu nhấn bạn đã chọn cho Windows."
+    }
+  }
+}

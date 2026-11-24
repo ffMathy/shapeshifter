@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Salin banyak hal, tempel yang mana saja. Tahan Ctrl+V dan riwayat papan klip Anda muncul: pilih item, lepaskan, dan item langsung tertempel. Teks, gambar, dan file disimpan persis seperti saat disalin, dan tidak ada yang Anda salin yang keluar dari komputer Anda.",
+  "description": "Salin banyak hal. Tempel yang mana saja.\n\nTekan Ctrl+V sekilas dan menempel seperti biasa. Tetap tahan Ctrl dan riwayat papan klip Anda muncul. Tekan V untuk turun di daftar, lepaskan untuk menempel. Shapeshifter tidak mengganggu sampai Anda membutuhkannya.\n\nLebih dari teks biasa\nTeks berformat, HTML, gambar, file, dan format khusus aplikasi disimpan dan ditempel kembali persis seperti saat Anda menyalinnya. Tekan tombol panah kanan untuk memilih tindakan untuk sebuah item:\n• Tempel sebagai teks biasa, tanpa format\n• Tempel gambar atau teks sebagai file, atau beberapa file sebagai satu file terkompresi\n• Buka tautan yang disalin, atau salin gambar dari tautan\n• Sematkan item agar tetap di atas, bahkan setelah mulai ulang\n\nTemukan yang Anda salin beberapa waktu lalu\nTekan S saat riwayat terbuka dan ketik beberapa kata. Enter menempelkan yang Anda temukan. 1–9 langsung melompat ke item, Del menghapus item, Esc membatalkan. Tekan Spasi agar riwayat tetap terbuka dan lihat-lihat dengan santai.\n\nPrivasi sejak awal\nTidak ada yang Anda salin yang keluar dari komputer Anda. Konten yang ditandai sensitif oleh pengelola kata sandi tidak pernah dicatat. Hanya jika Anda memilih \"Unggah dan tempel tautan\" untuk sebuah gambar, gambar itu saja yang diunggah agar tautannya bisa ditempel.\n\nMenyatu dengan Windows Anda\nShapeshifter mengikuti warna aksen serta mode terang atau gelap Anda, dan tersedia dalam 22 bahasa. Lebih suka pintasan lain? Gunakan Win+V sebagai gantinya, menggantikan riwayat papan klip Windows.\n\nShapeshifter bersifat sumber terbuka (github.com/ffMathy/Shapeshifter). Dengan membelinya di sini, Anda mendukung pengembangannya.",
+  "releaseNotes": "Rilis pertama di Microsoft Store.",
+  "additionalLicenseTerms": "Kode sumber Shapeshifter diterbitkan di bawah lisensi Creative Commons Attribution-NonCommercial 4.0 (Atribusi-NonKomersial) (https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Tahan Ctrl+V untuk melihat riwayat papan klip; lepaskan untuk menempelkan item yang dipilih",
+    "Menyimpan teks berformat, HTML, gambar, file, dan format khusus aplikasi persis seperti saat disalin",
+    "Tempel sebagai teks biasa, sebagai file, atau sebagai file terkompresi",
+    "Cari di riwayat: tekan S dan ketik beberapa kata",
+    "Sematkan item yang sering Anda tempel; item yang disematkan tetap ada setelah mulai ulang",
+    "Melewati kata sandi yang ditandai sensitif oleh pengelola kata sandi",
+    "Tidak ada yang Anda salin yang keluar dari komputer Anda",
+    "Mengikuti warna aksen serta mode terang atau gelap, dalam 22 bahasa"
+  ],
+  "searchTerms": [
+    "aplikasi clipboard",
+    "riwayat clipboard",
+    "copas",
+    "papan klip",
+    "riwayat papan klip",
+    "salin tempel",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Salin banyak hal. Tempel yang mana saja.",
+      "subline": "Tahan Ctrl+V dan riwayat papan klip Anda muncul. Pilih item, lepaskan, dan langsung tertempel.",
+      "caption": "Saat Ctrl+V ditahan, semua yang Anda salin tampil, yang terbaru di atas, dengan pratinjau setiap item."
+    },
+    "actions": {
+      "headline": "Tempel sesuai kebutuhan Anda",
+      "subline": "Tekan tombol panah kanan untuk menempel sebagai teks biasa, sebagai file, atau menyematkan item untuk nanti.",
+      "caption": "Tombol panah kanan menampilkan tindakan untuk item yang dipilih, misalnya menempel sebagai teks biasa."
+    },
+    "search": {
+      "headline": "Temukan yang Anda salin",
+      "subline": "Tekan S saat riwayat terbuka dan ketik beberapa kata. Enter menempelkan yang Anda temukan.",
+      "caption": "Mencari di riwayat: ketik beberapa kata dan hanya yang cocok yang ditampilkan."
+    },
+    "settings": {
+      "headline": "Sesuaikan dengan selera Anda",
+      "subline": "Pilih pintasan, berapa item yang disimpan, dan apakah riwayat tetap ada setelah mulai ulang.",
+      "caption": "Pilih pintasan, seberapa banyak riwayat yang disimpan, pemberitahuan, dan tips."
+    },
+    "dark": {
+      "headline": "Terang atau gelap, dengan warna Anda",
+      "subline": "Shapeshifter mengikuti warna aksen serta mode terang atau gelap Windows.",
+      "caption": "Shapeshifter dalam mode gelap, dengan warna aksen yang Anda pilih untuk Windows."
+    }
+  }
+}

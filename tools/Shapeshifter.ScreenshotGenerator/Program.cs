@@ -97,6 +97,11 @@ internal static class Program
             .WithInterFont()
             .SetupWithoutStarting();
 
+        if (args.Contains("--store"))
+        {
+            return StoreListing.Run(args);
+        }
+
         foreach (var look in looks)
         {
             var (requested, accepted) = NativeFonts[look];
@@ -261,13 +266,14 @@ internal static class Program
         return viewModel;
     }
 
-    /// <param name="selectedAction">When set, the actions pane is active with this action selected.</param>
-    /// <param name="search">When set, the picker is searching for this, showing only the sample items that match.</param>
-    private static void RenderPicker(
-        Look look, double scale, int width, int height, string path, bool empty = false, int? selectedAction = null, bool dark = false, string? search = null)
+    /// <summary>
+    /// The picker's content with the sample items, taken out of its window so it can be shown over a desktop (the picker's
+    /// own window cannot be captured over one). Close the returned window when done.
+    /// </summary>
+    internal static (PickerWindow Window, Control Content) CreatePickerContent(Look look, bool empty = false, int? selectedAction = null, string? search = null)
     {
         var photo = SampleArt.Banner(900, 600);
-        using var thumbnail = ToBitmap(photo);
+        var thumbnail = ToBitmap(photo);
         var viewModel = empty
             ? new PickerViewModel(look == Look.MacOS ? "Cmd" : "Ctrl") { MaxListHeight = 10_000 }
             : CreateSampleViewModel(look, photo, thumbnail);
@@ -298,6 +304,15 @@ internal static class Program
         content.DataContext = viewModel;
         content.FlowDirection = picker.FlowDirection;
 
+        return (picker, content);
+    }
+
+    /// <param name="selectedAction">When set, the actions pane is active with this action selected.</param>
+    /// <param name="search">When set, the picker is searching for this, showing only the sample items that match.</param>
+    private static void RenderPicker(
+        Look look, double scale, int width, int height, string path, bool empty = false, int? selectedAction = null, bool dark = false, string? search = null)
+    {
+        var (picker, content) = CreatePickerContent(look, empty, selectedAction, search);
         using var background = ToBitmap(SampleArt.Desktop(look, width, height, dark));
         var host = new Window
         {
@@ -357,7 +372,7 @@ internal static class Program
         window.Close();
     }
 
-    private static void Capture(Window host, string path)
+    internal static void Capture(Window host, string path)
     {
         // Greyscale antialiasing: subpixel (LCD) antialiasing would tint thin text, and depends on the screen.
         TextOptions.SetTextRenderingMode(host, TextRenderingMode.Antialias);
@@ -374,7 +389,7 @@ internal static class Program
         host.Close();
     }
 
-    internal static SettingsWindow CreateSettingsWindow()
+    internal static SettingsWindow CreateSettingsWindow(bool storeCopy = false)
     {
         var root = Path.Combine(Path.GetTempPath(), "shapeshifter-screenshots");
         var paths = AppPaths.ForRoot(root);
@@ -388,9 +403,16 @@ internal static class Program
                     Look.Windows => ["Ctrl", "Win"],
                     Look.MacOS => ["Cmd", "Ctrl"],
                     _ => ["Ctrl"],
-                }),
+                })
+            {
+                ShowsUpdates = !storeCopy,
+            },
         };
     }
+
+    /// <summary>The text of the first (pinned) sample item: the start of Shapeshifter's Wikipedia article.</summary>
+    internal static string Article { get; set; } =
+        "Shapeshifter is a freeware clipboard manager, originally developed by defunct Flamefusion company and later released as open source.";
 
     /// <summary>
     /// The items shown in the screenshots, copied a few minutes apart from applications typical of the platform.
@@ -398,8 +420,7 @@ internal static class Program
     internal static IEnumerable<ClipboardItem> SampleItems(Look look, byte[] photo)
     {
         var now = DateTimeOffset.Now;
-        const string article = "Shapeshifter is a freeware clipboard manager, originally developed by defunct Flamefusion company " +
-            "and later released as open source.";
+        var article = Article;
         var browser = SampleArt.BrowserIcon();
         var editor = SampleArt.EditorIcon();
         var desktop = look switch

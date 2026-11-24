@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Kopiér mange ting, og indsæt lige præcis det, du skal bruge. Hold Ctrl+V nede, så vises din udklipsholderhistorik: Vælg et element, slip, og det er indsat. Tekst, billeder og filer bevares præcis, som du kopierede dem, og intet af det, du kopierer, forlader din computer.",
+  "description": "Kopiér mange ting. Indsæt hvad du vil.\n\nEt kort tryk på Ctrl+V indsætter som altid. Bliver du ved med at holde Ctrl nede, vises din udklipsholderhistorik. Tryk på V for at gå ned i listen, og slip for at indsætte. Shapeshifter holder sig i baggrunden, til du har brug for det.\n\nMere end ren tekst\nFormateret tekst, HTML, billeder, filer og programspecifikke formater gemmes og indsættes præcis, som du kopierede dem. Tryk på højre piletast for at vælge, hvad der skal ske med et element:\n• Indsæt som ren tekst uden formatering\n• Indsæt et billede eller en tekst som fil, eller flere filer som én komprimeret fil\n• Åbn et kopieret link, eller kopiér billedet bag det\n• Fastgør et element, så det bliver øverst – også efter en genstart\n\nFind det, du kopierede for et stykke tid siden\nTryk på S, mens historikken er åben, og skriv et par ord. Enter indsætter det, du har fundet. Med 1–9 springer du direkte til et element, Del fjerner et, og Esc annullerer. Tryk på Mellemrum for at holde historikken åben, så du kan kigge dig omkring i dit eget tempo.\n\nPrivat fra starten\nIntet af det, du kopierer, forlader din computer. Indhold, som adgangskodeadministratorer markerer som følsomt, bliver aldrig gemt. Kun hvis du vælger »Upload og indsæt link« for et billede, bliver netop det billede uploadet, så der kan indsættes et link til det.\n\nFalder naturligt ind\nShapeshifter følger din accentfarve og lys eller mørk tilstand og taler 22 sprog. Foretrækker du en anden genvej? Brug Win+V i stedet – så overtager Shapeshifter pladsen fra Windows' udklipsholderhistorik.\n\nShapeshifter er open source (github.com/ffMathy/Shapeshifter). Når du køber det her, støtter du den videre udvikling.",
+  "releaseNotes": "Første udgivelse i Microsoft Store.",
+  "additionalLicenseTerms": "Kildekoden til Shapeshifter er udgivet under licensen Creative Commons Attribution-NonCommercial 4.0 (Navngivelse-IkkeKommerciel; https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Hold Ctrl+V nede for at se din udklipsholderhistorik; slip for at indsætte det valgte element",
+    "Bevarer formateret tekst, HTML, billeder, filer og programspecifikke formater præcis som kopieret",
+    "Indsæt som ren tekst, som fil eller som komprimeret fil",
+    "Søg i historikken: Tryk på S, og skriv et par ord",
+    "Fastgør de elementer, du ofte indsætter; fastgjorte elementer overlever en genstart",
+    "Springer adgangskoder over, som adgangskodeadministratorer markerer som følsomme",
+    "Intet af det, du kopierer, forlader din computer",
+    "Følger din accentfarve og lys eller mørk tilstand, på 22 sprog"
+  ],
+  "searchTerms": [
+    "udklipsholder",
+    "udklipsholder historik",
+    "kopier og indsæt",
+    "clipboard manager",
+    "udklipsholder program",
+    "flere udklipsholdere",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Kopiér mange ting. Indsæt hvad du vil.",
+      "subline": "Hold Ctrl+V nede, så vises din udklipsholderhistorik. Vælg et element, slip, og det er indsat.",
+      "caption": "Når du holder Ctrl+V nede, ser du alt, hvad du har kopieret – det nyeste først og med en forhåndsvisning af hvert element."
+    },
+    "actions": {
+      "headline": "Indsæt det lige, som du vil",
+      "subline": "Tryk på højre piletast for at indsætte som ren tekst eller som fil eller for at fastgøre et element til senere.",
+      "caption": "Højre piletast viser, hvad du kan gøre med det valgte element, f.eks. indsætte det som ren tekst."
+    },
+    "search": {
+      "headline": "Find det, du har kopieret",
+      "subline": "Tryk på S, mens historikken er åben, og skriv et par ord. Enter indsætter det, du har fundet.",
+      "caption": "Søgning i historikken: Skriv et par ord, så vises kun det, der passer."
+    },
+    "settings": {
+      "headline": "Gør det til dit eget",
+      "subline": "Vælg genvejen, hvor mange elementer der skal gemmes, og om historikken skal huskes efter genstart.",
+      "caption": "Vælg genvej, hvor meget historik der gemmes, notifikationer og tips."
+    },
+    "dark": {
+      "headline": "Lyst eller mørkt, i dine farver",
+      "subline": "Shapeshifter følger din accentfarve og Windows' lyse eller mørke tilstand.",
+      "caption": "Shapeshifter i mørk tilstand med den accentfarve, du har valgt i Windows."
+    }
+  }
+}

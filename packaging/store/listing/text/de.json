@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Kopiere vieles, füge ein, was du brauchst. Halte Strg+V gedrückt, und dein Zwischenablageverlauf erscheint: Element auswählen, loslassen – schon ist es eingefügt. Text, Bilder und Dateien bleiben genau so, wie du sie kopiert hast, und nichts, was du kopierst, verlässt deinen Computer.",
+  "description": "Kopiere vieles. Füge ein, was du brauchst.\n\nKurz Strg+V drücken fügt wie gewohnt ein. Hältst du Strg weiter gedrückt, erscheint dein Zwischenablageverlauf. Mit V gehst du in der Liste nach unten, beim Loslassen wird eingefügt. Bis du Shapeshifter brauchst, bleibt es unauffällig im Hintergrund.\n\nMehr als nur Text\nFormatierter Text, HTML, Bilder, Dateien und programmspezifische Formate bleiben erhalten und werden genau so eingefügt, wie du sie kopiert hast. Mit der Pfeiltaste nach rechts wählst du, was mit einem Element geschehen soll:\n• Als unformatierten Text einfügen – ganz ohne Formatierung\n• Ein Bild oder einen Text als Datei einfügen, oder mehrere Dateien als eine komprimierte Datei\n• Einen kopierten Link öffnen oder das Bild dahinter kopieren\n• Ein Element anheften, damit es oben bleibt – auch nach einem Neustart\n\nFinde, was du vor einer Weile kopiert hast\nDrücke S, während der Verlauf geöffnet ist, und tippe ein paar Wörter. Mit Enter fügst du den Treffer ein. Mit 1–9 springst du direkt zu einem Element, Entf entfernt eines, Esc bricht ab. Drücke die Leertaste, damit der Verlauf geöffnet bleibt und du dich in Ruhe umsehen kannst.\n\nPrivatsphäre von Anfang an\nNichts, was du kopierst, verlässt deinen Computer. Inhalte, die Passwortmanager als vertraulich markieren, werden nie gespeichert. Nur wenn du für ein Bild „Hochladen und Link einfügen“ wählst, wird genau dieses eine Bild hochgeladen, damit ein Link darauf eingefügt werden kann.\n\nFügt sich nahtlos ein\nShapeshifter übernimmt deine Akzentfarbe sowie den hellen oder dunklen Modus und spricht 22 Sprachen. Lieber ein anderes Tastenkürzel? Nimm stattdessen Win+V – anstelle des Windows-Zwischenablageverlaufs.\n\nShapeshifter ist Open Source (github.com/ffMathy/Shapeshifter). Mit dem Kauf hier unterstützt du die Weiterentwicklung.",
+  "releaseNotes": "Erste Veröffentlichung im Microsoft Store.",
+  "additionalLicenseTerms": "Der Quellcode von Shapeshifter steht unter der Lizenz Creative Commons Attribution-NonCommercial 4.0 (Namensnennung – nicht kommerziell; https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Strg+V gedrückt halten, um den Zwischenablageverlauf zu sehen; loslassen, um das gewählte Element einzufügen",
+    "Behält formatierten Text, HTML, Bilder, Dateien und programmspezifische Formate genau so, wie sie kopiert wurden",
+    "Als unformatierten Text, als Datei oder als komprimierte Datei einfügen",
+    "Verlauf durchsuchen: S drücken und ein paar Wörter tippen",
+    "Häufig eingefügte Elemente anheften; angeheftete Elemente bleiben auch nach einem Neustart erhalten",
+    "Überspringt Passwörter, die Passwortmanager als vertraulich markieren",
+    "Nichts, was du kopierst, verlässt deinen Computer",
+    "Übernimmt deine Akzentfarbe und den hellen oder dunklen Modus, in 22 Sprachen"
+  ],
+  "searchTerms": [
+    "Zwischenablage Manager",
+    "Zwischenablage Verlauf",
+    "Clipboard Manager",
+    "kopieren einfügen",
+    "Zwischenablage",
+    "mehrere Zwischenablagen",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Kopiere vieles. Füge ein, was du brauchst.",
+      "subline": "Halte Strg+V gedrückt, und dein Zwischenablageverlauf erscheint. Element wählen, loslassen – eingefügt.",
+      "caption": "Mit gedrückter Tastenkombination Strg+V siehst du alles, was du kopiert hast: das Neueste zuerst, jeweils mit Vorschau."
+    },
+    "actions": {
+      "headline": "Einfügen, wie du es brauchst",
+      "subline": "Mit der Pfeiltaste nach rechts fügst du als unformatierten Text oder als Datei ein oder heftest ein Element an.",
+      "caption": "Die Pfeiltaste nach rechts zeigt, was du mit dem gewählten Element tun kannst, etwa es als unformatierten Text einfügen."
+    },
+    "search": {
+      "headline": "Finde, was du kopiert hast",
+      "subline": "Drücke S, während der Verlauf geöffnet ist, und tippe ein paar Wörter. Mit Enter fügst du den Treffer ein.",
+      "caption": "Verlauf durchsuchen: ein paar Wörter tippen, und nur Passendes wird angezeigt."
+    },
+    "settings": {
+      "headline": "Ganz nach deinem Geschmack",
+      "subline": "Wähle das Tastenkürzel, wie viele Elemente gespeichert werden und ob der Verlauf einen Neustart übersteht.",
+      "caption": "Tastenkürzel, Umfang des Verlaufs, Benachrichtigungen und Tipps festlegen."
+    },
+    "dark": {
+      "headline": "Hell oder dunkel, in deinen Farben",
+      "subline": "Shapeshifter übernimmt deine Akzentfarbe und den hellen oder dunklen Modus von Windows.",
+      "caption": "Shapeshifter im dunklen Modus, in der Akzentfarbe, die du für Windows gewählt hast."
+    }
+  }
+}

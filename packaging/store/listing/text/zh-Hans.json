@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "复制多项内容，随心粘贴任意一项。按住 Ctrl+V，剪贴板历史记录就会出现：选中一项，松开按键，即可粘贴。文本、图像和文件都按复制时的原样保留，你复制的任何内容都不会离开你的电脑。",
+  "description": "复制多项内容，随心粘贴任意一项。\n\n轻按 Ctrl+V，照常粘贴。继续按住 Ctrl，剪贴板历史记录就会出现。按 V 在列表中向下移动，松开即可粘贴。在你需要之前，Shapeshifter 绝不打扰。\n\n不止纯文本\n富文本、HTML、图像、文件以及应用专用格式，都会按复制时的原样保留并粘贴。按右方向键，选择要对项目执行的操作：\n• 粘贴为纯文本，去除格式\n• 将图像或文本粘贴为文件，或将多个文件粘贴为一个压缩文件\n• 打开复制的链接，或复制链接指向的图像\n• 固定某个项目，让它始终位于顶部，重启后也不变\n\n轻松找回早先复制的内容\n历史记录打开时按 S，输入几个关键词，按 Enter 即可粘贴找到的内容。按 1–9 直接跳到对应项目，按 Del 删除一项，按 Esc 取消。按空格键可让历史记录保持打开，方便你从容浏览。\n\n隐私至上的设计\n你复制的任何内容都不会离开你的电脑。密码管理器标记为敏感的内容永远不会被记录。只有当你对某张图像选择“上传并粘贴链接”时，才会上传这一张图像，以便粘贴它的链接。\n\n与系统浑然一体\nShapeshifter 会跟随你的主题色以及浅色或深色模式，并支持 22 种语言。想换个快捷键？可以改用 Win+V，取代 Windows 剪贴板历史记录。\n\nShapeshifter 是开源软件（github.com/ffMathy/Shapeshifter）。在此购买即可支持它的持续开发。",
+  "releaseNotes": "首次在 Microsoft Store 发布。",
+  "additionalLicenseTerms": "Shapeshifter 的源代码依据 Creative Commons Attribution-NonCommercial 4.0（知识共享 署名-非商业性使用 4.0）许可证（https://creativecommons.org/licenses/by-nc/4.0/）发布。",
+  "features": [
+    "按住 Ctrl+V 查看剪贴板历史记录，松开即可粘贴所选项目",
+    "富文本、HTML、图像、文件和应用专用格式均按复制时原样保留",
+    "粘贴为纯文本、粘贴为文件或粘贴为压缩文件",
+    "搜索历史记录：按 S 并输入几个关键词",
+    "固定常用项目，固定的项目在重启后依然保留",
+    "跳过密码管理器标记为敏感的密码",
+    "你复制的任何内容都不会离开你的电脑",
+    "跟随你的主题色以及浅色或深色模式，支持 22 种语言"
+  ],
+  "searchTerms": [
+    "剪贴板",
+    "剪贴板管理",
+    "剪贴板历史",
+    "剪切板",
+    "复制粘贴",
+    "剪贴板工具",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "复制多项，随心粘贴",
+      "subline": "按住 Ctrl+V，剪贴板历史记录就会出现。选中一项，松开，即可粘贴。",
+      "caption": "按住 Ctrl+V 即可看到你复制过的所有内容，最新的排在最前，每项都附有预览。"
+    },
+    "actions": {
+      "headline": "想怎么粘贴，就怎么粘贴",
+      "subline": "按右方向键，可粘贴为纯文本、粘贴为文件，或固定项目以备后用。",
+      "caption": "按右方向键会显示可对所选项目执行的操作，例如粘贴为纯文本。"
+    },
+    "search": {
+      "headline": "快速找到复制过的内容",
+      "subline": "历史记录打开时按 S，输入几个关键词，按 Enter 即可粘贴找到的内容。",
+      "caption": "搜索历史记录：输入几个关键词，只显示匹配的内容。"
+    },
+    "settings": {
+      "headline": "按你的习惯来设置",
+      "subline": "选择快捷键、保留的项目数，以及重启后是否保留历史记录。",
+      "caption": "选择快捷键、保留多少历史记录、复制通知和提示。"
+    },
+    "dark": {
+      "headline": "浅色深色，都是你的颜色",
+      "subline": "Shapeshifter 会跟随你的主题色以及 Windows 的浅色或深色模式。",
+      "caption": "深色模式下的 Shapeshifter，使用你为 Windows 选择的主题色。"
+    }
+  }
+}

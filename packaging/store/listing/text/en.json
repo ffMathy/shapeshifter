@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Copy many things, paste any of them. Hold Ctrl+V and your clipboard history appears: pick an item, release, and it's pasted. Text, images and files are kept exactly as copied, and nothing you copy leaves your computer.",
+  "description": "Copy many things. Paste any of them.\n\nTap Ctrl+V and it pastes as always. Keep holding Ctrl and your clipboard history appears. Press V to move down the list, release to paste. Shapeshifter stays out of the way until you need it.\n\nMore than plain text\nRich text, HTML, images, files and app-specific formats are kept and pasted back exactly as you copied them. Press the right arrow key to choose what to do with an item:\n• Paste as plain text, without the formatting\n• Paste an image or text as a file, or several files as one compressed file\n• Open a copied link, or copy the image behind it\n• Pin an item so it stays at the top, even after a restart\n\nFind what you copied a while ago\nPress S while the history is open and type a few words. Enter pastes what you found. 1–9 jump straight to an item, Delete removes one, Esc cancels. Press Space to keep the history open and look around at your own pace.\n\nPrivate by design\nNothing you copy leaves your computer. Content that password managers mark as sensitive is never recorded. Only if you choose \"Upload and paste link\" for an image is that one image uploaded, so a link to it can be pasted.\n\nMade to fit in\nShapeshifter follows your accent colour and light or dark mode, and speaks 22 languages. Prefer another shortcut? Use Win+V instead, in place of the Windows clipboard history.\n\nShapeshifter is open source (github.com/ffMathy/Shapeshifter). Buying it here supports its development.",
+  "releaseNotes": "First release in the Microsoft Store.",
+  "additionalLicenseTerms": "Shapeshifter's source code is published under the Creative Commons Attribution-NonCommercial 4.0 license (https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Hold Ctrl+V to see your clipboard history; release to paste the item you picked",
+    "Keeps rich text, HTML, images, files and app-specific formats exactly as copied",
+    "Paste as plain text, as a file or as a compressed file",
+    "Search the history: press S and type a few words",
+    "Pin the items you paste often; pinned items survive restarts",
+    "Skips passwords that password managers mark as sensitive",
+    "Nothing you copy leaves your computer",
+    "Follows your accent colour and light or dark mode, in 22 languages"
+  ],
+  "searchTerms": [
+    "clipboard manager",
+    "clipboard history",
+    "copy paste",
+    "paste history",
+    "clipboard",
+    "multiple clipboard",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Copy many things. Paste any of them.",
+      "subline": "Hold Ctrl+V and your clipboard history appears. Pick an item, release, and it's pasted.",
+      "caption": "Holding Ctrl+V shows everything you copied, newest first, with a preview of each item."
+    },
+    "actions": {
+      "headline": "Paste it the way you need",
+      "subline": "Press the right arrow key to paste as plain text, as a file, or to pin an item for later.",
+      "caption": "The right arrow key shows what you can do with the selected item, such as pasting it as plain text."
+    },
+    "search": {
+      "headline": "Find what you copied",
+      "subline": "Press S while the history is open and type a few words. Enter pastes what you found.",
+      "caption": "Searching the history: type a few words and only what matches is shown."
+    },
+    "settings": {
+      "headline": "Make it yours",
+      "subline": "Choose the shortcut, how many items to keep, and whether the history survives a restart.",
+      "caption": "Choose the shortcut, how much history to keep, notifications and tips."
+    },
+    "dark": {
+      "headline": "Light or dark, in your colours",
+      "subline": "Shapeshifter follows your accent colour and Windows' light or dark mode.",
+      "caption": "Shapeshifter in dark mode, in the accent colour you chose for Windows."
+    }
+  }
+}

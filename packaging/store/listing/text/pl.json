@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Kopiuj wiele rzeczy, wklejaj dowolną z nich. Przytrzymaj Ctrl+V, a pojawi się historia schowka: wybierz element, puść klawisze i gotowe. Tekst, obrazy i pliki zostają dokładnie takie, jak je skopiowano, a nic, co kopiujesz, nie opuszcza twojego komputera.",
+  "description": "Kopiuj wiele rzeczy. Wklejaj dowolną z nich.\n\nKrótkie naciśnięcie Ctrl+V wkleja jak zwykle. Przytrzymaj Ctrl dłużej, a pojawi się historia schowka. Naciskaj V, aby przesuwać się w dół listy, i puść, aby wkleić. Shapeshifter nie przeszkadza, dopóki go nie potrzebujesz.\n\nNie tylko zwykły tekst\nTekst sformatowany, HTML, obrazy, pliki i formaty specyficzne dla aplikacji są zachowywane i wklejane dokładnie tak, jak je skopiowano. Naciśnij strzałkę w prawo, aby wybrać, co zrobić z elementem:\n• Wklej jako zwykły tekst, bez formatowania\n• Wklej obraz lub tekst jako plik albo kilka plików jako jeden plik skompresowany\n• Otwórz skopiowany link lub skopiuj obraz, do którego prowadzi\n• Przypnij element, aby został na górze, nawet po ponownym uruchomieniu\n\nZnajdź to, co skopiowano wcześniej\nNaciśnij S, gdy historia jest otwarta, i wpisz kilka słów. Enter wkleja to, co znaleziono. Klawisze 1–9 przechodzą prosto do elementu, Del usuwa element, a Esc anuluje. Naciśnij Spację, aby historia pozostała otwarta, i przeglądaj ją w swoim tempie.\n\nPrywatność od podstaw\nNic, co kopiujesz, nie opuszcza twojego komputera. Treści oznaczone przez menedżery haseł jako poufne nigdy nie są zapisywane. Tylko jeśli wybierzesz „Prześlij i wklej link” dla obrazu, ten jeden obraz zostanie przesłany, aby można było wkleić link do niego.\n\nPasuje do reszty systemu\nShapeshifter dopasowuje się do twojego koloru akcentu oraz trybu jasnego lub ciemnego i mówi w 22 językach. Wolisz inny skrót? Użyj Win+V, który zastępuje historię schowka systemu Windows.\n\nShapeshifter to projekt open source (github.com/ffMathy/Shapeshifter). Kupując go tutaj, wspierasz jego rozwój.",
+  "releaseNotes": "Pierwsze wydanie w Microsoft Store.",
+  "additionalLicenseTerms": "Kod źródłowy aplikacji Shapeshifter jest udostępniany na licencji Creative Commons Attribution-NonCommercial 4.0 (Uznanie autorstwa – Użycie niekomercyjne 4.0): https://creativecommons.org/licenses/by-nc/4.0/.",
+  "features": [
+    "Przytrzymaj Ctrl+V, aby zobaczyć historię schowka; puść, aby wkleić wybrany element",
+    "Zachowuje tekst sformatowany, HTML, obrazy, pliki i formaty aplikacji dokładnie tak, jak je skopiowano",
+    "Wklejaj jako zwykły tekst, jako plik lub jako plik skompresowany",
+    "Przeszukuj historię: naciśnij S i wpisz kilka słów",
+    "Przypinaj często wklejane elementy; przypięte elementy przetrwają ponowne uruchomienie",
+    "Pomija hasła, które menedżery haseł oznaczają jako poufne",
+    "Nic, co kopiujesz, nie opuszcza twojego komputera",
+    "Dopasowuje się do koloru akcentu i trybu jasnego lub ciemnego, w 22 językach"
+  ],
+  "searchTerms": [
+    "menedżer schowka",
+    "historia schowka",
+    "schowek",
+    "kopiuj wklej",
+    "schowek windows",
+    "wiele schowków",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Kopiuj wiele. Wklejaj, co chcesz.",
+      "subline": "Przytrzymaj Ctrl+V, a pojawi się historia schowka. Wybierz element, puść i gotowe.",
+      "caption": "Przytrzymanie Ctrl+V pokazuje wszystko, co skopiowano, od najnowszych, z podglądem każdego elementu."
+    },
+    "actions": {
+      "headline": "Wklejaj tak, jak potrzebujesz",
+      "subline": "Naciśnij strzałkę w prawo, aby wkleić jako zwykły tekst lub plik albo przypiąć element na później.",
+      "caption": "Strzałka w prawo pokazuje, co można zrobić z wybranym elementem, np. wkleić go jako zwykły tekst."
+    },
+    "search": {
+      "headline": "Znajdź to, co skopiowano",
+      "subline": "Naciśnij S, gdy historia jest otwarta, i wpisz kilka słów. Enter wkleja to, co znaleziono.",
+      "caption": "Przeszukiwanie historii: wpisz kilka słów, a pojawią się tylko pasujące elementy."
+    },
+    "settings": {
+      "headline": "Dopasuj do siebie",
+      "subline": "Wybierz skrót, liczbę zapamiętywanych elementów i to, czy historia ma przetrwać ponowne uruchomienie.",
+      "caption": "Wybór skrótu, długości historii, powiadomień i wskazówek."
+    },
+    "dark": {
+      "headline": "Jasny lub ciemny, w twoich kolorach",
+      "subline": "Shapeshifter dopasowuje się do twojego koloru akcentu i trybu jasnego lub ciemnego systemu Windows.",
+      "caption": "Shapeshifter w trybie ciemnym, w kolorze akcentu wybranym w systemie Windows."
+    }
+  }
+}
