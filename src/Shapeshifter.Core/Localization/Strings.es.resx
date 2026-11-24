@@ -224,11 +224,11 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Guarda este texto en un archivo .txt y pega el archivo.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copiar como carpeta comprimida</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Pegar como archivo comprimido</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copia estos archivos al portapapeles como una carpeta comprimida (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprime estos archivos en un único archivo .zip y lo pega.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copiar imagen del enlace</value>

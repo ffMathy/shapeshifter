@@ -224,11 +224,11 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Salva questo testo in un file .txt e incolla il file.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copia come cartella compressa</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Incolla come file compresso</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copia questi file negli Appunti come cartella compressa (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Comprime questi file in un unico file .zip e lo incolla.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Copia immagine dal link</value>

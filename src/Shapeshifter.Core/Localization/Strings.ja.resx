@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>このテキストを .txt ファイルに保存し、そのファイルを貼り付けます。</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>圧縮フォルダーとしてコピー</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>圧縮ファイルとして貼り付け</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>これらのファイルを圧縮 (.zip) フォルダーとしてクリップボードにコピーします。</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>これらのファイルを 1 つの .zip ファイルに圧縮して貼り付けます。</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>リンクから画像をコピー</value>

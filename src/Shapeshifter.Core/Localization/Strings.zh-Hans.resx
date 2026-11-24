@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>将此文本保存为 .txt 文件并粘贴该文件。</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>复制为压缩文件夹</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>粘贴为压缩文件</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>将这些文件以压缩 (.zip) 文件夹的形式复制到剪贴板。</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>将这些文件压缩为一个 .zip 文件并粘贴。</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>从链接复制图像</value>

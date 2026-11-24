@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>Lưu văn bản này vào tệp .txt và dán tệp đó.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Sao chép dưới dạng thư mục nén</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Dán dưới dạng tệp nén</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Sao chép các tệp này vào bảng tạm dưới dạng thư mục nén (.zip).</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Nén các tệp này thành một tệp .zip và dán tệp đó.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>Sao chép hình ảnh từ liên kết</value>

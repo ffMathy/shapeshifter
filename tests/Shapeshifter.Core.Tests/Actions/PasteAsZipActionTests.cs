@@ -5,7 +5,7 @@ using Shapeshifter.Core.Clipboard;
 
 namespace Shapeshifter.Core.Tests.Actions;
 
-public sealed class ZipFilesActionTests : IDisposable
+public sealed class PasteAsZipActionTests : IDisposable
 {
     private readonly string workspace = Directory.CreateTempSubdirectory("shapeshifter-zip-").FullName;
 
@@ -39,7 +39,7 @@ public sealed class ZipFilesActionTests : IDisposable
     [Theory]
     [MemberData(nameof(CanExecuteMatrix))]
     public void CanExecute_OnlyWhenFilesAreCopied(string kind, bool expected) =>
-        Assert.Equal(expected, new ZipFilesAction().CanExecute(Items.ByName(kind)));
+        Assert.Equal(expected, new PasteAsZipAction().CanExecute(Items.ByName(kind)));
 
     [Fact]
     public void CreateArchive_ContainsFilesAndNestedFoldersWithExactContent()
@@ -52,7 +52,7 @@ public sealed class ZipFilesActionTests : IDisposable
         byte[] binaryContent = [0, 1, 2, 255, 254, 0];
         File.WriteAllBytes(binary, binaryContent);
 
-        var archivePath = ZipFilesAction.CreateArchive([file, folder, binary], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
+        var archivePath = PasteAsZipAction.CreateArchive([file, folder, binary], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
 
         using var archive = ZipFile.OpenRead(archivePath);
         Assert.Equal(
@@ -71,8 +71,8 @@ public sealed class ZipFilesActionTests : IDisposable
         var file = WriteFile("a.txt", "a");
         var temporaryRoot = Path.Combine(workspace, "temp");
 
-        var first = ZipFilesAction.CreateArchive([file], temporaryRoot, TestContext.Current.CancellationToken);
-        var second = ZipFilesAction.CreateArchive([file], temporaryRoot, TestContext.Current.CancellationToken);
+        var first = PasteAsZipAction.CreateArchive([file], temporaryRoot, TestContext.Current.CancellationToken);
+        var second = PasteAsZipAction.CreateArchive([file], temporaryRoot, TestContext.Current.CancellationToken);
 
         Assert.NotEqual(first, second);
         foreach (var path in new[] { first, second })
@@ -80,7 +80,7 @@ public sealed class ZipFilesActionTests : IDisposable
             Assert.True(File.Exists(path));
             Assert.Equal("a.zip", Path.GetFileName(path));
             var container = Path.GetDirectoryName(path)!;
-            Assert.Equal(Path.Combine(temporaryRoot, "Compressed folders"), Path.GetDirectoryName(container));
+            Assert.Equal(Path.Combine(temporaryRoot, "Compressed files"), Path.GetDirectoryName(container));
             Assert.Equal(8, Path.GetFileName(container).Length);
         }
     }
@@ -92,7 +92,7 @@ public sealed class ZipFilesActionTests : IDisposable
         var b = WriteFile(Path.Combine("two", "report.txt"), "two");
         var c = WriteFile(Path.Combine("three", "REPORT.txt"), "three");
 
-        var archivePath = ZipFilesAction.CreateArchive([a, b, c], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
+        var archivePath = PasteAsZipAction.CreateArchive([a, b, c], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
 
         using var archive = ZipFile.OpenRead(archivePath);
         Assert.Equal(["report.txt", "report (2).txt", "REPORT (3).txt"], archive.Entries.Select(entry => entry.FullName));
@@ -107,7 +107,7 @@ public sealed class ZipFilesActionTests : IDisposable
         WriteFile(Path.Combine("one", "assets", "x.txt"), "one");
         WriteFile(Path.Combine("two", "assets", "x.txt"), "two");
 
-        var archivePath = ZipFilesAction.CreateArchive(
+        var archivePath = PasteAsZipAction.CreateArchive(
             [Path.Combine(workspace, "one", "assets"), Path.Combine(workspace, "two", "assets") + Path.DirectorySeparatorChar],
             Path.Combine(workspace, "temp"),
             TestContext.Current.CancellationToken);
@@ -124,7 +124,7 @@ public sealed class ZipFilesActionTests : IDisposable
         var file = WriteFile(Path.Combine("one", "data"), "file");
         WriteFile(Path.Combine("two", "data", "inner.txt"), "inner");
 
-        var archivePath = ZipFilesAction.CreateArchive([file, Path.Combine(workspace, "two", "data")], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
+        var archivePath = PasteAsZipAction.CreateArchive([file, Path.Combine(workspace, "two", "data")], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
 
         using var archive = ZipFile.OpenRead(archivePath);
         Assert.Equal(["data", "data (2)/inner.txt"], archive.Entries.Select(entry => entry.FullName));
@@ -135,7 +135,7 @@ public sealed class ZipFilesActionTests : IDisposable
     {
         var file = WriteFile("kept.txt", "kept");
 
-        var archivePath = ZipFilesAction.CreateArchive([Path.Combine(workspace, "gone.txt"), file], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
+        var archivePath = PasteAsZipAction.CreateArchive([Path.Combine(workspace, "gone.txt"), file], Path.Combine(workspace, "temp"), TestContext.Current.CancellationToken);
 
         using var archive = ZipFile.OpenRead(archivePath);
         Assert.Equal(["kept.txt"], archive.Entries.Select(entry => entry.FullName));
@@ -143,29 +143,25 @@ public sealed class ZipFilesActionTests : IDisposable
 
     [Fact]
     public void CreateArchive_RejectsNullPaths() =>
-        Assert.Throws<ArgumentNullException>(() => ZipFilesAction.CreateArchive(null!, workspace, TestContext.Current.CancellationToken));
+        Assert.Throws<ArgumentNullException>(() => PasteAsZipAction.CreateArchive(null!, workspace, TestContext.Current.CancellationToken));
 
     [Fact]
-    public async Task Execute_CopiesTheArchiveAndMakesItTheNewestHistoryItem()
+    public async Task Execute_PastesTheArchiveFromTheTemporaryFolder()
     {
         using var harness = new ActionTestHarness();
         var a = WriteFile(Path.Combine("Holiday", "a.jpg"), "a");
         var b = WriteFile(Path.Combine("Holiday", "b.jpg"), "b");
         var item = harness.AddToHistory(new ClipboardSnapshot { Files = [a, b] });
 
-        await new ZipFilesAction().ExecuteAsync(item, harness.Context, Ct);
+        await new PasteAsZipAction().ExecuteAsync(item, harness.Context, Ct);
 
         var written = Assert.Single(harness.Backend.Writes);
         var archivePath = Assert.Single(written.Files);
         Assert.Equal("Holiday.zip", Path.GetFileName(archivePath));
-        Assert.StartsWith(Path.Combine(harness.Paths.TempDirectory, "Compressed folders") + Path.DirectorySeparatorChar, archivePath, StringComparison.Ordinal);
+        Assert.StartsWith(Path.Combine(harness.Paths.TempDirectory, "Compressed files") + Path.DirectorySeparatorChar, archivePath, StringComparison.Ordinal);
         Assert.Null(written.Text);
-        Assert.Equal(0, harness.Paste.Calls);
-
-        var top = harness.History.Items[0];
-        Assert.Equal(ClipboardContentKind.File, top.Kind);
-        Assert.Equal([archivePath], top.Snapshot.Files);
-        Assert.Equal(item.Id, harness.History.Items[1].Id);
+        Assert.Equal(1, harness.Paste.Calls);
+        Assert.Equal(item.Id, Assert.Single(harness.History.Items).Id);
 
         using var archive = ZipFile.OpenRead(archivePath);
         Assert.Equal(["a.jpg", "b.jpg"], archive.Entries.Select(entry => entry.FullName));
@@ -188,11 +184,11 @@ public sealed class ZipFilesActionTests : IDisposable
     [Theory]
     [MemberData(nameof(ArchiveNames))]
     public void GetArchiveName_FollowsTheNamingRules(string[] paths, string expected) =>
-        Assert.Equal(expected, ZipFilesAction.GetArchiveName(paths));
+        Assert.Equal(expected, PasteAsZipAction.GetArchiveName(paths));
 
     [Fact]
     public void GetArchiveName_RejectsNull() =>
-        Assert.Throws<ArgumentNullException>(() => ZipFilesAction.GetArchiveName(null!));
+        Assert.Throws<ArgumentNullException>(() => PasteAsZipAction.GetArchiveName(null!));
 
     private static string P(params string[] parts) =>
         Path.Combine([Path.GetPathRoot(Path.GetTempPath())!, .. parts]);

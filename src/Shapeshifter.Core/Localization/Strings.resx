@@ -294,12 +294,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Saves this text to a .txt file and pastes the file.</value>
     <comment>Action description.</comment>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>Copy as compressed folder</value>
-    <comment>Action title: zip the copied files.</comment>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>Paste as compressed file</value>
+    <comment>Action title: zip the copied files into one file and paste that file.</comment>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>Copy these files to the clipboard as a compressed (.zip) folder.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>Compresses these files into one .zip file and pastes it.</value>
     <comment>Action description.</comment>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">

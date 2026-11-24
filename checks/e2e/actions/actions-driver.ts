@@ -87,7 +87,7 @@ export function readPicker(part: "actions" | "history" | "all" = "all", ...needl
 }
 
 /** Every action title, in the order they are shown, as read from the screen. */
-export const ACTION_TITLES = ["Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Copy as compressed folder",
+export const ACTION_TITLES = ["Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Paste as compressed file",
   "Copy image from link", "Open link", "Open links", "Pin to clipboard", "Unpin from clipboard"];
 
 export function actionTitlesOnScreen(): string[] {

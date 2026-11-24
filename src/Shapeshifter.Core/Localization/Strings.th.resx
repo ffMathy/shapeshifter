@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>บันทึกข้อความนี้เป็นไฟล์ .txt แล้ววางไฟล์นั้น</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>คัดลอกเป็นโฟลเดอร์บีบอัด</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>วางเป็นไฟล์บีบอัด</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>คัดลอกไฟล์เหล่านี้ไปยังคลิปบอร์ดเป็นโฟลเดอร์บีบอัด (.zip)</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>บีบอัดไฟล์เหล่านี้เป็นไฟล์ .zip ไฟล์เดียวแล้ววาง</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>คัดลอกรูปภาพจากลิงก์</value>

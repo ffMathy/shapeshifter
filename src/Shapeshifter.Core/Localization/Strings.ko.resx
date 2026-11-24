@@ -224,11 +224,11 @@
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
     <value>이 텍스트를 .txt 파일로 저장하고 그 파일을 붙여넣습니다.</value>
   </data>
-  <data name="ActionCopyAsZip" xml:space="preserve">
-    <value>압축 폴더로 복사</value>
+  <data name="ActionPasteAsZip" xml:space="preserve">
+    <value>압축 파일로 붙여넣기</value>
   </data>
-  <data name="ActionCopyAsZipDescription" xml:space="preserve">
-    <value>이 파일들을 압축(.zip) 폴더로 클립보드에 복사합니다.</value>
+  <data name="ActionPasteAsZipDescription" xml:space="preserve">
+    <value>이 파일들을 하나의 .zip 파일로 압축하여 붙여넣습니다.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>링크에서 이미지 복사</value>

@@ -48,14 +48,14 @@ test("an image offers Paste, Paste as file, Upload and paste link, and Pin", asy
   expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"]);
 }, 30_000);
 
-test("a file offers Paste, Copy as compressed folder and Pin", async () => {
+test("a file offers Paste, Paste as compressed file and Pin", async () => {
   await copyAs("text/uri-list", files(`one-${unique()}.txt`));
-  expect(await actionsOfNewest()).toEqual(["Paste", "Copy as compressed folder", "Pin to clipboard"]);
+  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as compressed file", "Pin to clipboard"]);
 }, 30_000);
 
 test("several files offer the same as one file", async () => {
   await copyAs("text/uri-list", files(`a-${unique()}.txt`, `b-${unique()}.txt`));
-  expect(await actionsOfNewest()).toEqual(["Paste", "Copy as compressed folder", "Pin to clipboard"]);
+  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as compressed file", "Pin to clipboard"]);
 }, 30_000);
 
 test("other data offers only Paste and Pin", async () => {
