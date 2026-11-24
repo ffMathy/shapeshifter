@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Copiez tout ce que vous voulez, collez ce dont vous avez besoin. Maintenez Ctrl+V et votre historique du Presse-papiers apparaît : choisissez un élément, relâchez, c’est collé. Textes, images et fichiers sont conservés exactement tels que vous les avez copiés, et rien de ce que vous copiez ne quitte votre ordinateur.",
+  "description": "Copiez tout. Collez ce que vous voulez.\n\nUne simple pression sur Ctrl+V colle comme d’habitude. Gardez Ctrl enfoncée et votre historique du Presse-papiers apparaît. Appuyez sur V pour descendre dans la liste, relâchez pour coller. Shapeshifter se fait oublier jusqu’à ce que vous en ayez besoin.\n\nBien plus que du texte brut\nTexte mis en forme, HTML, images, fichiers et formats propres aux applications sont conservés et collés exactement tels que vous les avez copiés. Appuyez sur la flèche droite pour choisir quoi faire d’un élément :\n• Coller en texte brut, sans la mise en forme\n• Coller une image ou du texte en tant que fichier, ou plusieurs fichiers en un seul fichier compressé\n• Ouvrir un lien copié, ou copier l’image vers laquelle il pointe\n• Épingler un élément pour qu’il reste en haut, même après un redémarrage\n\nRetrouvez ce que vous avez copié il y a un moment\nAppuyez sur S quand l’historique est ouvert et tapez quelques mots. Entrée colle ce que vous avez trouvé. Les touches 1 à 9 mènent directement à un élément, Suppr en supprime un, Échap annule. Appuyez sur Espace pour garder l’historique ouvert et le parcourir à votre rythme.\n\nConfidentiel par conception\nRien de ce que vous copiez ne quitte votre ordinateur. Les contenus que les gestionnaires de mots de passe marquent comme sensibles ne sont jamais enregistrés. Ce n’est que si vous choisissez « Mettre en ligne et coller le lien » pour une image que cette seule image est mise en ligne, afin de pouvoir coller un lien vers celle-ci.\n\nS’intègre naturellement\nShapeshifter suit votre couleur d’accentuation et le mode clair ou sombre, et parle 22 langues. Vous préférez un autre raccourci ? Utilisez plutôt Win+V, à la place de l’historique du Presse-papiers de Windows.\n\nShapeshifter est open source (github.com/ffMathy/Shapeshifter). L’acheter ici, c’est soutenir son développement.",
+  "releaseNotes": "Première version disponible sur le Microsoft Store.",
+  "additionalLicenseTerms": "Le code source de Shapeshifter est publié sous la licence Creative Commons Attribution-NonCommercial 4.0 (Attribution - Pas d’utilisation commerciale ; https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Maintenez Ctrl+V pour afficher l’historique du Presse-papiers ; relâchez pour coller l’élément choisi",
+    "Conserve texte mis en forme, HTML, images, fichiers et formats propres aux applications tels que copiés",
+    "Coller en texte brut, en tant que fichier ou en tant que fichier compressé",
+    "Recherchez dans l’historique : appuyez sur S et tapez quelques mots",
+    "Épinglez les éléments que vous collez souvent ; ils sont conservés après un redémarrage",
+    "Ignore les mots de passe que les gestionnaires de mots de passe marquent comme sensibles",
+    "Rien de ce que vous copiez ne quitte votre ordinateur",
+    "Suit votre couleur d’accentuation et le mode clair ou sombre, en 22 langues"
+  ],
+  "searchTerms": [
+    "presse-papier",
+    "gestionnaire presse papier",
+    "historique presse-papier",
+    "copier coller",
+    "multi presse-papier",
+    "clipboard",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Copiez tout. Collez ce que vous voulez.",
+      "subline": "Maintenez Ctrl+V et votre historique du Presse-papiers apparaît. Choisissez un élément, relâchez : c’est collé.",
+      "caption": "En maintenant Ctrl+V, vous voyez tout ce que vous avez copié, du plus récent au plus ancien, avec un aperçu de chaque élément."
+    },
+    "actions": {
+      "headline": "Collez exactement comme il faut",
+      "subline": "Appuyez sur la flèche droite pour coller en texte brut ou en tant que fichier, ou pour épingler un élément.",
+      "caption": "La flèche droite affiche ce que vous pouvez faire de l’élément sélectionné, par exemple le coller en texte brut."
+    },
+    "search": {
+      "headline": "Retrouvez ce que vous avez copié",
+      "subline": "Appuyez sur S quand l’historique est ouvert et tapez quelques mots. Entrée colle ce que vous avez trouvé.",
+      "caption": "Recherche dans l’historique : tapez quelques mots, seuls les éléments correspondants s’affichent."
+    },
+    "settings": {
+      "headline": "À votre façon",
+      "subline": "Choisissez le raccourci, le nombre d’éléments à conserver et si l’historique survit à un redémarrage.",
+      "caption": "Choisissez le raccourci, la taille de l’historique, les notifications et les astuces."
+    },
+    "dark": {
+      "headline": "Clair ou sombre, à vos couleurs",
+      "subline": "Shapeshifter suit votre couleur d’accentuation et le mode clair ou sombre de Windows.",
+      "caption": "Shapeshifter en mode sombre, dans la couleur d’accentuation choisie pour Windows."
+    }
+  }
+}

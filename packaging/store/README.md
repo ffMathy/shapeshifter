@@ -95,12 +95,41 @@ The Store API can only update an app whose first submission exists, so make that
    - Without them, download the run's **microsoft-store** artifact, unzip it, and in Partner Center start the submission
      and drop the `.msixupload` under **Packages**.
 2. Fill in **Pricing and availability**, **Properties** (category, privacy policy URL), **Age ratings** and the **Store
-   listing** (description, at least one screenshot, 1366×768 or larger). Under **Submission options**, explain the
+   listing** (see [The Store listing](#the-store-listing): five imports fill every language). Under **Submission options**, explain the
    `runFullTrust` restricted capability: "Shapeshifter is a desktop app (packaged Win32/.NET) and needs full trust to watch the clipboard, recognise its paste gesture with a low-level keyboard hook and paste into other apps."
 3. **Submit to the Store**.
 4. When it is published, delete `STORE_DRAFT_ONLY` (or set it to `false`). With the API secrets, every later release is
    submitted and published without you; without them, upload the releases you want from their **microsoft-store**
    artifacts the same way (you don't have to upload every one).
+
+### The Store listing
+
+The listing (texts, five screenshots and the logos, in all 22 languages Shapeshifter speaks) is generated, so it never
+has to be typed in Partner Center:
+
+1. Run **Actions › Store listing** (or `packaging/store/listing/make-listing.sh` locally) and download the
+   **store-listing** artifact. The workflow renders on Windows, so the screenshots show the Windows look in Segoe UI.
+2. In Partner Center, open the submission's **Store listings**, then **Import listings › Upload folder** (a language
+   column adds that listing language if the submission doesn't have it yet) and pick
+   `shapeshifter-store-listing-1-of-5`. Import `2-of-5` to `5-of-5` the same way; together they hold every language, split
+   so each upload stays small. A `shapeshifter-store-listing-<language>` folder updates one language. Unzip first; upload
+   the folder itself. The languages are the ones the package declares (`windows/AppxManifest.xml`,
+   `<Resource Language>`), which Partner Center shows under **Languages supported in packages** once a package built from
+   it is uploaded.
+3. If the import rejects a language column, Partner Center names that language differently: **Export listings**, then
+   run `make-listing.sh <out> -- --columns-from <the exported .csv>` and import again.
+
+What goes in:
+
+- Texts: [`listing/text/<language>.json`](listing/text/en.json), English being the source. Change `en.json`, then update
+  the translations the same way (their keys, order and limits are checked when the folders are built). The store copy
+  is paid: the texts never call it free.
+- Screenshots (1920×1080): the real picker and settings window in the Windows look, rendered by the screenshot generator
+  (`tools/Shapeshifter.ScreenshotGenerator`, `--store`), with the app and the headline in each language: the history, its
+  actions, searching, the settings (as a store copy shows them) and dark mode.
+- Logos: the 9:16 poster, 1:1 box art and 300×300 tile, drawn from the Windows app icon (`assets/icons/windows/application.svg`).
+- Fields: [`listing/fields.csv`](listing/fields.csv) is Partner Center's list of listing fields (from an export);
+  [`listing/build_listing.py`](listing/build_listing.py) fills it.
 
 ## Mac App Store
 
@@ -200,6 +229,7 @@ gh variable set MSSTORE_PRODUCT_ID --repo ffMathy/Shapeshifter --body 9NXXXXXXXX
 - [`windows/AppxManifest.xml`](windows/AppxManifest.xml): the MSIX manifest. Besides the app it declares a startup task
   (start at login; packaged apps cannot use the `Run` registry key), which users switch in **Settings › Apps › Startup**.
 - [`windows/make-msix.ps1`](windows/make-msix.ps1): packs `dotnet publish` output into the `.msixupload`.
+- [`listing/`](listing): the Store listing generator (see [The Store listing](#the-store-listing)).
 - [`macos/Info.plist`](macos/Info.plist), [`macos/Entitlements.plist`](macos/Entitlements.plist): the App Store bundle's
   property list and its sandbox entitlements.
 - [`macos/make-pkg.sh`](macos/make-pkg.sh): builds, signs and packages the `.app`.

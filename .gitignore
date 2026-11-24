@@ -22,3 +22,6 @@ website/app-icons/
 # AIL: the legacy app's runtime folder and caches
 .ail/
 node_modules/
+
+# Python bytecode (packaging/store/listing/build_listing.py)
+__pycache__/

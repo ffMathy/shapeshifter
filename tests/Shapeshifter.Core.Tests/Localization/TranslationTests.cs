@@ -24,6 +24,35 @@ public sealed partial class TranslationTests
     private static string[] Placeholders(string text) =>
         Placeholder().Matches(text).Select(match => match.Value).Distinct().Order(StringComparer.Ordinal).ToArray();
 
+    /// <summary>
+    /// The Microsoft Store lists the languages the package declares as the ones the app supports, and the Store listing
+    /// (packaging/store/listing) has a text for each: a new translation needs both.
+    /// </summary>
+    [Fact]
+    public void StorePackageAndListing_CoverEveryLanguage()
+    {
+        var dir = new DirectoryInfo(AppContext.BaseDirectory);
+        while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "Shapeshifter.slnx")))
+        {
+            dir = dir.Parent;
+        }
+
+        Assert.NotNull(dir);
+        var store = Path.Combine(dir.FullName, "packaging", "store");
+        var declared = ResourceLanguage().Matches(File.ReadAllText(Path.Combine(store, "windows", "AppxManifest.xml")))
+            .Select(match => match.Groups[1].Value)
+            .ToList();
+
+        Assert.Equal(["en-us", .. Localizer.Translations], declared, StringComparer.OrdinalIgnoreCase);
+        foreach (var language in new[] { "en" }.Concat(Localizer.Translations))
+        {
+            Assert.True(File.Exists(Path.Combine(store, "listing", "text", language + ".json")), $"no Store listing text for {language}");
+        }
+    }
+
+    [GeneratedRegex("<Resource Language=\"([^\"]+)\"")]
+    private static partial Regex ResourceLanguage();
+
     [Theory]
     [MemberData(nameof(Translations))]
     public void Translation_HasEveryString(string name)

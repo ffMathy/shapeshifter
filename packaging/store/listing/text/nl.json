@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Kopieer van alles en plak precies wat je nodig hebt. Houd Ctrl+V ingedrukt en je klembordgeschiedenis verschijnt: kies een item, laat los en het is geplakt. Tekst, afbeeldingen en bestanden blijven precies zoals je ze hebt gekopieerd, en niets wat je kopieert verlaat je computer.",
+  "description": "Kopieer van alles. Plak wat je wilt.\n\nTik je op Ctrl+V, dan plak je zoals altijd. Houd je Ctrl ingedrukt, dan verschijnt je klembordgeschiedenis. Druk op V om omlaag te gaan in de lijst en laat los om te plakken. Shapeshifter blijft op de achtergrond tot je het nodig hebt.\n\nMeer dan platte tekst\nOpgemaakte tekst, HTML, afbeeldingen, bestanden en app-specifieke formaten worden bewaard en precies zo geplakt als je ze hebt gekopieerd. Druk op de pijltoets naar rechts om te kiezen wat je met een item wilt doen:\n• Plakken als platte tekst, zonder opmaak\n• Een afbeelding of tekst plakken als bestand, of meerdere bestanden als één gecomprimeerd bestand\n• Een gekopieerde link openen, of de afbeelding achter de link kopiëren\n• Een item vastmaken zodat het bovenaan blijft, ook na een herstart\n\nVind terug wat je een tijdje geleden kopieerde\nDruk op S terwijl de geschiedenis open is en typ een paar woorden. Met Enter plak je wat je hebt gevonden. Met 1–9 spring je direct naar een item, Del verwijdert er een en Esc annuleert. Druk op Spatie om de geschiedenis open te houden en rustig rond te kijken.\n\nPrivacy als uitgangspunt\nNiets wat je kopieert verlaat je computer. Inhoud die wachtwoordmanagers als gevoelig markeren, wordt nooit vastgelegd. Alleen als je voor een afbeelding ‘Uploaden en link plakken’ kiest, wordt die ene afbeelding geüpload, zodat er een link naar geplakt kan worden.\n\nPast er naadloos bij\nShapeshifter volgt je accentkleur en de lichte of donkere modus, en spreekt 22 talen. Liever een andere sneltoets? Gebruik dan Win+V, in plaats van de klembordgeschiedenis van Windows.\n\nShapeshifter is open source (github.com/ffMathy/Shapeshifter). Door het hier te kopen, steun je de verdere ontwikkeling.",
+  "releaseNotes": "Eerste release in de Microsoft Store.",
+  "additionalLicenseTerms": "De broncode van Shapeshifter is gepubliceerd onder de licentie Creative Commons Attribution-NonCommercial 4.0 (Naamsvermelding-NietCommercieel; https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Houd Ctrl+V ingedrukt om je klembordgeschiedenis te zien; laat los om het gekozen item te plakken",
+    "Bewaart opgemaakte tekst, HTML, afbeeldingen, bestanden en app-specifieke formaten precies zoals gekopieerd",
+    "Plakken als platte tekst, als bestand of als gecomprimeerd bestand",
+    "Zoeken in de geschiedenis: druk op S en typ een paar woorden",
+    "Maak items vast die je vaak plakt; vastgemaakte items blijven bewaard na een herstart",
+    "Slaat wachtwoorden over die wachtwoordmanagers als gevoelig markeren",
+    "Niets wat je kopieert verlaat je computer",
+    "Volgt je accentkleur en de lichte of donkere modus, in 22 talen"
+  ],
+  "searchTerms": [
+    "klembord",
+    "klembordbeheer",
+    "klembordgeschiedenis",
+    "kopiëren plakken",
+    "clipboard manager",
+    "meerdere klemborden",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Kopieer van alles. Plak wat je wilt.",
+      "subline": "Houd Ctrl+V ingedrukt en je klembordgeschiedenis verschijnt. Kies een item, laat los en het is geplakt.",
+      "caption": "Met Ctrl+V ingedrukt zie je alles wat je hebt gekopieerd, het nieuwste eerst, met een voorbeeld van elk item."
+    },
+    "actions": {
+      "headline": "Plak het zoals jij wilt",
+      "subline": "Druk op de pijltoets naar rechts om te plakken als platte tekst of als bestand, of om een item vast te maken.",
+      "caption": "De pijltoets naar rechts toont wat je met het geselecteerde item kunt doen, zoals plakken als platte tekst."
+    },
+    "search": {
+      "headline": "Vind terug wat je kopieerde",
+      "subline": "Druk op S terwijl de geschiedenis open is en typ een paar woorden. Met Enter plak je wat je hebt gevonden.",
+      "caption": "Zoeken in de geschiedenis: typ een paar woorden en je ziet alleen wat overeenkomt."
+    },
+    "settings": {
+      "headline": "Helemaal naar jouw smaak",
+      "subline": "Kies de sneltoets, hoeveel items je bewaart en of de geschiedenis een herstart overleeft.",
+      "caption": "Kies de sneltoets, hoeveel geschiedenis je bewaart, meldingen en tips."
+    },
+    "dark": {
+      "headline": "Licht of donker, in jouw kleuren",
+      "subline": "Shapeshifter volgt je accentkleur en de lichte of donkere modus van Windows.",
+      "caption": "Shapeshifter in donkere modus, in de accentkleur die je voor Windows hebt gekozen."
+    }
+  }
+}

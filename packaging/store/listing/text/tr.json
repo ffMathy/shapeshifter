@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Birçok şeyi kopyalayın, istediğinizi yapıştırın. Ctrl+V tuşlarını basılı tutun, pano geçmişiniz açılsın: bir öğe seçin, bırakın, yapıştırılsın. Metin, görüntü ve dosyalar tam kopyaladığınız gibi saklanır; kopyaladığınız hiçbir şey bilgisayarınızdan çıkmaz.",
+  "description": "Birçok şeyi kopyalayın. İstediğinizi yapıştırın.\n\nCtrl+V tuşlarına kısaca basarsanız her zamanki gibi yapıştırır. Ctrl tuşunu basılı tutmaya devam ederseniz pano geçmişiniz açılır. Listede aşağı inmek için V tuşuna basın, yapıştırmak için bırakın. Shapeshifter, siz ihtiyaç duyana kadar karşınıza çıkmaz.\n\nDüz metinden fazlası\nBiçimlendirilmiş metin, HTML, görüntüler, dosyalar ve uygulamalara özgü biçimler saklanır ve tam kopyaladığınız gibi geri yapıştırılır. Bir öğeyle ne yapılacağını seçmek için sağ ok tuşuna basın:\n• Biçimlendirme olmadan, düz metin olarak yapıştırın\n• Bir görüntüyü veya metni dosya olarak, birden çok dosyayı tek bir sıkıştırılmış dosya olarak yapıştırın\n• Kopyalanan bir bağlantıyı açın ya da bağlantıdaki görüntüyü kopyalayın\n• Bir öğeyi sabitleyin; yeniden başlattıktan sonra bile en üstte kalsın\n\nBir süre önce kopyaladığınızı bulun\nGeçmiş açıkken S tuşuna basın ve birkaç kelime yazın. Enter, bulduğunuzu yapıştırır. 1–9 doğrudan bir öğeye atlar, Del bir öğeyi kaldırır, Esc iptal eder. Geçmişi açık tutup kendi hızınızda göz atmak için Boşluk tuşuna basın.\n\nGizlilik, tasarımın temelinde\nKopyaladığınız hiçbir şey bilgisayarınızdan çıkmaz. Parola yöneticilerinin hassas olarak işaretlediği içerikler asla kaydedilmez. Yalnızca bir görüntü için “Yükle ve bağlantıyı yapıştır” seçeneğini kullanırsanız o tek görüntü yüklenir; böylece ona giden bir bağlantı yapıştırılabilir.\n\nSisteminize uyum sağlar\nShapeshifter vurgu renginize ve açık ya da koyu moda uyar, 22 dili konuşur. Başka bir kısayol mu tercih edersiniz? Windows pano geçmişinin yerine Win+V'yi kullanın.\n\nShapeshifter açık kaynaklıdır (github.com/ffMathy/Shapeshifter). Uygulamayı buradan satın alarak geliştirilmesine destek olursunuz.",
+  "releaseNotes": "Microsoft Store'daki ilk sürüm.",
+  "additionalLicenseTerms": "Shapeshifter'ın kaynak kodu Creative Commons Attribution-NonCommercial 4.0 (Atıf-GayriTicari) lisansı altında yayımlanmıştır (https://creativecommons.org/licenses/by-nc/4.0/).",
+  "features": [
+    "Pano geçmişinizi görmek için Ctrl+V tuşlarını basılı tutun; seçtiğiniz öğeyi yapıştırmak için bırakın",
+    "Biçimlendirilmiş metin, HTML, görüntü, dosya ve uygulamalara özgü biçimleri tam kopyalandığı gibi saklar",
+    "Düz metin olarak, dosya olarak veya sıkıştırılmış dosya olarak yapıştırın",
+    "Geçmişte arayın: S tuşuna basın ve birkaç kelime yazın",
+    "Sık yapıştırdığınız öğeleri sabitleyin; sabitlenmiş öğeler yeniden başlatmadan sonra da kalır",
+    "Parola yöneticilerinin hassas olarak işaretlediği parolaları kaydetmez",
+    "Kopyaladığınız hiçbir şey bilgisayarınızdan çıkmaz",
+    "Vurgu renginize ve açık ya da koyu moda uyar; 22 dilde"
+  ],
+  "searchTerms": [
+    "pano yöneticisi",
+    "pano geçmişi",
+    "kopyala yapıştır",
+    "pano",
+    "çoklu pano",
+    "kopyalama geçmişi",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Bol bol kopyalayın, dilediğinizi yapıştırın",
+      "subline": "Ctrl+V tuşlarını basılı tutun, pano geçmişiniz açılsın. Bir öğe seçin, bırakın, yapıştırılsın.",
+      "caption": "Ctrl+V basılı tutulunca kopyaladığınız her şey, en yenisi en üstte ve her öğenin önizlemesiyle görünür."
+    },
+    "actions": {
+      "headline": "İhtiyacınıza göre yapıştırın",
+      "subline": "Düz metin ya da dosya olarak yapıştırmak veya bir öğeyi sonrası için sabitlemek için sağ ok tuşuna basın.",
+      "caption": "Sağ ok tuşu, seçili öğeyle neler yapabileceğinizi gösterir; örneğin düz metin olarak yapıştırmayı."
+    },
+    "search": {
+      "headline": "Kopyaladığınızı bulun",
+      "subline": "Geçmiş açıkken S tuşuna basın ve birkaç kelime yazın. Enter, bulduğunuzu yapıştırır.",
+      "caption": "Geçmişte arama: birkaç kelime yazın, yalnızca eşleşenler gösterilsin."
+    },
+    "settings": {
+      "headline": "Size göre ayarlayın",
+      "subline": "Kısayolu, kaç öğenin saklanacağını ve geçmişin yeniden başlatmadan sonra korunup korunmayacağını seçin.",
+      "caption": "Kısayolu, ne kadar geçmiş saklanacağını, bildirimleri ve ipuçlarını seçin."
+    },
+    "dark": {
+      "headline": "Açık ya da koyu, sizin renklerinizle",
+      "subline": "Shapeshifter vurgu renginize ve Windows'un açık ya da koyu moduna uyar.",
+      "caption": "Koyu modda, Windows için seçtiğiniz vurgu rengiyle Shapeshifter."
+    }
+  }
+}

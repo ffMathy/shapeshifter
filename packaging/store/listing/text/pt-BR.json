@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Copie várias coisas e cole a que quiser. Segure Ctrl+V e o histórico da área de transferência aparece: escolha um item, solte e pronto, está colado. Textos, imagens e arquivos ficam exatamente como foram copiados, e nada do que você copia sai do seu computador.",
+  "description": "Copie várias coisas. Cole a que quiser.\n\nUm toque rápido em Ctrl+V cola como sempre. Continue segurando Ctrl e o histórico da área de transferência aparece. Pressione V para descer na lista e solte para colar. O Shapeshifter não atrapalha até você precisar dele.\n\nMuito além do texto sem formatação\nTexto formatado, HTML, imagens, arquivos e formatos específicos de cada aplicativo são mantidos e colados exatamente como você copiou. Pressione a tecla de seta para a direita para escolher o que fazer com um item:\n• Colar como texto sem formatação\n• Colar uma imagem ou um texto como arquivo, ou vários arquivos como um único arquivo compactado\n• Abrir um link copiado ou copiar a imagem para a qual ele aponta\n• Fixar um item para que ele fique sempre no topo, mesmo depois de reiniciar\n\nEncontre o que você copiou há algum tempo\nPressione S com o histórico aberto e digite algumas palavras. Enter cola o que você encontrou. As teclas 1–9 levam direto a um item, Del remove um item e Esc cancela. Pressione Espaço para manter o histórico aberto e explorar com calma.\n\nPrivacidade desde a concepção\nNada do que você copia sai do seu computador. Conteúdo que gerenciadores de senhas marcam como confidencial nunca é registrado. Só se você escolher “Enviar e colar link” para uma imagem é que essa imagem, e apenas ela, é enviada, para que um link para ela possa ser colado.\n\nFeito para combinar\nO Shapeshifter segue sua cor de destaque e o modo claro ou escuro, e fala 22 idiomas. Prefere outro atalho? Use Win+V, que substitui o histórico da área de transferência do Windows.\n\nO Shapeshifter é de código aberto (github.com/ffMathy/Shapeshifter). Comprá-lo aqui apoia o desenvolvimento dele.",
+  "releaseNotes": "Primeira versão na Microsoft Store.",
+  "additionalLicenseTerms": "O código-fonte do Shapeshifter é publicado sob a licença Creative Commons Attribution-NonCommercial 4.0 (Atribuição-NãoComercial 4.0): https://creativecommons.org/licenses/by-nc/4.0/.",
+  "features": [
+    "Segure Ctrl+V para ver o histórico da área de transferência; solte para colar o item escolhido",
+    "Mantém texto formatado, HTML, imagens, arquivos e formatos específicos de aplicativos exatamente como copiados",
+    "Cole como texto sem formatação, como arquivo ou como arquivo compactado",
+    "Busque no histórico: pressione S e digite algumas palavras",
+    "Fixe os itens que você cola com frequência; itens fixados continuam lá após reiniciar",
+    "Ignora senhas que gerenciadores de senhas marcam como confidenciais",
+    "Nada do que você copia sai do seu computador",
+    "Segue sua cor de destaque e o modo claro ou escuro, em 22 idiomas"
+  ],
+  "searchTerms": [
+    "área de transferência",
+    "gerenciador de clipboard",
+    "copiar e colar",
+    "histórico de cópias",
+    "área de transferência windows",
+    "colar sem formatação",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Copie várias coisas. Cole a que quiser.",
+      "subline": "Segure Ctrl+V e o histórico da área de transferência aparece. Escolha um item, solte e pronto.",
+      "caption": "Ao segurar Ctrl+V, você vê tudo o que copiou, do mais recente ao mais antigo, com uma prévia de cada item."
+    },
+    "actions": {
+      "headline": "Cole do jeito que precisar",
+      "subline": "Pressione a seta para a direita para colar como texto sem formatação ou como arquivo, ou para fixar um item.",
+      "caption": "A seta para a direita mostra o que você pode fazer com o item selecionado, como colá-lo como texto sem formatação."
+    },
+    "search": {
+      "headline": "Encontre o que você copiou",
+      "subline": "Pressione S com o histórico aberto e digite algumas palavras. Enter cola o que você encontrou.",
+      "caption": "Busca no histórico: digite algumas palavras e só aparece o que corresponde."
+    },
+    "settings": {
+      "headline": "Do seu jeito",
+      "subline": "Escolha o atalho, quantos itens lembrar e se o histórico continua após reiniciar.",
+      "caption": "Escolha o atalho, quanto histórico manter, as notificações e as dicas."
+    },
+    "dark": {
+      "headline": "Claro ou escuro, com suas cores",
+      "subline": "O Shapeshifter segue sua cor de destaque e o modo claro ou escuro do Windows.",
+      "caption": "O Shapeshifter no modo escuro, com a cor de destaque que você escolheu no Windows."
+    }
+  }
+}

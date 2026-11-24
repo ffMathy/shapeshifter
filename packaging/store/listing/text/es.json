@@ -1,0 +1,56 @@
+{
+  "title": "Shapeshifter",
+  "shortTitle": "Shapeshifter",
+  "sortTitle": "Shapeshifter",
+  "voiceTitle": "Shapeshifter",
+  "shortDescription": "Copia muchas cosas y pega la que quieras. Mantén pulsadas Ctrl+V y aparecerá el historial del portapapeles: elige un elemento, suelta y se pega. El texto, las imágenes y los archivos se conservan tal como los copiaste, y nada de lo que copias sale de tu equipo.",
+  "description": "Copia muchas cosas. Pega la que quieras.\n\nPulsa Ctrl+V y se pega como siempre. Si mantienes pulsada Ctrl, aparece el historial del portapapeles. Pulsa V para bajar por la lista y suelta para pegar. Shapeshifter no se interpone hasta que lo necesitas.\n\nMucho más que texto sin formato\nEl texto enriquecido, el HTML, las imágenes, los archivos y los formatos propios de cada aplicación se conservan y se pegan exactamente como los copiaste. Pulsa la tecla de flecha derecha para elegir qué hacer con un elemento:\n• Pegar como texto sin formato, sin estilos ni colores\n• Pegar una imagen o un texto como archivo, o varios archivos como un único archivo comprimido\n• Abrir un enlace copiado o copiar la imagen a la que apunta\n• Anclar un elemento para que se quede arriba, incluso después de reiniciar\n\nEncuentra lo que copiaste hace tiempo\nPulsa S con el historial abierto y escribe unas palabras. Intro pega lo que has encontrado. Las teclas 1–9 saltan directamente a un elemento, Supr quita uno y Esc cancela. Pulsa Espacio para que el historial siga abierto y explóralo con calma.\n\nPrivado desde el diseño\nNada de lo que copias sale de tu equipo. El contenido que los administradores de contraseñas marcan como confidencial nunca se guarda. Solo si eliges «Subir y pegar enlace» para una imagen, se sube esa imagen, y únicamente esa, para poder pegar un enlace a ella.\n\nHecho para encajar\nShapeshifter sigue tu color de énfasis y el modo claro u oscuro, y habla 22 idiomas. ¿Prefieres otro atajo? Usa Win+V, que sustituye al historial del portapapeles de Windows.\n\nShapeshifter es de código abierto (github.com/ffMathy/Shapeshifter). Si lo compras aquí, apoyas su desarrollo.",
+  "releaseNotes": "Primera versión en Microsoft Store.",
+  "additionalLicenseTerms": "El código fuente de Shapeshifter se publica con la licencia Creative Commons Attribution-NonCommercial 4.0 (Reconocimiento-NoComercial 4.0): https://creativecommons.org/licenses/by-nc/4.0/.",
+  "features": [
+    "Mantén pulsadas Ctrl+V para ver el historial del portapapeles; suelta para pegar el elemento elegido",
+    "Conserva texto enriquecido, HTML, imágenes, archivos y formatos propios de cada aplicación tal como los copiaste",
+    "Pega como texto sin formato, como archivo o como archivo comprimido",
+    "Busca en el historial: pulsa S y escribe unas palabras",
+    "Ancla los elementos que pegas a menudo; los anclados se conservan tras reiniciar",
+    "Omite las contraseñas que los administradores de contraseñas marcan como confidenciales",
+    "Nada de lo que copias sale de tu equipo",
+    "Sigue tu color de énfasis y el modo claro u oscuro, en 22 idiomas"
+  ],
+  "searchTerms": [
+    "gestor de portapapeles",
+    "historial portapapeles",
+    "copiar y pegar",
+    "portapapeles",
+    "portapapeles múltiple",
+    "pegar sin formato",
+    "Win+V"
+  ],
+  "screenshots": {
+    "history": {
+      "headline": "Copia muchas cosas. Pega la que quieras.",
+      "subline": "Mantén pulsadas Ctrl+V y aparece el historial del portapapeles. Elige un elemento, suelta y listo.",
+      "caption": "Al mantener pulsadas Ctrl+V ves todo lo que has copiado, lo más reciente primero, con una vista previa de cada elemento."
+    },
+    "actions": {
+      "headline": "Pégalo como lo necesites",
+      "subline": "Pulsa la flecha derecha para pegar como texto sin formato o como archivo, o para anclar un elemento.",
+      "caption": "La flecha derecha muestra qué puedes hacer con el elemento seleccionado, como pegarlo como texto sin formato."
+    },
+    "search": {
+      "headline": "Encuentra lo que copiaste",
+      "subline": "Pulsa S con el historial abierto y escribe unas palabras. Intro pega lo que has encontrado.",
+      "caption": "Búsqueda en el historial: escribe unas palabras y solo se muestra lo que coincide."
+    },
+    "settings": {
+      "headline": "Hazlo a tu manera",
+      "subline": "Elige el atajo, cuántos elementos recordar y si el historial se conserva tras reiniciar.",
+      "caption": "Elige el atajo, cuánto historial guardar, las notificaciones y los consejos."
+    },
+    "dark": {
+      "headline": "Claro u oscuro, con tus colores",
+      "subline": "Shapeshifter sigue tu color de énfasis y el modo claro u oscuro de Windows.",
+      "caption": "Shapeshifter en modo oscuro, con el color de énfasis que elegiste para Windows."
+    }
+  }
+}
