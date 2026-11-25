@@ -49,6 +49,9 @@ public static class ClipboardFormatClassifier
         "DataObject", "Ole Private Data", "Object Descriptor", "Link Source Descriptor", "Embed Source", "Link Source",
         "CF_ENHMETAFILE", "CF_METAFILEPICT", "EnhancedMetafile", "MetaFilePict", "CF_PALETTE", "Palette",
         "CF_OWNERDISPLAY", "CF_DSPBITMAP", "CF_DSPENHMETAFILE", "CF_DSPMETAFILEPICT", "CF_BITMAP",
+        // Virtual files (Remote Desktop, Outlook attachments): the contents are streams that are gone once the source
+        // moves on, so the descriptor alone would paste nothing. They are saved as real files instead (VirtualFileStore).
+        FileGroupDescriptor.FormatName, FileGroupDescriptor.AnsiFormatName, FileGroupDescriptor.ContentsFormatName,
         // macOS
         "com.apple.pasteboard.promised-file-url", "dyn.ah62d4rv4gu8yc6durvwwa3xmrvw1gkdusm1044pxqyuha2pxsvw0e55bsmwca7d3sbwu",
     };

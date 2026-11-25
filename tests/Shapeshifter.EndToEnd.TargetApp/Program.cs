@@ -6,6 +6,7 @@ using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Platform.Storage;
 using Avalonia.Themes.Fluent;
 using Avalonia.Threading;
 
@@ -29,6 +30,14 @@ namespace Shapeshifter.EndToEnd.TargetApp;
 /// <item>
 /// <c>read-image</c>: read the clipboard's image the way an application pasting it does; answers
 /// <c>IMAGE &lt;width&gt;x&lt;height&gt;</c>, or <c>NONE</c>.
+/// </item>
+/// <item>
+/// <c>copy-virtual-file &lt;name&gt; &lt;contents&gt;</c> (Windows): put a file on the clipboard as virtual files, the way
+/// Remote Desktop offers files copied in a session; see <see cref="WindowsVirtualFiles"/>.
+/// </item>
+/// <item>
+/// <c>read-files</c>: read the clipboard's files the way an application pasting them does; answers <c>FILES</c>
+/// followed by, for each file, its name and its contents (both base64), separated by spaces.
 /// </item>
 /// <item><c>delete-temp</c>: delete the temporary file of the <c>firefox</c> scenario, as Firefox does later.</item>
 /// <item><c>describe-image</c> (Windows): answers <c>IMAGE &lt;description&gt;</c>, see <see cref="WindowsClipboard.Describe"/>.</item>
@@ -183,6 +192,25 @@ internal sealed class TargetApplication : Application
             case "copy-image" when OperatingSystem.IsWindows():
                 CopyImage(parts[1]);
                 return "OK";
+
+            case "copy-virtual-file" when OperatingSystem.IsWindows():
+                WindowsVirtualFiles.Copy([(Decode(parts[1]), Convert.FromBase64String(parts[2]))]);
+                return "OK";
+
+            case "read-files":
+                using (var data = await clipboard.TryGetDataAsync())
+                {
+                    var files = data is null ? null : await data.TryGetFilesAsync();
+                    var answer = new StringBuilder("FILES");
+                    foreach (var path in files?.Select(file => file.TryGetLocalPath()).OfType<string>() ?? [])
+                    {
+                        var contents = File.Exists(path) ? File.ReadAllBytes(path) : [];
+                        answer.Append(' ').Append(Convert.ToBase64String(Encoding.UTF8.GetBytes(Path.GetFileName(path))))
+                            .Append(' ').Append(Convert.ToBase64String(contents));
+                    }
+
+                    return answer.ToString();
+                }
 
             case "delete-temp":
                 if (temporaryImage is not null)

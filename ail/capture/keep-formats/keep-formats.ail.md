@@ -31,6 +31,11 @@ node KeepFormats : flow   level: experience
       When the user picks the image from the history and pastes it
       Then any app that asks for the image gets the same pixels, every time it asks
       And Shapeshifter keeps running and capturing copies
+    Scenario: files copied in a Remote Desktop session are kept as files
+      Given the file "report.txt" holding "remote" was copied in a Remote Desktop session on Windows
+      And something else was copied after it, in the session
+      When the user picks the file from the history and pastes it
+      Then the clipboard offers a file named "report.txt" holding "remote"
   how
     decide text, files and the image are kept in a portable form, and every other format as raw bytes under its own name
       because rich text, HTML, images, files and app-specific formats must be restored exactly (README, "Everything is kept")
@@ -42,12 +47,23 @@ node KeepFormats : flow   level: experience
       because the toolkit decodes and re-encodes images; the pixels are what the user copied
     decide an image together with one image file in the temporary folder counts as an image, not a file
       because Firefox on Windows copies images that way, and later deletes the file (#606)
+    decide files that the copying app offers only as streams are read when they are copied, and kept as real files in the temporary folder
+      because Remote Desktop offers files copied in a session that way, and the streams are gone once the session copies something else, so a history item holding only their description pasted nothing (#171, #129)
+      rejected keeping the description and reading the streams at paste time because by then the remote side no longer serves them (#129)
+    decide such a copy is not kept when it is over 1 GB, or when one of its files cannot be read
+      because a partial set of files would paste as if it were complete
+      because "unknown, confirm with the owner: why 1 GB"
+    decide files read this way do not outlive a restart, pinned or not
+      because the temporary folder is emptied at every start (DataLocations)
+      because "unknown, confirm with the owner: keep pinned Remote Desktop files?"
     decide files win over text, and text over an image, when deciding what an item is
       because office apps and browsers put a picture of copied text on the clipboard, which should still read as text
   uses      ClipboardFormats
   sources
     README.md, "Everything is kept"
     GitHub issue #606 (Firefox images on Windows)
+    GitHub issues #171 "Support RDP file streams", #129 "Remote desktop copying and pasting acts funny" (the formats Remote Desktop offers: FileGroupDescriptorW, FileContents, Preferred DropEffect)
+    tests/Shapeshifter.EndToEnd.Tests/VirtualFileEndToEndTests.cs: the target app serves a file as Remote Desktop does (its copy-virtual-file command), on Windows
     commit 8556808 "Fix crash when an app reads an image restored from the history": before it, on Linux an app reading a restored image made Shapeshifter crash (found while driving)
     driven on Linux (Xvfb, openbox) 2026-11-20: the target app's copy-html, xclip with text/uri-list, application/x-ail-capture-check and image/png; read back with xclip -o and compared with ImageMagick compare
     src/Shapeshifter.Desktop/Services/AvaloniaClipboardBackend.cs, ReadCoreAsync and WriteCoreAsync

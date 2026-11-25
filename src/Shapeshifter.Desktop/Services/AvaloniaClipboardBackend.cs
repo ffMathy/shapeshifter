@@ -20,15 +20,23 @@ internal sealed class AvaloniaClipboardBackend : IClipboardBackend
 {
     private readonly TopLevel host;
     private readonly ILogger logger;
+    private readonly IVirtualFileReader? virtualFiles;
+    private readonly string virtualFilesFolder;
 
     // What Shapeshifter last put on the clipboard. On X11 the clipboard hands this very object back while Shapeshifter
     // owns the selection, and it must stay alive (not disposed) to serve other applications' requests for it.
     private DataTransfer? written;
 
-    public AvaloniaClipboardBackend(TopLevel host, ILogger logger)
+    /// <param name="host">The window that gives access to the clipboard and the storage provider.</param>
+    /// <param name="logger">The log.</param>
+    /// <param name="virtualFiles">Reads files offered only as streams (Remote Desktop), where the platform has them.</param>
+    /// <param name="temporaryFolder">Where files read by <paramref name="virtualFiles"/> are saved, in a folder of their own.</param>
+    public AvaloniaClipboardBackend(TopLevel host, ILogger logger, IVirtualFileReader? virtualFiles = null, string? temporaryFolder = null)
     {
         this.host = host;
         this.logger = logger.ForContext<AvaloniaClipboardBackend>();
+        this.virtualFiles = virtualFiles;
+        virtualFilesFolder = Path.Combine(temporaryFolder ?? Path.GetTempPath(), VirtualFileStore.FolderName);
     }
 
     private IClipboard Clipboard => host.Clipboard ?? throw new InvalidOperationException("The clipboard is not available.");
@@ -134,6 +142,13 @@ internal sealed class AvaloniaClipboardBackend : IClipboardBackend
             files = items?.Select(item => item.TryGetLocalPath()).OfType<string>().ToArray() ?? [];
         }
 
+        // Files copied in a Remote Desktop session (and Outlook attachments) are offered as streams that are gone once
+        // the session copies something else, so they are saved as real files now (#171).
+        if (files.Count == 0 && !own && virtualFiles is not null && HasVirtualFiles(formatNames))
+        {
+            files = await virtualFiles.ReadAsync(virtualFilesFolder, cancellationToken).ConfigureAwait(true);
+        }
+
         byte[]? image = null;
         if (data.Contains(DataFormat.Bitmap))
         {
@@ -187,6 +202,10 @@ internal sealed class AvaloniaClipboardBackend : IClipboardBackend
 
         return new ClipboardSnapshot { Text = text, Files = files, Image = image, RawFormats = raw };
     }
+
+    private static bool HasVirtualFiles(string[] formatNames) =>
+        formatNames.Contains(FileGroupDescriptor.FormatName, StringComparer.OrdinalIgnoreCase)
+        && formatNames.Contains(FileGroupDescriptor.ContentsFormatName, StringComparer.OrdinalIgnoreCase);
 
     private async Task<byte[]?> ReadMarkerAsync(IAsyncDataTransfer data, string formatName)
     {

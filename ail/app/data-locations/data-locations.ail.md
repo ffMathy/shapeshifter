@@ -29,7 +29,8 @@ node DataLocations : data   level: system
       driven, Linux, throwaway HOME and XDG_* => .config/shapeshifter (0700) and .local/share/shapeshifter (0700) holding install.json, instance.json, instance.lock, logs/, temp/
     on Unix every folder is created with mode 0700, since they hold clipboard contents; Windows uses its per-user folders as they are
     the temp folder is emptied at every start by deleting and re-creating it, which re-creates it with the default
-      mode (driven: 0755 inside the 0700 data folder); actions put files there (text files, zip archives)
+      mode (driven: 0755 inside the 0700 data folder); actions put files there (text files, zip archives), and so do
+      files copied in a Remote Desktop session, under Temp/Virtual files
     --uninstall removes none of these; nothing is ever sent elsewhere, except an image the user chooses to upload
   how
     decide follow each platform's conventions (XDG on Linux, Application Support on macOS, AppData on Windows)

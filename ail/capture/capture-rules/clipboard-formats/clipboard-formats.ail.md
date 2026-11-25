@@ -17,6 +17,15 @@ node ClipboardFormats : fn   level: system
     ClipboardFormatClassifier.ShouldCapture(name: text, size: integer = 0) -> boolean
     ClipboardFormatClassifier.ShouldRestore(name: text, snapshot: ClipboardSnapshot) -> boolean
     MaxRawFormatBytes: integer = 32 MB
+    type VirtualFileDescriptor = { Name: text, IsDirectory: boolean, Size: integer? }
+      Name is a relative path with folders separated by a backslash
+    FileGroupDescriptor.Parse(data: bytes) -> list of VirtualFileDescriptor
+      data is a Windows FILEGROUPDESCRIPTORW: a 4-byte count, then 592 bytes per file
+    VirtualFileStore.Save(parentFolder: text, descriptor: bytes, openContents: (index: integer) -> bytes or nothing) -> list of text
+      the top-level files and folders, in the descriptor's order, inside parentFolder/<first 32 hex digits of the descriptor's SHA-256>
+    MaxVirtualFileBytes: integer = 1 GB
+    IVirtualFileReader.ReadAsync(parentFolder: text) -> later list of text
+      on Windows only; the backend asks it only when the clipboard has both FileGroupDescriptorW and FileContents and no files, and saves into Temp/Virtual files
     examples
       Kind(Files ["/a", "/b"], Text "x") => FileCollection;  Kind(Files ["/a"]) => File
       Kind(Text "hello", Image png) => Text;  Kind(Image png) => Image
@@ -33,6 +42,11 @@ node ClipboardFormats : fn   level: system
       IsExcludedFromHistory(["x-kde-passwordManagerHint" = "secret"]) => true;  = "other" => false   Linux
       ShouldCapture("TARGETS") => false;  ShouldCapture("CF_ENHMETAFILE") => false;  ShouldCapture("text/html") => true
       ShouldCapture("application/x-foo", 40 MB) => false
+      ShouldCapture("FileGroupDescriptorW") => false;  ShouldCapture("FileGroupDescriptor") => false;  ShouldCapture("FileContents") => false
+      VirtualFileStore.Save(folder, descriptor ["report.txt" 6 bytes, "Photos" folder, "Photos\beach.txt"], contents) => [folder/<hash>/report.txt, folder/<hash>/Photos]
+      VirtualFileStore.Save with the same descriptor again => the same paths, with no contents read
+      VirtualFileStore.Save(descriptor over MaxVirtualFileBytes in all) => [];  a file whose contents cannot be read => nothing kept
+      VirtualFileStore.ToRelativePath("..\a.txt") => "a.txt";  ("C:\Windows\x.txt") => "C_/Windows/x.txt";  ("what?.txt") => "what_.txt";  ("..") => nothing
       ShouldRestore("UTF8_STRING", snapshot with Text) => false;  ShouldRestore("image/png", snapshot with Image) => false
       ShouldRestore("text/uri-list", snapshot with Files) => false;  ShouldRestore("text/html", any) => true
       excluded content => the read returns an empty snapshot, after reading only the marker
@@ -43,10 +57,18 @@ node ClipboardFormats : fn   level: system
       because side formats (time stamps, source links) differ between two copies of the same thing
     decide on Windows, formats named "Unknown_Format_<id>" are skipped
       because GDI-handle formats slip past the ignore list under that name and cannot be written back by name
+    decide virtual files are read through the OLE clipboard's IDataObject, one FileContents index at a time, on a thread of its own
+      because the toolkit's portable clipboard cannot ask for one file's contents by index, and a transfer from the remote computer can be slow
+    decide a virtual-file copy's folder is named after a hash of its descriptor, written as a .partial folder and renamed when complete
+      because copying the same files again then reuses them with the same paths, so the history keeps one item and nothing is read twice; and a half-written copy is never reused
+    decide names are cut into segments, with "." and "..", drive letters and characters Windows forbids replaced or dropped
+      because the names come from another computer and must not write outside the copy's folder
     decide unreadable formats are skipped one by one, not the whole copy
       because "unknown, confirm with the owner"
   sources
-    src/Shapeshifter.Core/Clipboard/ClipboardSnapshot.cs, ClipboardFormatClassifier.cs
+    src/Shapeshifter.Core/Clipboard/ClipboardSnapshot.cs, ClipboardFormatClassifier.cs, FileGroupDescriptor.cs, VirtualFileStore.cs
+    src/Shapeshifter.Platform/Windows/WindowsVirtualFileReader.cs
+    GitHub issues #171, #129; FILEDESCRIPTORW, https://learn.microsoft.com/windows/win32/api/shlobj_core/ns-shlobj_core-filedescriptorw
     src/Shapeshifter.Desktop/Services/AvaloniaClipboardBackend.cs, ReadCoreAsync, WriteCoreAsync
     tests/Shapeshifter.EndToEnd.TargetApp/Program.cs, copy-secret (the marker per platform)
     GitHub issue #606; commits db7046f, b069ac4, 8556808
