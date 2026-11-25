@@ -63,6 +63,7 @@ node KeepFormats : flow   level: experience
     README.md, "Everything is kept"
     GitHub issue #606 (Firefox images on Windows)
     GitHub issues #171 "Support RDP file streams", #129 "Remote desktop copying and pasting acts funny" (the formats Remote Desktop offers: FileGroupDescriptorW, FileContents, Preferred DropEffect)
+    tests/Shapeshifter.EndToEnd.Tests/VirtualFileEndToEndTests.cs: the target app serves a file as Remote Desktop does (its copy-virtual-file command), on Windows
     commit 8556808 "Fix crash when an app reads an image restored from the history": before it, on Linux an app reading a restored image made Shapeshifter crash (found while driving)
     driven on Linux (Xvfb, openbox) 2026-11-20: the target app's copy-html, xclip with text/uri-list, application/x-ail-capture-check and image/png; read back with xclip -o and compared with ImageMagick compare
     src/Shapeshifter.Desktop/Services/AvaloniaClipboardBackend.cs, ReadCoreAsync and WriteCoreAsync

@@ -134,6 +134,29 @@ public sealed class ShapeshifterSession : IAsyncLifetime
         return await WaitForStateAsync(state => state.Kinds.Count > 0 && state.Kinds[0] == "Image", "capture of the bitmap");
     }
 
+    /// <summary>
+    /// Puts one file on the clipboard as virtual files, as Remote Desktop does (Windows only; see the target's
+    /// <c>copy-virtual-file</c> command), and waits until Shapeshifter captured a file.
+    /// </summary>
+    internal async Task<AppState> CopyVirtualFileAsync(string name, string contents)
+    {
+        await ExpectOkAsync($"copy-virtual-file {Encode(name)} {Encode(contents)}");
+        return await WaitForStateAsync(state => state.Kinds.Count > 0 && state.Kinds[0] != "Text", $"capture of the virtual file '{name}'");
+    }
+
+    /// <summary>The files on the clipboard as the target reads them when pasting: each file's name and contents.</summary>
+    public async Task<IReadOnlyList<(string Name, string Contents)>> ReadFilesAsync()
+    {
+        var response = await target!.SendAsync("read-files");
+        if (!response.StartsWith("FILES", StringComparison.Ordinal))
+        {
+            throw new InvalidOperationException(response);
+        }
+
+        var parts = response.Split(' ', StringSplitOptions.RemoveEmptyEntries).Skip(1).Select(part => Encoding.UTF8.GetString(Convert.FromBase64String(part))).ToArray();
+        return Enumerable.Range(0, parts.Length / 2).Select(index => (parts[index * 2], parts[(index * 2) + 1])).ToArray();
+    }
+
     /// <summary>Has the target read the clipboard's image, as an application pasting it does: <c>IMAGE WxH</c> or <c>NONE</c>.</summary>
     public async Task<string> ReadImageAsync() => await target!.SendAsync("read-image");
 
