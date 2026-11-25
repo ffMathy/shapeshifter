@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>يرفع هذه الصورة إلى {0} ويلصق رابطًا عامًا إليها.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>رفع ولصق الرابط</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>يرفع هذا النص إلى {0} ويلصق رابطًا عامًا إليه.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>تلميحات</value>
   </data>

@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Tải hình ảnh này lên {0} và dán liên kết công khai đến hình ảnh.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Tải lên và dán liên kết</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Tải văn bản này lên {0} và dán liên kết công khai đến văn bản.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Mẹo</value>
   </data>

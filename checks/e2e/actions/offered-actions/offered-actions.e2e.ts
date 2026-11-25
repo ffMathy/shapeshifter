@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@dfc8b4b4c9f75be5
+// ail-derived-from: OfferedActions@22143cbd398fb9d9
 // End-to-end check for OfferedActions: which actions each kind of item offers,
 // in which order, as read from the screen (OCR of the picker's actions column).
 // Content is put on the clipboard with xclip, as another app would.
@@ -31,16 +31,16 @@ const files = (...names: string[]) => {
   return names.map((n) => { const p = join(dir, n); writeFileSync(p, n); return `file://${p}`; }).join("\n") + "\n";
 };
 
-test("plain text offers Paste, Paste as file and Pin", async () => {
+test("plain text offers Paste, Paste as file, Upload and paste link, and Pin", async () => {
   await app.copy(`plain ${unique()}`);
-  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Pin to clipboard"]);
+  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"]);
 }, 30_000);
 
 test("formatted text also offers Paste as plain text", async () => {
   const id = unique();
   expect(await app.send(`copy-html ${b64(`bold ${id}`)} ${b64(`<b>bold</b> ${id}`)}`)).toBe("OK");
   await sleep(1200);
-  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Paste as plain text", "Pin to clipboard"]);
+  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Pin to clipboard"]);
 }, 30_000);
 
 test("an image offers Paste, Paste as file, Upload and paste link, and Pin", async () => {
@@ -66,5 +66,5 @@ test("other data offers only Paste and Pin", async () => {
 test("text with links also offers the link actions", async () => {
   const id = unique();
   await copyAs("UTF8_STRING", `see https://example.com/${id}.png and https://example.org/${id}`);
-  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Copy image from link", "Open links", "Pin to clipboard"]);
+  expect(await actionsOfNewest()).toEqual(["Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"]);
 }, 30_000);

@@ -8,13 +8,13 @@
       "adopted": true
     },
     "ActionCatalog": {
-      "hash": "db11a399ab06d13d91d0b90674a6162f8bc8952d2aeff43167d66f2834f43c61",
+      "hash": "8ad3dc9b2430c867d99e15df50dba1ba613a8f9ebe9a69113bc7f7883f7bd923",
       "files": {},
       "by": "adopted",
       "adopted": true
     },
     "Actions": {
-      "hash": "c2f5540acafac619f6361c228bfe5e1602b1cf59227f71ebffe95b2b9dbb8d83",
+      "hash": "e093a5070dc995de06e2bf83411a3249e6815052374ab0c4dcafc79c08a356f1",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -104,7 +104,7 @@
       "adopted": true
     },
     "DeleteItems": {
-      "hash": "361b1b3d5812626a016802dfa7ee4fb56b18baf130fd1e75f1ba860e7245a5be",
+      "hash": "490e0869cc6f290c34815558d5fc23596438cb11f83359fcfcde31b1f6bae6bb",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -182,7 +182,7 @@
       "adopted": true
     },
     "OfferedActions": {
-      "hash": "10f685f9821334908a03cd789131485c11c41b01435a37a3d2c46a534cb02c8a",
+      "hash": "c2073f6e6b20d6aa79331241e93607a8637321e3cf3563c154c62f940f5d0e90",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -194,7 +194,7 @@
       "adopted": true
     },
     "PasteActions": {
-      "hash": "1c136b09e3fd09ece32aad11a0a334e1dba7f7273ec42fde743a431ce00123a2",
+      "hash": "fb0044b9f786e66a0bf1ca4e9214da24cbb01f4d682197e68f683c4b1a96510e",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -224,7 +224,7 @@
       "adopted": true
     },
     "PinItems": {
-      "hash": "02998546ec4712a3a66dfd49a445ebf85f700b4303f0fc86214166da3d7cf13d",
+      "hash": "676c0f88e377ae66fc59e33edee44e828406ccad3aa74d2d34013b901d8776db",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -278,7 +278,7 @@
       "adopted": true
     },
     "RememberHistory": {
-      "hash": "fd68f6b60413b390c78c9af945d461374d64eb2f30b79d57424113d29777adf5",
+      "hash": "6e35dd1dbc03691d30da018f93807dc4c403a9985b5e0bc304e9cce3ed96892c",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -290,7 +290,7 @@
       "adopted": true
     },
     "SavedItems": {
-      "hash": "8876322aa6445ddde026e1a3a8ea5ce4566425f66a3f761bd09d729339133aa3",
+      "hash": "a92a70fc4fb63558ab92f122a35defc97cf2d5e0b00e4e9065691562b7f0564f",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -326,7 +326,7 @@
       "adopted": true
     },
     "SettingsWindow": {
-      "hash": "631a9d20d490d2fa0000eeeae11fcf1871938950f625f2724b4939b800d0de84",
+      "hash": "ccd2aed5b9c1729525c09f08273f164fc1c32d9e45fed92e7469f21d873b95a6",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -362,7 +362,13 @@
       "adopted": true
     },
     "UploadImage": {
-      "hash": "d16aa07ba3fd065227da86f569e194a2d69bde48672782fd750b7a7baf1fde5c",
+      "hash": "418f7faf6e4a0b81b74751a7d586732fbad8820e4bbe1661f10178a30f2af253",
+      "files": {},
+      "by": "adopted",
+      "adopted": true
+    },
+    "UploadText": {
+      "hash": "88b4878451e1958111886bb6ce76e460fd90040ea39e75163c380ae532e6f2b5",
       "files": {},
       "by": "adopted",
       "adopted": true

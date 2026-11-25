@@ -442,6 +442,14 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Uploads this image to {0} and pastes a public link to it.</value>
     <comment>Action description; {0} is the name of the image host (Catbox).</comment>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Upload and paste link</value>
+    <comment>Action title: upload the copied text to a file host and paste a link to it.</comment>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Uploads this text to {0} and pastes a public link to it.</value>
+    <comment>Action description; {0} is the name of the file host (Catbox).</comment>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tips</value>
     <comment>Setting title (toggle): show coaching tips.</comment>

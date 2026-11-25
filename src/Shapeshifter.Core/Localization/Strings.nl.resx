@@ -335,6 +335,12 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Uploadt deze afbeelding naar {0} en plakt een openbare link ernaar.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Uploaden en link plakken</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Uploadt deze tekst naar {0} en plakt een openbare link ernaar.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tips</value>
   </data>

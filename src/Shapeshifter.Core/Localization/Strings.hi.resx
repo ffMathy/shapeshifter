@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>इस छवि को {0} पर अपलोड करता है और उसका एक सार्वजनिक लिंक चिपकाता है।</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>अपलोड करें और लिंक चिपकाएँ</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>इस टेक्स्ट को {0} पर अपलोड करता है और उसका एक सार्वजनिक लिंक चिपकाता है।</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>सुझाव</value>
   </data>

@@ -22,22 +22,24 @@ node ActionCatalog : fn   level: system
               paste-as-file          10     an image with bytes, or Text kind with non-empty text
               paste-plain-text       20     Text kind with a rich format (HTML or RTF), and either non-empty text or an HTML format
               upload-image           30     an image with bytes (UploadImage)
+              upload-text            35     Text kind with text that is not only whitespace (UploadText)
               paste-as-zip           75     File or FileCollection kind
               copy-image-from-link   100    Text kind whose text holds a link to an image
               open-links             200    Text kind whose text holds at least one link; opens at most 10
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, upload-image, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
-      GetAvailable(text "hello") => [paste, paste-as-file, toggle-pin]
-      GetAvailable(text "x" + raw "text/html") => [paste, paste-as-file, paste-plain-text, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, upload-image, upload-text, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
+      GetAvailable(text "hello") => [paste, paste-as-file, upload-text, toggle-pin]
+      GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
+      GetAvailable(text "x" + raw "text/html") => [paste, paste-as-file, paste-plain-text, upload-text, toggle-pin]
       GetAvailable(raw "text/html" only, no plain text) => [paste, paste-plain-text, toggle-pin]
       GetAvailable(raw "Rich Text Format" only, no plain text) => [paste, toggle-pin]
       GetAvailable(PNG image) => [paste, paste-as-file, upload-image, toggle-pin]
       GetAvailable(image + one temporary image file, as Firefox copies) => [paste, paste-as-file, upload-image, toggle-pin]
-      GetAvailable(text "chart" + image, as office suites copy) => [paste, paste-as-file, toggle-pin]; paste-as-file writes the text
+      GetAvailable(text "chart" + image, as office suites copy) => [paste, paste-as-file, upload-text, toggle-pin]; paste-as-file and upload-text use the text
       GetAvailable(files ["/a/x.txt"]) => [paste, paste-as-zip, toggle-pin]
       GetAvailable(raw "application/x-weird" only) => [paste, toggle-pin]
-      GetAvailable(text "see https://example.com/a.png and https://example.org") => [paste, paste-as-file, copy-image-from-link, open-links, toggle-pin]
+      GetAvailable(text "see https://example.com/a.png and https://example.org") => [paste, paste-as-file, upload-text, copy-image-from-link, open-links, toggle-pin]
       open-links.GetTitle(text "https://example.org") => "Open link";  with two links => "Open links"
       paste-as-file.GetDescription(JPEG image) => "Saves this image to a .jpg file and pastes the file."
       paste: ExecuteAsync(item) => WriteAndPasteAsync(item.Snapshot), then History.MoveToTop(item.Id) (no move for a pinned item)

@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>এই ছবিটি {0}-এ আপলোড করে এবং এর একটি সর্বজনীন লিঙ্ক আটকায়।</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>আপলোড করে লিঙ্ক আটকান</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>এই টেক্সট {0}-এ আপলোড করে এবং এর একটি সর্বজনীন লিঙ্ক আটকায়।</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>পরামর্শ</value>
   </data>

@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>この画像を {0} にアップロードし、その公開リンクを貼り付けます。</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>アップロードしてリンクを貼り付け</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>このテキストを {0} にアップロードし、その公開リンクを貼り付けます。</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>ヒント</value>
   </data>
