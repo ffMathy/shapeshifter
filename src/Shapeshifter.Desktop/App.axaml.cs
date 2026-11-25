@@ -81,13 +81,13 @@ public partial class App : Application
 
             // A never-shown window gives access to the clipboard and the storage provider.
             var clipboardHost = new Window { Width = 1, Height = 1, ShowInTaskbar = false, WindowDecorations = WindowDecorations.None };
-            var backend = new AvaloniaClipboardBackend(clipboardHost, logger);
-
             platform = await PlatformServices.CreateAsync(logger).ConfigureAwait(true);
             foreach (var warning in platform.Warnings)
             {
                 logger.Warning("{Warning}", warning);
             }
+
+            var backend = new AvaloniaClipboardBackend(clipboardHost, logger, platform.VirtualFiles, Paths.TempDirectory);
 
             var changes = platform.CreateClipboardChangeSource(backend, logger);
             monitor = new ClipboardMonitor(backend, changes, history, logger, platform.SourceLocator);

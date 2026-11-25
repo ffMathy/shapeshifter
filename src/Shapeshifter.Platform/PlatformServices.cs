@@ -30,6 +30,9 @@ public sealed class PlatformServices : IAsyncDisposable
         SourceLocator = CreateSourceLocator(logger);
         FileIcons = CreateFileIconProvider(logger);
         WindowFocus = CreateWindowFocus(logger, x11);
+#pragma warning disable CA1416 // Created only inside the OS check.
+        VirtualFiles = OperatingSystem.IsWindows() ? new WindowsVirtualFileReader(logger) : null;
+#pragma warning restore CA1416
     }
 
     public IKeyboardHook KeyboardHook => keyboard;
@@ -50,6 +53,12 @@ public sealed class PlatformServices : IAsyncDisposable
 
     /// <summary>Moves the keyboard focus between the picker and the window the user works in, where possible.</summary>
     public IWindowFocus? WindowFocus { get; }
+
+    /// <summary>
+    /// Reads files that the copying application offers only as streams, such as files copied in a Remote Desktop
+    /// session; <see langword="null"/> where the clipboard has no such files.
+    /// </summary>
+    public IVirtualFileReader? VirtualFiles { get; }
 
     /// <summary>Limitations of the current session that the user should know about.</summary>
     public IReadOnlyList<string> Warnings { get; }
