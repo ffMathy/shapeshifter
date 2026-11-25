@@ -14,9 +14,11 @@ internal static class StartCommand
         var name = Path.GetFileNameWithoutExtension(process);
         if (string.Equals(name, "dotnet", StringComparison.OrdinalIgnoreCase))
         {
-            // Started as "dotnet Shapeshifter.dll" (framework-dependent build).
-            var entry = System.Reflection.Assembly.GetEntryAssembly()?.Location;
-            if (!string.IsNullOrEmpty(entry))
+            // Started as "dotnet Shapeshifter.dll" (framework-dependent build). The entry assembly sits in the app's
+            // folder; Assembly.Location would be empty in a single-file build (which never runs through dotnet).
+            var assembly = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Name;
+            var entry = assembly is null ? null : Path.Combine(AppContext.BaseDirectory, assembly + ".dll");
+            if (entry is not null && File.Exists(entry))
             {
                 return [process, entry];
             }
