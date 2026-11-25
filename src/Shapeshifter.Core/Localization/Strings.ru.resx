@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Загружает это изображение на сервис {0} и вставляет общедоступную ссылку на него.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Загрузить и вставить ссылку</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Загружает этот текст на сервис {0} и вставляет общедоступную ссылку на него.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Подсказки</value>
   </data>

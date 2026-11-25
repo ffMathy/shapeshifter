@@ -335,6 +335,12 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Przesyła ten obraz do serwisu {0} i wkleja publiczny link do niego.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Prześlij i wklej link</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Przesyła ten tekst do serwisu {0} i wkleja publiczny link do niego.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Wskazówki</value>
   </data>

@@ -335,6 +335,12 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Envia esta imagem para o {0} e cola um link público para ela.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Enviar e colar link</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Envia este texto para o {0} e cola um link público para ele.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Dicas</value>
   </data>

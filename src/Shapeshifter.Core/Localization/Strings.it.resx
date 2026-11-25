@@ -335,6 +335,12 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Carica questa immagine su {0} e incolla un link pubblico.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Carica e incolla il link</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Carica questo testo su {0} e incolla un link pubblico.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Suggerimenti</value>
   </data>

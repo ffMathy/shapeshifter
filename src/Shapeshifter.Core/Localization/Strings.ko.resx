@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>이 이미지를 {0}에 업로드하고 공개 링크를 붙여넣습니다.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>업로드하고 링크 붙여넣기</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>이 텍스트를 {0}에 업로드하고 공개 링크를 붙여넣습니다.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>팁</value>
   </data>

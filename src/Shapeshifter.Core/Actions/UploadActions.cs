@@ -1,13 +1,14 @@
 using System.Collections.Concurrent;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Text;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
 
 namespace Shapeshifter.Core.Actions;
 
 /// <summary>
-/// Uploads a copied image to Catbox (catbox.moe), a free image host without ads, and pastes the link.
+/// Uploads a copied image to Catbox (catbox.moe), a free file host without ads, and pastes the link.
 /// </summary>
 public sealed class UploadImageAction : IClipboardAction
 {
@@ -36,9 +37,54 @@ public sealed class UploadImageAction : IClipboardAction
         {
             var image = item.Snapshot.Image!;
             var name = $"Image {item.CapturedAt.LocalDateTime.ToString("yyyy-MM-dd HH.mm.ss", CultureInfo.InvariantCulture)}.{ImageFormat.GetExtension(image)}";
-            link = await Catbox.UploadAsync(context.Http, image, name, cancellationToken).ConfigureAwait(false);
+            link = await Catbox.UploadAsync(context.Http, image, name, ImageFormat.GetMediaType(image), cancellationToken).ConfigureAwait(false);
             uploaded[item.Id] = link;
             context.Logger.Information("Uploaded an image to {Service}", Catbox.Name);
+        }
+
+        var snapshot = new ClipboardSnapshot { Text = link.AbsoluteUri };
+        await context.WriteAndPasteAsync(snapshot, cancellationToken).ConfigureAwait(false);
+        context.History.Add(snapshot);
+    }
+}
+
+/// <summary>
+/// Uploads a copied text to Catbox as a .txt file and pastes the link, which shows the text itself.
+/// </summary>
+public sealed class UploadTextAction : IClipboardAction
+{
+    /// <summary>The media type the text is uploaded as.</summary>
+    public const string MediaType = "text/plain; charset=utf-8";
+
+    /// <summary>The links of texts that were already uploaded, so uploading the same item again reuses its link.</summary>
+    private readonly ConcurrentDictionary<Guid, Uri> uploaded = new();
+
+    public string Id => "upload-text";
+
+    public int Order => 35;
+
+    public string GetTitle(ClipboardItem item) => Strings.ActionUploadText;
+
+    public string GetDescription(ClipboardItem item) => Localizer.Format(Strings.ActionUploadTextDescription, Catbox.Name);
+
+    public bool CanExecute(ClipboardItem item)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        return item.Kind == ClipboardContentKind.Text && !string.IsNullOrWhiteSpace(item.Snapshot.Text);
+    }
+
+    public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        ArgumentNullException.ThrowIfNull(context);
+        if (!uploaded.TryGetValue(item.Id, out var link))
+        {
+            // With a byte order mark, so a browser shows the text as UTF-8 whatever character set Catbox announces.
+            var text = Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(item.Snapshot.Text!)).ToArray();
+            var name = $"Text {item.CapturedAt.LocalDateTime.ToString("yyyy-MM-dd HH.mm.ss", CultureInfo.InvariantCulture)}.txt";
+            link = await Catbox.UploadAsync(context.Http, text, name, MediaType, cancellationToken).ConfigureAwait(false);
+            uploaded[item.Id] = link;
+            context.Logger.Information("Uploaded a text to {Service}", Catbox.Name);
         }
 
         var snapshot = new ClipboardSnapshot { Text = link.AbsoluteUri };
@@ -56,19 +102,23 @@ public static class Catbox
 
     public static Uri Endpoint { get; } = new("https://catbox.moe/user/api.php");
 
-    /// <summary>Uploads <paramref name="data"/> as a file called <paramref name="fileName"/> and returns its public link.</summary>
-    public static async Task<Uri> UploadAsync(HttpClient http, byte[] data, string fileName, CancellationToken cancellationToken = default)
+    /// <summary>
+    /// Uploads <paramref name="data"/> as a file called <paramref name="fileName"/> of the type
+    /// <paramref name="mediaType"/> and returns its public link.
+    /// </summary>
+    public static async Task<Uri> UploadAsync(HttpClient http, byte[] data, string fileName, string mediaType, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(http);
         ArgumentNullException.ThrowIfNull(data);
         ArgumentException.ThrowIfNullOrEmpty(fileName);
+        ArgumentException.ThrowIfNullOrEmpty(mediaType);
         if (data.LongLength > MaxBytes)
         {
-            throw new InvalidOperationException($"The image is larger than the {MaxBytes / (1024 * 1024)} MB {Name} accepts.");
+            throw new InvalidOperationException($"The file is larger than the {MaxBytes / (1024 * 1024)} MB {Name} accepts.");
         }
 
         using var file = new ByteArrayContent(data);
-        file.Headers.ContentType = new MediaTypeHeaderValue(ImageFormat.GetMediaType(data));
+        file.Headers.ContentType = MediaTypeHeaderValue.Parse(mediaType);
         using var form = new MultipartFormDataContent
         {
             { new StringContent("fileupload"), "reqtype" },

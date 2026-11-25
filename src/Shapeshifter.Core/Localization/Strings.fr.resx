@@ -335,6 +335,12 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Met cette image en ligne sur {0} et colle un lien public vers celle-ci.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Mettre en ligne et coller le lien</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Met ce texte en ligne sur {0} et colle un lien public vers celui-ci.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Astuces</value>
   </data>

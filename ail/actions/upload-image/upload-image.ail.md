@@ -13,11 +13,11 @@ node UploadImage : fn   level: system
     UploadImageAction is an IClipboardAction with Id "upload-image" and Order 30:
       CanExecute(item) is true when item.Kind is Image and item.Snapshot.Image is not empty
       GetDescription(item) gives "Uploads this image to Catbox and pastes a public link to it."
-    Catbox.UploadAsync(http: HttpClient, data: bytes, fileName: text) -> later text   — the public link, an absolute web address
+    Catbox.UploadAsync(http: HttpClient, data: bytes, fileName: text, mediaType: text) -> later text   — the public link, an absolute web address; UploadText uploads through it too
     Catbox.Name: text = "Catbox"
     Catbox.MaxBytes: integer = 200 × 1024 × 1024   — 200 MB
     Catbox.Endpoint: text = "https://catbox.moe/user/api.php"
-    An upload is a POST to Endpoint, multipart/form-data: reqtype = "fileupload"; fileToUpload = the image bytes, named fileName, with the image's media type
+    An upload is a POST to Endpoint, multipart/form-data: reqtype = "fileupload"; fileToUpload = the bytes, named fileName, with mediaType (here the image's media type)
       the shared HttpClient sends User-Agent "Shapeshifter/<major.minor.patch>"; no account, no key
     examples
       ExecuteAsync(PNG captured 2026-11-20 13:05:09 local) => uploads "Image 2026-11-20 13.05.09.png" as image/png
@@ -27,7 +27,7 @@ node UploadImage : fn   level: system
       Catbox answers 412 "File too large" => HttpRequestException "Catbox refused the upload (412): File too large"; nothing pasted
       Catbox answers 200 "error: something" => HttpRequestException "Catbox did not return a link: error: something"
       Catbox answers 200 "http://files.catbox.moe/a.png" => HttpRequestException (only https links are accepted)
-      image of 201 MB => InvalidOperationException "The image is larger than the 200 MB Catbox accepts.", no request sent
+      image of 201 MB => InvalidOperationException "The file is larger than the 200 MB Catbox accepts.", no request sent
       no answer within 2 minutes => cancelled; nothing pasted
   how
     decide Catbox

@@ -335,6 +335,12 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Sube esta imagen a {0} y pega un enlace público a ella.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Subir y pegar enlace</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Sube este texto a {0} y pega un enlace público a él.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Consejos</value>
   </data>

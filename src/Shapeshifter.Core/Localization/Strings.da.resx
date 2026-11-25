@@ -335,6 +335,12 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Uploader dette billede til {0} og indsætter et offentligt link til det.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Upload og indsæt link</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Uploader denne tekst til {0} og indsætter et offentligt link til den.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tips</value>
   </data>

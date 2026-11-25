@@ -335,6 +335,12 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Bu görüntüyü {0} hizmetine yükler ve görüntünün herkese açık bağlantısını yapıştırır.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Yükle ve bağlantıyı yapıştır</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Bu metni {0} hizmetine yükler ve metnin herkese açık bağlantısını yapıştırır.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>İpuçları</value>
   </data>

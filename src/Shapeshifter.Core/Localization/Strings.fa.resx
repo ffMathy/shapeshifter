@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>این تصویر را در {0} بارگذاری می‌کند و یک پیوند عمومی به آن را می‌چسباند.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>بارگذاری و چسباندن پیوند</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>این متن را در {0} بارگذاری می‌کند و یک پیوند عمومی به آن را می‌چسباند.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>نکته‌ها</value>
   </data>

@@ -335,6 +335,12 @@
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>อัปโหลดรูปภาพนี้ไปยัง {0} แล้ววางลิงก์สาธารณะของรูปภาพนั้น</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>อัปโหลดแล้ววางลิงก์</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>อัปโหลดข้อความนี้ไปยัง {0} แล้ววางลิงก์สาธารณะของข้อความนั้น</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>เคล็ดลับ</value>
   </data>

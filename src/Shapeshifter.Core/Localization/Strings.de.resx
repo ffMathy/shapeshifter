@@ -335,6 +335,12 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionUploadImageDescription" xml:space="preserve">
     <value>Lädt dieses Bild zu {0} hoch und fügt einen öffentlichen Link darauf ein.</value>
   </data>
+  <data name="ActionUploadText" xml:space="preserve">
+    <value>Hochladen und Link einfügen</value>
+  </data>
+  <data name="ActionUploadTextDescription" xml:space="preserve">
+    <value>Lädt diesen Text zu {0} hoch und fügt einen öffentlichen Link darauf ein.</value>
+  </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tipps</value>
   </data>

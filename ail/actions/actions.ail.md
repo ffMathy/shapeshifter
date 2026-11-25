@@ -8,7 +8,7 @@ into them, Left back to the history, and letting go of Ctrl runs the chosen one.
 node Actions : flow   level: experience
   why   A copied thing is often needed in another shape: without its
         formatting, as a file, or kept for later. Converting it should not need
-        another app or a second trip to copy it again (#6, #23, #24).   <- Shapeshifter
+        another app or a second trip to copy it again (#6, #23, #24, #56).   <- Shapeshifter
   what
     Scenario: Right opens the actions, and letting go of Ctrl runs the chosen one
       Given "memo" was copied
@@ -51,7 +51,7 @@ node Actions : flow   level: experience
   copy
     footer.actions   "Actions"     next to the "←→" key in the picker's footer
   uses      GestureRules
-  children  OfferedActions, PasteActions, PinItems, DeleteItems, ActionCatalog, UploadImage
+  children  OfferedActions, PasteActions, PinItems, DeleteItems, ActionCatalog, UploadImage, UploadText
   sources
     GitHub issues #6, #23, #24, #258, #573; PRs #629, #634, #644
     commit 1ab814a "Open the actions with the Right arrow, now that they are on the right"
