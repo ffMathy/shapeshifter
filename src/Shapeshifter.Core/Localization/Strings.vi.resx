@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Sao chép chính tệp hoặc thư mục, sẵn sàng dán vào trình quản lý tệp hoặc email.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Hiện trong trình quản lý tệp</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Mở thư mục chứa đường dẫn này và chọn sẵn mục đó.</value>
+  </data>
 </root>

@@ -42,7 +42,7 @@
       "file": "an-e-mail-address-also-offers-write-email.png"
     },
     {
-      "test": "the path of an existing file also offers Copy file at this path",
+      "test": "the path of an existing file also offers Copy file at this path and Show in file manager",
       "file": "the-path-of-an-existing-file-also-offers-copy-file-at-this-p.png"
     },
     {

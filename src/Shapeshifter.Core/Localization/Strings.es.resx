@@ -491,4 +491,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Copia el propio archivo o carpeta, listo para pegar en un explorador de archivos o un correo.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Mostrar en el explorador de archivos</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Abre la carpeta de esta ruta, con ella seleccionada.</value>
+  </data>
 </root>

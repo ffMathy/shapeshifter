@@ -650,4 +650,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Copies the file or folder itself, ready to paste in a file manager or an email.</value>
     <comment>Action description for 'Copy file at this path'.</comment>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Show in file manager</value>
+    <comment>Action title: open the folder holding the copied file (or the file a copied path names) in the system's file manager (Explorer, Finder, Files), with it selected.</comment>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Opens the folder this path is in, with it selected.</value>
+    <comment>Action description for 'Show in file manager' on a copied text that is a path.</comment>
+  </data>
 </root>

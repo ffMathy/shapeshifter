@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Копирует сам файл или папку, чтобы вставить в файловый менеджер или письмо.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Показать в файловом менеджере</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Открывает папку с этим путём и выделяет его.</value>
+  </data>
 </root>

@@ -491,4 +491,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Kopiuje sam plik lub folder, gotowy do wklejenia w menedżerze plików lub e-mailu.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Pokaż w menedżerze plików</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Otwiera folder z tą ścieżką i zaznacza ją.</value>
+  </data>
 </root>

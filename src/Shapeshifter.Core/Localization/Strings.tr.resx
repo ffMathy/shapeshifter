@@ -491,4 +491,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Dosyanın veya klasörün kendisini kopyalar; dosya yöneticisine ya da e-postaya yapıştırılabilir.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Dosya yöneticisinde göster</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Bu yolun bulunduğu klasörü, öğe seçili olarak açar.</value>
+  </data>
 </root>

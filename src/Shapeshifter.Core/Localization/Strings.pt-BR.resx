@@ -491,4 +491,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Copia o próprio arquivo ou pasta, pronto para colar em um gerenciador de arquivos ou e-mail.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Mostrar no gerenciador de arquivos</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Abre a pasta deste caminho, com o item selecionado.</value>
+  </data>
 </root>

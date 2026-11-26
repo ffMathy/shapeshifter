@@ -491,4 +491,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Kopierer selve filen eller mappen, klar til at indsætte i en filhåndtering eller en e-mail.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Vis i filhåndtering</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Åbner mappen, stien ligger i, med den markeret.</value>
+  </data>
 </root>
