@@ -4,7 +4,7 @@
 [![Website](https://github.com/ffMathy/Shapeshifter/actions/workflows/website.yml/badge.svg)](https://github.com/ffMathy/Shapeshifter/actions/workflows/website.yml)
 [![Join the chat at https://gitter.im/ffMathy/Shapeshifter](https://badges.gitter.im/ffMathy/Shapeshifter.svg)](https://gitter.im/ffMathy/Shapeshifter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Financial Contributors on Open Collective](https://opencollective.com/shapeshifterclipboard/all/badge.svg?label=financial+contributors)](https://opencollective.com/shapeshifterclipboard)
-[![Written in AIL](https://img.shields.io/badge/written%20in-AIL-b45309)](https://ffmathy.github.io/agentic-intermediate-language/)
+[![Written in Agentic Intermediate Language](https://img.shields.io/badge/written%20in-Agentic%20Intermediate%20Language-b45309)](https://ffmathy.github.io/agentic-intermediate-language/)
 
 <p align="center"><img src="assets/screenshots/cover@2x.PNG" alt="Shapeshifter: copy many things, paste any of them. A free, open-source clipboard manager for Windows, macOS and Linux, shown next to its picker with five copied items"></p>
 
@@ -81,9 +81,9 @@ installation (your settings and pinned items stay), and set `SHAPESHIFTER_NO_UPD
 
 </details>
 
-# Written in AIL
+# Written in Agentic Intermediate Language
 
-<a href="https://ffmathy.github.io/agentic-intermediate-language/"><img src="https://img.shields.io/badge/written%20in-AIL-b45309?style=for-the-badge" alt="Written in AIL"></a>
+<a href="https://ffmathy.github.io/agentic-intermediate-language/"><img src="https://img.shields.io/badge/written%20in-Agentic%20Intermediate%20Language-b45309?style=for-the-badge" alt="Written in Agentic Intermediate Language"></a>
 
 Shapeshifter is written in [AIL](https://github.com/ffMathy/agentic-intermediate-language), the Agentic Intermediate
 Language. The spec in [`ail/`](ail) is the source of truth: it says why each part exists, what it does and how it was
