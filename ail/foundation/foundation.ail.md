@@ -10,7 +10,7 @@ node Foundation : library   level: system
   why   Generated code needs the clipboard's types, the actions' interface and
         the translated text, which stay hand-written while the app moves to
         generated code one node at a time.   <- Shapeshifter
-  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml, Launcher
+  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml, Launcher, NewContent
 ```
 
 ```ail
@@ -98,4 +98,16 @@ node Launcher : data   level: system   @existing
       in checks, ActionTestHarness gives the context a recording launcher: harness.Launcher.OpenedUrls lists, in order, the links opened (a list of absolute links), and nothing is opened for real
   sources
     src/Shapeshifter.Core/Platform/ISystemServices.cs, ILauncher; src/Shapeshifter.Platform/Common/Launcher.cs
+```
+
+```ail
+node NewContent : data   level: system   @existing
+  why   Actions that make something new put it on the clipboard and in the
+        history, so a plain paste afterwards inserts it.   <- Foundation
+  what
+    ActionContext.CopyNewContentAsync(snapshot: ClipboardSnapshot, cancellation) -> later nothing
+      writes the snapshot to the clipboard, then adds it to the history as its newest item; nothing is pasted
+      in checks, ActionTestHarness shows it as the last of harness.Backend.Writes and the first of harness.History.Items, and harness.Paste.Calls stays 0
+  sources
+    src/Shapeshifter.Core/Actions/IClipboardAction.cs, ActionContext.CopyNewContentAsync
 ```

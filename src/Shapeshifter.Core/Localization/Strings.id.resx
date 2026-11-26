@@ -485,4 +485,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Mencari teks ini di {0} pada browser Anda.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Salin file di jalur ini</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Menyalin file atau folder itu sendiri, siap ditempel di pengelola file atau email.</value>
+  </data>
 </root>

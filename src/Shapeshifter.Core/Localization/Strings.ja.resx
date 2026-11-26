@@ -485,4 +485,10 @@
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>ブラウザーの {0} でこのテキストを検索します。</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>このパスのファイルをコピー</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>ファイルやフォルダーそのものをコピーし、ファイル マネージャーやメールに貼り付けられるようにします。</value>
+  </data>
 </root>

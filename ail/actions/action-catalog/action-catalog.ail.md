@@ -36,12 +36,13 @@ node ActionCatalog : fn   level: system
               paste-result           52     Text kind whose text is a calculation of numbers, + - * / % ^ and parentheses (PasteResult)
               paste-as-zip           75     File or FileCollection kind
               copy-image-from-link   100    Text kind whose text holds a link to an image
+              copy-file-at-path      110    Text kind whose text is the absolute path of an existing local file or folder (FilePath)
               open-links             200    Text kind whose text holds at least one link; opens at most 10
               write-email            210    Text kind whose text is one e-mail address, maybe after mailto: (WriteEmail)
               search-web             220    Text kind whose text is one line of at most 200 characters with a letter or digit, and not a link on its own (SearchWeb)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, open-links, write-email, search-web, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, search-web, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, search-web, toggle-pin]

@@ -35,6 +35,7 @@ public sealed class ActionCatalog
         new PasteResultAction(),
         new WriteEmailAction(),
         new SearchWebAction(),
+        new CopyFileAtPathAction(),
         new TogglePinAction(),
     ]);
 

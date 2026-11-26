@@ -485,4 +485,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Cerca questo testo su {0} nel browser.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Copia il file di questo percorso</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Copia il file o la cartella stessa, pronta da incollare in un file manager o in un'email.</value>
+  </data>
 </root>
