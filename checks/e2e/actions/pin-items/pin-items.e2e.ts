@@ -1,4 +1,4 @@
-// ail-derived-from: PinItems@dc042e3d435cd0a3
+// ail-derived-from: PinItems@eaa4f9c314a3925b
 // End-to-end check for PinItems: pinning and unpinning from the actions, and
 // pinned items surviving a restart. Pinned items stay at the top for good, so
 // every scenario runs on a desktop of its own (PrivateDesktop), where it may
@@ -73,7 +73,7 @@ test("a pinned item offers Unpin, and unpinning lets it move down again", async 
   await tap("1");
   await tap("Right");
   await sleep(300);
-  expect(actionTitlesOnScreen()).toEqual(["Paste", "Paste as file", "Unpin from clipboard"]);
+  expect(actionTitlesOnScreen()).toEqual(["Paste", "Paste as file", "Upload and paste link", "Unpin from clipboard"]);
   await tap("Up");
   await keyUp("ctrl");
   await sleep(1200);
