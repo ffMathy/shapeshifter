@@ -37,6 +37,9 @@ public static class Glyphs
     /// <summary>A drop of paint: the colour actions.</summary>
     public static Geometry Palette { get; } = Geometry.Parse("M10,2.5 C10,2.5 4.5,8.5 4.5,12 C4.5,15 7,17.5 10,17.5 C13,17.5 15.5,15 15.5,12 C15.5,8.5 10,2.5 10,2.5 Z M7.5,12.5 C7.5,13.9 8.6,15 10,15");
 
+    /// <summary>A calculator: Paste result.</summary>
+    public static Geometry Calculator { get; } = Geometry.Parse("M4.5,2.5 H15.5 V17.5 H4.5 Z M7,5 H13 V8 H7 Z M7.25,11 H8.25 M9.5,11 H10.5 M11.75,11 H12.75 M7.25,14 H8.25 M9.5,14 H10.5 M11.75,14 H12.75");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -95,6 +98,7 @@ public static class Glyphs
             "paste-color-hsl" => Palette,
             "paste-as-date" => Clock,
             "paste-as-unix-time" => Clock,
+            "paste-result" => Calculator,
             _ => Clipboard,
         };
     }

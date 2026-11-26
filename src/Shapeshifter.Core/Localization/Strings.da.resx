@@ -467,4 +467,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Indsætter {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Indsæt resultat</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Regner det ud og indsætter {0}.</value>
+  </data>
 </root>

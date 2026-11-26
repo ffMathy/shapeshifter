@@ -467,4 +467,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Pega {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Pegar resultado</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Lo calcula y pega {0}.</value>
+  </data>
 </root>

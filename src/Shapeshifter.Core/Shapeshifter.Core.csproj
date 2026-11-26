@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" />
+    <PackageReference Include="NCalcSync" />
     <PackageReference Include="ReverseMarkdown" />
     <PackageReference Include="Serilog" />
   </ItemGroup>

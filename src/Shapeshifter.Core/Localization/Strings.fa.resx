@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0} را می‌چسباند.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>چسباندن نتیجه</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>این را محاسبه می‌کند و {0} را می‌چسباند.</value>
+  </data>
 </root>

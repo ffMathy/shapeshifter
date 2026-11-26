@@ -467,4 +467,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Colle {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Coller le résultat</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Le calcule et colle {0}.</value>
+  </data>
 </root>

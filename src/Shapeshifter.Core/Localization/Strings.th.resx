@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>วาง {0}</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>วางผลลัพธ์</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>คำนวณและวาง {0}</value>
+  </data>
 </root>

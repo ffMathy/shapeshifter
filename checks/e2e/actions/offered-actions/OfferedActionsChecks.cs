@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@b0dfc97e471caeae
+// ail-derived-from: OfferedActions@0397913b28f41e6a
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -95,6 +95,13 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as date and time", "Pin to clipboard"], await ActionsOfNewest());
         await CopyAs("UTF8_STRING", DateTimeOffset.FromUnixTimeSeconds(seconds).ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", System.Globalization.CultureInfo.InvariantCulture));
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as Unix time", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a calculation also offers Paste result", Timeout = 30_000)]
+    public async Task Calculation()
+    {
+        await CopyAs("UTF8_STRING", $"{Random.Shared.Next(2, 99)}*{Random.Shared.Next(2, 99)}+{Random.Shared.Next(2, 99)}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste result", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]

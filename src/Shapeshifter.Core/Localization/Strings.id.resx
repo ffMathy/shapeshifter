@@ -467,4 +467,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Menempelkan {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Tempel hasil</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Menghitungnya dan menempelkan {0}.</value>
+  </data>
 </root>

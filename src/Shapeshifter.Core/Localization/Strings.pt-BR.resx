@@ -467,4 +467,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Cola {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Colar resultado</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Calcula e cola {0}.</value>
+  </data>
 </root>

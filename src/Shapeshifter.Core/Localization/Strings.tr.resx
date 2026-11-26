@@ -467,4 +467,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0} yapıştırır.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Sonucu yapıştır</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Hesaplar ve {0} yapıştırır.</value>
+  </data>
 </root>

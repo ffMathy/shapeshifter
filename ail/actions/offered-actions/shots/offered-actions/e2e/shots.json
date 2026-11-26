@@ -34,6 +34,10 @@
       "file": "a-unix-time-also-offers-paste-as-date-and-time-and-a-date-an.png"
     },
     {
+      "test": "a calculation also offers Paste result",
+      "file": "a-calculation-also-offers-paste-result.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },
