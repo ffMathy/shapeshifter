@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Giải mã Base64 này và dán văn bản bên trong.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Dán và giải mã URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Dán văn bản này với các mã % được chuyển lại thành ký tự.</value>
+  </data>
 </root>

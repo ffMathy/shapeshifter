@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>解码此 Base64 并粘贴其中的文本。</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL 解码后粘贴</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>将 % 编码还原为字符后粘贴此文本。</value>
+  </data>
 </root>

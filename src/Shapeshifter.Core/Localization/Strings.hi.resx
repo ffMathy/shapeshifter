@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>इस Base64 को डिकोड करके उसका टेक्स्ट चिपकाता है।</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL डिकोड करके चिपकाएँ</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>इस टेक्स्ट के %-कोड को अक्षरों में बदलकर चिपकाता है।</value>
+  </data>
 </root>

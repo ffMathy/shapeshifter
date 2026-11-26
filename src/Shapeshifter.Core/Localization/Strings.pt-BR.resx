@@ -422,4 +422,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Decodifica este Base64 e cola o texto que ele contém.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Colar com URL decodificada</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Cola este texto com os códigos % convertidos de volta em caracteres.</value>
+  </data>
 </root>

@@ -422,4 +422,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Afkoder denne Base64 og indsætter teksten i den.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Indsæt URL-afkodet</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Indsætter teksten med dens %-koder lavet om til tegn.</value>
+  </data>
 </root>

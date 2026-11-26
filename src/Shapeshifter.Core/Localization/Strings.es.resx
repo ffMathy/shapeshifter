@@ -422,4 +422,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Descodifica este Base64 y pega el texto que contiene.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Pegar con la URL descodificada</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Pega este texto con sus códigos % convertidos en caracteres.</value>
+  </data>
 </root>

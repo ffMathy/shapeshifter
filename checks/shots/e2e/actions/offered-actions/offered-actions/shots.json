@@ -18,6 +18,10 @@
       "file": "base64-of-a-readable-text-also-offers-paste-decoded-base64.png"
     },
     {
+      "test": "a text with %-codes also offers Paste URL-decoded",
+      "file": "a-text-with-codes-also-offers-paste-url-decoded.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

@@ -78,6 +78,7 @@ public static class Glyphs
             "copy-image-from-link" => Image,
             "open-links" => Link,
             "decode-base64" => Decode,
+            "url-decode" => Decode,
             _ => Clipboard,
         };
     }

@@ -422,4 +422,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Dekoduje ten Base64 i wkleja zawarty w nim tekst.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Wklej z odkodowanym URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Wkleja ten tekst z kodami % zamienionymi z powrotem na znaki.</value>
+  </data>
 </root>

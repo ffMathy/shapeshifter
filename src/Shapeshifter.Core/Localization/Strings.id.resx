@@ -422,4 +422,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Mendekode Base64 ini dan menempelkan teks di dalamnya.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Tempel dengan URL didekode</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Menempelkan teks ini dengan kode % diubah kembali menjadi karakter.</value>
+  </data>
 </root>

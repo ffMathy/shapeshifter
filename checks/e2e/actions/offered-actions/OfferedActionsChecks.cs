@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@777c9eb990a7b9fa
+// ail-derived-from: OfferedActions@3cca2ff6c4fa0382
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -61,6 +61,13 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         await CopyAs("UTF8_STRING", B64($"hello {Unique()}"));
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a text with %-codes also offers Paste URL-decoded", Timeout = 30_000)]
+    public async Task UrlEncodedText()
+    {
+        await CopyAs("UTF8_STRING", $"a%20{Unique()}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]

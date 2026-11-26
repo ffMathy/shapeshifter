@@ -24,6 +24,7 @@ public sealed class ActionCatalog
         new CopyImageFromLinkAction(),
         new OpenLinksAction(),
         new DecodeBase64Action(),
+        new UrlDecodeAction(),
         new TogglePinAction(),
     ]);
 

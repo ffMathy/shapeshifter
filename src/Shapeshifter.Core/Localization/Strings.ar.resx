@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>يفك ترميز Base64 هذا ويلصق النص الذي يحمله.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>لصق بعد فك ترميز URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>يلصق هذا النص بعد تحويل رموز % فيه إلى أحرف.</value>
+  </data>
 </root>

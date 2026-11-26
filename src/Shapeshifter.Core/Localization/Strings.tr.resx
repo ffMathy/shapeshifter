@@ -422,4 +422,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Bu Base64'ü çözer ve içindeki metni yapıştırır.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL kodunu çözerek yapıştır</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Bu metni % kodlarını karakterlere geri çevirerek yapıştırır.</value>
+  </data>
 </root>

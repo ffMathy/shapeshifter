@@ -422,4 +422,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Décode ce Base64 et colle le texte qu'il contient.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Coller en décodant l'URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Colle ce texte en retransformant ses codes % en caractères.</value>
+  </data>
 </root>
