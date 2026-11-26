@@ -1,6 +1,6 @@
-// ail-derived-from: OpenPicker@bce9a81188a5f8ed
+// ail-derived-from: OpenPicker@a486d481867a4478
 // End-to-end check for OpenPicker: where the picker appears, that it leaves the keyboard with the app the user is in,
-// and what happens on a screen too short for it. Seen only through the windows on screen and what they show.
+// and that it fits whole on a 1000 × 1000 screen. Seen only through the windows on screen and what they show.
 using static Shapeshifter.Checks.PickerDriver;
 
 namespace Shapeshifter.Checks;
@@ -85,29 +85,31 @@ public sealed class OpenPickerChecks(TargetAppFixture target) : Scenario, IClass
         Assert.InRange(Math.Abs(shortOne.Y - PlaceFor(tall).Y), 0, 1);
     }
 
-    [Fact(DisplayName = "on a screen too short for the picker, it is shown in turn whole without its preview and cut off with it", Timeout = 180_000)]
-    public async Task OnAShortScreen()
+    [Fact(DisplayName = "on a 1000 × 1000 screen the picker shows whole, with its preview", Timeout = 180_000)]
+    public async Task FitsOnAThousandByAThousandScreen()
     {
-        var desktop = await OwnDesktop.Start(1280, 480, "short-screen");
+        var desktop = await OwnDesktop.Start(1000, 1000, "thousand");
         try
         {
             var d = desktop.Display;
-            await CopyWithXclip("first short line\nsecond short line\nthird short line", null, d);
             var seen = new List<string>();
-            for (var i = 0; i < 4; i++)
+            async Task Look(string what, string preview)
             {
-                var box = await HoldThePickerOpen(d);
-                var text = Squash(ReadText(ShootPicker(box, d)));
-                await CancelThePicker(d);
-                var preview = text.Contains("51 characters", StringComparison.Ordinal);
-                var footer = text.Contains("Esc", StringComparison.Ordinal);
-                if (!preview && footer && box.Height < 480) seen.Add("whole, without its preview");
-                else if (preview && !footer && box.Y + box.Height >= 480) seen.Add("cut off, with its preview");
-                else seen.Add($"neither ({box.Height} high at {box.Y}, preview {preview}, footer {footer})");
+                for (var i = 0; i < 2; i++)
+                {
+                    var box = await HoldThePickerOpen(d);
+                    var text = Squash(ReadTextBothWays(ShootPicker(box, d)));
+                    await CancelThePicker(d);
+                    var onScreen = box.X >= 0 && box.Y >= 0 && box.X + box.Width <= 1000 && box.Y + box.Height <= 1000;
+                    var whole = onScreen && text.Contains(preview, StringComparison.Ordinal) && text.Contains("Esc", StringComparison.Ordinal);
+                    seen.Add(whole ? $"{what}: whole" : $"{what}: not whole ({box.Width} × {box.Height} at {box.X},{box.Y}; read \"{text}\")");
+                }
             }
-            Assert.Contains("whole, without its preview", seen);
-            Assert.Contains("cut off, with its preview", seen);
-            Assert.DoesNotContain(seen, s => s.StartsWith("neither", StringComparison.Ordinal));
+            await CopyWithXclip("first short line\nsecond short line\nthird short line", null, d);
+            await Look("three lines of text", "51 characters");
+            await CopyWithXclip(MakeImage(640, 400), "image/png", d);
+            await Look("a 640 × 400 image", "640");
+            Assert.True(seen.TrueForAll(s => s.EndsWith(": whole", StringComparison.Ordinal)), string.Join("\n", seen));
         }
         finally
         {
