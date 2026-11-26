@@ -479,4 +479,16 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>يفتح رسالة جديدة إلى {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>البحث في الويب</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>يبحث عن هذا النص في {0} داخل متصفحك.</value>
+  </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>نسخ الملف في هذا المسار</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>ينسخ الملف أو المجلد نفسه، جاهزًا للصق في مدير الملفات أو في رسالة.</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-// ail-derived-from: TrayMenu@8b8636bf5f214da9
+// ail-derived-from: TrayMenu@df02e8072817dd37
 // End-to-end check for TrayMenu: its scenarios, played on an X11 desktop with a system tray against the running app.
 // It sees only what a user sees: windows on screen, the text that lands in another app, and what would have opened
 // in the browser or the file manager (see AppDriver.cs for what the desktop needs).
@@ -72,6 +72,29 @@ public sealed partial class TrayMenuChecks(AppFixture target) : Scenario, IClass
         await ChooseFromTrayMenu("Check for updates…");
         Assert.Equal("https://github.com/ffMathy/Shapeshifter/releases", await NextOpened(before));
         Assert.Empty(SettingsWindows());
+    }
+
+    [Fact(DisplayName = "a copy from an app store offers no update check", Timeout = 180_000)]
+    public async Task StoreCopyHasNoUpdateCheck()
+    {
+        // A copy of its own, on a desktop of its own, that acts as an app store's copy (SHAPESHIFTER_STORE_COPY=1).
+        var desktop = await OwnDesktop.Start(1280, 800, "store-copy", new Dictionary<string, string> { ["SHAPESHIFTER_STORE_COPY"] = "1" });
+        var display = Environment.GetEnvironmentVariable("DISPLAY");
+        try
+        {
+            Environment.SetEnvironmentVariable("DISPLAY", desktop.Display);
+            var before = Opened().Length;
+            // Where every other copy has "Check for updates…", a store copy has the item after it: Report a problem….
+            await ChooseFromTrayMenu("Check for updates…");
+            var opened = await NextOpened(before);
+            Assert.NotEqual("https://github.com/ffMathy/Shapeshifter/releases", opened);
+            Assert.StartsWith("https://github.com/ffMathy/Shapeshifter/issues/new", opened, StringComparison.Ordinal);
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("DISPLAY", display);
+            await desktop.Stop();
+        }
     }
 
     [Fact(DisplayName = "Clear history forgets what was copied before", Timeout = 30_000)]

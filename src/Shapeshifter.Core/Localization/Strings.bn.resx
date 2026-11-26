@@ -479,4 +479,16 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>{0}-কে একটি নতুন ইমেল খোলে।</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>ওয়েবে খুঁজুন</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>আপনার ব্রাউজারে {0}-এ এই লেখাটি খোঁজে।</value>
+  </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>এই পাথের ফাইল কপি করুন</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>ফাইল বা ফোল্ডারটি নিজেই কপি করে, ফাইল ম্যানেজার বা ইমেলে পেস্ট করার জন্য।</value>
+  </data>
 </root>

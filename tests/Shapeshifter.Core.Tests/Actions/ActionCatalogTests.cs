@@ -8,7 +8,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-color-hex", "paste-color-rgb", "paste-color-hsl", "paste-as-date", "paste-as-unix-time", "paste-result", "paste-as-zip", "copy-image-from-link", "open-links", "write-email", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-color-hex", "paste-color-rgb", "paste-color-hsl", "paste-as-date", "paste-as-unix-time", "paste-result", "paste-as-zip", "copy-image-from-link", "copy-file-at-path", "open-links", "write-email", "search-web", "toggle-pin",
     ];
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class ActionCatalogTests
         var catalog = ActionCatalog.CreateDefault();
 
         Assert.Equal(DefaultOrder, catalog.All.Select(action => action.Id));
-        Assert.Equal([0, 10, 20, 22, 24, 30, 35, 40, 42, 44, 46, 47, 48, 49, 50, 52, 75, 100, 200, 210, 255], catalog.All.Select(action => action.Order));
+        Assert.Equal([0, 10, 20, 22, 24, 30, 35, 40, 42, 44, 46, 47, 48, 49, 50, 52, 75, 100, 110, 200, 210, 220, 255], catalog.All.Select(action => action.Order));
     }
 
     [Fact]
@@ -81,10 +81,10 @@ public sealed class ActionCatalogTests
 
     public static readonly TheoryData<string, string[]> DefaultAvailability = new()
     {
-        { "plain", ["paste", "paste-as-file", "upload-text", "toggle-pin"] },
+        { "plain", ["paste", "paste-as-file", "upload-text", "search-web", "toggle-pin"] },
         { "whitespace", ["paste", "paste-as-file", "toggle-pin"] },
-        { "padded", ["paste", "paste-as-file", "paste-trimmed", "upload-text", "toggle-pin"] },
-        { "text+html", ["paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "upload-text", "toggle-pin"] },
+        { "padded", ["paste", "paste-as-file", "paste-trimmed", "upload-text", "search-web", "toggle-pin"] },
+        { "text+html", ["paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "upload-text", "search-web", "toggle-pin"] },
         { "html-only", ["paste", "paste-plain-text", "paste-as-markdown", "toggle-pin"] },
         { "empty-text+html", ["paste", "paste-plain-text", "paste-as-markdown", "toggle-pin"] },
         { "rtf-only", ["paste", "toggle-pin"] },  // RTF without text has no plain text to offer
@@ -94,17 +94,17 @@ public sealed class ActionCatalogTests
         { "file+html", ["paste", "paste-as-zip", "toggle-pin"] },
         { "other", ["paste", "toggle-pin"] },
         { "empty", ["paste", "toggle-pin"] },
-        { "link", ["paste", "paste-as-file", "upload-text", "open-links", "toggle-pin"] },
-        { "image-link", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
-        { "text+image", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
-        { "base64", ["paste", "paste-as-file", "upload-text", "decode-base64", "toggle-pin"] },
-        { "url-encoded", ["paste", "paste-as-file", "upload-text", "url-decode", "toggle-pin"] },
-        { "json", ["paste", "paste-as-file", "upload-text", "reformat-json", "toggle-pin"] },
-        { "color-hex", ["paste", "paste-as-file", "upload-text", "paste-color-rgb", "paste-color-hsl", "toggle-pin"] },
-        { "unix-time", ["paste", "paste-as-file", "upload-text", "paste-as-date", "toggle-pin"] },
-        { "iso-date", ["paste", "paste-as-file", "upload-text", "paste-as-unix-time", "toggle-pin"] },
-        { "sum", ["paste", "paste-as-file", "upload-text", "paste-result", "toggle-pin"] },
-        { "email", ["paste", "paste-as-file", "upload-text", "write-email", "toggle-pin"] },
+        { "link", ["paste", "paste-as-file", "upload-text", "open-links", "search-web", "toggle-pin"] },
+        { "image-link", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "search-web", "toggle-pin"] },
+        { "text+image", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "search-web", "toggle-pin"] },
+        { "base64", ["paste", "paste-as-file", "upload-text", "decode-base64", "search-web", "toggle-pin"] },
+        { "url-encoded", ["paste", "paste-as-file", "upload-text", "url-decode", "search-web", "toggle-pin"] },
+        { "json", ["paste", "paste-as-file", "upload-text", "reformat-json", "search-web", "toggle-pin"] },
+        { "color-hex", ["paste", "paste-as-file", "upload-text", "paste-color-rgb", "paste-color-hsl", "search-web", "toggle-pin"] },
+        { "unix-time", ["paste", "paste-as-file", "upload-text", "paste-as-date", "search-web", "toggle-pin"] },
+        { "iso-date", ["paste", "paste-as-file", "upload-text", "paste-as-unix-time", "search-web", "toggle-pin"] },
+        { "sum", ["paste", "paste-as-file", "upload-text", "paste-result", "search-web", "toggle-pin"] },
+        { "email", ["paste", "paste-as-file", "upload-text", "write-email", "search-web", "toggle-pin"] },
     };
 
     [Theory]
@@ -140,7 +140,7 @@ public sealed class ActionCatalogTests
         IClipboardAction[] actions =
         [
             new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
-            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new WriteEmailAction(), new PasteResultAction(), new PasteAsUnixTimeAction(), new PasteAsDateAction(), new PasteAsHslColorAction(), new PasteAsRgbColorAction(), new PasteAsHexColorAction(), new PasteAsMarkdownAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
+            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new CopyFileAtPathAction(), new SearchWebAction(), new WriteEmailAction(), new PasteResultAction(), new PasteAsUnixTimeAction(), new PasteAsDateAction(), new PasteAsHslColorAction(), new PasteAsRgbColorAction(), new PasteAsHexColorAction(), new PasteAsMarkdownAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
         ];
 
         Assert.All(actions, action => Assert.Throws<ArgumentNullException>(() => action.CanExecute(null!)));

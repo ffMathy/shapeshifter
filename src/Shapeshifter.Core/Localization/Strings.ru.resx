@@ -479,4 +479,16 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Открывает новое письмо для {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Искать в интернете</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Ищет этот текст в {0} в браузере.</value>
+  </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Копировать файл по этому пути</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Копирует сам файл или папку, чтобы вставить в файловый менеджер или письмо.</value>
+  </data>
 </root>

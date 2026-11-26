@@ -479,4 +479,16 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>เปิดอีเมลใหม่ถึง {0}</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>ค้นหาบนเว็บ</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>ค้นหาข้อความนี้ใน {0} บนเบราว์เซอร์</value>
+  </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>คัดลอกไฟล์ที่เส้นทางนี้</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>คัดลอกไฟล์หรือโฟลเดอร์นั้นเอง พร้อมวางในตัวจัดการไฟล์หรืออีเมล</value>
+  </data>
 </root>

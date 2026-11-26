@@ -34,6 +34,11 @@ node TrayMenu : flow   level: experience
       When the user chooses "Check for updates…"
       Then the browser opens the project's releases page
       And the settings window does not open
+    Scenario: a copy from an app store offers no update check
+      Given Shapeshifter was installed from the Microsoft Store
+      When the user opens the tray menu
+      Then there is no "Check for updates…" item
+      And the other items are as in any copy
     Scenario: Clear history forgets what was copied before
       Given "older" and then "latest" were copied
       When the user chooses "Clear history"
@@ -54,6 +59,9 @@ node TrayMenu : flow   level: experience
       because pinning is how people keep something on purpose (#205, #459)
     decide on Linux the icon is dark on a light panel and light on a dark one, and GNOME and Pantheon count as dark
       because their top bar stays dark in light mode too (commit 3863433)
+    decide a copy from an app store leaves "Check for updates…" out of the menu
+      because the store updates that copy, and the item could only open the GitHub releases page
+      rejected opening the store's page instead, because the store already shows and installs updates by itself
     decide Shapeshifter keeps working without an icon on desktops that have no tray
       because the gesture does not need the tray
   copy
@@ -68,6 +76,7 @@ node TrayMenu : flow   level: experience
   look
     menu        the platform's own menu, in this order: Settings…, Open log folder, Clear history, Check for
                 updates…, a separator, Report a problem…, About Shapeshifter, a separator, Quit Shapeshifter
+                (a copy from an app store has no "Check for updates…")
     icon        a clipboard; on Linux a symbolic glyph in the panel's tone, on a Mac a template image in the menu bar
   uses      ProblemReport, ChangeSettings
   children  ProblemReport

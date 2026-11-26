@@ -36,31 +36,33 @@ node ActionCatalog : fn   level: system
               paste-result           52     Text kind whose text is a calculation of numbers, + - * / % ^ and parentheses (PasteResult)
               paste-as-zip           75     File or FileCollection kind
               copy-image-from-link   100    Text kind whose text holds a link to an image
+              copy-file-at-path      110    Text kind whose text is the absolute path of an existing local file or folder (FilePath)
               open-links             200    Text kind whose text holds at least one link; opens at most 10
               write-email            210    Text kind whose text is one e-mail address, maybe after mailto: (WriteEmail)
+              search-web             220    Text kind whose text is one line of at most 200 characters with a letter or digit, and not a link on its own (SearchWeb)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, open-links, write-email, toggle-pin]
-      GetAvailable(text "hello") => [paste, paste-as-file, upload-text, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, toggle-pin]
+      GetAvailable(text "hello") => [paste, paste-as-file, upload-text, search-web, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
-      GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, toggle-pin]
-      GetAvailable(text "x" + raw "text/html") => [paste, paste-as-file, paste-plain-text, upload-text, toggle-pin]
+      GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, search-web, toggle-pin]
+      GetAvailable(text "x" + raw "text/html") => [paste, paste-as-file, paste-plain-text, upload-text, search-web, toggle-pin]
       GetAvailable(raw "text/html" only, no plain text) => [paste, paste-plain-text, toggle-pin]
       GetAvailable(raw "Rich Text Format" only, no plain text) => [paste, toggle-pin]
       GetAvailable(PNG image) => [paste, paste-as-file, upload-image, toggle-pin]
       GetAvailable(image + one temporary image file, as Firefox copies) => [paste, paste-as-file, upload-image, toggle-pin]
-      GetAvailable(text "chart" + image, as office suites copy) => [paste, paste-as-file, upload-text, toggle-pin]; paste-as-file and upload-text use the text
+      GetAvailable(text "chart" + image, as office suites copy) => [paste, paste-as-file, upload-text, search-web, toggle-pin]; paste-as-file and upload-text use the text
       GetAvailable(files ["/a/x.txt"]) => [paste, paste-as-zip, toggle-pin]
       GetAvailable(raw "application/x-weird" only) => [paste, toggle-pin]
-      GetAvailable(text "see https://example.com/a.png and https://example.org") => [paste, paste-as-file, upload-text, copy-image-from-link, open-links, toggle-pin]
-      GetAvailable(text "aGVsbG8gd29ybGQ=") => [paste, paste-as-file, upload-text, decode-base64, toggle-pin]
-      GetAvailable(text "a%20b") => [paste, paste-as-file, upload-text, url-decode, toggle-pin]
-      GetAvailable(text "{\"a\":1}") => [paste, paste-as-file, upload-text, reformat-json, toggle-pin]
-      GetAvailable(text "#3584e4") => [paste, paste-as-file, upload-text, paste-color-rgb, paste-color-hsl, toggle-pin]
-      GetAvailable(text "1795703400") => [paste, paste-as-file, upload-text, paste-as-date, toggle-pin]
-      GetAvailable(text "2026-11-26T14:30:00Z") => [paste, paste-as-file, upload-text, paste-as-unix-time, toggle-pin]
-      GetAvailable(text "12*7+3") => [paste, paste-as-file, upload-text, paste-result, toggle-pin]
-      GetAvailable(text "anna@example.com") => [paste, paste-as-file, upload-text, write-email, toggle-pin]
+      GetAvailable(text "see https://example.com/a.png and https://example.org") => [paste, paste-as-file, upload-text, copy-image-from-link, open-links, search-web, toggle-pin]
+      GetAvailable(text "aGVsbG8gd29ybGQ=") => [paste, paste-as-file, upload-text, decode-base64, search-web, toggle-pin]
+      GetAvailable(text "a%20b") => [paste, paste-as-file, upload-text, url-decode, search-web, toggle-pin]
+      GetAvailable(text "{\"a\":1}") => [paste, paste-as-file, upload-text, reformat-json, search-web, toggle-pin]
+      GetAvailable(text "#3584e4") => [paste, paste-as-file, upload-text, paste-color-rgb, paste-color-hsl, search-web, toggle-pin]
+      GetAvailable(text "1795703400") => [paste, paste-as-file, upload-text, paste-as-date, search-web, toggle-pin]
+      GetAvailable(text "2026-11-26T14:30:00Z") => [paste, paste-as-file, upload-text, paste-as-unix-time, search-web, toggle-pin]
+      GetAvailable(text "12*7+3") => [paste, paste-as-file, upload-text, paste-result, search-web, toggle-pin]
+      GetAvailable(text "anna@example.com") => [paste, paste-as-file, upload-text, write-email, search-web, toggle-pin]
       open-links.GetTitle(text "https://example.org") => "Open link";  with two links => "Open links"
       paste-as-file.GetDescription(JPEG image) => "Saves this image to a .jpg file and pastes the file."
       paste: ExecuteAsync(item) => WriteAndPasteAsync(item.Snapshot), then History.MoveToTop(item.Id) (no move for a pinned item)

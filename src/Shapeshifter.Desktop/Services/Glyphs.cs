@@ -103,6 +103,8 @@ public static class Glyphs
             "paste-as-unix-time" => Clock,
             "paste-result" => Calculator,
             "write-email" => Mail,
+            "search-web" => Search,
+            "copy-file-at-path" => File,
             _ => Clipboard,
         };
     }

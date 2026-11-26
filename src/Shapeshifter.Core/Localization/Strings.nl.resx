@@ -479,4 +479,16 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Opent een nieuwe e-mail aan {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Op het web zoeken</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Zoekt deze tekst op {0} in je browser.</value>
+  </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Bestand op dit pad kopiëren</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Kopieert het bestand of de map zelf, klaar om te plakken in een bestandsbeheerder of e-mail.</value>
+  </data>
 </root>

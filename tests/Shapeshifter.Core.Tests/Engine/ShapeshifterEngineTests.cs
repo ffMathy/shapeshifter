@@ -10,7 +10,7 @@ namespace Shapeshifter.Core.Tests.Engine;
 
 public sealed class ShapeshifterEngineTests : IAsyncLifetime
 {
-    private static readonly string[] DefaultTextActions = ["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"];
+    private static readonly string[] DefaultTextActions = ["Paste", "Paste as file", "Upload and paste link", "Search the web", "Pin to clipboard"];
 
     private EngineHarness h = new();
 
@@ -220,6 +220,7 @@ public sealed class ShapeshifterEngineTests : IAsyncLifetime
 
         h.Picker.Search(PickerSearchInput.Typed("banana"));
         h.Picker.Search(new PickerSearchInput(PickerSearchKey.Right));
+        h.Picker.Search(new PickerSearchInput(PickerSearchKey.Down));
         h.Picker.Search(new PickerSearchInput(PickerSearchKey.Down));
         h.Picker.Search(new PickerSearchInput(PickerSearchKey.Down));
         h.Picker.Search(new PickerSearchInput(PickerSearchKey.Down));
@@ -695,7 +696,7 @@ public sealed class ShapeshifterEngineTests : IAsyncLifetime
         var shown = h.Picker.Calls[0].State!;
         Assert.Equal(1, shown.SelectedIndex);
         Assert.Equal("see https://example.com/page", shown.Items[1].Snapshot.Text);
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Open link", "Pin to clipboard"], shown.Actions.Select(action => action.Title));
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Open link", "Search the web", "Pin to clipboard"], shown.Actions.Select(action => action.Title));
     }
 
     [Fact]
@@ -799,7 +800,7 @@ public sealed class ShapeshifterEngineTests : IAsyncLifetime
 
         var shown = h.Picker.Calls[0].State!;
         Assert.Equal(0, shown.SelectedIndex);
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Unpin from clipboard"], shown.Actions.Select(action => action.Title));
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Search the web", "Unpin from clipboard"], shown.Actions.Select(action => action.Title));
         Assert.Equal(new PerformAction(pinned.Id, 0), effects[2]);
         Assert.Same(pinned.Snapshot, Assert.Single(h.Backend.Written));
         Assert.Equal(["pinned", "a"], Texts(h.History.Items));

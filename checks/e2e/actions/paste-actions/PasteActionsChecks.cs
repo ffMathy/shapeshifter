@@ -1,4 +1,4 @@
-// ail-derived-from: PasteActions@0173c4946ad9a750
+// ail-derived-from: PasteActions@dd5da39c2cfb3f8d
 // End-to-end check for PasteActions: Paste, Paste as plain text and Paste as file, seen through what arrives in
 // another app, the clipboard (xclip) and the files the user is handed.
 using System.Text;

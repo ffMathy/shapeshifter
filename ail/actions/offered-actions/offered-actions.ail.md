@@ -9,48 +9,52 @@ node OfferedActions : flow   level: experience
         reads while holding keys; the list must be short and its order fixed,
         so the keys to reach an action can be learnt (#62).   <- Actions
   what
-    Scenario: plain text offers Paste, Paste as file, Upload and paste link, and Pin
+    Scenario: plain text offers Paste, Paste as file, Upload and paste link, Search the web, and Pin
       Given a plain text was copied
       When the user holds Ctrl+V until the picker appears and taps Right
-      Then the actions are "Paste", "Paste as file", "Upload and paste link", "Pin to clipboard", in that order
+      Then the actions are "Paste", "Paste as file", "Upload and paste link", "Search the web", "Pin to clipboard", in that order
     Scenario: formatted text also offers Paste as plain text and Paste as Markdown
       Given a text with formatting (bold, from a web page) was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Search the web", "Pin to clipboard"
     Scenario: text with spaces or blank lines around it also offers Paste trimmed
       Given the text "  padded \n" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Search the web", "Pin to clipboard"
     Scenario: Base64 of a readable text also offers Paste decoded Base64
       Given the Base64 of a readable text, such as "aGVsbG8gd29ybGQ=", was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Search the web", "Pin to clipboard"
     Scenario: a text with %-codes also offers Paste URL-decoded
       Given the text "a%20b" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Search the web", "Pin to clipboard"
     Scenario: JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON
       Given the text "{\"a\":1}" was copied, and then the same JSON spread over three lines
       When the user opens the actions of each
-      Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Pin to clipboard"
+      Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Search the web", "Pin to clipboard"
       And the second's are "Paste", "Paste as file", "Upload and paste link", "Paste minified JSON", "Pin to clipboard"
     Scenario: a colour also offers it in the other notations
       Given the text "#3584e4" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste as RGB colour", "Paste as HSL colour", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste as RGB colour", "Paste as HSL colour", "Search the web", "Pin to clipboard"
     Scenario: a Unix time also offers Paste as date and time, and a date and time Paste as Unix time
       Given the text "1795703400" was copied, and then "2026-11-26T14:30:00Z"
       When the user opens the actions of each
-      Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste as date and time", "Pin to clipboard"
-      And the second's are "Paste", "Paste as file", "Upload and paste link", "Paste as Unix time", "Pin to clipboard"
+      Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste as date and time", "Search the web", "Pin to clipboard"
+      And the second's are "Paste", "Paste as file", "Upload and paste link", "Paste as Unix time", "Search the web", "Pin to clipboard"
     Scenario: a calculation also offers Paste result
       Given the text "12*7+3" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste result", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste result", "Search the web", "Pin to clipboard"
     Scenario: an e-mail address also offers Write email
       Given the text "anna@example.com" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Write email", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Write email", "Search the web", "Pin to clipboard"
+    Scenario: the path of an existing file also offers Copy file at this path
+      Given the path of an existing file, such as "/home/anna/report.txt", was copied as text
+      When the user opens its actions
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Copy file at this path", "Search the web", "Pin to clipboard"
     Scenario: an image offers Paste, Paste as file, Upload and paste link, and Pin
       Given an image was copied
       When the user opens its actions
@@ -70,9 +74,9 @@ node OfferedActions : flow   level: experience
     Scenario: text with links also offers the link actions
       Given the text "see https://example.com/a.png and https://example.org" was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Search the web", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as hex colour, Paste as RGB colour, Paste as HSL colour, Paste as date and time, Paste as Unix time, Paste result, Paste as compressed file, Copy image from link, Open link or Open links, Write email, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as hex colour, Paste as RGB colour, Paste as HSL colour, Paste as date and time, Paste as Unix time, Paste result, Paste as compressed file, Copy image from link, Copy file at this path, Open link or Open links, Write email, Search the web, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -105,6 +109,8 @@ node OfferedActions : flow   level: experience
     action.unixTime         "Paste as Unix time"             "Pastes {0}."
     action.result           "Paste result"                   "Calculates this and pastes {0}."
     action.email            "Write email"                    "Opens a new email to {0}."
+    action.search           "Search the web"                 "Searches {0} for this text in your browser."
+    action.copyFileAtPath   "Copy file at this path"         "Copies the file or folder itself, ready to paste in a file manager or an email."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

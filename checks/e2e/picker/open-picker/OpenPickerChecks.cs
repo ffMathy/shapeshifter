@@ -41,8 +41,8 @@ public sealed class OpenPickerChecks(TargetAppFixture target) : Scenario, IClass
         await CancelThePicker();
         var place = PlaceFor(box);
         Assert.InRange(Math.Abs(box.X - place.X), 0, 1);
-        var area = WorkArea();
-        Assert.InRange(Math.Abs(box.Y - (area.Y + (int)Math.Floor(area.Height * 0.16))), 0, 1);
+        // 16 % down, or higher when the picker is too tall to fit there (as for text with many actions on a short screen).
+        Assert.InRange(Math.Abs(box.Y - place.Y), 0, 1);
     }
 
     [Fact(DisplayName = "the picker never takes the keyboard focus", Timeout = 30_000)]
