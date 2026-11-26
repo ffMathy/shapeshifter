@@ -473,4 +473,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Oblicza to i wkleja {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Napisz e-mail</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Otwiera nowy e-mail do {0}.</value>
+  </data>
 </root>

@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>계산하여 {0}을(를) 붙여넣습니다.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>이메일 쓰기</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>{0}에게 보낼 새 이메일을 엽니다.</value>
+  </data>
 </root>

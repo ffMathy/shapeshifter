@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>計算して {0} を貼り付けます。</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>メールを作成</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>{0} 宛ての新しいメールを開きます。</value>
+  </data>
 </root>

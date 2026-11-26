@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>คำนวณและวาง {0}</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>เขียนอีเมล</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>เปิดอีเมลใหม่ถึง {0}</value>
+  </data>
 </root>

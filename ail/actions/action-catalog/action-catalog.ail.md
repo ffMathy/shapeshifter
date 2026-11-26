@@ -37,9 +37,10 @@ node ActionCatalog : fn   level: system
               paste-as-zip           75     File or FileCollection kind
               copy-image-from-link   100    Text kind whose text holds a link to an image
               open-links             200    Text kind whose text holds at least one link; opens at most 10
+              write-email            210    Text kind whose text is one e-mail address, maybe after mailto: (WriteEmail)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-as-zip, copy-image-from-link, open-links, write-email, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, toggle-pin]
@@ -59,6 +60,7 @@ node ActionCatalog : fn   level: system
       GetAvailable(text "1795703400") => [paste, paste-as-file, upload-text, paste-as-date, toggle-pin]
       GetAvailable(text "2026-11-26T14:30:00Z") => [paste, paste-as-file, upload-text, paste-as-unix-time, toggle-pin]
       GetAvailable(text "12*7+3") => [paste, paste-as-file, upload-text, paste-result, toggle-pin]
+      GetAvailable(text "anna@example.com") => [paste, paste-as-file, upload-text, write-email, toggle-pin]
       open-links.GetTitle(text "https://example.org") => "Open link";  with two links => "Open links"
       paste-as-file.GetDescription(JPEG image) => "Saves this image to a .jpg file and pastes the file."
       paste: ExecuteAsync(item) => WriteAndPasteAsync(item.Snapshot), then History.MoveToTop(item.Id) (no move for a pinned item)

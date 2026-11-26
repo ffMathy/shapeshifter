@@ -38,6 +38,10 @@
       "file": "a-calculation-also-offers-paste-result.png"
     },
     {
+      "test": "an e-mail address also offers Write email",
+      "file": "an-e-mail-address-also-offers-write-email.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

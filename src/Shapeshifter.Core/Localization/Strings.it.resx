@@ -473,4 +473,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Lo calcola e incolla {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Scrivi email</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Apre una nuova email a {0}.</value>
+  </data>
 </root>

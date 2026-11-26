@@ -473,4 +473,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Regner det ud og indsætter {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Skriv e-mail</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Åbner en ny e-mail til {0}.</value>
+  </data>
 </root>

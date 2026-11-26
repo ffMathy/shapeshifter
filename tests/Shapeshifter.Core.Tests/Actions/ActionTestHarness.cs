@@ -193,7 +193,7 @@ internal static class Items
     public static readonly TheoryData<string> AllKinds =
     [
         "plain", "whitespace", "padded", "text+html", "html-only", "empty-text+html", "rtf-only", "image", "file", "files", "other",
-        "base64", "url-encoded", "json", "color-hex", "unix-time", "iso-date", "sum", "empty", "link", "image-link", "text+image", "file+html",
+        "base64", "url-encoded", "json", "color-hex", "unix-time", "iso-date", "sum", "email", "empty", "link", "image-link", "text+image", "file+html",
     ];
 
     public static byte[] Utf8(string value) => Encoding.UTF8.GetBytes(value);
@@ -226,6 +226,7 @@ internal static class Items
         "unix-time" => new() { Text = "1795703400" },
         "iso-date" => new() { Text = "2026-11-26T14:30:00Z" },
         "sum" => new() { Text = "12*7+3" },
+        "email" => new() { Text = "anna@example.com" },
         "empty" => ClipboardSnapshot.Empty,
         "link" => new() { Text = "see https://example.com/page" },
         "image-link" => new() { Text = "see https://example.com/pic.png" },

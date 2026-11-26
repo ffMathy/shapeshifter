@@ -473,4 +473,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Rekent het uit en plakt {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>E-mail schrijven</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Opent een nieuwe e-mail aan {0}.</value>
+  </data>
 </root>

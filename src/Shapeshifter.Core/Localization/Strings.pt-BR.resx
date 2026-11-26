@@ -473,4 +473,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Calcula e cola {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Escrever e-mail</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Abre um novo e-mail para {0}.</value>
+  </data>
 </root>

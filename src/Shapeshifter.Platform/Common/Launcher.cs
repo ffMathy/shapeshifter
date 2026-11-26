@@ -10,9 +10,9 @@ public sealed class Launcher(ILogger logger) : ILauncher
     public void OpenUrl(Uri uri)
     {
         ArgumentNullException.ThrowIfNull(uri);
-        if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps)
+        if (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps && uri.Scheme != Uri.UriSchemeMailto)
         {
-            throw new ArgumentException("Only web links can be opened.", nameof(uri));
+            throw new ArgumentException("Only web and e-mail links can be opened.", nameof(uri));
         }
 
         Open(uri.AbsoluteUri);
