@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Mở thư mục chứa đường dẫn này và chọn sẵn mục đó.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Dán đường dẫn</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Dán các đường dẫn</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Dán vị trí của tệp này dưới dạng văn bản.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Dán vị trí của các tệp này dưới dạng văn bản, mỗi dòng một tệp.</value>
+  </data>
 </root>

@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Открывает папку с этим путём и выделяет его.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Вставить путь</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Вставить пути</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Вставляет расположение этого файла текстом.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Вставляет расположение этих файлов текстом, по одному в строке.</value>
+  </data>
 </root>

@@ -497,4 +497,16 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Åbner mappen, stien ligger i, med den markeret.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Indsæt sti</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Indsæt stier</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Indsætter, hvor filen ligger, som tekst.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Indsætter, hvor filerne ligger, som tekst, én pr. linje.</value>
+  </data>
 </root>

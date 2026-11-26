@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>वह फ़ोल्डर खोलता है जिसमें यह पाथ है, उसे चुना हुआ रखकर।</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>पाथ चिपकाएँ</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>पाथ चिपकाएँ</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>यह फ़ाइल कहाँ है, उसे टेक्स्ट के रूप में चिपकाता है।</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>ये फ़ाइलें कहाँ हैं, उसे टेक्स्ट के रूप में, हर पंक्ति में एक, चिपकाता है।</value>
+  </data>
 </root>

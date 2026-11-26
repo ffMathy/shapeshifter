@@ -497,4 +497,16 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Membuka folder tempat jalur ini berada, dengan item itu dipilih.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Tempel jalur</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Tempel jalur-jalur</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Menempelkan lokasi file ini sebagai teks.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Menempelkan lokasi file-file ini sebagai teks, satu per baris.</value>
+  </data>
 </root>

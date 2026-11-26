@@ -497,4 +497,16 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Abre la carpeta de esta ruta, con ella seleccionada.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Pegar ruta</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Pegar rutas</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Pega como texto dónde está este archivo.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Pega como texto dónde están estos archivos, uno por línea.</value>
+  </data>
 </root>

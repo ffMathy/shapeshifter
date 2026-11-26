@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>이 경로가 있는 폴더를 열고 해당 항목을 선택합니다.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>경로 붙여넣기</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>경로들 붙여넣기</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>이 파일의 위치를 텍스트로 붙여넣습니다.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>이 파일들의 위치를 한 줄에 하나씩 텍스트로 붙여넣습니다.</value>
+  </data>
 </root>

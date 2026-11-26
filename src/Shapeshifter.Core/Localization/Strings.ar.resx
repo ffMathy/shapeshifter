@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>يفتح المجلد الذي يقع فيه هذا المسار مع تحديده.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>لصق المسار</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>لصق المسارات</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>يلصق موقع هذا الملف كنص.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>يلصق مواقع هذه الملفات كنص، واحدًا في كل سطر.</value>
+  </data>
 </root>

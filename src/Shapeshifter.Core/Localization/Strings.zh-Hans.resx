@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>打开此路径所在的文件夹并选中它。</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>粘贴路径</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>粘贴路径</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>以文本形式粘贴此文件的位置。</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>以文本形式粘贴这些文件的位置，每行一个。</value>
+  </data>
 </root>

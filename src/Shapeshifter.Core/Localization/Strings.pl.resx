@@ -497,4 +497,16 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Otwiera folder z tą ścieżką i zaznacza ją.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Wklej ścieżkę</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Wklej ścieżki</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Wkleja lokalizację tego pliku jako tekst.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Wkleja lokalizacje tych plików jako tekst, po jednej w wierszu.</value>
+  </data>
 </root>
