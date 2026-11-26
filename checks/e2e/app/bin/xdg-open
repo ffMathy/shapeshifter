@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Stands in for the browser and the file manager in the AIL end-to-end checks (checks/e2e/app/AppDriver.cs): instead of
+# opening a link or a folder, it writes it as one line to .ail/browser/<display>.txt, where the checks read it.
+# scripts/ail/run-legacy.sh puts this folder first on Shapeshifter's PATH.
+set -euo pipefail
+root="$(cd "$(dirname "$0")/../../../.." && pwd)"
+display="${DISPLAY:-none}"
+mkdir -p "$root/.ail/browser"
+printf '%s\n' "$1" >> "$root/.ail/browser/${display//[^A-Za-z0-9]/}.txt"

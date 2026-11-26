@@ -3,6 +3,8 @@
 !/build/signing.pfx
 
 bin/
+# The stand-in for the browser in the AIL end-to-end checks is source, not build output.
+!/checks/e2e/app/bin/
 obj/
 artifacts/
 TestResults/
