@@ -497,4 +497,16 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Ouvre le dossier de ce chemin, avec l'élément sélectionné.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Coller le chemin</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Coller les chemins</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Colle l'emplacement de ce fichier sous forme de texte.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Colle l'emplacement de ces fichiers sous forme de texte, un par ligne.</value>
+  </data>
 </root>

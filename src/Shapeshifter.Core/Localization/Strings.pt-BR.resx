@@ -497,4 +497,16 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Abre a pasta deste caminho, com o item selecionado.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Colar caminho</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Colar caminhos</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Cola como texto onde este arquivo está.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Cola como texto onde estes arquivos estão, um por linha.</value>
+  </data>
 </root>

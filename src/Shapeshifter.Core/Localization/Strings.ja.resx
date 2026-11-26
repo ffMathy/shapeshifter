@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>このパスがあるフォルダーを、選択した状態で開きます。</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>パスを貼り付け</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>パスを貼り付け</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>このファイルの場所をテキストとして貼り付けます。</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>これらのファイルの場所を 1 行に 1 つずつテキストとして貼り付けます。</value>
+  </data>
 </root>

@@ -497,4 +497,16 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Apre la cartella di questo percorso, con l'elemento selezionato.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Incolla percorso</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Incolla percorsi</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Incolla come testo la posizione di questo file.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Incolla come testo la posizione di questi file, uno per riga.</value>
+  </data>
 </root>

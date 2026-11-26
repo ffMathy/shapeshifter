@@ -1,0 +1,69 @@
+{
+  "node": "OfferedActions",
+  "shots": [
+    {
+      "test": "plain text offers Paste, Paste as file, Upload and paste link, Search the web, and Pin",
+      "file": "plain-text-offers-paste-paste-as-file-upload-and-paste-link-.png"
+    },
+    {
+      "test": "formatted text also offers Paste as plain text and Paste as Markdown",
+      "file": "formatted-text-also-offers-paste-as-plain-text-and-paste-as-.png"
+    },
+    {
+      "test": "text with spaces or blank lines around it also offers Paste trimmed",
+      "file": "text-with-spaces-or-blank-lines-around-it-also-offers-paste-.png"
+    },
+    {
+      "test": "Base64 of a readable text also offers Paste decoded Base64",
+      "file": "base64-of-a-readable-text-also-offers-paste-decoded-base64.png"
+    },
+    {
+      "test": "a text with %-codes also offers Paste URL-decoded",
+      "file": "a-text-with-codes-also-offers-paste-url-decoded.png"
+    },
+    {
+      "test": "JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON",
+      "file": "json-on-one-line-also-offers-paste-formatted-json-and-json-o.png"
+    },
+    {
+      "test": "a colour also offers it in the other notations",
+      "file": "a-colour-also-offers-it-in-the-other-notations.png"
+    },
+    {
+      "test": "a Unix time also offers Paste as date and time, and a date and time Paste as Unix time",
+      "file": "a-unix-time-also-offers-paste-as-date-and-time-and-a-date-an.png"
+    },
+    {
+      "test": "a calculation also offers Paste result",
+      "file": "a-calculation-also-offers-paste-result.png"
+    },
+    {
+      "test": "an e-mail address also offers Write email",
+      "file": "an-e-mail-address-also-offers-write-email.png"
+    },
+    {
+      "test": "the path of an existing file also offers Copy file at this path and Show in file manager",
+      "file": "the-path-of-an-existing-file-also-offers-copy-file-at-this-p.png"
+    },
+    {
+      "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
+      "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
+    },
+    {
+      "test": "a file offers Paste, Paste path, Paste as compressed file and Pin",
+      "file": "a-file-offers-paste-paste-path-paste-as-compressed-file-and-.png"
+    },
+    {
+      "test": "several files offer the same as one file, with Paste paths",
+      "file": "several-files-offer-the-same-as-one-file-with-paste-paths.png"
+    },
+    {
+      "test": "other data offers only Paste and Pin",
+      "file": "other-data-offers-only-paste-and-pin.png"
+    },
+    {
+      "test": "text with links also offers the link actions",
+      "file": "text-with-links-also-offers-the-link-actions.png"
+    }
+  ]
+}

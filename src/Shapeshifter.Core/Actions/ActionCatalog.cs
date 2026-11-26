@@ -37,6 +37,7 @@ public sealed class ActionCatalog
         new SearchWebAction(),
         new CopyFileAtPathAction(),
         new ShowPathInFileManagerAction(),
+        new PastePathsAction(),
         new TogglePinAction(),
     ]);
 

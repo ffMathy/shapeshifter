@@ -497,4 +497,16 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Opent de map waarin dit pad staat, met het geselecteerd.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Pad plakken</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Paden plakken</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Plakt de locatie van dit bestand als tekst.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Plakt de locaties van deze bestanden als tekst, één per regel.</value>
+  </data>
 </root>

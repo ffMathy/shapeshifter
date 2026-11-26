@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>এই পাথটি যে ফোল্ডারে আছে তা খোলে, এটি বেছে রেখে।</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>পাথ পেস্ট করুন</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>পাথগুলো পেস্ট করুন</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>এই ফাইলটি কোথায় আছে তা লেখা হিসেবে পেস্ট করে।</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>এই ফাইলগুলো কোথায় আছে তা লেখা হিসেবে, প্রতি লাইনে একটি করে পেস্ট করে।</value>
+  </data>
 </root>
