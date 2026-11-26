@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>วางข้อความนี้โดยไม่มีช่องว่างและบรรทัดว่างที่ต้นและท้ายข้อความ</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>วาง Base64 ที่ถอดรหัสแล้ว</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>ถอดรหัส Base64 นี้และวางข้อความที่อยู่ข้างใน</value>
+  </data>
 </root>

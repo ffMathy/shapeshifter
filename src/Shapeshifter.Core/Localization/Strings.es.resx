@@ -416,4 +416,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Pega este texto sin los espacios ni las líneas en blanco del principio y del final.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Pegar Base64 descodificado</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Descodifica este Base64 y pega el texto que contiene.</value>
+  </data>
 </root>

@@ -25,6 +25,9 @@ public static class Glyphs
     /// <summary>Text between two bars, drawn in from both sides: Paste trimmed.</summary>
     public static Geometry Trim { get; } = Geometry.Parse("M2.5,4.5 V15.5 M17.5,4.5 V15.5 M7,10 H13 M5,7.5 L7.5,10 L5,12.5 M15,7.5 L12.5,10 L15,12.5");
 
+    /// <summary>Code brackets around a slash: the decoding actions.</summary>
+    public static Geometry Decode { get; } = Geometry.Parse("M6.5,6 L2.5,10 L6.5,14 M13.5,6 L17.5,10 L13.5,14 M11.5,4.5 L8.5,15.5");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -74,6 +77,7 @@ public static class Glyphs
             "paste-as-file" => PasteAsFile,
             "copy-image-from-link" => Image,
             "open-links" => Link,
+            "decode-base64" => Decode,
             _ => Clipboard,
         };
     }

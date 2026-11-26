@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Вставляє цей текст без пробілів і порожніх рядків на початку та в кінці.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Вставити декодований Base64</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Декодує цей Base64 і вставляє текст із нього.</value>
+  </data>
 </root>

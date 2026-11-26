@@ -193,7 +193,7 @@ internal static class Items
     public static readonly TheoryData<string> AllKinds =
     [
         "plain", "whitespace", "padded", "text+html", "html-only", "empty-text+html", "rtf-only", "image", "file", "files", "other",
-        "empty", "link", "image-link", "text+image", "file+html",
+        "base64", "empty", "link", "image-link", "text+image", "file+html",
     ];
 
     public static byte[] Utf8(string value) => Encoding.UTF8.GetBytes(value);
@@ -219,6 +219,7 @@ internal static class Items
         "file" => new() { Files = ["/tmp/does-not-matter/a.txt"] },
         "files" => new() { Files = ["/tmp/x/a.txt", "/tmp/x/b.txt"] },
         "other" => new() { RawFormats = [new RawClipboardFormat("application/x-custom", [1, 2, 3])] },
+        "base64" => new() { Text = "aGVsbG8gd29ybGQ=" },
         "empty" => ClipboardSnapshot.Empty,
         "link" => new() { Text = "see https://example.com/page" },
         "image-link" => new() { Text = "see https://example.com/pic.png" },

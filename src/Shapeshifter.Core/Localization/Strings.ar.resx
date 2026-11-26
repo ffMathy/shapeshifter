@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>يلصق هذا النص دون المسافات والأسطر الفارغة في بدايته ونهايته.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>لصق Base64 بعد فك ترميزه</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>يفك ترميز Base64 هذا ويلصق النص الذي يحمله.</value>
+  </data>
 </root>

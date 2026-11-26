@@ -14,6 +14,10 @@
       "file": "text-with-spaces-or-blank-lines-around-it-also-offers-paste-.png"
     },
     {
+      "test": "Base64 of a readable text also offers Paste decoded Base64",
+      "file": "base64-of-a-readable-text-also-offers-paste-decoded-base64.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

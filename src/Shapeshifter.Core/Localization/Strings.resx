@@ -550,4 +550,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this text without the spaces and blank lines at its start and end.</value>
     <comment>Action description for 'Paste trimmed'.</comment>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Paste decoded Base64</value>
+    <comment>Action title: decode the copied Base64 string and paste the text it holds. Keep the word Base64.</comment>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Decodes this Base64 and pastes the text it holds.</value>
+    <comment>Action description for 'Paste decoded Base64'.</comment>
+  </data>
 </root>

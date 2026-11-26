@@ -416,4 +416,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Bu metni başındaki ve sonundaki boşluklar ve boş satırlar olmadan yapıştırır.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64'ü çözerek yapıştır</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Bu Base64'ü çözer ve içindeki metni yapıştırır.</value>
+  </data>
 </root>

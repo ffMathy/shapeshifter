@@ -416,4 +416,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Menempelkan teks ini tanpa spasi dan baris kosong di awal dan akhirnya.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Tempel Base64 yang didekode</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Mendekode Base64 ini dan menempelkan teks di dalamnya.</value>
+  </data>
 </root>

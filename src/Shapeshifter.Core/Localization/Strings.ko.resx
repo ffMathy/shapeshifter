@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>이 텍스트를 앞뒤의 공백과 빈 줄 없이 붙여넣습니다.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 디코딩하여 붙여넣기</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>이 Base64를 디코딩하여 담긴 텍스트를 붙여넣습니다.</value>
+  </data>
 </root>

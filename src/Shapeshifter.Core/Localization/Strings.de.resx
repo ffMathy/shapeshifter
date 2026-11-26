@@ -416,4 +416,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Fügt diesen Text ohne Leerzeichen und Leerzeilen am Anfang und Ende ein.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 dekodiert einfügen</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Dekodiert dieses Base64 und fügt den enthaltenen Text ein.</value>
+  </data>
 </root>

@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>粘贴此文本，去掉开头和结尾的空格与空行。</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>解码 Base64 后粘贴</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>解码此 Base64 并粘贴其中的文本。</value>
+  </data>
 </root>
