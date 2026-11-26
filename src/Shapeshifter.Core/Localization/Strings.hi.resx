@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>इस JSON को एक पंक्ति में, बिना खाली जगह के चिपकाता है।</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Markdown के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>शीर्षक, सूचियाँ, लिंक और ज़ोर रखते हुए इस टेक्स्ट को Markdown में चिपकाता है।</value>
+  </data>
 </root>

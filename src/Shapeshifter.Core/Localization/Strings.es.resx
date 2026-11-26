@@ -440,4 +440,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Pega este JSON en una línea, sin espacios.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Pegar como Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Pega este texto como Markdown, con títulos, listas, enlaces y énfasis.</value>
+  </data>
 </root>

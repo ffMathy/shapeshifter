@@ -440,4 +440,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Colle ce JSON sur une ligne, sans espaces.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Coller en Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Colle ce texte en Markdown, avec titres, listes, liens et mises en valeur.</value>
+  </data>
 </root>

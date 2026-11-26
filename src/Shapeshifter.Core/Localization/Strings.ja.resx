@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>この JSON を空白なしの 1 行で貼り付けます。</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Markdown として貼り付け</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>見出し、リスト、リンク、強調を残して Markdown として貼り付けます。</value>
+  </data>
 </root>

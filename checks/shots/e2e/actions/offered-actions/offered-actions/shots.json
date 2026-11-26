@@ -6,8 +6,8 @@
       "file": "plain-text-offers-paste-paste-as-file-upload-and-paste-link-.png"
     },
     {
-      "test": "formatted text also offers Paste as plain text",
-      "file": "formatted-text-also-offers-paste-as-plain-text.png"
+      "test": "formatted text also offers Paste as plain text and Paste as Markdown",
+      "file": "formatted-text-also-offers-paste-as-plain-text-and-paste-as-.png"
     },
     {
       "test": "text with spaces or blank lines around it also offers Paste trimmed",

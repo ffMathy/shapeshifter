@@ -440,4 +440,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Menempelkan JSON ini dalam satu baris, tanpa spasi.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Tempel sebagai Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Menempelkan teks ini sebagai Markdown, dengan judul, daftar, tautan, dan penekanan.</value>
+  </data>
 </root>

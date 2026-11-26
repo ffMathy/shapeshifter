@@ -440,4 +440,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Fügt dieses JSON in einer Zeile ohne Leerzeichen ein.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Als Markdown einfügen</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Fügt diesen Text als Markdown ein, mit Überschriften, Listen, Links und Hervorhebungen.</value>
+  </data>
 </root>

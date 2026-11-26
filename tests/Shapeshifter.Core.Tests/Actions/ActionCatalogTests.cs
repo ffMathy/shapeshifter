@@ -8,7 +8,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
     ];
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class ActionCatalogTests
         var catalog = ActionCatalog.CreateDefault();
 
         Assert.Equal(DefaultOrder, catalog.All.Select(action => action.Id));
-        Assert.Equal([0, 10, 20, 24, 30, 35, 40, 42, 44, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
+        Assert.Equal([0, 10, 20, 22, 24, 30, 35, 40, 42, 44, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
     }
 
     [Fact]
@@ -84,9 +84,9 @@ public sealed class ActionCatalogTests
         { "plain", ["paste", "paste-as-file", "upload-text", "toggle-pin"] },
         { "whitespace", ["paste", "paste-as-file", "toggle-pin"] },
         { "padded", ["paste", "paste-as-file", "paste-trimmed", "upload-text", "toggle-pin"] },
-        { "text+html", ["paste", "paste-as-file", "paste-plain-text", "upload-text", "toggle-pin"] },
-        { "html-only", ["paste", "paste-plain-text", "toggle-pin"] },
-        { "empty-text+html", ["paste", "paste-plain-text", "toggle-pin"] },
+        { "text+html", ["paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "upload-text", "toggle-pin"] },
+        { "html-only", ["paste", "paste-plain-text", "paste-as-markdown", "toggle-pin"] },
+        { "empty-text+html", ["paste", "paste-plain-text", "paste-as-markdown", "toggle-pin"] },
         { "rtf-only", ["paste", "toggle-pin"] },  // RTF without text has no plain text to offer
         { "image", ["paste", "paste-as-file", "upload-image", "toggle-pin"] },
         { "file", ["paste", "paste-as-zip", "toggle-pin"] },
@@ -135,7 +135,7 @@ public sealed class ActionCatalogTests
         IClipboardAction[] actions =
         [
             new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
-            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
+            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new PasteAsMarkdownAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
         ];
 
         Assert.All(actions, action => Assert.Throws<ArgumentNullException>(() => action.CanExecute(null!)));

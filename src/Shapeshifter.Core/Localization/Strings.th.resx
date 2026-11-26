@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>วาง JSON นี้ในบรรทัดเดียวโดยไม่มีช่องว่าง</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>วางเป็น Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>วางข้อความนี้เป็น Markdown โดยคงหัวเรื่อง รายการ ลิงก์ และการเน้นไว้</value>
+  </data>
 </root>

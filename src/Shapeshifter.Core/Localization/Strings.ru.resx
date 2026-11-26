@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Вставляет этот JSON в одну строку без пробелов.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Вставить как Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Вставляет этот текст как Markdown, с заголовками, списками, ссылками и выделением.</value>
+  </data>
 </root>

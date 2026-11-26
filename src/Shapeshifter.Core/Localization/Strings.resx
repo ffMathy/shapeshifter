@@ -582,4 +582,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this JSON on one line, without spaces.</value>
     <comment>Action description for 'Paste minified JSON'.</comment>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Paste as Markdown</value>
+    <comment>Action title: paste the copied formatted text as Markdown (headings, lists, links written with # * [] and so on). Keep the word Markdown.</comment>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Pastes this text as Markdown, keeping headings, lists, links and emphasis.</value>
+    <comment>Action description for 'Paste as Markdown'.</comment>
+  </data>
 </root>

@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>将此 JSON 粘贴为一行，不含空格。</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>以 Markdown 粘贴</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>以 Markdown 粘贴此文本，保留标题、列表、链接和强调。</value>
+  </data>
 </root>
