@@ -19,7 +19,7 @@ node PinItems : flow   level: experience
     Scenario: a pinned item offers Unpin, and unpinning lets it move down again
       Given "sticky" was pinned and "next" was copied after it
       When the user chooses "sticky" and taps Right
-      Then its actions are "Paste", "Paste as file", "Unpin from clipboard"
+      Then its actions are "Paste", "Paste as file", "Upload and paste link", "Unpin from clipboard"
       When the user taps Up and lets go of Ctrl, then copies "newest"
       Then "newest" is listed above "sticky", and tapping 1 pastes "newest"
     Scenario: pinned items come back after a restart, the rest does not

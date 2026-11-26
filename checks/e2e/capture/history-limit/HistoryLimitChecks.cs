@@ -23,7 +23,7 @@ public sealed class HistoryLimitChecks(CaptureAppFixture target) : Scenario, ICl
             // There is no fourth item: 4 does nothing, and the newest is pasted as usual.
             Assert.Equal($"fourth {id}", await PasteFromHistory(App, "4"));
             // The third item is the oldest one kept: "first" was dropped.
-            Assert.Equal($"second {id}", await PasteFromHistory(App, "3"));
+            Assert.Equal($"second {id}", await PasteFromHistoryShowingIt(App, "3"));
         }
         finally
         {
@@ -49,7 +49,7 @@ public sealed class HistoryLimitChecks(CaptureAppFixture target) : Scenario, ICl
             Assert.Equal($"pinned {id}", await PasteFromHistory(App, "Up"));
             // Copying the pinned text again leaves it where it is: no second, unpinned copy appears under it.
             await App.Copy($"pinned {id}");
-            Assert.Equal($"pinned {id}", await PasteFromHistory(App, "Up"));
+            Assert.Equal($"pinned {id}", await PasteFromHistoryShowingIt(App, "Up"));
             Assert.Equal($"newer {id}", await PasteFromHistory(App, "v"));
         }
         finally
