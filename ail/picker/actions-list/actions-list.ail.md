@@ -56,5 +56,5 @@ node ActionsList : view   level: experience
     src/Shapeshifter.Desktop/Views/PickerWindow.axaml, "actionsPane"; src/Shapeshifter.Desktop/ViewModels/PickerViewModel.cs, UpdateActionsHeader
     src/Shapeshifter.Desktop/Styles/Linux.axaml, Windows.axaml, MacOS.axaml, "actions"
     assets/screenshots/actions.PNG
-    tests/Shapeshifter.Desktop.Tests/ActionDescriptionLineTests.cs measures every description in every look and language (Skia, the bundled Inter font)
+    tests/Shapeshifter.Desktop.Tests/ActionDescriptionLineTests.cs measures every description in every language, each look on its own operating system in its own font
 ```

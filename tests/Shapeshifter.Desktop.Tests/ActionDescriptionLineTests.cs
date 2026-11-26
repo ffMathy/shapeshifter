@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Reflection;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 using Serilog.Core;
@@ -16,8 +17,10 @@ namespace Shapeshifter.Desktop.Tests;
 
 /// <summary>
 /// Every action's description must fit on at most 2 lines in the actions pane of every look, in English and in every
-/// translation (ail/picker/actions-list). The picker is laid out with real text shaping (Skia and the bundled Inter
-/// font), and each description is measured without the look's line limit, so a text that would be cut off fails too.
+/// translation (ail/picker/actions-list). The picker is laid out with real text shaping (Skia), and each description is
+/// measured without the look's line limit, so a text that would be cut off fails too. Line breaks depend on the font, so
+/// a look is measured only on its own operating system, in the font it is shown in there (Segoe UI, SF Pro, Adwaita
+/// Sans: scripts/install-adwaita-fonts.sh), as the screenshots are; CI's build job runs on all three.
 /// </summary>
 public sealed class ActionDescriptionLineTests
 {
@@ -42,13 +45,41 @@ public sealed class ActionDescriptionLineTests
 
     public static TheoryData<Look> Looks => [Look.Linux, Look.Windows, Look.MacOS];
 
+    /// <summary>The font each look is shown in, and the family names it must resolve to (as the screenshot generator checks).</summary>
+    private static readonly Dictionary<Look, (string Requested, string[] Accepted)> NativeFonts = new()
+    {
+        [Look.Windows] = ("Segoe UI Variable Text", ["Segoe UI"]),
+        [Look.MacOS] = (".AppleSystemUIFont", ["System Font", ".AppleSystemUIFont", ".SF NS", "SF Pro"]),
+        [Look.Linux] = ("Adwaita Sans", ["Adwaita Sans"]),
+    };
+
+    private static bool IsOwnOperatingSystem(Look look) => look switch
+    {
+        Look.Windows => OperatingSystem.IsWindows(),
+        Look.MacOS => OperatingSystem.IsMacOS(),
+        _ => OperatingSystem.IsLinux(),
+    };
+
     [Theory]
     [MemberData(nameof(Looks))]
     public async Task Every_description_fits_on_two_lines(Look look)
     {
+        if (!IsOwnOperatingSystem(look))
+        {
+            Assert.Skip($"The {look} look is measured on its own operating system, in the font it is shown in there.");
+        }
+
         var tooLong = new List<string>();
         await TestApp.RunAsync(() =>
         {
+            var (requested, accepted) = NativeFonts[look];
+            var resolved = FontManager.Current.TryGetGlyphTypeface(new Typeface(requested), out var glyphTypeface)
+                ? glyphTypeface.FamilyName
+                : "(none)";
+            Assert.True(
+                accepted.Any(name => resolved.StartsWith(name, StringComparison.OrdinalIgnoreCase)),
+                $"The {look} look's font \"{requested}\" is not installed (it resolves to \"{resolved}\"); on Linux, run scripts/install-adwaita-fonts.sh.");
+
             PlatformLook.Apply(Application.Current!, look);
             var previous = CultureInfo.CurrentUICulture;
             try

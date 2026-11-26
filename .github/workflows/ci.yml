@@ -76,6 +76,10 @@ jobs:
       - uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
+      - name: Install Adwaita Sans
+        # The desktop tests measure the Linux look's text in the font it is shown in (ActionDescriptionLineTests).
+        if: matrix.os == 'ubuntu-latest'
+        run: scripts/install-adwaita-fonts.sh
       - name: Build
         run: dotnet build Shapeshifter.slnx -c Release
       - name: Unit tests
