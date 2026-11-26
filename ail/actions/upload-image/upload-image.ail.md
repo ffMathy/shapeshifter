@@ -13,22 +13,18 @@ node UploadImage : fn   level: system
     UploadImageAction is an IClipboardAction with Id "upload-image" and Order 30:
       CanExecute(item) is true when item.Kind is Image and item.Snapshot.Image is not empty
       GetDescription(item) gives "Uploads this image to Catbox and pastes a public link to it."
-    Catbox.UploadAsync(http: HttpClient, data: bytes, fileName: text, mediaType: text) -> later text   — the public link, an absolute web address; UploadText uploads through it too
-    Catbox.Name: text = "Catbox"
-    Catbox.MaxBytes: integer = 200 × 1024 × 1024   — 200 MB
-    Catbox.Endpoint: text = "https://catbox.moe/user/api.php"
-    An upload is a POST to Endpoint, multipart/form-data: reqtype = "fileupload"; fileToUpload = the bytes, named fileName, with mediaType (here the image's media type)
-      the shared HttpClient sends User-Agent "Shapeshifter/<major.minor.patch>"; no account, no key
+    GetTitle(item) gives Strings.ActionUploadImage, "Upload and paste link"
+    GetDescription(item) is Localizer.Format(Strings.ActionUploadImageDescription, Catbox.Name)
+    ExecuteAsync uploads with Catbox.UploadAsync(context.Http, the image, "Image <yyyy-MM-dd HH.mm.ss>.<extension>", ImageFormat.GetMediaType(image)), the time being CapturedAt in local time and the extension ImageFormat.GetExtension(image)
+      then pastes a snapshot holding only the link's text with context.WriteAndPasteAsync, then adds that snapshot with context.History.Add
+      and logs "Uploaded an image to {Service}" with Catbox.Name
     examples
       ExecuteAsync(PNG captured 2026-11-20 13:05:09 local) => uploads "Image 2026-11-20 13.05.09.png" as image/png
       ExecuteAsync(JPEG image) => uploads "Image <time>.jpg" as image/jpeg
       Catbox answers 200 "https://files.catbox.moe/abc123.png" => pastes the text "https://files.catbox.moe/abc123.png", and adds it to the history as its newest item
       ExecuteAsync(the same item again) => no second upload; the link remembered for that item is pasted again
-      Catbox answers 412 "File too large" => HttpRequestException "Catbox refused the upload (412): File too large"; nothing pasted
-      Catbox answers 200 "error: something" => HttpRequestException "Catbox did not return a link: error: something"
-      Catbox answers 200 "http://files.catbox.moe/a.png" => HttpRequestException (only https links are accepted)
-      image of 201 MB => InvalidOperationException "The file is larger than the 200 MB Catbox accepts.", no request sent
-      no answer within 2 minutes => cancelled; nothing pasted
+      CanExecute(text "hello") => false;  CanExecute(empty image) => false
+      Catbox answers 412 "File too large" => HttpRequestException; nothing pasted, nothing added to the history
   how
     decide Catbox
       because it is free, has no ads, and takes anonymous uploads without an account (PR #629)
@@ -43,6 +39,7 @@ node UploadImage : fn   level: system
       because Catbox's anonymous uploads have no owner (PR #629 told users so in its consent dialog); README.md says what is uploaded, under "Nothing you copy leaves your computer"
     decide a failure is logged and nothing is pasted; the user is not told
       because "unknown, confirm with the owner: should a failed upload show a notification?"
+  uses  Catbox, ClipboardAction, ClipboardItem, ActionContext, ImageFormat, Localization
   sources
     GitHub issue #23; PRs #629 "Image actions (paste as file, upload to Catbox)", #641 "Upload images to Catbox without asking for consent first"
     commits 9a08207, 37b802e; README.md, "Good to know"; docs/architecture.md, "Pasting"

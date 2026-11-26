@@ -51,7 +51,7 @@ node Actions : flow   level: experience
   copy
     footer.actions   "Actions"     next to the "←→" key in the picker's footer
   uses      GestureRules
-  children  OfferedActions, PasteActions, PinItems, DeleteItems, ActionCatalog, UploadImage, UploadText
+  children  OfferedActions, PasteActions, PinItems, DeleteItems, ActionCatalog, Catbox, UploadImage, UploadText
   sources
     GitHub issues #6, #23, #24, #258, #573; PRs #629, #634, #644
     commit 1ab814a "Open the actions with the Right arrow, now that they are on the right"

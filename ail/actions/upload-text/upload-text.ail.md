@@ -16,15 +16,17 @@ node UploadText : fn   level: system
       CanExecute(item) is true when item.Kind is Text and item.Snapshot.Text holds something other than whitespace
       GetTitle(item) gives "Upload and paste link", the same title as UploadImage
       GetDescription(item) gives "Uploads this text to Catbox and pastes a public link to it."
+      GetTitle(item) is Strings.ActionUploadText; GetDescription(item) is Localizer.Format(Strings.ActionUploadTextDescription, Catbox.Name)
     UploadTextAction.MediaType: text = "text/plain; charset=utf-8"
-    the upload is Catbox.UploadAsync(http, the text, "Text <yyyy-MM-dd HH.mm.ss>.txt", MediaType), with UploadImage's endpoint, form fields, 200 MB limit, 2 minute timeout and answers
-    the file holds the text in UTF-8, after a UTF-8 byte order mark
+    ExecuteAsync uploads with Catbox.UploadAsync(context.Http, the file, "Text <yyyy-MM-dd HH.mm.ss>.txt", MediaType), the time being CapturedAt in local time
+      the file holds the UTF-8 byte order mark EF BB BF, then the text in UTF-8
+      then pastes a snapshot holding only the link's text with context.WriteAndPasteAsync, then adds that snapshot with context.History.Add
+      and logs "Uploaded a text to {Service}" with Catbox.Name
     examples
       ExecuteAsync(text "héllo wörld" captured 2026-11-20 13:05:09 local) => uploads "Text 2026-11-20 13.05.09.txt" as text/plain; charset=utf-8, holding EF BB BF then "héllo wörld" in UTF-8
       Catbox answers 200 "https://files.catbox.moe/abc123.txt" => pastes the text "https://files.catbox.moe/abc123.txt", and adds it to the history as its newest item
       ExecuteAsync(the same item again) => no second upload; the link remembered for that item is pasted again
-      Catbox answers 412 "Invalid uploader" => HttpRequestException "Catbox refused the upload (412): Invalid uploader"; nothing pasted
-      Catbox answers 200 "error: something" => HttpRequestException "Catbox did not return a link: error: something"
+      Catbox answers 412 "Invalid uploader" => HttpRequestException; nothing pasted, nothing added to the history
       CanExecute(text "   ") => false
       CanExecute(raw "text/html" only, no plain text) => false
       CanExecute(text "caption" + image, as office suites copy) => true; the text is uploaded, not the image
@@ -45,7 +47,7 @@ node UploadText : fn   level: system
       because a .txt file shows the words; the formatting would show as markup
     decide each item is uploaded at most once while Shapeshifter runs, a failure is logged and nothing is pasted, and an upload cannot be deleted
       because UploadImage does the same, for the reasons it records
-  uses      UploadImage
+  uses      Catbox, ClipboardAction, ClipboardItem, ActionContext, Localization
   sources
     GitHub issue #56 and its comments; the owner's answer in this change: Catbox, not paste.gg
     src/Shapeshifter.Core/Actions/UploadActions.cs, UploadTextAction

@@ -15,6 +15,7 @@ picker/                                                      Picker: the window,
 actions/                                                     Actions: paste variants, delete, pin, remember the history
 search/                                                      SearchHistory: S to search the history
 app/                                                         App: tray, settings, single instance, install, updates
+foundation/                                                  Foundation: hand-written code that generated code builds on
 ```
 
 ## Target
@@ -23,19 +24,29 @@ The app as it is built today. Changing this block, then `/ail:build`, moves it
 to another technology; the end-to-end checks in `checks/e2e/` prove the new
 app behaves like this one.
 
+`ail build` compiles the logic: `fn` and `data` nodes, into
+`src/Shapeshifter.Core/Ail/`. Flows, views and the app itself are hand-written
+and proven by their end-to-end checks, which `ail build` runs against the app
+(`run.app`). Hand-written code that generated code depends on is described by
+`@existing` nodes in `ail/foundation/`. A node moves to generated code once it
+is built: its hand-written counterpart is deleted in the same change.
+
 ```ail
 target
   code         C# 14 on .NET 11, nullable enabled, warnings as errors; Avalonia 12 for windows; SharpHook for the global keyboard hook and simulated keys
   structure    Shapeshifter.Core holds every rule as plain, testable code; Shapeshifter.Platform touches the operating system; Shapeshifter.Desktop is the Avalonia app
-  naming       PascalCase types and members, one public type per file, file named after the type
-  copy         user-visible text comes from Strings.resx and its translations, never from code
+  naming       PascalCase types and members, file named after the node; hand-written code has one public type per file, while a generated file holds every public type of its node
+  namespaces   generated code is in the file-scoped namespace Shapeshifter.Core.Ail and starts with: using Shapeshifter.Core.Actions; using Shapeshifter.Core.Clipboard; using Shapeshifter.Core.Localization; (the @existing nodes live there, by the names their contracts give)
+  comments     every public type and member has an XML doc comment saying what it is for
+  arguments    a public member that takes a reference-type argument throws ArgumentNullException (ArgumentNullException.ThrowIfNull) when it is missing, before anything else; the derived checks don't test this, the hand-written ActionCatalogTests do
+  copy         user-visible text comes from Strings.resx and its translations, never from code: Strings.<Key> for each key the spec names
   path.fn      src/Shapeshifter.Core/Ail/{dir}/{name}.cs
-  path.flow    src/Shapeshifter.Core/Ail/{dir}/{name}.cs
   path.data    src/Shapeshifter.Core/Ail/{dir}/{name}.cs
-  path.view    src/Shapeshifter.Desktop/Ail/{dir}/{name}.axaml
-  path.system  src/Shapeshifter.Desktop/Ail/Program.cs
-  generated    src/Shapeshifter.Core/Ail/**, src/Shapeshifter.Desktop/Ail/**
-  tests        xUnit v3; the end-to-end checks are xUnit too (checks/e2e/Shapeshifter.Checks), driving the desktop with xdotool and reading it with tesseract
+  generated    src/Shapeshifter.Core/Ail/**
+  tests        xUnit v3 on Microsoft.Testing.Platform, in tests/Shapeshifter.Core.Tests, built like all code with warnings as errors and the .NET analyzers (so a list's Count and indexer, never Enumerable.Count() or First() on a list; ConfigureAwait(false) is not needed in tests); a check is a public sealed class in the file-scoped namespace Shapeshifter.Core.Ail.Tests, named after its file; actions are checked with ActionTestHarness (below); end-to-end checks are bun tests that drive the desktop with xdotool
+  test harness ActionTestHarness, internal to the test project in namespace Shapeshifter.Core.Tests.Actions: `using var harness = new ActionTestHarness();` gives harness.Context, an ActionContext wired to fakes; harness.Handler.Respond is a function from each HTTP request to its answer, and harness.Handler.RequestedUris lists the requests made; harness.AddToHistory(snapshot) returns the ClipboardItem it added, whose CapturedAt a check may set; harness.Backend.Writes lists the snapshots written to the clipboard, harness.Paste.Calls counts simulated pastes, harness.History.Items lists the history newest first; ActionTestHarness.Ct is the cancellation token to pass
+  checks.path  tests/Shapeshifter.Core.Tests/Ail/{dir}/{name}Tests.cs
+  checks.run   dotnet test --project tests/Shapeshifter.Core.Tests --filter-class "Shapeshifter.Core.Ail.Tests.{name}Tests"
 ```
 
 ## Glossary
@@ -115,7 +126,7 @@ node Shapeshifter : system   level: product
     14. Shapeshifter waits in the system tray; every setting takes effect at once.   refined-by: TrayMenu, ChangeSettings
     15. It installs itself for the user without administrator rights, starts at login and keeps itself up to date.   refined-by: SelfInstall, AutoUpdate
   entry     PasteGesture
-  children  PasteGesture, Capture, Picker, Actions, SearchHistory, App
+  children  PasteGesture, Capture, Picker, Actions, SearchHistory, App, Foundation
   sources
     README.md, sections "Hold Ctrl+V" and "Good to know"
     docs/architecture.md
