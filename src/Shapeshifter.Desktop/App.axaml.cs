@@ -187,7 +187,11 @@ public partial class App : Application
             menu.Items.Add(MenuItem(Strings.TraySettings, ShowSettings));
             menu.Items.Add(MenuItem(Strings.SettingsOpenLogFolder, () => platform?.Launcher.OpenFolder(Paths.LogDirectory)));
             menu.Items.Add(MenuItem(Strings.SettingsClearHistory, () => history?.Clear()));
-            menu.Items.Add(MenuItem(Strings.TrayCheckForUpdates, CheckForUpdates));
+            if (!StoreInstall.IsActive)
+            {
+                // A copy from an app store is updated by the store, so it offers no update check.
+                menu.Items.Add(MenuItem(Strings.TrayCheckForUpdates, CheckForUpdates));
+            }
             menu.Items.Add(new NativeMenuItemSeparator());
             menu.Items.Add(MenuItem(Strings.TrayReportProblem, ReportProblem));
             menu.Items.Add(MenuItem(Localizer.Format(Strings.TrayAbout, ReleaseVersion.Current()), ShowSettings));
