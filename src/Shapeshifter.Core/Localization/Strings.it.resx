@@ -479,4 +479,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Apre una nuova email a {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Cerca sul web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Cerca questo testo su {0} nel browser.</value>
+  </data>
 </root>

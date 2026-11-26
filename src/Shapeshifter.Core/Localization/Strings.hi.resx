@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>{0} को नया ईमेल खोलता है।</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>वेब पर खोजें</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>आपके ब्राउज़र में {0} पर यह टेक्स्ट खोजता है।</value>
+  </data>
 </root>

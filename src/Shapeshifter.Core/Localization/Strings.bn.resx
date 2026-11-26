@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>{0}-কে একটি নতুন ইমেল খোলে।</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>ওয়েবে খুঁজুন</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>আপনার ব্রাউজারে {0}-এ এই লেখাটি খোঁজে।</value>
+  </data>
 </root>

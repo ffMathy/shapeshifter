@@ -479,4 +479,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Membuka email baru ke {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Cari di web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Mencari teks ini di {0} pada browser Anda.</value>
+  </data>
 </root>

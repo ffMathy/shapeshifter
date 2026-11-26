@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>新建一封发给 {0} 的邮件。</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>在网上搜索</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>在浏览器中用 {0} 搜索此文本。</value>
+  </data>
 </root>

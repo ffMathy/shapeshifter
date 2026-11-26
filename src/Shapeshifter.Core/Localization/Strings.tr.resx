@@ -479,4 +479,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>{0} adresine yeni bir e-posta açar.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Web'de ara</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Bu metni tarayıcınızda {0} ile arar.</value>
+  </data>
 </root>

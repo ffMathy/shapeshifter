@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "c70e877b0268a68ed3577b19e847164ec373eac7c66308d497807199047f14b0",
-      "spec": "12c88c8c2e2bf2361c932b33037341c00a474a7f6ec93d0735379699ce946cdb",
+      "hash": "3dfdeb462d176b2bed215f1cde421abf061779afba05b9757be077d9e4155ff0",
+      "spec": "449b0ef2002acda89b9bd0002436b45754e7d3535296b80c5929c04518db34e6",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -210,6 +210,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "c5f1541dfdc06885fb1de5a4ea3ade37fed6ff7b3ef80f0a68ff30d8907956e9"
+    },
+    "SearchWeb": {
+      "hash": "4b2736291b68a6a52ff9c53989f27e1a72411ae3f44cb66f4f5a71bff8454f28",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/search-web/SearchWeb.cs": "b7ab2234f58921c543d2a77cf3ed2eb0b728f12164b9db0c7884a3536da09eb1"
+      },
+      "by": "claude-code"
     },
     "SelfInstall": {
       "hash": "ec2d1314ebaa6679569364f54d76162cc35154cc6dc5146120499beaa68d6ffe",
