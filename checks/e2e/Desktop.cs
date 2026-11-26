@@ -11,6 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace Shapeshifter.Checks;
 
+/// <summary>A window's place and size on screen, in pixels.</summary>
+public sealed record Box(int X, int Y, int Width, int Height);
+
 public static partial class Desktop
 {
     /// <summary>The project root: AIL_ROOT, else the folder with ail.config.json above the working folder or the checks' build.</summary>

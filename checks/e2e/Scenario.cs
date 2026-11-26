@@ -23,7 +23,9 @@ public abstract class Scenario : IAsyncLifetime
 
     public async ValueTask DisposeAsync()
     {
-        await Screen.SaveProof(TestContext.Current.Test?.TestDisplayName ?? GetType().Name);
+        // A skipped scenario (one that can't be played on this platform) has nothing to prove.
+        if (TestContext.Current.TestState?.Result is TestResult.Skipped) Screen.Forget();
+        else await Screen.SaveProof(TestContext.Current.Test?.TestDisplayName ?? GetType().Name);
         await AfterEach();
         GC.SuppressFinalize(this);
     }

@@ -13,9 +13,6 @@ using System.Text.RegularExpressions;
 
 namespace Shapeshifter.Checks;
 
-/// <summary>A window's place and size on screen, in pixels.</summary>
-public readonly record struct Box(int X, int Y, int Width, int Height);
-
 /// <summary>A word OCR found, and where (in the screenshot's pixels).</summary>
 public readonly record struct Word(string Text, int Left, int Top);
 
@@ -102,7 +99,7 @@ public static partial class PickerDriver
     public static async Task<bool> WaitForPicker(bool visible, string? display = null, int timeout = 3000)
     {
         var until = DateTime.UtcNow.AddMilliseconds(timeout);
-        while (Picker(display).HasValue != visible)
+        while ((Picker(display) is not null) != visible)
         {
             if (DateTime.UtcNow > until) return !visible;
             await Desktop.Sleep(50);
@@ -117,7 +114,7 @@ public static partial class PickerDriver
         for (var i = 0; i < 40; i++)
         {
             var box = Picker(display);
-            if (box is not null && box == last) return box.Value;
+            if (box is not null && box == last) return box;
             last = box;
             await Desktop.Sleep(150);
         }

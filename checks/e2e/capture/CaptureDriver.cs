@@ -15,9 +15,6 @@ using static Shapeshifter.Checks.Desktop;
 
 namespace Shapeshifter.Checks;
 
-/// <summary>A window's place and size on screen.</summary>
-public sealed record Box(int X, int Y, int Width, int Height);
-
 /// <summary>A moment, in milliseconds since watching began, when a notification was up, and its box.</summary>
 public sealed record Sighting(long At, Box Box);
 
