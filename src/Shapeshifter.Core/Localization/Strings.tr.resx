@@ -473,4 +473,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Hesaplar ve {0} yapıştırır.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>E-posta yaz</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>{0} adresine yeni bir e-posta açar.</value>
+  </data>
 </root>

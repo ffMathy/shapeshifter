@@ -473,4 +473,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Rechnet es aus und fügt {0} ein.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>E-Mail schreiben</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Öffnet eine neue E-Mail an {0}.</value>
+  </data>
 </root>

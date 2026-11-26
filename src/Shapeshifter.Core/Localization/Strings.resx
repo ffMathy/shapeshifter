@@ -626,4 +626,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Calculates this and pastes {0}.</value>
     <comment>Action description for 'Paste result'; {0} is the result, such as 87.</comment>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Write email</value>
+    <comment>Action title: start a new e-mail to the copied address in the user's e-mail app.</comment>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Opens a new email to {0}.</value>
+    <comment>Action description for 'Write email'; {0} is the e-mail address.</comment>
+  </data>
 </root>

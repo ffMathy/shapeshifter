@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "f8ad096e148ebd84aa2e7309013807873ac4342f10ed609cbd8124ca9f68ed30",
-      "spec": "4a20050696178ecf92d7e74ebabc11bf2c2c5ca8b0a5c4b13acb37f1b7d27945",
+      "hash": "c70e877b0268a68ed3577b19e847164ec373eac7c66308d497807199047f14b0",
+      "spec": "12c88c8c2e2bf2361c932b33037341c00a474a7f6ec93d0735379699ce946cdb",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -257,6 +257,13 @@
       "hash": "3860efee1d05b3bf719ad41057126db813b7184f02cde0a4a19acedee3f3fa91",
       "files": {
         "src/Shapeshifter.Core/Ail/actions/url-decode/UrlDecode.cs": "8baf80dc2ff5cdfc4016eed65edc6fae66e577220017967b8cc52b23ca59aab4"
+      },
+      "by": "claude-code"
+    },
+    "WriteEmail": {
+      "hash": "f42e75682f4d2be2f16221b53516ae3a4fe84678de8410c214c0eabd34d9fd68",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/write-email/WriteEmail.cs": "4576dd38f9e5c1da47a50cf9d098fb9af63c852c8b648945300c25872aa4361f"
       },
       "by": "claude-code"
     }

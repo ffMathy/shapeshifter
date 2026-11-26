@@ -473,4 +473,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Le calcule et colle {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Écrire un e-mail</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Ouvre un nouvel e-mail à {0}.</value>
+  </data>
 </root>

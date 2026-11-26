@@ -10,7 +10,7 @@ node Foundation : library   level: system
   why   Generated code needs the clipboard's types, the actions' interface and
         the translated text, which stay hand-written while the app moves to
         generated code one node at a time.   <- Shapeshifter
-  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml
+  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml, Launcher
 ```
 
 ```ail
@@ -85,4 +85,17 @@ node CopiedHtml : data   level: system   @existing
     Shapeshifter.Core.Text.HtmlText.Decode(data: bytes) -> text   — it lives in Shapeshifter.Core.Text, which generated code must import with a using; the HTML in a format's Data: Windows' CF_HTML header is removed, UTF-16 is recognised by its byte order mark, else UTF-8
   sources
     src/Shapeshifter.Core/Clipboard/ClipboardSnapshot.cs, RawClipboardFormat; ClipboardFormatClassifier.cs, IsHtml; src/Shapeshifter.Core/Text/HtmlText.cs, Decode
+```
+
+```ail
+node Launcher : data   level: system   @existing
+  why   Some actions open something outside Shapeshifter: a link in the
+        browser, a new e-mail.   <- Foundation
+  what
+    ActionContext.Launcher.OpenUrl(link: an absolute link) -> nothing
+      opens an http, https or mailto link with the system's default app for it, at once; it returns before that app has started, and only logs when the system cannot open it
+      any other kind of link throws ArgumentException
+      in checks, ActionTestHarness gives the context a recording launcher: harness.Launcher.OpenedUrls lists, in order, the links opened (a list of absolute links), and nothing is opened for real
+  sources
+    src/Shapeshifter.Core/Platform/ISystemServices.cs, ILauncher; src/Shapeshifter.Platform/Common/Launcher.cs
 ```

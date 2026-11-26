@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Обчислює й вставляє {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Написати лист</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Відкриває новий лист до {0}.</value>
+  </data>
 </root>

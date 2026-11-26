@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>این را محاسبه می‌کند و {0} را می‌چسباند.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>نوشتن ایمیل</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>ایمیل تازه‌ای به {0} باز می‌کند.</value>
+  </data>
 </root>

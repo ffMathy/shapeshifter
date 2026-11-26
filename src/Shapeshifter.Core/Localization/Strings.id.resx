@@ -473,4 +473,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Menghitungnya dan menempelkan {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Tulis email</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Membuka email baru ke {0}.</value>
+  </data>
 </root>

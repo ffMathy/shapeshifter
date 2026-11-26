@@ -33,6 +33,7 @@ public sealed class ActionCatalog
         new PasteAsDateAction(),
         new PasteAsUnixTimeAction(),
         new PasteResultAction(),
+        new WriteEmailAction(),
         new TogglePinAction(),
     ]);
 
