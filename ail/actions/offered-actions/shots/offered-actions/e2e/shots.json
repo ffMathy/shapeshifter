@@ -42,6 +42,10 @@
       "file": "an-e-mail-address-also-offers-write-email.png"
     },
     {
+      "test": "the path of an existing file also offers Copy file at this path",
+      "file": "the-path-of-an-existing-file-also-offers-copy-file-at-this-p.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

@@ -485,4 +485,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Busca este texto en {0} en tu navegador.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Copiar el archivo de esta ruta</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Copia el propio archivo o carpeta, listo para pegar en un explorador de archivos o un correo.</value>
+  </data>
 </root>

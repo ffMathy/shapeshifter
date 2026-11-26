@@ -485,4 +485,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Sucht diesen Text bei {0} in deinem Browser.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Datei unter diesem Pfad kopieren</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Kopiert die Datei oder den Ordner selbst, zum Einfügen im Dateimanager oder in einer E-Mail.</value>
+  </data>
 </root>

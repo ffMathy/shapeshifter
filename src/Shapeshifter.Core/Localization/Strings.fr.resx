@@ -485,4 +485,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Recherche ce texte sur {0} dans votre navigateur.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Copier le fichier de ce chemin</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Copie le fichier ou le dossier lui-même, prêt à coller dans un gestionnaire de fichiers ou un e-mail.</value>
+  </data>
 </root>

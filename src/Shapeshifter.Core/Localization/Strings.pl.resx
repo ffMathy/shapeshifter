@@ -485,4 +485,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Wyszukuje ten tekst w {0} w przeglądarce.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Kopiuj plik z tej ścieżki</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Kopiuje sam plik lub folder, gotowy do wklejenia w menedżerze plików lub e-mailu.</value>
+  </data>
 </root>

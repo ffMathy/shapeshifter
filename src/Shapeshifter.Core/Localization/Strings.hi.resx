@@ -485,4 +485,10 @@
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>आपके ब्राउज़र में {0} पर यह टेक्स्ट खोजता है।</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>इस पाथ की फ़ाइल कॉपी करें</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>फ़ाइल या फ़ोल्डर को ही कॉपी करता है, फ़ाइल मैनेजर या ईमेल में चिपकाने के लिए।</value>
+  </data>
 </root>

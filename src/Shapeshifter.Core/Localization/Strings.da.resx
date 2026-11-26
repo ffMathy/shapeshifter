@@ -485,4 +485,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Søger efter teksten på {0} i din browser.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Kopiér filen på denne sti</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Kopierer selve filen eller mappen, klar til at indsætte i en filhåndtering eller en e-mail.</value>
+  </data>
 </root>

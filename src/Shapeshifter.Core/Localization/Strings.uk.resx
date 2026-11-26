@@ -485,4 +485,10 @@
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Шукає цей текст у {0} у браузері.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Копіювати файл за цим шляхом</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Копіює сам файл або теку, щоб вставити у файловий менеджер чи лист.</value>
+  </data>
 </root>

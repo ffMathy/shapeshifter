@@ -485,4 +485,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionSearchWebDescription" xml:space="preserve">
     <value>Bu metni tarayıcınızda {0} ile arar.</value>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Bu yoldaki dosyayı kopyala</value>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Dosyanın veya klasörün kendisini kopyalar; dosya yöneticisine ya da e-postaya yapıştırılabilir.</value>
+  </data>
 </root>

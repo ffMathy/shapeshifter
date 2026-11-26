@@ -642,4 +642,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Searches {0} for this text in your browser.</value>
     <comment>Action description for 'Search the web'; {0} is the search engine (DuckDuckGo).</comment>
   </data>
+  <data name="ActionCopyFileAtPath" xml:space="preserve">
+    <value>Copy file at this path</value>
+    <comment>Action title: the copied text is the path of a file or folder; copy that file or folder itself to the clipboard.</comment>
+  </data>
+  <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
+    <value>Copies the file or folder itself, ready to paste in a file manager or an email.</value>
+    <comment>Action description for 'Copy file at this path'.</comment>
+  </data>
 </root>
