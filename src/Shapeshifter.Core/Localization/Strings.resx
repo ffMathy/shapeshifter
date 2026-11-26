@@ -307,7 +307,7 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <comment>Action title: download the image a copied link points to.</comment>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Downloads the linked image and copies the image itself to the clipboard.</value>
+    <value>Copies the linked image itself to the clipboard.</value>
     <comment>Action description.</comment>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
@@ -331,7 +331,7 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <comment>Action title: keep the item at the top and save it to disk.</comment>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Pins this item so that it always stays at the top, and saves it to your computer so that it is there the next time you open Shapeshifter.</value>
+    <value>Keeps this item at the top, saved for next time.</value>
     <comment>Action description.</comment>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
@@ -339,7 +339,7 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <comment>Action title: undo pinning.</comment>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Unpins this item so that it moves down as you copy, and is no longer saved to your computer.</value>
+    <value>Lets this item move down, and stops saving it.</value>
     <comment>Action description.</comment>
   </data>
   <data name="TimeJustNow" xml:space="preserve">

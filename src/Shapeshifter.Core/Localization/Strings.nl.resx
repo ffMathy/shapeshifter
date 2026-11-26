@@ -216,7 +216,7 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
     <value>Plakken als platte tekst</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Plakt de inhoud van het klembord als platte tekst zonder opmaak.</value>
+    <value>Plakt als platte tekst zonder opmaak.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Plakken als bestand</value>
@@ -234,7 +234,7 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
     <value>Afbeelding kopiëren via link</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Downloadt de gelinkte afbeelding en kopieert de afbeelding zelf naar het klembord.</value>
+    <value>Kopieert de gelinkte afbeelding zelf naar het klembord.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Link openen</value>
@@ -252,13 +252,13 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
     <value>Vastmaken aan klembord</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Maakt dit item vast zodat het altijd bovenaan blijft, en slaat het op je computer op zodat het er de volgende keer dat je Shapeshifter opent nog is.</value>
+    <value>Houdt dit item bovenaan en bewaart het voor later.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Losmaken van klembord</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Maakt dit item los zodat het omlaag schuift terwijl je kopieert en niet meer op je computer wordt bewaard.</value>
+    <value>Laat dit item weer zakken en bewaart het niet meer.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Zojuist</value>
@@ -327,19 +327,19 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
     <value>Uit</value>
   </data>
   <data name="ActionPasteAsImageFileDescription" xml:space="preserve">
-    <value>Slaat deze afbeelding op in een .{0}-bestand en plakt het bestand.</value>
+    <value>Slaat deze afbeelding op als .{0}-bestand en plakt het.</value>
   </data>
   <data name="ActionUploadImage" xml:space="preserve">
     <value>Uploaden en link plakken</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Uploadt deze afbeelding naar {0} en plakt een openbare link ernaar.</value>
+    <value>Zet de afbeelding op {0} en plakt een openbare link.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Uploaden en link plakken</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Uploadt deze tekst naar {0} en plakt een openbare link ernaar.</value>
+    <value>Uploadt deze tekst naar {0} en plakt een openbare link.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tips</value>

@@ -216,7 +216,7 @@
     <value>Dán dưới dạng văn bản thuần</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Dán nội dung bảng tạm dưới dạng văn bản thuần, không có định dạng.</value>
+    <value>Dán dưới dạng văn bản thuần, không định dạng.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Dán dưới dạng tệp</value>
@@ -234,7 +234,7 @@
     <value>Sao chép hình ảnh từ liên kết</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Tải xuống hình ảnh được liên kết và sao chép chính hình ảnh đó vào bảng tạm.</value>
+    <value>Sao chép hình ảnh được liên kết vào bảng tạm.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Mở liên kết</value>
@@ -252,13 +252,13 @@
     <value>Ghim vào bảng tạm</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Ghim mục này để mục luôn ở trên cùng, đồng thời lưu vào máy tính của bạn để mục vẫn còn ở đó vào lần tới bạn mở Shapeshifter.</value>
+    <value>Giữ mục này ở trên cùng và lưu lại cho lần sau.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Bỏ ghim khỏi bảng tạm</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Bỏ ghim mục này để mục di chuyển xuống khi bạn sao chép và không còn được lưu vào máy tính của bạn.</value>
+    <value>Để mục này trôi xuống và không lưu nó nữa.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Vừa xong</value>
@@ -333,13 +333,13 @@
     <value>Tải lên và dán liên kết</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Tải hình ảnh này lên {0} và dán liên kết công khai đến hình ảnh.</value>
+    <value>Tải hình ảnh lên {0} và dán liên kết công khai.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Tải lên và dán liên kết</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Tải văn bản này lên {0} và dán liên kết công khai đến văn bản.</value>
+    <value>Tải văn bản lên {0} và dán liên kết công khai.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Mẹo</value>

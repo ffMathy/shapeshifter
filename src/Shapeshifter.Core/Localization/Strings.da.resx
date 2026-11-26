@@ -216,7 +216,7 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
     <value>Indsæt som ren tekst</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Indsætter udklipsholderens indhold som ren tekst uden formatering.</value>
+    <value>Indsætter som ren tekst uden formatering.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Indsæt som fil</value>
@@ -234,7 +234,7 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
     <value>Kopiér billede fra link</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Henter det linkede billede og kopierer selve billedet til udklipsholderen.</value>
+    <value>Kopierer det linkede billede til udklipsholderen.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Åbn link</value>
@@ -252,13 +252,13 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
     <value>Fastgør til udklipsholder</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Fastgør dette element, så det altid bliver øverst, og gemmer det på din computer, så det er der, næste gang du åbner Shapeshifter.</value>
+    <value>Holder elementet øverst og gemmer det til næste gang.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Frigør fra udklipsholder</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Frigør dette element, så det rykker ned, når du kopierer, og ikke længere gemmes på din computer.</value>
+    <value>Lader elementet rykke ned og gemmer det ikke længere.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Lige nu</value>
@@ -333,13 +333,13 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
     <value>Upload og indsæt link</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Uploader dette billede til {0} og indsætter et offentligt link til det.</value>
+    <value>Uploader billedet til {0} og indsætter et offentligt link.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Upload og indsæt link</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Uploader denne tekst til {0} og indsætter et offentligt link til den.</value>
+    <value>Uploader teksten til {0} og indsætter et offentligt link.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tips</value>

@@ -216,7 +216,7 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch�
     <value>Incolla come testo normale</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Incolla il contenuto degli Appunti come testo normale, senza formattazione.</value>
+    <value>Incolla come testo normale, senza formattazione.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Incolla come file</value>
@@ -234,7 +234,7 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch�
     <value>Copia immagine dal link</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Scarica l’immagine collegata e copia l’immagine stessa negli Appunti.</value>
+    <value>Copia l’immagine collegata negli Appunti.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Apri link</value>
@@ -252,13 +252,13 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch�
     <value>Fissa negli Appunti</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Fissa questo elemento in modo che resti sempre in cima e lo salva sul computer, così sarà ancora lì la prossima volta che apri Shapeshifter.</value>
+    <value>Tiene questo elemento in cima e lo salva per la prossima volta.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Rimuovi dai fissati negli Appunti</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Non fissa più questo elemento: scenderà man mano che copi e non sarà più salvato sul computer.</value>
+    <value>Lascia scendere questo elemento e non lo salva più.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Adesso</value>

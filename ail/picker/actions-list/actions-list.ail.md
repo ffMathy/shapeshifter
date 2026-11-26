@@ -11,6 +11,7 @@ node ActionsList : view   level: experience
         original Shapeshifter).   <- Picker
   what
     a heading, then one entry per action: a line icon, a title and a description that wraps
+    every description fits on at most 2 lines, in every look and in every language
     the first action is the default, the one letting go of Ctrl runs, and is marked as such
     the chosen action is marked; while the actions have the keyboard (after Right) the mark is stronger, and the history row keeps a fainter mark
     the heading names the kind of item in the Windows and Mac looks
@@ -30,12 +31,14 @@ node ActionsList : view   level: experience
       because everything else stays in the system's neutral palette (commit "Give Windows the Mica Sheets look")
     decide in the Linux look the selected action stays white, with only its title and icon in the accent
       because the accent title keeps 4.5:1 contrast only on plain white (Linux.axaml)
+    decide a description is written to fit on at most 2 lines in each look's pane, in English and in every translation; a translation that does not fit is shortened, never cut off
+      because the owner: the Pin description was "way too long", and descriptions "should be able to render in maximum 2 lines" (2026-11-26)
     decide the Linux look writes "Actions" and "→ to choose" in English in every language
       because "unknown, confirm with the owner: keep this? the words are fixed in the Linux look's template"
   look
     pane        Linux 284 wide, no background, below the preview card; Windows 300 wide, a translucent tint with a hairline on its start side, 4 of padding; macOS 250 wide, a nested glass sidebar rounded 18 with 8 of padding
     heading     Linux: "Actions" bold 15 and "→ to choose" 12 dim on the same line, 24 high; Windows: the kind of item, 12 semibold dim; macOS: the same, 11 semibold
-    entry       a 16 line icon at the top, 12 of space, the title 14 (macOS 13 semibold) and the description 12.5 dim (Windows 12, macOS 11 on at most 3 lines)
+    entry       a 16 line icon at the top, 12 of space, the title 14 (macOS 13 semibold) and the description 12.5 dim (Windows 12, macOS 11 on at most 2 lines)
     Linux       a white card of entries split by hairlines, rounded 12; the chosen entry's title semibold in the accent, its icon in the accent; a 2-pixel accent ring while the actions have the keyboard; the default marked by a 16 check mark in the accent at the end
     Windows     entries rounded 4 with 2 between them; the chosen one a subtle fill, and a 3 × 16 accent pill at its start while the actions have the keyboard; its icon in the accent; "Default" 11 dim at the end
     macOS       each entry a card; the chosen one near-white with an accent outline (at 55 % while the history has the keyboard); icons in the accent inside a round well; "Default" in a small grey pill, 10 semibold
@@ -53,4 +56,5 @@ node ActionsList : view   level: experience
     src/Shapeshifter.Desktop/Views/PickerWindow.axaml, "actionsPane"; src/Shapeshifter.Desktop/ViewModels/PickerViewModel.cs, UpdateActionsHeader
     src/Shapeshifter.Desktop/Styles/Linux.axaml, Windows.axaml, MacOS.axaml, "actions"
     assets/screenshots/actions.PNG
+    tests/Shapeshifter.Desktop.Tests/ActionDescriptionLineTests.cs measures every description in every look and language (Skia, the bundled Inter font)
 ```

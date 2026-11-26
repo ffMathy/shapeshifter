@@ -607,7 +607,7 @@
     <Setter Property="Foreground" Value="#4A4A52" />
     <Setter Property="TextWrapping" Value="Wrap" />
     <Setter Property="TextTrimming" Value="CharacterEllipsis" />
-    <Setter Property="MaxLines" Value="3" />
+    <Setter Property="MaxLines" Value="2" />
   </Style>
   <!-- The pill floats over the top right of the text, beside the title, so it never narrows the description:
        the shared template puts it in its own Auto column (as a local value, which a style cannot move), so a

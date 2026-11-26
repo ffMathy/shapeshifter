@@ -216,7 +216,7 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
     <value>Coller en texte brut</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Colle le contenu du Presse-papiers en texte brut, sans mise en forme.</value>
+    <value>Colle en texte brut, sans mise en forme.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Coller en tant que fichier</value>
@@ -234,7 +234,7 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
     <value>Copier l’image du lien</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Télécharge l’image liée et copie l’image elle-même dans le Presse-papiers.</value>
+    <value>Copie l’image liée dans le Presse-papiers.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Ouvrir le lien</value>
@@ -252,13 +252,13 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
     <value>Épingler au Presse-papiers</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Épingle cet élément pour qu’il reste toujours en haut, et l’enregistre sur votre ordinateur pour qu’il soit toujours là la prochaine fois que vous ouvrirez Shapeshifter.</value>
+    <value>Garde cet élément en haut et l’enregistre pour plus tard.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Détacher du Presse-papiers</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Détache cet élément : il descendra au fil de vos copies et ne sera plus enregistré sur votre ordinateur.</value>
+    <value>Laisse cet élément descendre et ne l’enregistre plus.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>À l’instant</value>
@@ -333,13 +333,13 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
     <value>Mettre en ligne et coller le lien</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Met cette image en ligne sur {0} et colle un lien public vers celle-ci.</value>
+    <value>Met cette image en ligne sur {0} et colle un lien public.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Mettre en ligne et coller le lien</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Met ce texte en ligne sur {0} et colle un lien public vers celui-ci.</value>
+    <value>Met ce texte en ligne sur {0} et colle un lien public.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Astuces</value>

@@ -216,25 +216,25 @@
     <value>چسباندن به‌صورت متن ساده</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>محتوای کلیپ‌بورد را به‌صورت متن ساده و بدون قالب‌بندی می‌چسباند.</value>
+    <value>به‌صورت متن ساده و بدون قالب‌بندی می‌چسباند.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>چسباندن به‌صورت فایل</value>
   </data>
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
-    <value>این متن را در یک فایل .txt ذخیره می‌کند و فایل را می‌چسباند.</value>
+    <value>این متن را در فایل .txt ذخیره و فایل را می‌چسباند.</value>
   </data>
   <data name="ActionPasteAsZip" xml:space="preserve">
     <value>چسباندن به‌صورت فایل فشرده</value>
   </data>
   <data name="ActionPasteAsZipDescription" xml:space="preserve">
-    <value>این فایل‌ها را در یک فایل .zip فشرده می‌کند و آن را می‌چسباند.</value>
+    <value>این فایل‌ها را در یک فایل .zip فشرده و آن را می‌چسباند.</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>کپی تصویر از پیوند</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>تصویر پیوندشده را بارگیری می‌کند و خود تصویر را در کلیپ‌بورد کپی می‌کند.</value>
+    <value>تصویر پیوندشده را در کلیپ‌بورد کپی می‌کند.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>باز کردن پیوند</value>
@@ -252,13 +252,13 @@
     <value>سنجاق کردن به کلیپ‌بورد</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>این مورد را سنجاق می‌کند تا همیشه در بالا بماند، و آن را در رایانه شما ذخیره می‌کند تا دفعه بعد که Shapeshifter را باز می‌کنید همچنان وجود داشته باشد.</value>
+    <value>این مورد را بالا نگه می‌دارد و برای دفعهٔ بعد ذخیره می‌کند.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>برداشتن سنجاق از کلیپ‌بورد</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>سنجاق این مورد را برمی‌دارد تا با کپی‌های جدید پایین برود، و دیگر در رایانه شما ذخیره نمی‌شود.</value>
+    <value>می‌گذارد این مورد پایین برود و دیگر ذخیره‌اش نمی‌کند.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>همین حالا</value>
@@ -327,19 +327,19 @@
     <value>خاموش</value>
   </data>
   <data name="ActionPasteAsImageFileDescription" xml:space="preserve">
-    <value>این تصویر را در یک فایل .{0} ذخیره می‌کند و فایل را می‌چسباند.</value>
+    <value>این تصویر را در فایل .{0} ذخیره و فایل را می‌چسباند.</value>
   </data>
   <data name="ActionUploadImage" xml:space="preserve">
     <value>بارگذاری و چسباندن پیوند</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>این تصویر را در {0} بارگذاری می‌کند و یک پیوند عمومی به آن را می‌چسباند.</value>
+    <value>تصویر را در {0} بارگذاری و پیوند عمومی‌اش را می‌چسباند.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>بارگذاری و چسباندن پیوند</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>این متن را در {0} بارگذاری می‌کند و یک پیوند عمومی به آن را می‌چسباند.</value>
+    <value>متن را در {0} بارگذاری و پیوند عمومی‌اش را می‌چسباند.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>نکته‌ها</value>

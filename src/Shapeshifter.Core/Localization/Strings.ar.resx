@@ -252,13 +252,13 @@
     <value>تثبيت في الحافظة</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>يثبّت هذا العنصر بحيث يبقى دائمًا في الأعلى، ويحفظه على الكمبيوتر بحيث يكون موجودًا في المرة التالية التي تفتح فيها Shapeshifter.</value>
+    <value>يُبقي هذا العنصر في الأعلى ويحفظه للمرة القادمة.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>إلغاء التثبيت من الحافظة</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>يلغي تثبيت هذا العنصر بحيث ينتقل إلى الأسفل كلما نسخت، ولا يعود محفوظًا على الكمبيوتر.</value>
+    <value>يترك هذا العنصر ينزل ولا يحفظه بعد الآن.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>الآن</value>

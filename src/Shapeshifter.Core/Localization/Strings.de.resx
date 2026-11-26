@@ -210,19 +210,19 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
     <value>Einfügen</value>
   </data>
   <data name="ActionPasteDescription" xml:space="preserve">
-    <value>Fügt den Inhalt der Zwischenablage unverändert ein.</value>
+    <value>Fügt den Inhalt unverändert ein.</value>
   </data>
   <data name="ActionPasteAsPlainText" xml:space="preserve">
     <value>Als unformatierten Text einfügen</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Fügt den Inhalt der Zwischenablage als reinen Text ohne Formatierung ein.</value>
+    <value>Fügt als reinen Text ohne Formatierung ein.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Als Datei einfügen</value>
   </data>
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
-    <value>Speichert diesen Text in einer .txt-Datei und fügt die Datei ein.</value>
+    <value>Speichert den Text als .txt-Datei und fügt sie ein.</value>
   </data>
   <data name="ActionPasteAsZip" xml:space="preserve">
     <value>Als komprimierte Datei einfügen</value>
@@ -234,7 +234,7 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
     <value>Bild aus Link kopieren</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Lädt das verlinkte Bild herunter und kopiert das Bild selbst in die Zwischenablage.</value>
+    <value>Kopiert das verlinkte Bild in die Zwischenablage.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Link öffnen</value>
@@ -252,13 +252,13 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
     <value>In der Zwischenablage anheften</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Heftet dieses Element an, damit es immer oben bleibt, und speichert es auf dem Computer, damit es beim nächsten Öffnen von Shapeshifter noch da ist.</value>
+    <value>Hält das Element oben und speichert es für das nächste Mal.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Von der Zwischenablage lösen</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Löst dieses Element, sodass es beim Kopieren nach unten rückt und nicht mehr auf dem Computer gespeichert wird.</value>
+    <value>Lässt das Element nach unten rücken und speichert es nicht.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Gerade eben</value>
@@ -327,19 +327,19 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
     <value>Aus</value>
   </data>
   <data name="ActionPasteAsImageFileDescription" xml:space="preserve">
-    <value>Speichert dieses Bild in einer .{0}-Datei und fügt die Datei ein.</value>
+    <value>Speichert das Bild als .{0}-Datei und fügt sie ein.</value>
   </data>
   <data name="ActionUploadImage" xml:space="preserve">
     <value>Hochladen und Link einfügen</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Lädt dieses Bild zu {0} hoch und fügt einen öffentlichen Link darauf ein.</value>
+    <value>Lädt das Bild zu {0} hoch, fügt einen öffentlichen Link ein.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Hochladen und Link einfügen</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Lädt diesen Text zu {0} hoch und fügt einen öffentlichen Link darauf ein.</value>
+    <value>Lädt den Text zu {0} hoch, fügt einen öffentlichen Link ein.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Tipps</value>

@@ -216,7 +216,7 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
     <value>Düz metin olarak yapıştır</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Pano içeriğini biçimlendirme olmadan düz metin olarak yapıştırır.</value>
+    <value>Düz metin olarak, biçimlendirmesiz yapıştırır.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Dosya olarak yapıştır</value>
@@ -234,7 +234,7 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
     <value>Bağlantıdaki görüntüyü kopyala</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Bağlantıdaki görüntüyü indirir ve görüntünün kendisini panoya kopyalar.</value>
+    <value>Bağlantıdaki görüntüyü panoya kopyalar.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Bağlantıyı aç</value>
@@ -252,13 +252,13 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
     <value>Panoya sabitle</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Bu öğeyi her zaman en üstte kalacak şekilde sabitler ve Shapeshifter bir sonraki açıldığında da orada olması için bilgisayarınıza kaydeder.</value>
+    <value>Bu öğeyi en üstte tutar ve bir dahaki sefer için kaydeder.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Panodaki sabitlemeyi kaldır</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Bu öğenin sabitlemesini kaldırır; öğe siz kopyaladıkça aşağı kayar ve artık bilgisayarınıza kaydedilmez.</value>
+    <value>Bu öğenin aşağı kaymasına izin verir ve artık kaydetmez.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Az önce</value>
@@ -333,13 +333,13 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
     <value>Yükle ve bağlantıyı yapıştır</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Bu görüntüyü {0} hizmetine yükler ve görüntünün herkese açık bağlantısını yapıştırır.</value>
+    <value>Görseli {0} hizmetine yükler, herkese açık bağlantıyı yapıştırır.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Yükle ve bağlantıyı yapıştır</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Bu metni {0} hizmetine yükler ve metnin herkese açık bağlantısını yapıştırır.</value>
+    <value>Metni {0} hizmetine yükler, herkese açık bağlantıyı yapıştırır.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>İpuçları</value>

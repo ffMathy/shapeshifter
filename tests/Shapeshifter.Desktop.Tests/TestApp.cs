@@ -17,8 +17,11 @@ internal static class TestApp
     {
         var thread = new Thread(() =>
         {
+            // Skia and the bundled Inter font, as the app uses, so that text is shaped and measured as it is shown.
             AppBuilder.Configure<App>()
-                .UseHeadless(new AvaloniaHeadlessPlatformOptions { UseHeadlessDrawing = true })
+                .UseSkia()
+                .WithInterFont()
+                .UseHeadless(new AvaloniaHeadlessPlatformOptions { UseHeadlessDrawing = false })
                 .SetupWithoutStarting();
             foreach (var work in Work.GetConsumingEnumerable())
             {

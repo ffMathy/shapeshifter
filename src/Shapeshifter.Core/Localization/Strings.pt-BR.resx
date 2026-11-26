@@ -216,7 +216,7 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
     <value>Colar como texto sem formatação</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Cola o conteúdo da área de transferência como texto sem formatação.</value>
+    <value>Cola como texto sem formatação.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Colar como arquivo</value>
@@ -234,7 +234,7 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
     <value>Copiar imagem do link</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Baixa a imagem do link e copia a própria imagem para a área de transferência.</value>
+    <value>Copia a imagem do link para a área de transferência.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Abrir link</value>
@@ -252,13 +252,13 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
     <value>Fixar na área de transferência</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Fixa este item para que ele fique sempre no topo e o salva no computador para que ele esteja lá na próxima vez que você abrir o Shapeshifter.</value>
+    <value>Mantém este item no topo e o salva para a próxima vez.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Desafixar da área de transferência</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Desafixa este item para que ele desça conforme você copia e deixe de ser salvo no computador.</value>
+    <value>Deixa este item descer e não o salva mais.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Agora mesmo</value>
@@ -333,7 +333,7 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
     <value>Enviar e colar link</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Envia esta imagem para o {0} e cola um link público para ela.</value>
+    <value>Envia esta imagem ao {0} e cola um link público.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Enviar e colar link</value>
