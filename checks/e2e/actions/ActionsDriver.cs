@@ -109,7 +109,7 @@ public static partial class ActionsDriver
 
     /// <summary>Every action title, in the order they are shown, as read from the screen.</summary>
     public static readonly string[] ActionTitles = ["Paste", "Paste as file", "Paste as plain text", "Paste trimmed", "Upload and paste link", "Paste as compressed file",
-        "Copy image from link", "Open link", "Open links", "Paste decoded Base64", "Paste URL-decoded", "Paste formatted JSON", "Paste minified JSON", "Paste as Markdown", "Paste as hex colour", "Paste as RGB colour", "Paste as HSL colour", "Paste as date and time", "Paste as Unix time", "Paste result", "Write email", "Search the web", "Copy file at this path", "Pin to clipboard", "Unpin from clipboard"];
+        "Copy image from link", "Open link", "Open links", "Paste decoded Base64", "Paste URL-decoded", "Paste formatted JSON", "Paste minified JSON", "Paste as Markdown", "Paste as hex colour", "Paste as RGB colour", "Paste as HSL colour", "Paste as date and time", "Paste as Unix time", "Paste result", "Write email", "Search the web", "Copy file at this path", "Show in file manager", "Pin to clipboard", "Unpin from clipboard"];
 
     public static string[] ActionTitlesOnScreen()
     {
@@ -117,8 +117,9 @@ public static partial class ActionsDriver
         static bool IsStray(string rest)
         {
             var marks = rest.Trim().Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries);
-            // A mark of symbols only (such as "</>" for a code icon) is never part of a title, whatever its length.
-            return marks.Length <= 2 && marks.All(m => m.Length <= 2 || !m.Any(char.IsLetterOrDigit));
+            // A mark with at most one letter or digit (such as "</>" for a code icon, or "(a)" for a folder with a
+            // magnifier) is never part of a title, whatever its length.
+            return marks.Length <= 2 && marks.All(m => m.Length <= 2 || m.Count(char.IsLetterOrDigit) <= 1);
         }
         static string ReplaceFirst(string s, string what)
         {

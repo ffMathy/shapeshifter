@@ -74,6 +74,10 @@ internal sealed class RecordingLauncher : ILauncher
     public void OpenUrl(Uri uri) => OpenedUrls.Add(uri);
 
     public void OpenFolder(string path) => OpenedFolders.Add(path);
+
+    public List<string> RevealedPaths { get; } = [];
+
+    public void RevealInFileManager(string path) => RevealedPaths.Add(path);
 }
 
 internal sealed class FakeHttpMessageHandler : HttpMessageHandler

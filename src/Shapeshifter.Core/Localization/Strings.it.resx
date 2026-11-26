@@ -491,4 +491,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Copia il file o la cartella stessa, pronta da incollare in un file manager o in un'email.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Mostra nel file manager</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Apre la cartella di questo percorso, con l'elemento selezionato.</value>
+  </data>
 </root>

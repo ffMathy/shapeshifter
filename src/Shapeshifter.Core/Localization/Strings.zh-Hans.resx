@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>复制文件或文件夹本身，可粘贴到文件管理器或邮件中。</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>在文件管理器中显示</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>打开此路径所在的文件夹并选中它。</value>
+  </data>
 </root>

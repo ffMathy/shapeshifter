@@ -491,4 +491,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Menyalin file atau folder itu sendiri, siap ditempel di pengelola file atau email.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Tampilkan di pengelola file</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Membuka folder tempat jalur ini berada, dengan item itu dipilih.</value>
+  </data>
 </root>

@@ -16,6 +16,12 @@ public interface ILauncher
     void OpenUrl(Uri uri);
 
     void OpenFolder(string path);
+
+    /// <summary>
+    /// Opens the folder that holds <paramref name="path"/> (a file or a folder) in the system's file manager, with it
+    /// selected.
+    /// </summary>
+    void RevealInFileManager(string path);
 }
 
 /// <summary>Where the mouse pointer is, in physical screen pixels, if the platform can tell.</summary>

@@ -491,4 +491,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Copie le fichier ou le dossier lui-même, prêt à coller dans un gestionnaire de fichiers ou un e-mail.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Afficher dans le gestionnaire de fichiers</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Ouvre le dossier de ce chemin, avec l'élément sélectionné.</value>
+  </data>
 </root>

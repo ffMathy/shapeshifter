@@ -491,4 +491,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Kopieert het bestand of de map zelf, klaar om te plakken in een bestandsbeheerder of e-mail.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Tonen in bestandsbeheer</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Opent de map waarin dit pad staat, met het geselecteerd.</value>
+  </data>
 </root>

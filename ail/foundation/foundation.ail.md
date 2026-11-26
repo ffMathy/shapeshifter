@@ -10,7 +10,7 @@ node Foundation : library   level: system
   why   Generated code needs the clipboard's types, the actions' interface and
         the translated text, which stay hand-written while the app moves to
         generated code one node at a time.   <- Shapeshifter
-  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml, Launcher, NewContent
+  children  ClipboardItem, ImageFormat, ClipboardAction, ActionContext, Localization, CopiedHtml, Launcher, NewContent, FileManager
 ```
 
 ```ail
@@ -110,4 +110,15 @@ node NewContent : data   level: system   @existing
       in checks, ActionTestHarness shows it as the last of harness.Backend.Writes and the first of harness.History.Items, and harness.Paste.Calls stays 0
   sources
     src/Shapeshifter.Core/Actions/IClipboardAction.cs, ActionContext.CopyNewContentAsync
+```
+
+```ail
+node FileManager : data   level: system   @existing
+  why   Some actions show a file where it lives.   <- Foundation
+  what
+    ActionContext.Launcher.RevealInFileManager(path: text) -> nothing
+      opens the folder that holds the file or folder at path in the system's file manager, with it selected: Explorer on Windows, Finder on macOS, and on Linux the file manager that answers the freedesktop FileManager1 interface, else the folder itself; it only logs when that fails
+      in checks, ActionTestHarness gives the context a recording launcher: harness.Launcher.RevealedPaths lists, in order, the paths revealed, and nothing is opened for real
+  sources
+    src/Shapeshifter.Core/Platform/ISystemServices.cs, ILauncher.RevealInFileManager; src/Shapeshifter.Platform/Common/Launcher.cs
 ```
