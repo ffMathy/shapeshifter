@@ -416,4 +416,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Wkleja ten tekst bez spacji i pustych wierszy na początku i na końcu.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Wklej zdekodowany Base64</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Dekoduje ten Base64 i wkleja zawarty w nim tekst.</value>
+  </data>
 </root>

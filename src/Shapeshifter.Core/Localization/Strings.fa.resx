@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>این متن را بدون فاصله‌ها و خط‌های خالی ابتدا و انتهای آن می‌چسباند.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>چسباندن Base64 رمزگشایی‌شده</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>این Base64 را رمزگشایی می‌کند و متن درون آن را می‌چسباند.</value>
+  </data>
 </root>

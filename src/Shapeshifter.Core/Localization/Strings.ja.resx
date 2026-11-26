@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>このテキストを、先頭と末尾の空白や空行を除いて貼り付けます。</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 をデコードして貼り付け</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>この Base64 をデコードし、中のテキストを貼り付けます。</value>
+  </data>
 </root>

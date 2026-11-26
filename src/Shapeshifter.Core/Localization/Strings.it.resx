@@ -416,4 +416,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Incolla questo testo senza gli spazi e le righe vuote all'inizio e alla fine.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Incolla Base64 decodificato</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Decodifica questo Base64 e incolla il testo che contiene.</value>
+  </data>
 </root>

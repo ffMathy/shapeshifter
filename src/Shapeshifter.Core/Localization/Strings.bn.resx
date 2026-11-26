@@ -416,4 +416,10 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>এই লেখাটি শুরু ও শেষের ফাঁকা জায়গা আর খালি লাইন ছাড়া পেস্ট করে।</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 ডিকোড করে পেস্ট করুন</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>এই Base64 ডিকোড করে এর ভেতরের লেখা পেস্ট করে।</value>
+  </data>
 </root>

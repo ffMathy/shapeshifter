@@ -416,4 +416,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Colle ce texte sans les espaces ni les lignes vides au début et à la fin.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Coller le Base64 décodé</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Décode ce Base64 et colle le texte qu'il contient.</value>
+  </data>
 </root>
