@@ -10,6 +10,10 @@
       "file": "formatted-text-also-offers-paste-as-plain-text.png"
     },
     {
+      "test": "text with spaces or blank lines around it also offers Paste trimmed",
+      "file": "text-with-spaces-or-blank-lines-around-it-also-offers-paste-.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

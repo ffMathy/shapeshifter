@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Ctrl+V বেছে নিলে Cmd+V আগের মতোই পেস্ট করে</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>অতিরিক্ত ফাঁকা ছাড়া পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>এই লেখাটি শুরু ও শেষের ফাঁকা জায়গা আর খালি লাইন ছাড়া পেস্ট করে।</value>
+  </data>
 </root>

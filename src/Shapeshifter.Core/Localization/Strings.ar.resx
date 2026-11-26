@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>مع Ctrl+V يبقى Cmd+V للصق كالمعتاد</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>لصق بدون مسافات زائدة</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>يلصق هذا النص دون المسافات والأسطر الفارغة في بدايته ونهايته.</value>
+  </data>
 </root>

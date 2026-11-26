@@ -410,4 +410,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Con Ctrl+V, Cmd+V pega como siempre</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Pegar sin espacios sobrantes</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Pega este texto sin los espacios ni las líneas en blanco del principio y del final.</value>
+  </data>
 </root>

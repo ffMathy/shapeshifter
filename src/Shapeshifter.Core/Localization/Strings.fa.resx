@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>با Ctrl+V، کلید Cmd+V مثل همیشه جای‌گذاری می‌کند</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>چسباندن بدون فاصله‌های اضافی</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>این متن را بدون فاصله‌ها و خط‌های خالی ابتدا و انتهای آن می‌چسباند.</value>
+  </data>
 </root>

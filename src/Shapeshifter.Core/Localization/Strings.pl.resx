@@ -410,4 +410,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Przy Ctrl+V skrót Cmd+V wkleja jak zwykle</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Wklej bez zbędnych spacji</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Wkleja ten tekst bez spacji i pustych wierszy na początku i na końcu.</value>
+  </data>
 </root>

@@ -410,4 +410,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Con Ctrl+V, Cmd+V incolla come sempre</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Incolla senza spazi superflui</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Incolla questo testo senza gli spazi e le righe vuote all'inizio e alla fine.</value>
+  </data>
 </root>

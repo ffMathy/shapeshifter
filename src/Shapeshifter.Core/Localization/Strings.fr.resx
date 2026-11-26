@@ -410,4 +410,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Avec Ctrl+V, Cmd+V colle comme d’habitude</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Coller sans espaces superflus</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Colle ce texte sans les espaces ni les lignes vides au début et à la fin.</value>
+  </data>
 </root>

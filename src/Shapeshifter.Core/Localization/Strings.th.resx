@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>เมื่อใช้ Ctrl+V แล้ว Cmd+V จะวางตามปกติ</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>วางโดยตัดช่องว่างหัวท้าย</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>วางข้อความนี้โดยไม่มีช่องว่างและบรรทัดว่างที่ต้นและท้ายข้อความ</value>
+  </data>
 </root>

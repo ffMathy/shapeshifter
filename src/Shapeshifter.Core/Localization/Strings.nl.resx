@@ -410,4 +410,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Met Ctrl+V plakt Cmd+V gewoon</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Plakken zonder witruimte rondom</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Plakt deze tekst zonder de spaties en lege regels aan het begin en einde.</value>
+  </data>
 </root>

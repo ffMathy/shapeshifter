@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "81a3367cbe91810a52bec47abf66b30cbeae495206ac19a60aed231142b9ef71",
-      "spec": "73a640409cf847e0272b8461f822c717b6cf381bc68a22093f7ddd3d2659646a",
+      "hash": "e597dd9a343a9dd26c8f72f5030e99d5a968810894edceccf4e02d01b31581f6",
+      "spec": "7817b625b10168f5e47beabb375c56161b2089b61f01e5c9ae4e76d551830e80",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -91,6 +91,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "214c9abddf62a259f0bdec1f39d4a501c31cf878607956089728a7831d30cd98"
+    },
+    "PasteTrimmed": {
+      "hash": "7907d5ba3855e31608f02400d39124d9cda294e727aff58cc3abfce1c6581f62",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/paste-trimmed/PasteTrimmed.cs": "d37390545642ec2a84602b725cff14faed9be48aa6c8f77d691d2d50b21f8178"
+      },
+      "by": "claude-code"
     },
     "PlacementRules": {
       "hash": "830f4201a2dcdd3f3911cd4883cccb5ce7381f5d37c02f34436542c55631691d",

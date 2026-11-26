@@ -410,4 +410,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Mit Strg+V fügt Cmd+V wie gewohnt ein</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Ohne Leerraum am Rand einfügen</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Fügt diesen Text ohne Leerzeichen und Leerzeilen am Anfang und Ende ein.</value>
+  </data>
 </root>
