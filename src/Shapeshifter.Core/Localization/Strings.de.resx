@@ -416,4 +416,28 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Fügt diesen Text ohne Leerzeichen und Leerzeilen am Anfang und Ende ein.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 dekodiert einfügen</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Dekodiert dieses Base64 und fügt den enthaltenen Text ein.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL-dekodiert einfügen</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Fügt diesen Text ein und wandelt %-Codes in Zeichen zurück.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>JSON formatiert einfügen</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Fügt dieses JSON eingerückt ein, ein Wert pro Zeile.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>JSON kompakt einfügen</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Fügt dieses JSON in einer Zeile ohne Leerzeichen ein.</value>
+  </data>
 </root>

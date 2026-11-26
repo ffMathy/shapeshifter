@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>يلصق هذا النص دون المسافات والأسطر الفارغة في بدايته ونهايته.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>لصق Base64 بعد فك ترميزه</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>يفك ترميز Base64 هذا ويلصق النص الذي يحمله.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>لصق بعد فك ترميز URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>يلصق هذا النص بعد تحويل رموز % فيه إلى أحرف.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>لصق JSON منسق</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>يلصق JSON هذا مع إزاحة، قيمة واحدة في كل سطر.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>لصق JSON مضغوط</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>يلصق JSON هذا في سطر واحد دون مسافات.</value>
+  </data>
 </root>

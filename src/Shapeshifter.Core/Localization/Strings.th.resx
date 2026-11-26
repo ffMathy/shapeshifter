@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>วางข้อความนี้โดยไม่มีช่องว่างและบรรทัดว่างที่ต้นและท้ายข้อความ</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>วาง Base64 ที่ถอดรหัสแล้ว</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>ถอดรหัส Base64 นี้และวางข้อความที่อยู่ข้างใน</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>วางโดยถอดรหัส URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>วางข้อความนี้โดยแปลงรหัส % กลับเป็นตัวอักษร</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>วาง JSON ที่จัดรูปแบบแล้ว</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>วาง JSON นี้แบบเยื้อง หนึ่งค่าต่อบรรทัด</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>วาง JSON แบบย่อ</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>วาง JSON นี้ในบรรทัดเดียวโดยไม่มีช่องว่าง</value>
+  </data>
 </root>

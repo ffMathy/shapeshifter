@@ -23,6 +23,9 @@ public sealed class ActionCatalog
         new PasteAsZipAction(),
         new CopyImageFromLinkAction(),
         new OpenLinksAction(),
+        new DecodeBase64Action(),
+        new UrlDecodeAction(),
+        new ReformatJsonAction(),
         new TogglePinAction(),
     ]);
 

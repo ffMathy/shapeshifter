@@ -109,7 +109,7 @@ public static partial class ActionsDriver
 
     /// <summary>Every action title, in the order they are shown, as read from the screen.</summary>
     public static readonly string[] ActionTitles = ["Paste", "Paste as file", "Paste as plain text", "Paste trimmed", "Upload and paste link", "Paste as compressed file",
-        "Copy image from link", "Open link", "Open links", "Pin to clipboard", "Unpin from clipboard"];
+        "Copy image from link", "Open link", "Open links", "Paste decoded Base64", "Paste URL-decoded", "Paste formatted JSON", "Paste minified JSON", "Pin to clipboard", "Unpin from clipboard"];
 
     public static string[] ActionTitlesOnScreen()
     {
@@ -117,7 +117,8 @@ public static partial class ActionsDriver
         static bool IsStray(string rest)
         {
             var marks = rest.Trim().Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries);
-            return marks.Length <= 2 && marks.All(m => m.Length <= 2);
+            // A mark of symbols only (such as "</>" for a code icon) is never part of a title, whatever its length.
+            return marks.Length <= 2 && marks.All(m => m.Length <= 2 || !m.Any(char.IsLetterOrDigit));
         }
         static string ReplaceFirst(string s, string what)
         {

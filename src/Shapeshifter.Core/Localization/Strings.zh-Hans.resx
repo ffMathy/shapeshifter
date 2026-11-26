@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>粘贴此文本，去掉开头和结尾的空格与空行。</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>解码 Base64 后粘贴</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>解码此 Base64 并粘贴其中的文本。</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL 解码后粘贴</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>将 % 编码还原为字符后粘贴此文本。</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>粘贴格式化的 JSON</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>缩进粘贴此 JSON，每行一个值。</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>粘贴压缩的 JSON</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>将此 JSON 粘贴为一行，不含空格。</value>
+  </data>
 </root>

@@ -416,4 +416,28 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Pega este texto sin los espacios ni las líneas en blanco del principio y del final.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Pegar Base64 descodificado</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Descodifica este Base64 y pega el texto que contiene.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Pegar con la URL descodificada</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Pega este texto con sus códigos % convertidos en caracteres.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Pegar JSON con formato</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Pega este JSON con sangría, un valor por línea.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Pegar JSON compactado</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Pega este JSON en una línea, sin espacios.</value>
+  </data>
 </root>

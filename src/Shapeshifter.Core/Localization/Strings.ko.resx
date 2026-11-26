@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>이 텍스트를 앞뒤의 공백과 빈 줄 없이 붙여넣습니다.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 디코딩하여 붙여넣기</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>이 Base64를 디코딩하여 담긴 텍스트를 붙여넣습니다.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL 디코딩하여 붙여넣기</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>% 코드를 문자로 되돌려 이 텍스트를 붙여넣습니다.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>서식을 갖춘 JSON 붙여넣기</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>이 JSON을 들여쓰기하여 한 줄에 값 하나씩 붙여넣습니다.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>압축한 JSON 붙여넣기</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>이 JSON을 공백 없이 한 줄로 붙여넣습니다.</value>
+  </data>
 </root>

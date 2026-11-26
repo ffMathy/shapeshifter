@@ -416,4 +416,28 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Colle ce texte sans les espaces ni les lignes vides au début et à la fin.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Coller le Base64 décodé</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Décode ce Base64 et colle le texte qu'il contient.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Coller en décodant l'URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Colle ce texte en retransformant ses codes % en caractères.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Coller le JSON mis en forme</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Colle ce JSON indenté, une valeur par ligne.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Coller le JSON compacté</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Colle ce JSON sur une ligne, sans espaces.</value>
+  </data>
 </root>

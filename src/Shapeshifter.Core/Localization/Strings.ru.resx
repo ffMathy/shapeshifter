@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Вставляет этот текст без пробелов и пустых строк в начале и в конце.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Вставить декодированный Base64</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Декодирует этот Base64 и вставляет текст из него.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Вставить с декодированием URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Вставляет этот текст, превращая %-коды обратно в символы.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Вставить отформатированный JSON</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Вставляет этот JSON с отступами, по одному значению в строке.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Вставить сжатый JSON</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Вставляет этот JSON в одну строку без пробелов.</value>
+  </data>
 </root>

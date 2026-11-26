@@ -21,6 +21,19 @@ node OfferedActions : flow   level: experience
       Given the text "  padded \n" was copied
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Pin to clipboard"
+    Scenario: Base64 of a readable text also offers Paste decoded Base64
+      Given the Base64 of a readable text, such as "aGVsbG8gd29ybGQ=", was copied
+      When the user opens its actions
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Pin to clipboard"
+    Scenario: a text with %-codes also offers Paste URL-decoded
+      Given the text "a%20b" was copied
+      When the user opens its actions
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Pin to clipboard"
+    Scenario: JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON
+      Given the text "{\"a\":1}" was copied, and then the same JSON spread over three lines
+      When the user opens the actions of each
+      Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Pin to clipboard"
+      And the second's are "Paste", "Paste as file", "Upload and paste link", "Paste minified JSON", "Pin to clipboard"
     Scenario: an image offers Paste, Paste as file, Upload and paste link, and Pin
       Given an image was copied
       When the user opens its actions
@@ -42,7 +55,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste trimmed, Upload and paste link, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -63,6 +76,10 @@ node OfferedActions : flow   level: experience
     action.openLink         "Open link" / "Open links"     "Opens the link in your browser." / "Opens the links in your browser (at most 10)."
     action.pin              "Pin to clipboard"             "Keeps this item at the top, saved for next time."
     action.unpin            "Unpin from clipboard"         "Lets this item move down, and stops saving it."
+    action.base64           "Paste decoded Base64"           "Decodes this Base64 and pastes the text it holds."
+    action.urlDecode        "Paste URL-decoded"              "Pastes this text with its %-codes turned back into characters."
+    action.minifyJson       "Paste minified JSON"            "Pastes this JSON on one line, without spaces."
+    action.formatJson       "Paste formatted JSON"           "Pastes this JSON indented, one value per line."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

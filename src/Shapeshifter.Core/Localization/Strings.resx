@@ -550,4 +550,36 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this text without the spaces and blank lines at its start and end.</value>
     <comment>Action description for 'Paste trimmed'.</comment>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Paste decoded Base64</value>
+    <comment>Action title: decode the copied Base64 string and paste the text it holds. Keep the word Base64.</comment>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Decodes this Base64 and pastes the text it holds.</value>
+    <comment>Action description for 'Paste decoded Base64'.</comment>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Paste URL-decoded</value>
+    <comment>Action title: paste the copied text with its URL %-codes (such as %20) decoded.</comment>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Pastes this text with its %-codes turned back into characters.</value>
+    <comment>Action description for 'Paste URL-decoded'. %-codes are sequences such as %20 in web addresses.</comment>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Paste formatted JSON</value>
+    <comment>Action title: paste the copied JSON indented, one value per line. Keep the word JSON.</comment>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Pastes this JSON indented, one value per line.</value>
+    <comment>Action description for 'Paste formatted JSON'.</comment>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Paste minified JSON</value>
+    <comment>Action title: paste the copied JSON on one line, without spaces. Keep the word JSON.</comment>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Pastes this JSON on one line, without spaces.</value>
+    <comment>Action description for 'Paste minified JSON'.</comment>
+  </data>
 </root>

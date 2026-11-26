@@ -8,7 +8,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "paste-trimmed", "upload-image", "upload-text", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
     ];
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class ActionCatalogTests
         var catalog = ActionCatalog.CreateDefault();
 
         Assert.Equal(DefaultOrder, catalog.All.Select(action => action.Id));
-        Assert.Equal([0, 10, 20, 24, 30, 35, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
+        Assert.Equal([0, 10, 20, 24, 30, 35, 40, 42, 44, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
     }
 
     [Fact]
@@ -97,6 +97,9 @@ public sealed class ActionCatalogTests
         { "link", ["paste", "paste-as-file", "upload-text", "open-links", "toggle-pin"] },
         { "image-link", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
         { "text+image", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
+        { "base64", ["paste", "paste-as-file", "upload-text", "decode-base64", "toggle-pin"] },
+        { "url-encoded", ["paste", "paste-as-file", "upload-text", "url-decode", "toggle-pin"] },
+        { "json", ["paste", "paste-as-file", "upload-text", "reformat-json", "toggle-pin"] },
     };
 
     [Theory]
@@ -132,7 +135,7 @@ public sealed class ActionCatalogTests
         IClipboardAction[] actions =
         [
             new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
-            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new PasteTrimmedAction(),
+            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
         ];
 
         Assert.All(actions, action => Assert.Throws<ArgumentNullException>(() => action.CanExecute(null!)));

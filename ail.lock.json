@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "e597dd9a343a9dd26c8f72f5030e99d5a968810894edceccf4e02d01b31581f6",
-      "spec": "7817b625b10168f5e47beabb375c56161b2089b61f01e5c9ae4e76d551830e80",
+      "hash": "6f3d2eb6a0154e163827274d35b74cef2fca602b3ff8d6ba5fcc12afae81d209",
+      "spec": "fd92f23583a328992460cdd83d001e0209ea4237a39239f0e03410338ed4bf05",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -70,6 +70,13 @@
       "files": {},
       "by": "adopted",
       "adopted": true
+    },
+    "DecodeBase64": {
+      "hash": "b87ab39fb1a8affd06dda972390b382876210d320a94cf70df8e0f80e25fdabd",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/decode-base64/DecodeBase64.cs": "74f1ed49bf552129b582ce6ee9583db0b5fea5062f3a67ffa47f03c96d382529"
+      },
+      "by": "claude-code"
     },
     "GestureRules": {
       "hash": "7ac840ff57932ad5ed92bb8db4acbdd9b87bf30f71830eddc905d4b210a2b7bd",
@@ -133,6 +140,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "65782d6fea7084ef1e146e1c4a12cc83977b901043c5b463ef8cbc51477db048"
+    },
+    "ReformatJson": {
+      "hash": "4b1f6f1c4f994efe0a027ec8fbf76c3d81124349a25cd672c8a0912ded438f86",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "a658c03fe0ed069d4f138943a6f055b573d3d067a91e85494b03c733d3fbe2ef"
+      },
+      "by": "claude-code"
     },
     "RelativeTime": {
       "hash": "f74a7a5c8a9d4a2f3dd0477483219090b6f4c95ca33c0fa2572bba2f39259250",
@@ -208,6 +222,13 @@
       "hash": "d2fd484efb4120d16a134caf429cfd119d542a24e7cabc1c78f916be3c6ec233",
       "files": {
         "src/Shapeshifter.Core/Ail/actions/upload-text/UploadText.cs": "2a8d2b59595a20aa510792fc488642e9cf082cb1ccfbf702f1bf39921021bf70"
+      },
+      "by": "claude-code"
+    },
+    "UrlDecode": {
+      "hash": "3860efee1d05b3bf719ad41057126db813b7184f02cde0a4a19acedee3f3fa91",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/url-decode/UrlDecode.cs": "8baf80dc2ff5cdfc4016eed65edc6fae66e577220017967b8cc52b23ca59aab4"
       },
       "by": "claude-code"
     }

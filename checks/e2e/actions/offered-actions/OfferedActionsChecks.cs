@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@58db45df105718c4
+// ail-derived-from: OfferedActions@65d5c88bb971f0a5
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -54,6 +54,30 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         await CopyAs("UTF8_STRING", $"  padded {Unique()} \n");
         Assert.Equal(["Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "Base64 of a readable text also offers Paste decoded Base64", Timeout = 30_000)]
+    public async Task Base64Text()
+    {
+        await CopyAs("UTF8_STRING", B64($"hello {Unique()}"));
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a text with %-codes also offers Paste URL-decoded", Timeout = 30_000)]
+    public async Task UrlEncodedText()
+    {
+        await CopyAs("UTF8_STRING", $"a%20{Unique()}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON", Timeout = 40_000)]
+    public async Task Json()
+    {
+        var id = Unique();
+        await CopyAs("UTF8_STRING", $"{{\"{id}\":1}}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Pin to clipboard"], await ActionsOfNewest());
+        await CopyAs("UTF8_STRING", $"{{\n  \"{id}\": 2\n}}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste minified JSON", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]

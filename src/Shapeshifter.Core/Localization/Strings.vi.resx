@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>Dán văn bản này mà không có khoảng trắng và dòng trống ở đầu và cuối.</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Dán Base64 đã giải mã</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>Giải mã Base64 này và dán văn bản bên trong.</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Dán và giải mã URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Dán văn bản này với các mã % được chuyển lại thành ký tự.</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Dán JSON đã định dạng</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Dán JSON này có thụt lề, mỗi giá trị một dòng.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Dán JSON đã thu gọn</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Dán JSON này trên một dòng, không có khoảng trắng.</value>
+  </data>
 </root>

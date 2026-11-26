@@ -416,4 +416,28 @@
   <data name="ActionPasteTrimmedDescription" xml:space="preserve">
     <value>このテキストを、先頭と末尾の空白や空行を除いて貼り付けます。</value>
   </data>
+  <data name="ActionDecodeBase64" xml:space="preserve">
+    <value>Base64 をデコードして貼り付け</value>
+  </data>
+  <data name="ActionDecodeBase64Description" xml:space="preserve">
+    <value>この Base64 をデコードし、中のテキストを貼り付けます。</value>
+  </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL デコードして貼り付け</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>% コードを文字に戻してこのテキストを貼り付けます。</value>
+  </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>整形した JSON を貼り付け</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>この JSON をインデントし、1 行に 1 つの値で貼り付けます。</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>圧縮した JSON を貼り付け</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>この JSON を空白なしの 1 行で貼り付けます。</value>
+  </data>
 </root>
