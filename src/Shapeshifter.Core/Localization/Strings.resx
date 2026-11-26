@@ -658,4 +658,20 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Opens the folder this path is in, with it selected.</value>
     <comment>Action description for 'Show in file manager' on a copied text that is a path.</comment>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Paste path</value>
+    <comment>Action title for one copied file: paste the file's full path (its location) as text.</comment>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Paste paths</value>
+    <comment>Action title for several copied files: paste their full paths as text, one per line.</comment>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Pastes where this file is as text.</value>
+    <comment>Action description for 'Paste path' (one file).</comment>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Pastes where these files are as text, one per line.</value>
+    <comment>Action description for 'Paste paths' (several files).</comment>
+  </data>
 </root>

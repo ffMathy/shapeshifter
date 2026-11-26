@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>เปิดโฟลเดอร์ที่มีเส้นทางนี้ และเลือกไว้ให้</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>วางเส้นทาง</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>วางเส้นทางทั้งหมด</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>วางตำแหน่งของไฟล์นี้เป็นข้อความ</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>วางตำแหน่งของไฟล์เหล่านี้เป็นข้อความ บรรทัดละหนึ่งไฟล์</value>
+  </data>
 </root>

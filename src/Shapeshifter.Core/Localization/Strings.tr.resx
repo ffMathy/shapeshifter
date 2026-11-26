@@ -497,4 +497,16 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Bu yolun bulunduğu klasörü, öğe seçili olarak açar.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Yolu yapıştır</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Yolları yapıştır</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Bu dosyanın konumunu metin olarak yapıştırır.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Bu dosyaların konumlarını metin olarak, her satıra bir tane yapıştırır.</value>
+  </data>
 </root>

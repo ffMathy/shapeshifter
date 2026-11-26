@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>پوشه‌ای را که این مسیر در آن است، با انتخاب آن باز می‌کند.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>چسباندن مسیر</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>چسباندن مسیرها</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>محل این فایل را به‌صورت متن می‌چسباند.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>محل این فایل‌ها را به‌صورت متن، هر کدام در یک خط، می‌چسباند.</value>
+  </data>
 </root>

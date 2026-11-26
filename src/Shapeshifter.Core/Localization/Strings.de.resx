@@ -497,4 +497,16 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Öffnet den Ordner mit diesem Pfad und markiert ihn.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Pfad einfügen</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Pfade einfügen</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Fügt den Speicherort dieser Datei als Text ein.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Fügt die Speicherorte dieser Dateien als Text ein, einen pro Zeile.</value>
+  </data>
 </root>

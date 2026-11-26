@@ -497,4 +497,16 @@
   <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
     <value>Відкриває теку з цим шляхом і виділяє його.</value>
   </data>
+  <data name="ActionPastePath" xml:space="preserve">
+    <value>Вставити шлях</value>
+  </data>
+  <data name="ActionPastePaths" xml:space="preserve">
+    <value>Вставити шляхи</value>
+  </data>
+  <data name="ActionPastePathDescription" xml:space="preserve">
+    <value>Вставляє розташування цього файлу як текст.</value>
+  </data>
+  <data name="ActionPastePathsDescription" xml:space="preserve">
+    <value>Вставляє розташування цих файлів як текст, по одному в рядку.</value>
+  </data>
 </root>
