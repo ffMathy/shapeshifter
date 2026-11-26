@@ -196,6 +196,13 @@ public static partial class PickerDriver
     /// <summary>What a screenshot says, read with OCR (English letters).</summary>
     public static string ReadText(string png) => Desktop.Run("tesseract", [png, "-", "--psm", "3"], OneThread);
 
+    /// <summary>
+    /// What a screenshot says, read with OCR twice: as a page (<see cref="ReadText"/>) and as scattered text. A tall
+    /// picker's page layout can make the first reading skip a short block, such as a row's time, that the second finds.
+    /// </summary>
+    public static string ReadTextBothWays(string png) =>
+        ReadText(png) + "\n" + Desktop.Run("tesseract", [png, "-", "--psm", "11"], OneThread);
+
     /// <summary>Every word OCR finds, with where it is (in the screenshot's pixels).</summary>
     public static List<Word> ReadWords(string png) =>
         [.. Desktop.Run("tesseract", [png, "-", "--psm", "11", "tsv"], OneThread).Split('\n').Skip(1)

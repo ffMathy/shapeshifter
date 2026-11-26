@@ -77,7 +77,7 @@ public static partial class CaptureDriver
     /// (e.g. ["v", "v"], ["Up"], ["3"]) and lets go of Ctrl. Returns false, having let go of everything, if the picker
     /// did not appear.
     /// </summary>
-    static async Task<bool> TryPick(string[] keys)
+    static async Task<bool> TryPick(string[] keys, bool keep)
     {
         await KeyDown("ctrl");
         try
@@ -87,6 +87,7 @@ public static partial class CaptureDriver
             await KeyUp("v");
             if (!shown) return false;
             foreach (var k in keys) await Tap(k, 120);
+            if (keep) Screen.Keep();
             return true;
         }
         finally
@@ -100,12 +101,12 @@ public static partial class CaptureDriver
     /// Picks from the history like a person who, when the history does not come up (the first time right after
     /// Shapeshifter starts), simply tries again. <paramref name="before"/> runs before each try (e.g. emptying the text box).
     /// </summary>
-    public static async Task Pick(string[] keys, Func<Task>? before = null)
+    public static async Task Pick(string[] keys, Func<Task>? before = null, bool keep = false)
     {
         for (var attempt = 1; attempt <= 3; attempt++)
         {
             if (before is not null) await before();
-            if (await TryPick(keys)) return;
+            if (await TryPick(keys, keep)) return;
             await Sleep(1000);
         }
         throw new InvalidOperationException("the picker did not appear while Ctrl+V was held, three times");
@@ -115,6 +116,17 @@ public static partial class CaptureDriver
     public static async Task<string> PasteFromHistory(TargetApp app, params string[] keys)
     {
         await Pick(keys, app.Prepare);
+        await Sleep(700);
+        return await app.Text();
+    }
+
+    /// <summary>
+    /// Like <see cref="PasteFromHistory"/>, but keeps the screen with the history open on the chosen item as the
+    /// scenario's proof: for items whose paste shows nothing in a text box, such as files or an image.
+    /// </summary>
+    public static async Task<string> PasteFromHistoryShowingIt(TargetApp app, params string[] keys)
+    {
+        await Pick(keys, app.Prepare, keep: true);
         await Sleep(700);
         return await app.Text();
     }

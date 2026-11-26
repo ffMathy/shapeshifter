@@ -22,7 +22,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         Assert.Equal("OK", await App.Send($"copy-html {B64($"Rich bold {id} and italic")} {B64(html)}"));
         await Sleep(800);
         await App.Copy($"plain after rich {id}");
-        Assert.Equal($"Rich bold {id} and italic", await PasteFromHistory(App, "v"));
+        Assert.Equal($"Rich bold {id} and italic", await PasteFromHistoryShowingIt(App, "v"));
         Assert.Contains("text/html", ClipboardTypes());
         Assert.Equal(html, Encoding.UTF8.GetString(ClipboardBytes("text/html")));
     }
@@ -36,7 +36,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         await File.WriteAllTextAsync(file, "a file to copy", TestContext.Current.CancellationToken);
         await XCopy($"file://{file}\n", "text/uri-list");
         await App.Copy($"text after file {Unique()}");
-        await PasteFromHistory(App, "v");
+        await PasteFromHistoryShowingIt(App, "v");
         Assert.Contains("text/uri-list", ClipboardTypes());
         Assert.Equal($"file://{file}", Encoding.UTF8.GetString(ClipboardBytes("text/uri-list")).Trim());
     }
@@ -47,7 +47,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         byte[] bytes = [0, 1, 2, 250, 255, 13, 10, .. Encoding.UTF8.GetBytes(Unique())];
         await XCopy(bytes, "application/x-ail-capture-check");
         await App.Copy($"text after custom {Unique()}");
-        await PasteFromHistory(App, "v");
+        await PasteFromHistoryShowingIt(App, "v");
         Assert.Contains("application/x-ail-capture-check", ClipboardTypes());
         Assert.Equal(bytes, ClipboardBytes("application/x-ail-capture-check"));
     }
@@ -59,7 +59,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         Desktop.Run("convert", ["-size", "4x3", "xc:red", "-fill", "blue", "-draw", "point 1,1", "-fill", "lime", "-draw", "point 2,2", png]);
         await XCopy(await File.ReadAllBytesAsync(png, TestContext.Current.CancellationToken), "image/png");
         await App.Copy($"text after image {Unique()}");
-        await PasteFromHistory(App, "v");
+        await PasteFromHistoryShowingIt(App, "v");
         Assert.Contains("image/png", ClipboardTypes());
         // Read twice, as an app asking for the image again would: same pixels both times.
         foreach (var n in new[] { 1, 2 })
@@ -88,7 +88,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         await Sleep(800);
         // Copying something else takes the virtual files off the clipboard, so their streams can no longer be read.
         await App.Copy($"text after remote file {id}");
-        await PasteFromHistory(App, "v");
+        await PasteFromHistoryShowingIt(App, "v");
         var answer = (await App.Send("read-files")).Split(' ', StringSplitOptions.RemoveEmptyEntries);
         Assert.Equal("FILES", answer[0]);
         var files = answer.Skip(1).Chunk(2).Select(f => (Name: Decode(f[0]), Contents: Decode(f[1]))).ToArray();

@@ -26,7 +26,7 @@ public sealed class LanguagesChecks : Scenario
     public Task SpeaksTheLanguage() => WithLanguage("de", async d =>
     {
         var box = await HoldThePickerOpen(d);
-        var text = Squash(ReadText(ShootPicker(box, d)));
+        var text = Squash(ReadTextBothWays(ShootPicker(box, d)));
         await CancelThePicker(d);
         Assert.Contains("Noch nichts kopiert", text, StringComparison.Ordinal);
         Assert.Contains("Strg", text, StringComparison.Ordinal);
@@ -39,7 +39,7 @@ public sealed class LanguagesChecks : Scenario
     {
         await CopyWithXclip("ein kurzer Text", null, d);
         var box = await HoldThePickerOpen(d);
-        var text = Squash(ReadText(ShootPicker(box, d)));
+        var text = Squash(ReadTextBothWays(ShootPicker(box, d)));
         await CancelThePicker(d);
         Assert.Contains("Gerade eben", text, StringComparison.Ordinal);
         Assert.Contains("History", text, StringComparison.Ordinal);
