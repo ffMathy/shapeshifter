@@ -509,4 +509,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Indsætter, hvor filerne ligger, som tekst, én pr. linje.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Indsæt filens indhold</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Indsætter teksten i filen i stedet for selve filen.</value>
+  </data>
 </root>

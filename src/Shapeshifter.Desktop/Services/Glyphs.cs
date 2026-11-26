@@ -113,6 +113,7 @@ public static class Glyphs
             "copy-file-at-path" => File,
             "show-path-in-file-manager" => Reveal,
             "paste-paths" => Path,
+            "paste-file-contents" => Text,
             _ => Clipboard,
         };
     }

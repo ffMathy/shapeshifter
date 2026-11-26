@@ -509,4 +509,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Menempelkan lokasi file-file ini sebagai teks, satu per baris.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Tempel isi file</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Menempelkan teks di dalam file ini, bukan filenya.</value>
+  </data>
 </root>

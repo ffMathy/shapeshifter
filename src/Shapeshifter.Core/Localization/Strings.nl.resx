@@ -509,4 +509,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Plakt de locaties van deze bestanden als tekst, één per regel.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Bestandsinhoud plakken</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Plakt de tekst in dit bestand in plaats van het bestand.</value>
+  </data>
 </root>

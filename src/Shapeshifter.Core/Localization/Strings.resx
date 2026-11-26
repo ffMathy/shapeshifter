@@ -674,4 +674,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes where these files are as text, one per line.</value>
     <comment>Action description for 'Paste paths' (several files).</comment>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Paste file contents</value>
+    <comment>Action title: paste the text inside the copied text file, instead of the file itself.</comment>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Pastes the text inside this file instead of the file.</value>
+    <comment>Action description for 'Paste file contents'.</comment>
+  </data>
 </root>
