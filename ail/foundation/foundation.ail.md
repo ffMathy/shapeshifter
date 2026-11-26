@@ -5,7 +5,7 @@ Hand-written code that generated code builds on. These nodes are `@existing`:
 contracts. Each states only what generated code needs; the code itself, named
 under `sources`, holds the rest.
 
-More nodes in this folder, each in a file of its own: [`ClipboardItem`](clipboard-item.ail.md), [`ImageFormat`](image-format.ail.md), [`ClipboardAction`](clipboard-action.ail.md), [`ActionContext`](action-context.ail.md), [`Localization`](localization.ail.md), [`CopiedHtml`](copied-html.ail.md).
+More nodes, each in a folder of its own: [`ClipboardItem`](clipboard-item/clipboard-item.ail.md), [`ImageFormat`](image-format/image-format.ail.md), [`ClipboardAction`](clipboard-action/clipboard-action.ail.md), [`ActionContext`](action-context/action-context.ail.md), [`Localization`](localization/localization.ail.md), [`CopiedHtml`](copied-html/copied-html.ail.md).
 
 ```ail
 node Foundation : library   level: system
