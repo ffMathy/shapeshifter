@@ -216,7 +216,7 @@
     <value>সাধারণ টেক্সট হিসেবে আটকান</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>ক্লিপবোর্ডের বিষয়বস্তু ফরম্যাটিং ছাড়া সাধারণ টেক্সট হিসেবে আটকায়।</value>
+    <value>ফরম্যাটিং ছাড়া সাধারণ টেক্সট হিসেবে আটকায়।</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>ফাইল হিসেবে আটকান</value>
@@ -252,13 +252,13 @@
     <value>ক্লিপবোর্ডে পিন করুন</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>এই আইটেমটি পিন করে যাতে এটি সবসময় উপরে থাকে, এবং আপনার কম্পিউটারে সংরক্ষণ করে যাতে পরের বার Shapeshifter খুললেও এটি থাকে।</value>
+    <value>এই আইটেমটি উপরে রাখে এবং পরের বারের জন্য সংরক্ষণ করে।</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>ক্লিপবোর্ড থেকে আনপিন করুন</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>এই আইটেমটি আনপিন করে যাতে আপনি কপি করার সাথে সাথে এটি নিচে নামে, এবং এটি আর আপনার কম্পিউটারে সংরক্ষিত থাকে না।</value>
+    <value>এই আইটেমটিকে নিচে নামতে দেয় এবং আর সংরক্ষণ করে না।</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>এইমাত্র</value>

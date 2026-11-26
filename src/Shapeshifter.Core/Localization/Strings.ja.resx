@@ -216,25 +216,25 @@
     <value>プレーンテキストとして貼り付け</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>クリップボードの内容を書式なしのプレーンテキストとして貼り付けます。</value>
+    <value>書式なしのテキストとして貼り付けます。</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>ファイルとして貼り付け</value>
   </data>
   <data name="ActionPasteAsFileDescription" xml:space="preserve">
-    <value>このテキストを .txt ファイルに保存し、そのファイルを貼り付けます。</value>
+    <value>このテキストを .txt ファイルにして貼り付けます。</value>
   </data>
   <data name="ActionPasteAsZip" xml:space="preserve">
     <value>圧縮ファイルとして貼り付け</value>
   </data>
   <data name="ActionPasteAsZipDescription" xml:space="preserve">
-    <value>これらのファイルを 1 つの .zip ファイルに圧縮して貼り付けます。</value>
+    <value>これらのファイルを .zip に圧縮して貼り付けます。</value>
   </data>
   <data name="ActionCopyImageFromLink" xml:space="preserve">
     <value>リンクから画像をコピー</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>リンク先の画像をダウンロードし、画像そのものをクリップボードにコピーします。</value>
+    <value>リンク先の画像をクリップボードにコピーします。</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>リンクを開く</value>
@@ -252,13 +252,13 @@
     <value>クリップボードにピン留め</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>この項目をピン留めして常に一番上に表示し、次回 Shapeshifter を開いたときにも残るようにコンピューターに保存します。</value>
+    <value>この項目を一番上に保ち、次回のために保存します。</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>クリップボードからピン留めを外す</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>この項目のピン留めを外します。コピーするにつれて下に移動し、コンピューターには保存されなくなります。</value>
+    <value>この項目を下に移動できるようにし、保存をやめます。</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>たった今</value>
@@ -327,19 +327,19 @@
     <value>オフ</value>
   </data>
   <data name="ActionPasteAsImageFileDescription" xml:space="preserve">
-    <value>この画像を .{0} ファイルに保存し、そのファイルを貼り付けます。</value>
+    <value>この画像を .{0} ファイルにして貼り付けます。</value>
   </data>
   <data name="ActionUploadImage" xml:space="preserve">
     <value>アップロードしてリンクを貼り付け</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>この画像を {0} にアップロードし、その公開リンクを貼り付けます。</value>
+    <value>画像を {0} に上げて、公開リンクを貼り付けます。</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>アップロードしてリンクを貼り付け</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>このテキストを {0} にアップロードし、その公開リンクを貼り付けます。</value>
+    <value>テキストを {0} に上げて、公開リンクを貼り付けます。</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>ヒント</value>

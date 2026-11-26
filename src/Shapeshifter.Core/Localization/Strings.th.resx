@@ -216,7 +216,7 @@
     <value>วางเป็นข้อความธรรมดา</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>วางเนื้อหาในคลิปบอร์ดเป็นข้อความธรรมดาโดยไม่มีการจัดรูปแบบ</value>
+    <value>วางเป็นข้อความธรรมดาโดยไม่มีการจัดรูปแบบ</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>วางเป็นไฟล์</value>
@@ -234,7 +234,7 @@
     <value>คัดลอกรูปภาพจากลิงก์</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>ดาวน์โหลดรูปภาพที่ลิงก์ไว้ แล้วคัดลอกตัวรูปภาพไปยังคลิปบอร์ด</value>
+    <value>คัดลอกรูปภาพจากลิงก์ไปยังคลิปบอร์ด</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>เปิดลิงก์</value>
@@ -252,13 +252,13 @@
     <value>ปักหมุดไว้ในคลิปบอร์ด</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>ปักหมุดรายการนี้ให้อยู่ด้านบนสุดเสมอ และบันทึกไว้ในคอมพิวเตอร์ของคุณเพื่อให้ยังอยู่ในครั้งถัดไปที่คุณเปิด Shapeshifter</value>
+    <value>เก็บรายการนี้ไว้ด้านบนและบันทึกไว้สำหรับครั้งถัดไป</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>เลิกปักหมุดจากคลิปบอร์ด</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>เลิกปักหมุดรายการนี้ เพื่อให้รายการเลื่อนลงเมื่อคุณคัดลอก และจะไม่ถูกบันทึกไว้ในคอมพิวเตอร์ของคุณอีกต่อไป</value>
+    <value>ให้รายการนี้เลื่อนลงได้และเลิกบันทึกไว้</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>เมื่อสักครู่</value>
@@ -333,13 +333,13 @@
     <value>อัปโหลดแล้ววางลิงก์</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>อัปโหลดรูปภาพนี้ไปยัง {0} แล้ววางลิงก์สาธารณะของรูปภาพนั้น</value>
+    <value>อัปโหลดรูปภาพนี้ไปยัง {0} แล้ววางลิงก์สาธารณะ</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>อัปโหลดแล้ววางลิงก์</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>อัปโหลดข้อความนี้ไปยัง {0} แล้ววางลิงก์สาธารณะของข้อความนั้น</value>
+    <value>อัปโหลดข้อความนี้ไปยัง {0} แล้ววางลิงก์สาธารณะ</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>เคล็ดลับ</value>

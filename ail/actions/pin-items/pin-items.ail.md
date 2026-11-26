@@ -40,7 +40,7 @@ node PinItems : flow   level: experience
     decide a plain Ctrl+V still pastes the newest copy, not a pinned item; the picker opens on the newest copy
       because pinning must not change what an ordinary paste does
     decide pinning saves the item on the computer straight away; unpinning deletes it from there
-      because the action promises it "is there the next time you open Shapeshifter", and Unpin that it "is no longer saved to your computer"
+      because the action promises it is kept "saved for next time", and Unpin that it "stops saving it"
     decide an unpinned item goes back to the top of the history, as if just copied
       because "unknown, confirm with the owner: should it go back where its copy time puts it?"
     decide copying again what a pinned item holds leaves the pinned item where it is, and adds no duplicate

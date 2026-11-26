@@ -216,7 +216,7 @@
     <value>सादे टेक्स्ट के रूप में चिपकाएँ</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>क्लिपबोर्ड की सामग्री को बिना फ़ॉर्मेटिंग के सादे टेक्स्ट के रूप में चिपकाता है।</value>
+    <value>बिना फ़ॉर्मेटिंग के सादे टेक्स्ट के रूप में चिपकाता है।</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>फ़ाइल के रूप में चिपकाएँ</value>
@@ -234,7 +234,7 @@
     <value>लिंक से छवि कॉपी करें</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>लिंक की गई छवि डाउनलोड करता है और छवि को ही क्लिपबोर्ड पर कॉपी करता है।</value>
+    <value>लिंक की गई छवि को क्लिपबोर्ड पर कॉपी करता है।</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>लिंक खोलें</value>
@@ -252,13 +252,13 @@
     <value>क्लिपबोर्ड पर पिन करें</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>इस आइटम को पिन करता है ताकि यह हमेशा सबसे ऊपर रहे, और इसे आपके कंप्यूटर पर सहेजता है ताकि अगली बार Shapeshifter खोलने पर भी यह मौजूद रहे।</value>
+    <value>इस आइटम को ऊपर रखता है और अगली बार के लिए सहेजता है।</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>क्लिपबोर्ड से अनपिन करें</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>इस आइटम को अनपिन करता है ताकि कॉपी करते समय यह नीचे खिसकता जाए, और यह अब आपके कंप्यूटर पर सहेजा नहीं जाता।</value>
+    <value>इस आइटम को नीचे जाने देता है और अब इसे नहीं सहेजता।</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>अभी</value>
@@ -333,13 +333,13 @@
     <value>अपलोड करें और लिंक चिपकाएँ</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>इस छवि को {0} पर अपलोड करता है और उसका एक सार्वजनिक लिंक चिपकाता है।</value>
+    <value>छवि {0} पर अपलोड कर सार्वजनिक लिंक चिपकाता है।</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>अपलोड करें और लिंक चिपकाएँ</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>इस टेक्स्ट को {0} पर अपलोड करता है और उसका एक सार्वजनिक लिंक चिपकाता है।</value>
+    <value>टेक्स्ट {0} पर अपलोड कर सार्वजनिक लिंक चिपकाता है।</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>सुझाव</value>

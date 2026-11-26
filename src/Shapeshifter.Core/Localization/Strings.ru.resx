@@ -210,13 +210,13 @@
     <value>Вставить</value>
   </data>
   <data name="ActionPasteDescription" xml:space="preserve">
-    <value>Вставляет содержимое буфера обмена без изменений.</value>
+    <value>Вставляет содержимое без изменений.</value>
   </data>
   <data name="ActionPasteAsPlainText" xml:space="preserve">
     <value>Вставить как обычный текст</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Вставляет содержимое буфера обмена как обычный текст без форматирования.</value>
+    <value>Вставляет как обычный текст без форматирования.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Вставить как файл</value>
@@ -234,7 +234,7 @@
     <value>Копировать изображение по ссылке</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Скачивает изображение по ссылке и копирует само изображение в буфер обмена.</value>
+    <value>Копирует изображение по ссылке в буфер обмена.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Открыть ссылку</value>
@@ -252,13 +252,13 @@
     <value>Закрепить в буфере обмена</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Закрепляет этот элемент, чтобы он всегда оставался вверху, и сохраняет его на компьютере, чтобы он был доступен при следующем запуске приложения Shapeshifter.</value>
+    <value>Держит элемент вверху и сохраняет его на будущее.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Открепить из буфера обмена</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Открепляет этот элемент: он будет смещаться вниз по мере копирования и больше не будет сохраняться на компьютере.</value>
+    <value>Даёт элементу сдвигаться вниз и больше его не хранит.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Только что</value>
@@ -333,13 +333,13 @@
     <value>Загрузить и вставить ссылку</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Загружает это изображение на сервис {0} и вставляет общедоступную ссылку на него.</value>
+    <value>Загружает картинку на {0} и вставляет публичную ссылку.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Загрузить и вставить ссылку</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Загружает этот текст на сервис {0} и вставляет общедоступную ссылку на него.</value>
+    <value>Загружает текст на {0} и вставляет публичную ссылку.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Подсказки</value>

@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@22143cbd398fb9d9
+// ail-derived-from: OfferedActions@f74b22308a41d434
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;

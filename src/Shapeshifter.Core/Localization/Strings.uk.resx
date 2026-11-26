@@ -216,7 +216,7 @@
     <value>Вставити як звичайний текст</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Вставляє вміст буфера обміну як звичайний текст без форматування.</value>
+    <value>Вставляє як звичайний текст без форматування.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Вставити як файл</value>
@@ -234,7 +234,7 @@
     <value>Копіювати зображення за посиланням</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Завантажує зображення за посиланням і копіює саме зображення в буфер обміну.</value>
+    <value>Копіює зображення за посиланням у буфер обміну.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Відкрити посилання</value>
@@ -252,13 +252,13 @@
     <value>Закріпити в буфері обміну</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Закріплює цей елемент, щоб він завжди залишався вгорі, і зберігає його на комп’ютері, щоб він був доступний під час наступного запуску програми Shapeshifter.</value>
+    <value>Тримає елемент угорі й зберігає його на майбутнє.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Відкріпити з буфера обміну</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Відкріплює цей елемент: він зміщуватиметься вниз, коли ви копіюєте, і більше не зберігатиметься на комп’ютері.</value>
+    <value>Дає елементу зміщуватися вниз і більше не зберігає його.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Щойно</value>
@@ -333,13 +333,13 @@
     <value>Завантажити й вставити посилання</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Завантажує це зображення на сервіс {0} і вставляє публічне посилання на нього.</value>
+    <value>Завантажує картинку на {0} і вставляє публічне посилання.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Завантажити й вставити посилання</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Завантажує цей текст на сервіс {0} і вставляє публічне посилання на нього.</value>
+    <value>Завантажує текст на {0} і вставляє публічне посилання.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Підказки</value>

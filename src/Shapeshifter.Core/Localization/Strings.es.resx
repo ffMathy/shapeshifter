@@ -216,7 +216,7 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
     <value>Pegar como texto sin formato</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Pega el contenido del portapapeles como texto sin formato.</value>
+    <value>Pega el contenido como texto sin formato.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Pegar como archivo</value>
@@ -234,7 +234,7 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
     <value>Copiar imagen del enlace</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Descarga la imagen enlazada y copia la propia imagen al portapapeles.</value>
+    <value>Copia la imagen enlazada al portapapeles.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Abrir enlace</value>
@@ -252,13 +252,13 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
     <value>Anclar al portapapeles</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Ancla este elemento para que siempre esté arriba y lo guarda en el equipo para que siga ahí la próxima vez que abras Shapeshifter.</value>
+    <value>Mantiene este elemento arriba y lo guarda para la próxima vez.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Desanclar del portapapeles</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Desancla este elemento para que baje a medida que copias y deja de guardarlo en el equipo.</value>
+    <value>Deja que este elemento baje y ya no lo guarda.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Ahora mismo</value>

@@ -234,7 +234,7 @@
     <value>링크에서 이미지 복사</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>링크된 이미지를 다운로드하여 이미지 자체를 클립보드에 복사합니다.</value>
+    <value>링크된 이미지를 클립보드에 복사합니다.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>링크 열기</value>
@@ -252,13 +252,13 @@
     <value>클립보드에 고정</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>이 항목을 고정하여 항상 맨 위에 유지하고, 다음에 Shapeshifter를 열 때도 남아 있도록 컴퓨터에 저장합니다.</value>
+    <value>이 항목을 맨 위에 두고 다음에도 쓸 수 있게 저장합니다.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>클립보드에서 고정 해제</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>이 항목의 고정을 해제합니다. 복사할 때마다 아래로 이동하며, 더 이상 컴퓨터에 저장되지 않습니다.</value>
+    <value>이 항목이 아래로 내려가게 하고 더 이상 저장하지 않습니다.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>방금</value>

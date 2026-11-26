@@ -54,10 +54,10 @@ node OfferedActions : flow   level: experience
     action.plain            "Paste as plain text"          "Pastes clipboard contents as plain text with no formatting."
     action.upload           "Upload and paste link"        "Uploads this image to Catbox and pastes a public link to it." / "Uploads this text to Catbox and pastes a public link to it."
     action.zip              "Paste as compressed file"     "Compresses these files into one .zip file and pastes it."
-    action.imageFromLink    "Copy image from link"         "Downloads the linked image and copies the image itself to the clipboard."
+    action.imageFromLink    "Copy image from link"         "Copies the linked image itself to the clipboard."
     action.openLink         "Open link" / "Open links"     "Opens the link in your browser." / "Opens the links in your browser (at most 10)."
-    action.pin              "Pin to clipboard"             "Pins this item so that it always stays at the top, and saves it to your computer so that it is there the next time you open Shapeshifter."
-    action.unpin            "Unpin from clipboard"         "Unpins this item so that it moves down as you copy, and is no longer saved to your computer."
+    action.pin              "Pin to clipboard"             "Keeps this item at the top, saved for next time."
+    action.unpin            "Unpin from clipboard"         "Lets this item move down, and stops saving it."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

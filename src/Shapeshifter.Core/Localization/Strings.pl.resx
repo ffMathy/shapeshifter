@@ -216,7 +216,7 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
     <value>Wklej jako zwykły tekst</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>Wkleja zawartość schowka jako zwykły tekst bez formatowania.</value>
+    <value>Wkleja jako zwykły tekst bez formatowania.</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>Wklej jako plik</value>
@@ -234,7 +234,7 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
     <value>Kopiuj obraz z linku</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>Pobiera obraz, do którego prowadzi link, i kopiuje sam obraz do schowka.</value>
+    <value>Kopiuje obraz z linku do schowka.</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>Otwórz link</value>
@@ -252,13 +252,13 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
     <value>Przypnij do schowka</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>Przypina ten element, aby zawsze pozostawał na górze, i zapisuje go na komputerze, aby był dostępny przy następnym uruchomieniu aplikacji Shapeshifter.</value>
+    <value>Trzyma ten element na górze i zapisuje go na następny raz.</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>Odepnij od schowka</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>Odpina ten element: będzie przesuwał się w dół w miarę kopiowania i nie będzie już zapisywany na komputerze.</value>
+    <value>Pozwala elementowi przesuwać się w dół i już go nie zapisuje.</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>Przed chwilą</value>
@@ -333,13 +333,13 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
     <value>Prześlij i wklej link</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>Przesyła ten obraz do serwisu {0} i wkleja publiczny link do niego.</value>
+    <value>Przesyła ten obraz do {0} i wkleja publiczny link.</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>Prześlij i wklej link</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>Przesyła ten tekst do serwisu {0} i wkleja publiczny link do niego.</value>
+    <value>Przesyła ten tekst do {0} i wkleja publiczny link.</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>Wskazówki</value>

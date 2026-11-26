@@ -252,13 +252,13 @@
     <value>固定到剪贴板</value>
   </data>
   <data name="ActionPinDescription" xml:space="preserve">
-    <value>固定此项目，使其始终保持在顶部，并将其保存到你的电脑上，以便下次打开 Shapeshifter 时它仍在。</value>
+    <value>将此项目保持在顶部，并保存到下次使用。</value>
   </data>
   <data name="ActionUnpin" xml:space="preserve">
     <value>从剪贴板取消固定</value>
   </data>
   <data name="ActionUnpinDescription" xml:space="preserve">
-    <value>取消固定此项目，使其随着你的复制而下移，并且不再保存到你的电脑上。</value>
+    <value>让此项目随复制下移，并不再保存。</value>
   </data>
   <data name="TimeJustNow" xml:space="preserve">
     <value>刚刚</value>
