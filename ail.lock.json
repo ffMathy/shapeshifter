@@ -100,9 +100,9 @@
       "spec": "214c9abddf62a259f0bdec1f39d4a501c31cf878607956089728a7831d30cd98"
     },
     "PasteAsMarkdown": {
-      "hash": "006673d7cd222f4b3746e9018dad726f927a6bc82f0eaed9fdc49219c3b2c7b7",
+      "hash": "a2dc87bd9c6c9ac38868d4b8769b98277f294e67e49b7641df36c178fa3bd194",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-as-markdown/PasteAsMarkdown.cs": "df3453a5b7aadb88938309ef55a04c6649e3a39d19199c8b5c4a8a12fb2b9bbe"
+        "src/Shapeshifter.Core/Ail/actions/paste-as-markdown/PasteAsMarkdown.cs": "d0bd912f156537fb61606ac3121060af3626705356f03fb36a7e181ba71f1a77"
       },
       "by": "claude-code"
     },

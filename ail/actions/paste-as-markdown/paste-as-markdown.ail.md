@@ -17,8 +17,8 @@ node PasteAsMarkdown : fn   level: system
       ExecuteAsync pastes ClipboardSnapshot { Text: Convert(the HTML) } with context.WriteAndPasteAsync; nothing is added to the history
     the item's HTML is the Data of the first of item.Snapshot.RawFormats whose Name ClipboardFormatClassifier.IsHtml accepts, read with HtmlText.Decode
     PasteAsMarkdownAction.Convert(html: text) -> text
-      converts with ReverseMarkdown (the ReverseMarkdown package, which Shapeshifter.Core references), exactly as: a ReverseMarkdown.Config with GithubFlavored true, then config.Tags.Unknown = ReverseMarkdown.Config.UnknownTagsOption.Bypass, config.Formatting.RemoveComments = true and config.Links.SmartHref = true; then new ReverseMarkdown.Converter(config).Convert(html)
-      the result without the white space at its start and end
+      converts with ReverseMarkdown (the ReverseMarkdown package, which Shapeshifter.Core references), exactly as: a ReverseMarkdown.Config with GithubFlavored true, then config.Tags.Unknown = ReverseMarkdown.Config.UnknownTagsOption.Bypass, config.Formatting.RemoveComments = true, config.Links.SmartHref = true and config.Formatting.OutputLineEnding = "\n"; then new ReverseMarkdown.Converter(config).Convert(html)
+      the result without the white space at its start and end; its lines end in a line feed on every system
     examples
       Convert("<h1>Title</h1><p>Some <b>bold</b> and <i>italic</i> and a <a href=\"https://example.com\">link</a>.</p>") => "# Title\n\nSome **bold** and *italic* and a [link](https://example.com)."
       Convert("<ul><li>one</li><li>two</li></ul>") => "- one\n- two"
@@ -34,6 +34,8 @@ node PasteAsMarkdown : fn   level: system
   how
     decide ReverseMarkdown, GitHub-flavoured
       because it is the most used HTML-to-Markdown converter for .NET, MIT licensed, and GitHub's flavour adds tables and fenced code, which most Markdown apps read
+    decide lines end in a line feed on every system
+      because Markdown apps and editors read line feeds everywhere, and the result is then the same on Windows as elsewhere; ReverseMarkdown would otherwise use the system's line ending
     decide unknown tags keep their text, and comments are dropped
       because copied HTML is full of tags and markers that mean nothing in Markdown; their words matter, the markup does not
     decide offered only for text with an HTML format

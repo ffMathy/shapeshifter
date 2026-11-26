@@ -54,8 +54,8 @@ public static partial class ActionsDriver
 
     // ---------- reading the picker ----------
 
-    /// <summary>A short id that OCR reads back reliably (no 0/o, 1/l/i, 5/s look-alikes), for texts a check looks for on screen.</summary>
-    public static string ReadableId() => new(Random.Shared.GetItems("acdefhkmnprtwxyz".AsSpan(), 6));
+    /// <summary>A short id that OCR reads back reliably (no 0/o, 1/l/i, 5/s or c/e look-alikes), for texts a check looks for on screen.</summary>
+    public static string ReadableId() => new(Random.Shared.GetItems("adfhkmnprtwxyz".AsSpan(), 6));
 
     /// <summary>Tesseract, one thread (several checks may read the screen at once).</summary>
     static string Tesseract(params string[] args) => Run("tesseract", args, new Dictionary<string, string> { ["OMP_THREAD_LIMIT"] = "1" });
