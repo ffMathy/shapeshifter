@@ -29,13 +29,13 @@ target
   structure    Shapeshifter.Core holds every rule as plain, testable code; Shapeshifter.Platform touches the operating system; Shapeshifter.Desktop is the Avalonia app
   naming       PascalCase types and members, one public type per file, file named after the type
   copy         user-visible text comes from Strings.resx and its translations, never from code
-  path.fn      src/Shapeshifter.Core/Ail/{dir}/{Pascal}.cs
-  path.flow    src/Shapeshifter.Core/Ail/{dir}/{Pascal}.cs
-  path.data    src/Shapeshifter.Core/Ail/{dir}/{Pascal}.cs
-  path.view    src/Shapeshifter.Desktop/Ail/{dir}/{Pascal}.axaml
+  path.fn      src/Shapeshifter.Core/Ail/{dir}/{name}.cs
+  path.flow    src/Shapeshifter.Core/Ail/{dir}/{name}.cs
+  path.data    src/Shapeshifter.Core/Ail/{dir}/{name}.cs
+  path.view    src/Shapeshifter.Desktop/Ail/{dir}/{name}.axaml
   path.system  src/Shapeshifter.Desktop/Ail/Program.cs
   generated    src/Shapeshifter.Core/Ail/**, src/Shapeshifter.Desktop/Ail/**
-  tests        xUnit v3 on Microsoft.Testing.Platform; end-to-end checks are bun tests that drive the desktop with xdotool
+  tests        xUnit v3; the end-to-end checks are xUnit too (checks/e2e/Shapeshifter.Checks), driving the desktop with xdotool and reading it with tesseract
 ```
 
 ## Glossary
