@@ -440,4 +440,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Indsætter denne JSON på én linje uden mellemrum.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Indsæt som Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Indsætter teksten som Markdown med overskrifter, lister, links og fremhævning.</value>
+  </data>
 </root>

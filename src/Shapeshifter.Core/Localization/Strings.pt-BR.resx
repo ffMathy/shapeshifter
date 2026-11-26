@@ -440,4 +440,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Cola este JSON em uma linha, sem espaços.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Colar como Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Cola este texto como Markdown, com títulos, listas, links e ênfase.</value>
+  </data>
 </root>

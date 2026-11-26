@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>يلصق JSON هذا في سطر واحد دون مسافات.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>لصق بتنسيق Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>يلصق هذا النص بتنسيق Markdown مع الحفاظ على العناوين والقوائم والروابط والتأكيد.</value>
+  </data>
 </root>

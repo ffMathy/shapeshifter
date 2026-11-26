@@ -13,10 +13,10 @@ node OfferedActions : flow   level: experience
       Given a plain text was copied
       When the user holds Ctrl+V until the picker appears and taps Right
       Then the actions are "Paste", "Paste as file", "Upload and paste link", "Pin to clipboard", in that order
-    Scenario: formatted text also offers Paste as plain text
+    Scenario: formatted text also offers Paste as plain text and Paste as Markdown
       Given a text with formatting (bold, from a web page) was copied
       When the user opens its actions
-      Then they are "Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Pin to clipboard"
+      Then they are "Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Pin to clipboard"
     Scenario: text with spaces or blank lines around it also offers Paste trimmed
       Given the text "  padded \n" was copied
       When the user opens its actions
@@ -55,7 +55,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -80,6 +80,7 @@ node OfferedActions : flow   level: experience
     action.urlDecode        "Paste URL-decoded"              "Pastes this text with its %-codes turned back into characters."
     action.minifyJson       "Paste minified JSON"            "Pastes this JSON on one line, without spaces."
     action.formatJson       "Paste formatted JSON"           "Pastes this JSON indented, one value per line."
+    action.markdown         "Paste as Markdown"              "Pastes this text as Markdown, keeping headings, lists, links and emphasis."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

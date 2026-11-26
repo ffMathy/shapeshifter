@@ -440,4 +440,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Wkleja ten JSON w jednym wierszu, bez spacji.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Wklej jako Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Wkleja ten tekst jako Markdown, z nagłówkami, listami, linkami i wyróżnieniami.</value>
+  </data>
 </root>

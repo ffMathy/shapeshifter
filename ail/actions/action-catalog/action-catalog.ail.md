@@ -21,6 +21,7 @@ node ActionCatalog : fn   level: system
               paste                  0      always
               paste-as-file          10     an image with bytes, or Text kind with non-empty text
               paste-plain-text       20     Text kind with a rich format (HTML or RTF), and either non-empty text or an HTML format
+              paste-as-markdown      22     Text kind with an HTML format that converts to Markdown holding something (PasteAsMarkdown)
               paste-trimmed          24     Text kind whose text starts or ends with white space and holds something else (PasteTrimmed)
               upload-image           30     an image with bytes (UploadImage)
               upload-text            35     Text kind with text that is not only whitespace (UploadText)
@@ -32,7 +33,7 @@ node ActionCatalog : fn   level: system
               open-links             200    Text kind whose text holds at least one link; opens at most 10
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, toggle-pin]

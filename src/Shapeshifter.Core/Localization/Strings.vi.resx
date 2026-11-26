@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Dán JSON này trên một dòng, không có khoảng trắng.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Dán dưới dạng Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Dán văn bản này dưới dạng Markdown, giữ tiêu đề, danh sách, liên kết và nhấn mạnh.</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@65d5c88bb971f0a5
+// ail-derived-from: OfferedActions@954baf79dc248189
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -40,13 +40,13 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
     }
 
-    [Fact(DisplayName = "formatted text also offers Paste as plain text", Timeout = 30_000)]
+    [Fact(DisplayName = "formatted text also offers Paste as plain text and Paste as Markdown", Timeout = 30_000)]
     public async Task FormattedText()
     {
         var id = Unique();
         Assert.Equal("OK", await App.Send($"copy-html {B64($"bold {id}")} {B64($"<b>bold</b> {id}")}"));
         await Sleep(1200);
-        Assert.Equal(["Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "text with spaces or blank lines around it also offers Paste trimmed", Timeout = 30_000)]

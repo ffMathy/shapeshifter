@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>이 JSON을 공백 없이 한 줄로 붙여넣습니다.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Markdown으로 붙여넣기</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>제목, 목록, 링크, 강조를 살려 Markdown으로 붙여넣습니다.</value>
+  </data>
 </root>

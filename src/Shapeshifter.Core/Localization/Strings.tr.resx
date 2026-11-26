@@ -440,4 +440,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Bu JSON'u boşluksuz, tek satırda yapıştırır.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Markdown olarak yapıştır</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Bu metni başlıkları, listeleri, bağlantıları ve vurguları koruyarak Markdown olarak yapıştırır.</value>
+  </data>
 </root>

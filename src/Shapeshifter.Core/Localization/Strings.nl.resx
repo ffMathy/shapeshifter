@@ -440,4 +440,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Plakt deze JSON op één regel, zonder spaties.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Plakken als Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Plakt deze tekst als Markdown, met koppen, lijsten, links en nadruk.</value>
+  </data>
 </root>

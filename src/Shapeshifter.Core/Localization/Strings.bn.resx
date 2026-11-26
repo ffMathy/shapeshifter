@@ -440,4 +440,10 @@
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>এই JSON ফাঁকা ছাড়া এক লাইনে পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Markdown হিসেবে পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>শিরোনাম, তালিকা, লিংক ও জোর রেখে এই লেখা Markdown হিসেবে পেস্ট করে।</value>
+  </data>
 </root>

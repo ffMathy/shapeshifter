@@ -31,6 +31,9 @@ public static class Glyphs
     /// <summary>Curly braces: the JSON actions.</summary>
     public static Geometry Braces { get; } = Geometry.Parse("M7,3.5 C5,3.5 5,5 5,6.5 V8.5 C5,9.5 4.5,10 3.5,10 C4.5,10 5,10.5 5,11.5 V13.5 C5,15 5,16.5 7,16.5 M13,3.5 C15,3.5 15,5 15,6.5 V8.5 C15,9.5 15.5,10 16.5,10 C15.5,10 15,10.5 15,11.5 V13.5 C15,15 15,16.5 13,16.5");
 
+    /// <summary>The Markdown mark, an M and a down arrow in a box: Paste as Markdown.</summary>
+    public static Geometry Markdown { get; } = Geometry.Parse("M2.5,5 H17.5 V15 H2.5 Z M5,12.5 V7.5 L7,10 L9,7.5 V12.5 M13.5,7.5 V12.5 M11.75,10.75 L13.5,12.5 L15.25,10.75");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -83,6 +86,7 @@ public static class Glyphs
             "decode-base64" => Decode,
             "url-decode" => Decode,
             "reformat-json" => Braces,
+            "paste-as-markdown" => Markdown,
             _ => Clipboard,
         };
     }

@@ -440,4 +440,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionMinifyJsonDescription" xml:space="preserve">
     <value>Incolla questo JSON su una riga, senza spazi.</value>
   </data>
+  <data name="ActionPasteAsMarkdown" xml:space="preserve">
+    <value>Incolla come Markdown</value>
+  </data>
+  <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
+    <value>Incolla questo testo come Markdown, con titoli, elenchi, link ed enfasi.</value>
+  </data>
 </root>
