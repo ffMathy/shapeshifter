@@ -446,4 +446,16 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Pega este texto como Markdown, con títulos, listas, enlaces y énfasis.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Pegar como color hexadecimal</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Pegar como color RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Pegar como color HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Pega {0}.</value>
+  </data>
 </root>

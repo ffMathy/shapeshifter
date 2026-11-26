@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>शीर्षक, सूचियाँ, लिंक और ज़ोर रखते हुए इस टेक्स्ट को Markdown में चिपकाता है।</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>हेक्स रंग के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>RGB रंग के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>HSL रंग के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>{0} चिपकाता है।</value>
+  </data>
 </root>

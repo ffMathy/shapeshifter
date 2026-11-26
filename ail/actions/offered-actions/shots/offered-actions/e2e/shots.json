@@ -26,6 +26,10 @@
       "file": "json-on-one-line-also-offers-paste-formatted-json-and-json-o.png"
     },
     {
+      "test": "a colour also offers it in the other notations",
+      "file": "a-colour-also-offers-it-in-the-other-notations.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

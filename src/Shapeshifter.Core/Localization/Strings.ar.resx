@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>يلصق هذا النص بتنسيق Markdown مع الحفاظ على العناوين والقوائم والروابط والتأكيد.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>لصق كلون سداسي عشري</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>لصق كلون RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>لصق كلون HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>يلصق {0}.</value>
+  </data>
 </root>

@@ -28,12 +28,15 @@ node ActionCatalog : fn   level: system
               reformat-json          40     Text kind whose text is one JSON object or array (ReformatJson); titled Paste formatted JSON or Paste minified JSON
               decode-base64          42     Text kind whose text is Base64 of readable text (DecodeBase64)
               url-decode             44     Text kind whose text holds %-codes that decode to readable text (UrlDecode)
+              paste-color-hex        46     Text kind whose text is one colour in rgb() or hsl() (ConvertColor)
+              paste-color-rgb        47     Text kind whose text is one colour as hex or in hsl() (ConvertColor)
+              paste-color-hsl        48     Text kind whose text is one colour as hex or in rgb() (ConvertColor)
               paste-as-zip           75     File or FileCollection kind
               copy-image-from-link   100    Text kind whose text holds a link to an image
               open-links             200    Text kind whose text holds at least one link; opens at most 10
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-zip, copy-image-from-link, open-links, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, toggle-pin]
@@ -49,6 +52,7 @@ node ActionCatalog : fn   level: system
       GetAvailable(text "aGVsbG8gd29ybGQ=") => [paste, paste-as-file, upload-text, decode-base64, toggle-pin]
       GetAvailable(text "a%20b") => [paste, paste-as-file, upload-text, url-decode, toggle-pin]
       GetAvailable(text "{\"a\":1}") => [paste, paste-as-file, upload-text, reformat-json, toggle-pin]
+      GetAvailable(text "#3584e4") => [paste, paste-as-file, upload-text, paste-color-rgb, paste-color-hsl, toggle-pin]
       open-links.GetTitle(text "https://example.org") => "Open link";  with two links => "Open links"
       paste-as-file.GetDescription(JPEG image) => "Saves this image to a .jpg file and pastes the file."
       paste: ExecuteAsync(item) => WriteAndPasteAsync(item.Snapshot), then History.MoveToTop(item.Id) (no move for a pinned item)

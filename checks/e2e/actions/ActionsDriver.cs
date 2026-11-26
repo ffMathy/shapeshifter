@@ -109,7 +109,7 @@ public static partial class ActionsDriver
 
     /// <summary>Every action title, in the order they are shown, as read from the screen.</summary>
     public static readonly string[] ActionTitles = ["Paste", "Paste as file", "Paste as plain text", "Paste trimmed", "Upload and paste link", "Paste as compressed file",
-        "Copy image from link", "Open link", "Open links", "Paste decoded Base64", "Paste URL-decoded", "Paste formatted JSON", "Paste minified JSON", "Paste as Markdown", "Pin to clipboard", "Unpin from clipboard"];
+        "Copy image from link", "Open link", "Open links", "Paste decoded Base64", "Paste URL-decoded", "Paste formatted JSON", "Paste minified JSON", "Paste as Markdown", "Paste as hex colour", "Paste as RGB colour", "Paste as HSL colour", "Pin to clipboard", "Unpin from clipboard"];
 
     public static string[] ActionTitlesOnScreen()
     {

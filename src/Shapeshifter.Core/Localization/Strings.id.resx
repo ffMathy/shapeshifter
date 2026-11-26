@@ -446,4 +446,16 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Menempelkan teks ini sebagai Markdown, dengan judul, daftar, tautan, dan penekanan.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Tempel sebagai warna hex</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Tempel sebagai warna RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Tempel sebagai warna HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Menempelkan {0}.</value>
+  </data>
 </root>

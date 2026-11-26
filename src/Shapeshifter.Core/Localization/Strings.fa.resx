@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>این متن را به‌صورت Markdown با سرتیترها، فهرست‌ها، پیوندها و تأکیدها می‌چسباند.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>چسباندن به‌صورت رنگ هگز</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>چسباندن به‌صورت رنگ RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>چسباندن به‌صورت رنگ HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>{0} را می‌چسباند.</value>
+  </data>
 </root>

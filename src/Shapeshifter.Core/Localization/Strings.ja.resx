@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>見出し、リスト、リンク、強調を残して Markdown として貼り付けます。</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>16 進カラーとして貼り付け</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>RGB カラーとして貼り付け</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>HSL カラーとして貼り付け</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>{0} を貼り付けます。</value>
+  </data>
 </root>

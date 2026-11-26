@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "a142b68850d672b37f07ad489f64389ea5d671c5529de9be877aa4f0eb327acc",
-      "spec": "16cbdecbde153b9d0508011e0d09f0a9a99501ee8d749432f5b4fe50e691ffa8",
+      "hash": "88e1be283bd2269adf9a1ea173f7e79d8febf4d77fb329d588211ac70b2a8a4c",
+      "spec": "fa7158a633e70801e2f301ca4a2d8e4748e49cecb5a640e9e42b2469ca9677df",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -56,6 +56,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "97a1d49b52e060cc2db98012a6bdd55e315b21501885dad322c1dbabeefc59c5"
+    },
+    "ConvertColor": {
+      "hash": "13f7cd9f2d4c31274586c9dd6d8a61e6679a7fbd0bb8909112c8c89898ecdeb6",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/convert-color/ConvertColor.cs": "eda67e6810b0bd4ec4512b859949b272166c6072639280a537e1034d4b91651a"
+      },
+      "by": "claude-code"
     },
     "CopySource": {
       "hash": "53bf108c6933bc5187ec4d42ac8facc0c8199c8db8f5c02d863dc8db55ed2171",

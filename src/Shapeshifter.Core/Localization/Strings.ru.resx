@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Вставляет этот текст как Markdown, с заголовками, списками, ссылками и выделением.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Вставить как цвет HEX</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Вставить как цвет RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Вставить как цвет HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Вставляет {0}.</value>
+  </data>
 </root>

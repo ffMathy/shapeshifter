@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>제목, 목록, 링크, 강조를 살려 Markdown으로 붙여넣습니다.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>16진수 색상으로 붙여넣기</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>RGB 색상으로 붙여넣기</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>HSL 색상으로 붙여넣기</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>{0}을(를) 붙여넣습니다.</value>
+  </data>
 </root>

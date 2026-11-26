@@ -446,4 +446,16 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Indsætter teksten som Markdown med overskrifter, lister, links og fremhævning.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Indsæt som hex-farve</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Indsæt som RGB-farve</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Indsæt som HSL-farve</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Indsætter {0}.</value>
+  </data>
 </root>

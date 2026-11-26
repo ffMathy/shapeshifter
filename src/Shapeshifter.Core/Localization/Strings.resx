@@ -590,4 +590,20 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this text as Markdown, keeping headings, lists, links and emphasis.</value>
     <comment>Action description for 'Paste as Markdown'.</comment>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Paste as hex colour</value>
+    <comment>Action title: paste the copied colour written as a hex code, such as #3584e4.</comment>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Paste as RGB colour</value>
+    <comment>Action title: paste the copied colour written as rgb(), such as rgb(53, 132, 228). Keep RGB.</comment>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Paste as HSL colour</value>
+    <comment>Action title: paste the copied colour written as hsl(), such as hsl(213, 76%, 55%). Keep HSL.</comment>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Pastes {0}.</value>
+    <comment>Action description for the colour actions; {0} is the colour as it will be pasted, such as rgb(53, 132, 228).</comment>
+  </data>
 </root>
