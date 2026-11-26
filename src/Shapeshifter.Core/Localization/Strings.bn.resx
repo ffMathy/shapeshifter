@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>এটি হিসাব করে {0} পেস্ট করে।</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>ইমেল লিখুন</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>{0}-কে একটি নতুন ইমেল খোলে।</value>
+  </data>
 </root>

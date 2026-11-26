@@ -473,4 +473,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>Lo calcula y pega {0}.</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>Escribir correo</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>Abre un correo nuevo para {0}.</value>
+  </data>
 </root>

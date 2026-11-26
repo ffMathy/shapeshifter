@@ -473,4 +473,10 @@
   <data name="ActionPasteResultDescription" xml:space="preserve">
     <value>इसकी गणना करके {0} चिपकाता है।</value>
   </data>
+  <data name="ActionWriteEmail" xml:space="preserve">
+    <value>ईमेल लिखें</value>
+  </data>
+  <data name="ActionWriteEmailDescription" xml:space="preserve">
+    <value>{0} को नया ईमेल खोलता है।</value>
+  </data>
 </root>
