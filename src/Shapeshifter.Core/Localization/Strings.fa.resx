@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>این Base64 را رمزگشایی می‌کند و متن درون آن را می‌چسباند.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>چسباندن با رمزگشایی URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>این متن را با تبدیل کدهای % به نویسه‌ها می‌چسباند.</value>
+  </data>
 </root>

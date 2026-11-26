@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>이 Base64를 디코딩하여 담긴 텍스트를 붙여넣습니다.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL 디코딩하여 붙여넣기</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>% 코드를 문자로 되돌려 이 텍스트를 붙여넣습니다.</value>
+  </data>
 </root>

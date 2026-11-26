@@ -558,4 +558,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Decodes this Base64 and pastes the text it holds.</value>
     <comment>Action description for 'Paste decoded Base64'.</comment>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Paste URL-decoded</value>
+    <comment>Action title: paste the copied text with its URL %-codes (such as %20) decoded.</comment>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Pastes this text with its %-codes turned back into characters.</value>
+    <comment>Action description for 'Paste URL-decoded'. %-codes are sequences such as %20 in web addresses.</comment>
+  </data>
 </root>

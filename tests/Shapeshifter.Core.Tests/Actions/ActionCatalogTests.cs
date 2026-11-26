@@ -8,7 +8,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "paste-trimmed", "upload-image", "upload-text", "decode-base64", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "paste-trimmed", "upload-image", "upload-text", "decode-base64", "url-decode", "paste-as-zip", "copy-image-from-link", "open-links", "toggle-pin",
     ];
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class ActionCatalogTests
         var catalog = ActionCatalog.CreateDefault();
 
         Assert.Equal(DefaultOrder, catalog.All.Select(action => action.Id));
-        Assert.Equal([0, 10, 20, 24, 30, 35, 42, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
+        Assert.Equal([0, 10, 20, 24, 30, 35, 42, 44, 75, 100, 200, 255], catalog.All.Select(action => action.Order));
     }
 
     [Fact]
@@ -98,6 +98,7 @@ public sealed class ActionCatalogTests
         { "image-link", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
         { "text+image", ["paste", "paste-as-file", "upload-text", "copy-image-from-link", "open-links", "toggle-pin"] },
         { "base64", ["paste", "paste-as-file", "upload-text", "decode-base64", "toggle-pin"] },
+        { "url-encoded", ["paste", "paste-as-file", "upload-text", "url-decode", "toggle-pin"] },
     };
 
     [Theory]
@@ -133,7 +134,7 @@ public sealed class ActionCatalogTests
         IClipboardAction[] actions =
         [
             new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
-            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
+            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
         ];
 
         Assert.All(actions, action => Assert.Throws<ArgumentNullException>(() => action.CanExecute(null!)));

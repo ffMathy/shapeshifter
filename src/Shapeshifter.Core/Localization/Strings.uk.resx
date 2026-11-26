@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Декодує цей Base64 і вставляє текст із нього.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Вставити з декодуванням URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Вставляє цей текст, перетворюючи %-коди назад на символи.</value>
+  </data>
 </root>

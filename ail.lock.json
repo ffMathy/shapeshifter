@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "a99083ec1474b21bd8147110c75b054cfc16dbd8928339ba60f5f595a0b99267",
-      "spec": "830ee57b8f9e4deaa32b6d0694a070e418c953ea5abbc6924eaf2e43d2c1184e",
+      "hash": "04ee796b2094f70cbba6e90a1636befc27efd5a7b2ae8a1e0a286163c268ec16",
+      "spec": "a64a8bf1e1bfe367d0cf9782361dcebab193fe784eb0a5ba00fb7bfb1e39e478",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -215,6 +215,13 @@
       "hash": "d2fd484efb4120d16a134caf429cfd119d542a24e7cabc1c78f916be3c6ec233",
       "files": {
         "src/Shapeshifter.Core/Ail/actions/upload-text/UploadText.cs": "2a8d2b59595a20aa510792fc488642e9cf082cb1ccfbf702f1bf39921021bf70"
+      },
+      "by": "claude-code"
+    },
+    "UrlDecode": {
+      "hash": "3860efee1d05b3bf719ad41057126db813b7184f02cde0a4a19acedee3f3fa91",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/url-decode/UrlDecode.cs": "8baf80dc2ff5cdfc4016eed65edc6fae66e577220017967b8cc52b23ca59aab4"
       },
       "by": "claude-code"
     }

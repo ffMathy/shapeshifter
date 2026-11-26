@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>ถอดรหัส Base64 นี้และวางข้อความที่อยู่ข้างใน</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>วางโดยถอดรหัส URL</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>วางข้อความนี้โดยแปลงรหัส % กลับเป็นตัวอักษร</value>
+  </data>
 </root>

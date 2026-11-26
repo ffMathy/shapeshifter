@@ -422,4 +422,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>Decodifica questo Base64 e incolla il testo che contiene.</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>Incolla con URL decodificato</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>Incolla questo testo con i codici % riconvertiti in caratteri.</value>
+  </data>
 </root>

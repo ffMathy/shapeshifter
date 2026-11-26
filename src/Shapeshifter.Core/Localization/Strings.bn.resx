@@ -422,4 +422,10 @@
   <data name="ActionDecodeBase64Description" xml:space="preserve">
     <value>এই Base64 ডিকোড করে এর ভেতরের লেখা পেস্ট করে।</value>
   </data>
+  <data name="ActionUrlDecode" xml:space="preserve">
+    <value>URL ডিকোড করে পেস্ট করুন</value>
+  </data>
+  <data name="ActionUrlDecodeDescription" xml:space="preserve">
+    <value>এই লেখার %-কোডগুলো অক্ষরে ফিরিয়ে পেস্ট করে।</value>
+  </data>
 </root>
