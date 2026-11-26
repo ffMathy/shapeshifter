@@ -33,7 +33,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         var dir = Path.Combine(Scratch, $"files-{Unique()}");
         Directory.CreateDirectory(dir);
         var file = Path.Combine(dir, "report.txt");
-        await File.WriteAllTextAsync(file, "a file to copy");
+        await File.WriteAllTextAsync(file, "a file to copy", TestContext.Current.CancellationToken);
         await XCopy($"file://{file}\n", "text/uri-list");
         await App.Copy($"text after file {Unique()}");
         await PasteFromHistory(App, "v");
@@ -57,7 +57,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
     {
         var png = Path.Combine(Scratch, $"image-{Unique()}.png");
         Desktop.Run("convert", ["-size", "4x3", "xc:red", "-fill", "blue", "-draw", "point 1,1", "-fill", "lime", "-draw", "point 2,2", png]);
-        await XCopy(await File.ReadAllBytesAsync(png), "image/png");
+        await XCopy(await File.ReadAllBytesAsync(png, TestContext.Current.CancellationToken), "image/png");
         await App.Copy($"text after image {Unique()}");
         await PasteFromHistory(App, "v");
         Assert.Contains("image/png", ClipboardTypes());
@@ -65,7 +65,7 @@ public sealed class KeepFormatsChecks(CaptureAppFixture target) : Scenario, ICla
         foreach (var n in new[] { 1, 2 })
         {
             var back = Path.Combine(Scratch, $"back-{n}-{Unique()}.png");
-            await File.WriteAllBytesAsync(back, ClipboardBytes("image/png"));
+            await File.WriteAllBytesAsync(back, ClipboardBytes("image/png"), TestContext.Current.CancellationToken);
             Assert.True(SamePixels(png, back), $"read back the {n}. time, the image's pixels differ from what was copied");
         }
         // Shapeshifter is still there: the next copy is in the history.

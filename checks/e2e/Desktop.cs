@@ -13,11 +13,12 @@ namespace Shapeshifter.Checks;
 
 public static partial class Desktop
 {
-    /// <summary>The project root: the folder with ail.config.json, above wherever the checks were built.</summary>
+    /// <summary>The project root: AIL_ROOT, else the folder with ail.config.json above the working folder or the checks' build.</summary>
     public static string Root { get; } = FindRoot();
 
     static string FindRoot()
     {
+        if (Environment.GetEnvironmentVariable("AIL_ROOT") is { Length: > 0 } given) return Path.GetFullPath(given);
         foreach (var start in new[] { Environment.CurrentDirectory, AppContext.BaseDirectory })
         {
             for (var dir = new DirectoryInfo(start); dir is not null; dir = dir.Parent)

@@ -10,4 +10,5 @@ out="${AIL_CHECKS_OUT:-checks/e2e/bin/Release/net11.0}"
 if [[ "$1" == build ]]; then
   exec dotnet build checks/e2e -c Release -v quiet -nologo
 fi
+export AIL_ROOT="$PWD"
 exec dotnet "$out/Shapeshifter.Checks.dll" -class "*.$1Checks" -result-junit "$2" -noLogo -noColor -reporter verbose
