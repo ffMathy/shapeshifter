@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Открывает новое письмо для {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Искать в интернете</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Ищет этот текст в {0} в браузере.</value>
+  </data>
 </root>

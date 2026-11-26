@@ -479,4 +479,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Åbner en ny e-mail til {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Søg på nettet</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Søger efter teksten på {0} i din browser.</value>
+  </data>
 </root>

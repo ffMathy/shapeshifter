@@ -34,6 +34,7 @@ public sealed class ActionCatalog
         new PasteAsUnixTimeAction(),
         new PasteResultAction(),
         new WriteEmailAction(),
+        new SearchWebAction(),
         new TogglePinAction(),
     ]);
 

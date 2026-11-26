@@ -479,4 +479,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Ouvre un nouvel e-mail à {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Rechercher sur le web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Recherche ce texte sur {0} dans votre navigateur.</value>
+  </data>
 </root>

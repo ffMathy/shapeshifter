@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Mở email mới gửi đến {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Tìm trên web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Tìm văn bản này trên {0} trong trình duyệt.</value>
+  </data>
 </root>

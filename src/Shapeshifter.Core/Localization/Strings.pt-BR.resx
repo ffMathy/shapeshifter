@@ -479,4 +479,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Abre um novo e-mail para {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Pesquisar na web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Pesquisa este texto no {0} no seu navegador.</value>
+  </data>
 </root>

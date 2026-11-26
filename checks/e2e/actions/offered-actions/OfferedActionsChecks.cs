@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@b06bb5d08f8df26a
+// ail-derived-from: OfferedActions@b1b8a02a6f003ea7
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -33,11 +33,11 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         return string.Join("\n", names.Select(n => { var p = Path.Combine(dir, n); File.WriteAllText(p, n); return $"file://{p}"; })) + "\n";
     }
 
-    [Fact(DisplayName = "plain text offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]
+    [Fact(DisplayName = "plain text offers Paste, Paste as file, Upload and paste link, Search the web, and Pin", Timeout = 30_000)]
     public async Task PlainText()
     {
         await App.Copy($"plain {Unique()}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "formatted text also offers Paste as plain text and Paste as Markdown", Timeout = 30_000)]
@@ -46,28 +46,28 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         var id = Unique();
         Assert.Equal("OK", await App.Send($"copy-html {B64($"bold {id}")} {B64($"<b>bold</b> {id}")}"));
         await Sleep(1200);
-        Assert.Equal(["Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Paste as plain text", "Paste as Markdown", "Upload and paste link", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "text with spaces or blank lines around it also offers Paste trimmed", Timeout = 30_000)]
     public async Task PaddedText()
     {
         await CopyAs("UTF8_STRING", $"  padded {Unique()} \n");
-        Assert.Equal(["Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "Base64 of a readable text also offers Paste decoded Base64", Timeout = 30_000)]
     public async Task Base64Text()
     {
         await CopyAs("UTF8_STRING", B64($"hello {Unique()}"));
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste decoded Base64", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "a text with %-codes also offers Paste URL-decoded", Timeout = 30_000)]
     public async Task UrlEncodedText()
     {
         await CopyAs("UTF8_STRING", $"a%20{Unique()}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste URL-decoded", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON", Timeout = 40_000)]
@@ -75,7 +75,7 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         var id = Unique();
         await CopyAs("UTF8_STRING", $"{{\"{id}\":1}}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
         await CopyAs("UTF8_STRING", $"{{\n  \"{id}\": 2\n}}");
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste minified JSON", "Pin to clipboard"], await ActionsOfNewest());
     }
@@ -84,7 +84,7 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     public async Task Colour()
     {
         await CopyAs("UTF8_STRING", $"#{Random.Shared.Next(0x1000000):x6}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as RGB colour", "Paste as HSL colour", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as RGB colour", "Paste as HSL colour", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "a Unix time also offers Paste as date and time, and a date and time Paste as Unix time", Timeout = 40_000)]
@@ -92,23 +92,23 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         var seconds = 1_700_000_000 + Random.Shared.Next(100_000_000);
         await CopyAs("UTF8_STRING", seconds.ToString(System.Globalization.CultureInfo.InvariantCulture));
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as date and time", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as date and time", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
         await CopyAs("UTF8_STRING", DateTimeOffset.FromUnixTimeSeconds(seconds).ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", System.Globalization.CultureInfo.InvariantCulture));
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as Unix time", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste as Unix time", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "a calculation also offers Paste result", Timeout = 30_000)]
     public async Task Calculation()
     {
         await CopyAs("UTF8_STRING", $"{Random.Shared.Next(2, 99)}*{Random.Shared.Next(2, 99)}+{Random.Shared.Next(2, 99)}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste result", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste result", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an e-mail address also offers Write email", Timeout = 30_000)]
     public async Task EmailAddress()
     {
         await CopyAs("UTF8_STRING", $"anna.{Unique()}@example.com");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Write email", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Write email", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]
@@ -144,6 +144,6 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         var id = Unique();
         await CopyAs("UTF8_STRING", $"see https://example.com/{id}.png and https://example.org/{id}");
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Search the web", "Pin to clipboard"], await ActionsOfNewest());
     }
 }

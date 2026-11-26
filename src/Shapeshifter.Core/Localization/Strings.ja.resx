@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>{0} 宛ての新しいメールを開きます。</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>ウェブで検索</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>ブラウザーの {0} でこのテキストを検索します。</value>
+  </data>
 </root>

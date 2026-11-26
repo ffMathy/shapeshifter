@@ -2,7 +2,7 @@
   "node": "OfferedActions",
   "shots": [
     {
-      "test": "plain text offers Paste, Paste as file, Upload and paste link, and Pin",
+      "test": "plain text offers Paste, Paste as file, Upload and paste link, Search the web, and Pin",
       "file": "plain-text-offers-paste-paste-as-file-upload-and-paste-link-.png"
     },
     {

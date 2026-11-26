@@ -479,4 +479,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>Abre un correo nuevo para {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>Buscar en la web</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>Busca este texto en {0} en tu navegador.</value>
+  </data>
 </root>

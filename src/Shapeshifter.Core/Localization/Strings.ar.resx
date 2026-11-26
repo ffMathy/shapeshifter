@@ -479,4 +479,10 @@
   <data name="ActionWriteEmailDescription" xml:space="preserve">
     <value>يفتح رسالة جديدة إلى {0}.</value>
   </data>
+  <data name="ActionSearchWeb" xml:space="preserve">
+    <value>البحث في الويب</value>
+  </data>
+  <data name="ActionSearchWebDescription" xml:space="preserve">
+    <value>يبحث عن هذا النص في {0} داخل متصفحك.</value>
+  </data>
 </root>

@@ -1,4 +1,4 @@
-// ail-derived-from: PinItems@eaa4f9c314a3925b
+// ail-derived-from: PinItems@946f777114fad27d
 // End-to-end check for PinItems: pinning and unpinning from the actions, and pinned items surviving a restart.
 // Pinned items stay at the top for good, so every scenario runs on a desktop of its own (PrivateDesktop), where it
 // may also quit Shapeshifter from its tray menu and start it again.
@@ -61,7 +61,7 @@ public sealed class PinItemsChecks : PrivateDesktopScenario
         await Tap("Right");
         await Sleep(300);
         // A text also offers "Upload and paste link" (OfferedActions); Unpin takes Pin's place, last.
-        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Unpin from clipboard"], ActionTitlesOnScreen());
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Search the web", "Unpin from clipboard"], ActionTitlesOnScreen());
         await Tap("Up");
         await KeyUp("ctrl");
         await Sleep(1200);
