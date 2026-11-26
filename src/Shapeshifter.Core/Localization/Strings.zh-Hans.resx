@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>使用 Ctrl+V 时，Cmd+V 照常粘贴</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>去掉首尾空白后粘贴</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>粘贴此文本，去掉开头和结尾的空格与空行。</value>
+  </data>
 </root>

@@ -410,4 +410,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Dengan Ctrl+V, Cmd+V menempel seperti biasa</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Tempel tanpa spasi berlebih</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Menempelkan teks ini tanpa spasi dan baris kosong di awal dan akhirnya.</value>
+  </data>
 </root>

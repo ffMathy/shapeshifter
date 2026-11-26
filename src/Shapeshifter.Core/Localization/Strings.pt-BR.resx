@@ -410,4 +410,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Com Ctrl+V, Cmd+V cola como sempre</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Colar sem espaços sobrando</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Cola este texto sem os espaços e linhas em branco do início e do fim.</value>
+  </data>
 </root>

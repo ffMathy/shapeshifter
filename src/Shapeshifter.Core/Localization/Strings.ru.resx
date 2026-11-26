@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>С Ctrl+V сочетание Cmd+V вставляет как обычно</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Вставить без лишних пробелов</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Вставляет этот текст без пробелов и пустых строк в начале и в конце.</value>
+  </data>
 </root>

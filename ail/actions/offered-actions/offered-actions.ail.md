@@ -17,6 +17,10 @@ node OfferedActions : flow   level: experience
       Given a text with formatting (bold, from a web page) was copied
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Pin to clipboard"
+    Scenario: text with spaces or blank lines around it also offers Paste trimmed
+      Given the text "  padded \n" was copied
+      When the user opens its actions
+      Then they are "Paste", "Paste as file", "Paste trimmed", "Upload and paste link", "Pin to clipboard"
     Scenario: an image offers Paste, Paste as file, Upload and paste link, and Pin
       Given an image was copied
       When the user opens its actions
@@ -38,7 +42,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Upload and paste link, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste trimmed, Upload and paste link, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -52,6 +56,7 @@ node OfferedActions : flow   level: experience
     action.paste            "Paste"                        "Pastes clipboard contents as-is."
     action.pasteFile        "Paste as file"                "Saves this text to a .txt file and pastes the file." / "Saves this image to a .{ext} file and pastes the file."
     action.plain            "Paste as plain text"          "Pastes clipboard contents as plain text with no formatting."
+    action.trimmed          "Paste trimmed"                "Pastes this text without the spaces and blank lines at its start and end."
     action.upload           "Upload and paste link"        "Uploads this image to Catbox and pastes a public link to it." / "Uploads this text to Catbox and pastes a public link to it."
     action.zip              "Paste as compressed file"     "Compresses these files into one .zip file and pastes it."
     action.imageFromLink    "Copy image from link"         "Copies the linked image itself to the clipboard."

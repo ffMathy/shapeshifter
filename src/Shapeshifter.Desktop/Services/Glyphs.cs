@@ -22,6 +22,9 @@ public static class Glyphs
 
     public static Geometry PlainText { get; } = Geometry.Parse("M3.5,5 V3.5 H12.5 V5 M8,3.5 V16.5 M6,16.5 H10 M12.5,11 H17 M12.5,14 H17 M12.5,17 H15.5");
 
+    /// <summary>Text between two bars, drawn in from both sides: Paste trimmed.</summary>
+    public static Geometry Trim { get; } = Geometry.Parse("M2.5,4.5 V15.5 M17.5,4.5 V15.5 M7,10 H13 M5,7.5 L7.5,10 L5,12.5 M15,7.5 L12.5,10 L15,12.5");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -65,6 +68,7 @@ public static class Glyphs
         {
             "toggle-pin" => unpins ? Unpin : Pin,
             "paste-plain-text" => PlainText,
+            "paste-trimmed" => Trim,
             "paste-as-zip" => Archive,
             "upload-image" or "upload-text" => Upload,
             "paste-as-file" => PasteAsFile,

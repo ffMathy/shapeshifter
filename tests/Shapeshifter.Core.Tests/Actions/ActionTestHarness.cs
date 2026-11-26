@@ -192,7 +192,7 @@ internal static class Items
 {
     public static readonly TheoryData<string> AllKinds =
     [
-        "plain", "whitespace", "text+html", "html-only", "empty-text+html", "rtf-only", "image", "file", "files", "other",
+        "plain", "whitespace", "padded", "text+html", "html-only", "empty-text+html", "rtf-only", "image", "file", "files", "other",
         "empty", "link", "image-link", "text+image", "file+html",
     ];
 
@@ -202,6 +202,7 @@ internal static class Items
     {
         "plain" => new() { Text = "hello world" },
         "whitespace" => new() { Text = "   " },
+        "padded" => new() { Text = "  hello world\n" },
         "text+html" => new()
         {
             Text = "Hello World",

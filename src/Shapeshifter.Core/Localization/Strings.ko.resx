@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Ctrl+V를 사용하면 Cmd+V는 평소처럼 붙여넣습니다</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>앞뒤 공백 없이 붙여넣기</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>이 텍스트를 앞뒤의 공백과 빈 줄 없이 붙여넣습니다.</value>
+  </data>
 </root>

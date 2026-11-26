@@ -542,4 +542,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Ctrl+V leaves Cmd+V free to paste as usual</value>
     <comment>macOS: explains the Ctrl+V choice of the shortcut setting. Keep Cmd; use the local name of the Ctrl key (German: Strg).</comment>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Paste trimmed</value>
+    <comment>Action title: paste the copied text without the spaces and blank lines at its start and end.</comment>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Pastes this text without the spaces and blank lines at its start and end.</value>
+    <comment>Action description for 'Paste trimmed'.</comment>
+  </data>
 </root>

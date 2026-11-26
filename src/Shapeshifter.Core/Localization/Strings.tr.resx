@@ -410,4 +410,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Ctrl+V seçilince Cmd+V her zamanki gibi yapıştırır</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Boşlukları kırparak yapıştır</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Bu metni başındaki ve sonundaki boşluklar ve boş satırlar olmadan yapıştırır.</value>
+  </data>
 </root>

@@ -410,4 +410,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Med Ctrl+V indsætter Cmd+V som normalt</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>Indsæt uden omkringstående mellemrum</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>Indsætter teksten uden mellemrum og tomme linjer i starten og slutningen.</value>
+  </data>
 </root>

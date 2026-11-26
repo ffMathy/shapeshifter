@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Ctrl+V चुनने पर Cmd+V पहले की तरह पेस्ट करता है</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>अतिरिक्त खाली जगह के बिना चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>इस टेक्स्ट को शुरू और अंत की खाली जगह और खाली पंक्तियों के बिना चिपकाता है।</value>
+  </data>
 </root>

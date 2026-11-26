@@ -410,4 +410,10 @@
   <data name="SettingsShortcutDescriptionMac" xml:space="preserve">
     <value>Ctrl+V にすると、Cmd+V は通常どおり貼り付けます</value>
   </data>
+  <data name="ActionPasteTrimmed" xml:space="preserve">
+    <value>前後の空白を除いて貼り付け</value>
+  </data>
+  <data name="ActionPasteTrimmedDescription" xml:space="preserve">
+    <value>このテキストを、先頭と末尾の空白や空行を除いて貼り付けます。</value>
+  </data>
 </root>
