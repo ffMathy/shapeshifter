@@ -18,8 +18,19 @@ public static class StoreInstall
     /// <summary>True when the Microsoft Store or the Mac App Store installed this copy.</summary>
     public static bool IsActive => Detected.Value;
 
+    /// <summary>
+    /// Set to 1, makes this copy act as if an app store had installed it, on any system: the end-to-end checks use it
+    /// to see what a store copy shows, which they cannot install from a store.
+    /// </summary>
+    public const string OverrideVariable = "SHAPESHIFTER_STORE_COPY";
+
     private static bool Detect()
     {
+        if (Environment.GetEnvironmentVariable(OverrideVariable) == "1")
+        {
+            return true;
+        }
+
         if (OperatingSystem.IsWindows())
         {
             uint length = 0;
