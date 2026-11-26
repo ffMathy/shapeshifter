@@ -458,4 +458,13 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Menempelkan {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Tempel sebagai tanggal dan waktu</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Tempel sebagai waktu Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Menempelkan {0}.</value>
+  </data>
 </root>

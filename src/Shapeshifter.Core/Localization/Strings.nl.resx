@@ -458,4 +458,13 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Plakt {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Plakken als datum en tijd</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Plakken als Unix-tijd</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Plakt {0}.</value>
+  </data>
 </root>

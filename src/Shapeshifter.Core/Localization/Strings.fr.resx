@@ -458,4 +458,13 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Colle {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Coller en date et heure</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Coller en temps Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Colle {0}.</value>
+  </data>
 </root>

@@ -458,4 +458,13 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Wkleja {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Wklej jako datę i godzinę</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Wklej jako czas Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Wkleja {0}.</value>
+  </data>
 </root>

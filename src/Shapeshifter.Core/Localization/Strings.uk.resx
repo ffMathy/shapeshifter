@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Вставляє {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Вставити як дату й час</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Вставити як час Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Вставляє {0}.</value>
+  </data>
 </root>

@@ -93,6 +93,8 @@ public static class Glyphs
             "paste-color-hex" => Palette,
             "paste-color-rgb" => Palette,
             "paste-color-hsl" => Palette,
+            "paste-as-date" => Clock,
+            "paste-as-unix-time" => Clock,
             _ => Clipboard,
         };
     }

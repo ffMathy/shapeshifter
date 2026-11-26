@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0} পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>তারিখ ও সময় হিসেবে পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Unix সময় হিসেবে পেস্ট করুন</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0} পেস্ট করে।</value>
+  </data>
 </root>

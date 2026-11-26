@@ -30,6 +30,10 @@
       "file": "a-colour-also-offers-it-in-the-other-notations.png"
     },
     {
+      "test": "a Unix time also offers Paste as date and time, and a date and time Paste as Unix time",
+      "file": "a-unix-time-also-offers-paste-as-date-and-time-and-a-date-an.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },

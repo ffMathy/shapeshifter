@@ -606,4 +606,16 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes {0}.</value>
     <comment>Action description for the colour actions; {0} is the colour as it will be pasted, such as rgb(53, 132, 228).</comment>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Paste as date and time</value>
+    <comment>Action title: paste the copied Unix time (seconds since 1970) as a readable date and time.</comment>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Paste as Unix time</value>
+    <comment>Action title: paste the copied date and time as a Unix time (seconds since 1970). Keep 'Unix'.</comment>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Pastes {0}.</value>
+    <comment>Action description for the timestamp actions; {0} is what will be pasted, such as 2026-11-26T15:30:00+01:00 or 1795703400.</comment>
+  </data>
 </root>

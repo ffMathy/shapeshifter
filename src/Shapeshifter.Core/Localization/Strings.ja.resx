@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0} を貼り付けます。</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>日時として貼り付け</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Unix 時間として貼り付け</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0} を貼り付けます。</value>
+  </data>
 </root>

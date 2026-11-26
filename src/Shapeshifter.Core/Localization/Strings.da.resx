@@ -458,4 +458,13 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Indsætter {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Indsæt som dato og klokkeslæt</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Indsæt som Unix-tid</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Indsætter {0}.</value>
+  </data>
 </root>

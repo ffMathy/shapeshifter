@@ -458,4 +458,13 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Incolla {0}.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Incolla come data e ora</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Incolla come tempo Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Incolla {0}.</value>
+  </data>
 </root>
