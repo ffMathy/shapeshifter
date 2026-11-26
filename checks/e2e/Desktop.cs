@@ -36,7 +36,11 @@ public static partial class Desktop
     public static Task Sleep(int ms) => Task.Delay(ms);
 
     /// <summary>A short id, so texts from different tests never collide in the history.</summary>
-    public static string Unique() => new(Random.Shared.GetItems("abcdefghijklmnopqrstuvwxyz0123456789".AsSpan(), 6));
+    /// <summary>
+    /// Six random characters that mark one scenario's text. Characters OCR confuses with others in the picker's fonts
+    /// (c and e, o and 0, l, i and 1, and so on) are left out, since many checks read the text back from the screen.
+    /// </summary>
+    public static string Unique() => new(Random.Shared.GetItems("abdfghjkmnpqrtwxyz2345789".AsSpan(), 6));
 
     /// <summary>Runs a program to the end and returns what it wrote to stdout (an empty string if it can't start).</summary>
     public static string Run(string file, IEnumerable<string> args, IDictionary<string, string>? env = null, string? input = null) =>
