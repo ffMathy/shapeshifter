@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>يلصق {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>لصق الناتج</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>يحسب هذا ويلصق {0}.</value>
+  </data>
 </root>

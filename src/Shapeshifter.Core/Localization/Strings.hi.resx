@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0} चिपकाता है।</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>परिणाम चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>इसकी गणना करके {0} चिपकाता है।</value>
+  </data>
 </root>

@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0} পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>ফলাফল পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>এটি হিসাব করে {0} পেস্ট করে।</value>
+  </data>
 </root>

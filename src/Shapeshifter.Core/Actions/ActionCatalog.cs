@@ -32,6 +32,7 @@ public sealed class ActionCatalog
         new PasteAsHslColorAction(),
         new PasteAsDateAction(),
         new PasteAsUnixTimeAction(),
+        new PasteResultAction(),
         new TogglePinAction(),
     ]);
 

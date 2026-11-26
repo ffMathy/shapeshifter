@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0} を貼り付けます。</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>計算結果を貼り付け</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>計算して {0} を貼り付けます。</value>
+  </data>
 </root>

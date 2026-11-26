@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>粘贴 {0}。</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>粘贴计算结果</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>计算后粘贴 {0}。</value>
+  </data>
 </root>
