@@ -9,7 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "db11a399ab06d13d91d0b90674a6162f8bc8952d2aeff43167d66f2834f43c61",
+      "hash": "81a3367cbe91810a52bec47abf66b30cbeae495206ac19a60aed231142b9ef71",
+      "spec": "73a640409cf847e0272b8461f822c717b6cf381bc68a22093f7ddd3d2659646a",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -43,7 +44,8 @@
       "spec": "f651d1a0834a58b236980e133305a0513ad4a6ba8479cea6eb350d36ee4e1371"
     },
     "ClipboardFormats": {
-      "hash": "d3cccc5e833dc17f5b8642a66781efbd40a0844c032fc07128abbe14a6dd87d5",
+      "hash": "796739f0d63480a3ad79e6151ae42e6da1f85816903e8a09554da6fbcf833042",
+      "spec": "e2e1404695e4d3b3fb4b1d4aa726719265f64d514e6afdcb1c952913531421cc",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -63,7 +65,8 @@
       "spec": "13e480952ba232f03299ce9249de27e107bd76ecd82fdd89d913c6eaf99eb01b"
     },
     "DataLocations": {
-      "hash": "df6c7e3b3dbd1f22802aeab73a6dd1090baa04af97582745e021422dcdc62d40",
+      "hash": "a00b8f274c682a3d40f957b4f21811f4c4f596bebef1b7e0184b1c1928ba5880",
+      "spec": "24ae271cb315e408519bf7b7a49eeec48a25d30a3eb73ea774f8ba9fee095319",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -139,7 +142,8 @@
       "spec": "026c674d4ce7981279814216cb6940ab15bcc0e65cd1374ce5e47181261dfd36"
     },
     "SavedItems": {
-      "hash": "8876322aa6445ddde026e1a3a8ea5ce4566425f66a3f761bd09d729339133aa3",
+      "hash": "03cbd18a1e83e044f8b5c1d16865cd5eaf3501ca3a3cf943d7bb25b365d2a167",
+      "spec": "8638be7ed9b9608a43223a729283da8f1dc05a464af7db28a63fab0d68e7c6a6",
       "files": {},
       "by": "adopted",
       "adopted": true
