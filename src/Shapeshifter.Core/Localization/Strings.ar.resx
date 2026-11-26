@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>يلصق هذا النص بعد تحويل رموز % فيه إلى أحرف.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>لصق JSON منسق</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>يلصق JSON هذا مع إزاحة، قيمة واحدة في كل سطر.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>لصق JSON مضغوط</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>يلصق JSON هذا في سطر واحد دون مسافات.</value>
+  </data>
 </root>

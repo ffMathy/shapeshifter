@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "04ee796b2094f70cbba6e90a1636befc27efd5a7b2ae8a1e0a286163c268ec16",
-      "spec": "a64a8bf1e1bfe367d0cf9782361dcebab193fe784eb0a5ba00fb7bfb1e39e478",
+      "hash": "6f3d2eb6a0154e163827274d35b74cef2fca602b3ff8d6ba5fcc12afae81d209",
+      "spec": "fd92f23583a328992460cdd83d001e0209ea4237a39239f0e03410338ed4bf05",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -140,6 +140,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "65782d6fea7084ef1e146e1c4a12cc83977b901043c5b463ef8cbc51477db048"
+    },
+    "ReformatJson": {
+      "hash": "4b1f6f1c4f994efe0a027ec8fbf76c3d81124349a25cd672c8a0912ded438f86",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "a658c03fe0ed069d4f138943a6f055b573d3d067a91e85494b03c733d3fbe2ef"
+      },
+      "by": "claude-code"
     },
     "RelativeTime": {
       "hash": "f74a7a5c8a9d4a2f3dd0477483219090b6f4c95ca33c0fa2572bba2f39259250",

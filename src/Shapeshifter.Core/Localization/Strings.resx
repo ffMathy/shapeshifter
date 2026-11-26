@@ -566,4 +566,20 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this text with its %-codes turned back into characters.</value>
     <comment>Action description for 'Paste URL-decoded'. %-codes are sequences such as %20 in web addresses.</comment>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Paste formatted JSON</value>
+    <comment>Action title: paste the copied JSON indented, one value per line. Keep the word JSON.</comment>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Pastes this JSON indented, one value per line.</value>
+    <comment>Action description for 'Paste formatted JSON'.</comment>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Paste minified JSON</value>
+    <comment>Action title: paste the copied JSON on one line, without spaces. Keep the word JSON.</comment>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Pastes this JSON on one line, without spaces.</value>
+    <comment>Action description for 'Paste minified JSON'.</comment>
+  </data>
 </root>

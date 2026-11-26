@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>วางข้อความนี้โดยแปลงรหัส % กลับเป็นตัวอักษร</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>วาง JSON ที่จัดรูปแบบแล้ว</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>วาง JSON นี้แบบเยื้อง หนึ่งค่าต่อบรรทัด</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>วาง JSON แบบย่อ</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>วาง JSON นี้ในบรรทัดเดียวโดยไม่มีช่องว่าง</value>
+  </data>
 </root>

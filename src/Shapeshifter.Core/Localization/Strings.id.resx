@@ -428,4 +428,16 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Menempelkan teks ini dengan kode % diubah kembali menjadi karakter.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Tempel JSON yang diformat</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Menempelkan JSON ini dengan indentasi, satu nilai per baris.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Tempel JSON yang diringkas</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Menempelkan JSON ini dalam satu baris, tanpa spasi.</value>
+  </data>
 </root>

@@ -428,4 +428,16 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Indsætter teksten med dens %-koder lavet om til tegn.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Indsæt formateret JSON</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Indsætter denne JSON med indrykning, én værdi pr. linje.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Indsæt komprimeret JSON</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Indsætter denne JSON på én linje uden mellemrum.</value>
+  </data>
 </root>

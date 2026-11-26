@@ -22,6 +22,10 @@
       "file": "a-text-with-codes-also-offers-paste-url-decoded.png"
     },
     {
+      "test": "JSON on one line also offers Paste formatted JSON, and JSON over several lines Paste minified JSON",
+      "file": "json-on-one-line-also-offers-paste-formatted-json-and-json-o.png"
+    },
+    {
       "test": "an image offers Paste, Paste as file, Upload and paste link, and Pin",
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },
