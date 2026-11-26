@@ -446,4 +446,16 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Fügt diesen Text als Markdown ein, mit Überschriften, Listen, Links und Hervorhebungen.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Als Hex-Farbe einfügen</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Als RGB-Farbe einfügen</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Als HSL-Farbe einfügen</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Fügt {0} ein.</value>
+  </data>
 </root>

@@ -34,6 +34,9 @@ public static class Glyphs
     /// <summary>The Markdown mark, an M and a down arrow in a box: Paste as Markdown.</summary>
     public static Geometry Markdown { get; } = Geometry.Parse("M2.5,5 H17.5 V15 H2.5 Z M5,12.5 V7.5 L7,10 L9,7.5 V12.5 M13.5,7.5 V12.5 M11.75,10.75 L13.5,12.5 L15.25,10.75");
 
+    /// <summary>A drop of paint: the colour actions.</summary>
+    public static Geometry Palette { get; } = Geometry.Parse("M10,2.5 C10,2.5 4.5,8.5 4.5,12 C4.5,15 7,17.5 10,17.5 C13,17.5 15.5,15 15.5,12 C15.5,8.5 10,2.5 10,2.5 Z M7.5,12.5 C7.5,13.9 8.6,15 10,15");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -87,6 +90,9 @@ public static class Glyphs
             "url-decode" => Decode,
             "reformat-json" => Braces,
             "paste-as-markdown" => Markdown,
+            "paste-color-hex" => Palette,
+            "paste-color-rgb" => Palette,
+            "paste-color-hsl" => Palette,
             _ => Clipboard,
         };
     }

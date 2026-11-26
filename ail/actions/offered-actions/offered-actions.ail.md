@@ -34,6 +34,10 @@ node OfferedActions : flow   level: experience
       When the user opens the actions of each
       Then the first's are "Paste", "Paste as file", "Upload and paste link", "Paste formatted JSON", "Pin to clipboard"
       And the second's are "Paste", "Paste as file", "Upload and paste link", "Paste minified JSON", "Pin to clipboard"
+    Scenario: a colour also offers it in the other notations
+      Given the text "#3584e4" was copied
+      When the user opens its actions
+      Then they are "Paste", "Paste as file", "Upload and paste link", "Paste as RGB colour", "Paste as HSL colour", "Pin to clipboard"
     Scenario: an image offers Paste, Paste as file, Upload and paste link, and Pin
       Given an image was copied
       When the user opens its actions
@@ -55,7 +59,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as hex colour, Paste as RGB colour, Paste as HSL colour, Paste as compressed file, Copy image from link, Open link or Open links, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -81,6 +85,9 @@ node OfferedActions : flow   level: experience
     action.minifyJson       "Paste minified JSON"            "Pastes this JSON on one line, without spaces."
     action.formatJson       "Paste formatted JSON"           "Pastes this JSON indented, one value per line."
     action.markdown         "Paste as Markdown"              "Pastes this text as Markdown, keeping headings, lists, links and emphasis."
+    action.colorHex         "Paste as hex colour"            "Pastes {0}."
+    action.colorRgb         "Paste as RGB colour"            "Pastes {0}."
+    action.colorHsl         "Paste as HSL colour"            "Pastes {0}."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

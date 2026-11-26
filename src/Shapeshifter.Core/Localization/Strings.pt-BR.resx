@@ -446,4 +446,16 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Cola este texto como Markdown, com títulos, listas, links e ênfase.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Colar como cor hexadecimal</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Colar como cor RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Colar como cor HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Cola {0}.</value>
+  </data>
 </root>

@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>以 Markdown 粘贴此文本，保留标题、列表、链接和强调。</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>以十六进制颜色粘贴</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>以 RGB 颜色粘贴</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>以 HSL 颜色粘贴</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>粘贴 {0}。</value>
+  </data>
 </root>

@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Вставляє цей текст як Markdown, із заголовками, списками, посиланнями та виділенням.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Вставити як колір HEX</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Вставити як колір RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Вставити як колір HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Вставляє {0}.</value>
+  </data>
 </root>

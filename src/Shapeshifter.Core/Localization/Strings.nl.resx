@@ -446,4 +446,16 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Plakt deze tekst als Markdown, met koppen, lijsten, links en nadruk.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Plakken als hex-kleur</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Plakken als RGB-kleur</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Plakken als HSL-kleur</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Plakt {0}.</value>
+  </data>
 </root>

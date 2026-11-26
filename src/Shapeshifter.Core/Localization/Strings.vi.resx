@@ -446,4 +446,16 @@
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Dán văn bản này dưới dạng Markdown, giữ tiêu đề, danh sách, liên kết và nhấn mạnh.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Dán dưới dạng màu hex</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Dán dưới dạng màu RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Dán dưới dạng màu HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Dán {0}.</value>
+  </data>
 </root>

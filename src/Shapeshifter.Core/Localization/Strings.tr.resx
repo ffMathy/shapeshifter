@@ -446,4 +446,16 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Bu metni başlıkları, listeleri, bağlantıları ve vurguları koruyarak Markdown olarak yapıştırır.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Onaltılık renk olarak yapıştır</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>RGB renk olarak yapıştır</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>HSL renk olarak yapıştır</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>{0} yapıştırır.</value>
+  </data>
 </root>

@@ -446,4 +446,16 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteAsMarkdownDescription" xml:space="preserve">
     <value>Incolla questo testo come Markdown, con titoli, elenchi, link ed enfasi.</value>
   </data>
+  <data name="ActionColorHex" xml:space="preserve">
+    <value>Incolla come colore esadecimale</value>
+  </data>
+  <data name="ActionColorRgb" xml:space="preserve">
+    <value>Incolla come colore RGB</value>
+  </data>
+  <data name="ActionColorHsl" xml:space="preserve">
+    <value>Incolla come colore HSL</value>
+  </data>
+  <data name="ActionColorDescription" xml:space="preserve">
+    <value>Incolla {0}.</value>
+  </data>
 </root>

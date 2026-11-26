@@ -193,7 +193,7 @@ internal static class Items
     public static readonly TheoryData<string> AllKinds =
     [
         "plain", "whitespace", "padded", "text+html", "html-only", "empty-text+html", "rtf-only", "image", "file", "files", "other",
-        "base64", "url-encoded", "json", "empty", "link", "image-link", "text+image", "file+html",
+        "base64", "url-encoded", "json", "color-hex", "empty", "link", "image-link", "text+image", "file+html",
     ];
 
     public static byte[] Utf8(string value) => Encoding.UTF8.GetBytes(value);
@@ -222,6 +222,7 @@ internal static class Items
         "base64" => new() { Text = "aGVsbG8gd29ybGQ=" },
         "url-encoded" => new() { Text = "a%20b" },
         "json" => new() { Text = "{\"a\":1}" },
+        "color-hex" => new() { Text = "#3584e4" },
         "empty" => ClipboardSnapshot.Empty,
         "link" => new() { Text = "see https://example.com/page" },
         "image-link" => new() { Text = "see https://example.com/pic.png" },
