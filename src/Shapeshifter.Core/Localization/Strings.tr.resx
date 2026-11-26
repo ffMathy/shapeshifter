@@ -458,4 +458,13 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0} yapıştırır.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Tarih ve saat olarak yapıştır</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Unix zamanı olarak yapıştır</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0} yapıştırır.</value>
+  </data>
 </root>

@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0} चिपकाता है।</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>तारीख़ और समय के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Unix समय के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0} चिपकाता है।</value>
+  </data>
 </root>

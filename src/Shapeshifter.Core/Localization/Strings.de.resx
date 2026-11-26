@@ -458,4 +458,13 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionColorDescription" xml:space="preserve">
     <value>Fügt {0} ein.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>Als Datum und Uhrzeit einfügen</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Als Unix-Zeit einfügen</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>Fügt {0} ein.</value>
+  </data>
 </root>

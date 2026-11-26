@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>粘贴 {0}。</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>以日期和时间粘贴</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>以 Unix 时间粘贴</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>粘贴 {0}。</value>
+  </data>
 </root>

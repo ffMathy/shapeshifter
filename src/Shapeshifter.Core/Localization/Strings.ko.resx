@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0}을(를) 붙여넣습니다.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>날짜와 시간으로 붙여넣기</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>Unix 시간으로 붙여넣기</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0}을(를) 붙여넣습니다.</value>
+  </data>
 </root>

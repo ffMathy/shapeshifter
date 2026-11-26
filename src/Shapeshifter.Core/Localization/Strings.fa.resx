@@ -458,4 +458,13 @@
   <data name="ActionColorDescription" xml:space="preserve">
     <value>{0} را می‌چسباند.</value>
   </data>
+  <data name="ActionPasteAsDate" xml:space="preserve">
+    <value>چسباندن به‌صورت تاریخ و ساعت</value>
+  </data>
+  <data name="ActionPasteAsUnixTime" xml:space="preserve">
+    <value>چسباندن به‌صورت زمان Unix</value>
+  </data>
+  <data name="ActionTimestampDescription" xml:space="preserve">
+    <value>{0} را می‌چسباند.</value>
+  </data>
 </root>
