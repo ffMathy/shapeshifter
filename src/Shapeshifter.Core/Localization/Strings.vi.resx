@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Dán {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Dán kết quả</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Tính toán và dán {0}.</value>
+  </data>
 </root>

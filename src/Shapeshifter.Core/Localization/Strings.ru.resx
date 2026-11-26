@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Вставляет {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Вставить результат</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Вычисляет и вставляет {0}.</value>
+  </data>
 </root>

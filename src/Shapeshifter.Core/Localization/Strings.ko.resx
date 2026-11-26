@@ -467,4 +467,10 @@
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>{0}을(를) 붙여넣습니다.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>결과 붙여넣기</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>계산하여 {0}을(를) 붙여넣습니다.</value>
+  </data>
 </root>

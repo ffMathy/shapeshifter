@@ -467,4 +467,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Incolla {0}.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Incolla risultato</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Lo calcola e incolla {0}.</value>
+  </data>
 </root>

@@ -467,4 +467,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionTimestampDescription" xml:space="preserve">
     <value>Fügt {0} ein.</value>
   </data>
+  <data name="ActionPasteResult" xml:space="preserve">
+    <value>Ergebnis einfügen</value>
+  </data>
+  <data name="ActionPasteResultDescription" xml:space="preserve">
+    <value>Rechnet es aus und fügt {0} ein.</value>
+  </data>
 </root>
