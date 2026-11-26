@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "fea46767f1f3c37fb0a3f6a586aef47e8d25b164bba49dafe81752fa6bde4ad7",
-      "spec": "f9c51640dadde703518c4db39f7917bda629e592c7c2bbe551a50ae651395aad",
+      "hash": "c6767d7eb7f818d87391362d43a6c50cd382b59324cf99c8e8c0783e15a83b51",
+      "spec": "da31d13633175331b7709fbedd27028b4c3bda788707a09f3ac9d3ec7d52deb0",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -93,9 +93,9 @@
       "by": "claude-code"
     },
     "FilePath": {
-      "hash": "5a1699f85fd20599ff488b875442608889dfce3dbab3bb6fe752cbf028571bfd",
+      "hash": "c5fca61a90e79a3df7de5512a26ea32eadde1a397fae4f254a56a03c0aaaa890",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/file-path/FilePath.cs": "4fbc2604a19ed4f8a82db60a9c1fb9238d61772bae7c655199e3781a6a99ceea"
+        "src/Shapeshifter.Core/Ail/actions/file-path/FilePath.cs": "e76030651debe3e41f3d1662ad918e06684f81b33dd3ef876163d1485137e939"
       },
       "by": "claude-code"
     },

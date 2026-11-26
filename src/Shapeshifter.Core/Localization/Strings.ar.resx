@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>ينسخ الملف أو المجلد نفسه، جاهزًا للصق في مدير الملفات أو في رسالة.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>إظهار في مدير الملفات</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>يفتح المجلد الذي يقع فيه هذا المسار مع تحديده.</value>
+  </data>
 </root>

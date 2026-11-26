@@ -358,6 +358,10 @@ internal sealed class FakeLauncher : ILauncher
     public void OpenUrl(Uri uri) => OpenedUrls.Add(uri);
 
     public void OpenFolder(string path) => OpenedFolders.Add(path);
+
+    public List<string> RevealedPaths { get; } = [];
+
+    public void RevealInFileManager(string path) => RevealedPaths.Add(path);
 }
 
 /// <summary>An action that records what it was asked to do, optionally failing.</summary>

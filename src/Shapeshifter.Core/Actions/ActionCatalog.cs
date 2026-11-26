@@ -36,6 +36,7 @@ public sealed class ActionCatalog
         new WriteEmailAction(),
         new SearchWebAction(),
         new CopyFileAtPathAction(),
+        new ShowPathInFileManagerAction(),
         new TogglePinAction(),
     ]);
 

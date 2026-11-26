@@ -481,6 +481,10 @@ internal static class Program
         public void OpenFolder(string path)
         {
         }
+
+        public void RevealInFileManager(string path)
+        {
+        }
     }
 
     internal static Bitmap ToBitmap(byte[] png)

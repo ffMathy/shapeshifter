@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>คัดลอกไฟล์หรือโฟลเดอร์นั้นเอง พร้อมวางในตัวจัดการไฟล์หรืออีเมล</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>แสดงในตัวจัดการไฟล์</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>เปิดโฟลเดอร์ที่มีเส้นทางนี้ และเลือกไว้ให้</value>
+  </data>
 </root>

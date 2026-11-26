@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>ファイルやフォルダーそのものをコピーし、ファイル マネージャーやメールに貼り付けられるようにします。</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>ファイル マネージャーで表示</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>このパスがあるフォルダーを、選択した状態で開きます。</value>
+  </data>
 </root>

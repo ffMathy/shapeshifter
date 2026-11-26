@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>Копіює сам файл або теку, щоб вставити у файловий менеджер чи лист.</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>Показати у файловому менеджері</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>Відкриває теку з цим шляхом і виділяє його.</value>
+  </data>
 </root>

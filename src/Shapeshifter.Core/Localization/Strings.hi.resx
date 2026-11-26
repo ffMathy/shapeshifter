@@ -491,4 +491,10 @@
   <data name="ActionCopyFileAtPathDescription" xml:space="preserve">
     <value>फ़ाइल या फ़ोल्डर को ही कॉपी करता है, फ़ाइल मैनेजर या ईमेल में चिपकाने के लिए।</value>
   </data>
+  <data name="ActionShowInFileManager" xml:space="preserve">
+    <value>फ़ाइल मैनेजर में दिखाएँ</value>
+  </data>
+  <data name="ActionShowPathInFileManagerDescription" xml:space="preserve">
+    <value>वह फ़ोल्डर खोलता है जिसमें यह पाथ है, उसे चुना हुआ रखकर।</value>
+  </data>
 </root>
