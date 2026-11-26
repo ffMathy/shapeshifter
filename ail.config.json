@@ -23,5 +23,10 @@
         "AIL_TARGET_APP": "tests/Shapeshifter.EndToEnd.TargetApp/bin/Release/net11.0/Shapeshifter.EndToEnd.TargetApp.dll"
       }
     }
+  },
+  "tests": {
+    "e2e": "checks/e2e/{dir}/{name}Checks.cs",
+    "prepare": "scripts/ail/check.sh build",
+    "command": "scripts/ail/check.sh {name} {report}"
   }
 }

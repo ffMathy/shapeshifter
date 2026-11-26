@@ -192,6 +192,16 @@ internal sealed class PickerPresenter : IPickerPresenter
     private PickerWindow CreateWindow()
     {
         var picker = new PickerWindow { DataContext = viewModel };
+
+        // On X11 the window may only take its laid-out size after it was placed (for the size it had before), so it
+        // is brought back inside the screen once that size is known: the whole picker always stays on one screen.
+        picker.Resized += (_, e) =>
+        {
+            if (IsVisible)
+            {
+                KeepOnScreen(picker, e.ClientSize);
+            }
+        };
         picker.Activated += (_, _) =>
         {
             if (searchInput is not null)
@@ -456,6 +466,27 @@ internal sealed class PickerPresenter : IPickerPresenter
         picker.Position = new PixelPoint(
             area.X + (int)Math.Max(0, (area.Width - width) / 2),
             area.Y + (int)top);
+    }
+
+    /// <summary>Moves the picker, at its new size, back inside the working area of its screen where it reaches past an edge.</summary>
+    private void KeepOnScreen(Window picker, Size size)
+    {
+        var screen = FindScreen(picker.Screens);
+        if (screen is null)
+        {
+            return;
+        }
+
+        var scaling = GetScaling(picker, screen);
+        var area = screen.WorkingArea;
+        var width = (int)Math.Ceiling(size.Width * scaling);
+        var height = (int)Math.Ceiling(size.Height * scaling);
+        var x = Math.Max(area.X, Math.Min(picker.Position.X, area.Right - width));
+        var y = Math.Max(area.Y, Math.Min(picker.Position.Y, area.Bottom - height));
+        if (x != picker.Position.X || y != picker.Position.Y)
+        {
+            picker.Position = new PixelPoint(x, y);
+        }
     }
 
     /// <summary>

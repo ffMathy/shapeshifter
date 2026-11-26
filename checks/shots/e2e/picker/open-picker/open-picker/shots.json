@@ -18,8 +18,8 @@
       "file": "the-picker-is-placed-for-the-size-it-had-the-time-before.png"
     },
     {
-      "test": "on a screen too short for the picker, it is shown in turn whole without its preview and cut off with it",
-      "file": "on-a-screen-too-short-for-the-picker-it-is-shown-in-turn-who.png"
+      "test": "on a 1000 × 1000 screen the picker shows whole, with its preview",
+      "file": "on-a-1000-1000-screen-the-picker-shows-whole-with-its-previe.png"
     }
   ]
 }
