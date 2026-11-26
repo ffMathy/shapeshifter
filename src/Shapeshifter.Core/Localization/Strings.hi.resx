@@ -216,7 +216,7 @@
     <value>सादे टेक्स्ट के रूप में चिपकाएँ</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>क्लिपबोर्ड की सामग्री को बिना फ़ॉर्मेटिंग के सादे टेक्स्ट के रूप में चिपकाता है।</value>
+    <value>बिना फ़ॉर्मेटिंग के सादे टेक्स्ट के रूप में चिपकाता है।</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>फ़ाइल के रूप में चिपकाएँ</value>
@@ -234,7 +234,7 @@
     <value>लिंक से छवि कॉपी करें</value>
   </data>
   <data name="ActionCopyImageFromLinkDescription" xml:space="preserve">
-    <value>लिंक की गई छवि डाउनलोड करता है और छवि को ही क्लिपबोर्ड पर कॉपी करता है।</value>
+    <value>लिंक की गई छवि को क्लिपबोर्ड पर कॉपी करता है।</value>
   </data>
   <data name="ActionOpenLink" xml:space="preserve">
     <value>लिंक खोलें</value>
@@ -333,13 +333,13 @@
     <value>अपलोड करें और लिंक चिपकाएँ</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>इस छवि को {0} पर अपलोड करके सार्वजनिक लिंक चिपकाता है।</value>
+    <value>छवि {0} पर अपलोड कर सार्वजनिक लिंक चिपकाता है।</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>अपलोड करें और लिंक चिपकाएँ</value>
   </data>
   <data name="ActionUploadTextDescription" xml:space="preserve">
-    <value>इस टेक्स्ट को {0} पर अपलोड करके सार्वजनिक लिंक चिपकाता है।</value>
+    <value>टेक्स्ट {0} पर अपलोड कर सार्वजनिक लिंक चिपकाता है।</value>
   </data>
   <data name="SettingsTipsTitle" xml:space="preserve">
     <value>सुझाव</value>

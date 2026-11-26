@@ -216,7 +216,7 @@
     <value>সাধারণ টেক্সট হিসেবে আটকান</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>ক্লিপবোর্ডের বিষয়বস্তু ফরম্যাটিং ছাড়া সাধারণ টেক্সট হিসেবে আটকায়।</value>
+    <value>ফরম্যাটিং ছাড়া সাধারণ টেক্সট হিসেবে আটকায়।</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>ফাইল হিসেবে আটকান</value>

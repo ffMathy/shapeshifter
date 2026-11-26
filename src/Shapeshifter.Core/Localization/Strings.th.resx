@@ -216,7 +216,7 @@
     <value>วางเป็นข้อความธรรมดา</value>
   </data>
   <data name="ActionPasteAsPlainTextDescription" xml:space="preserve">
-    <value>วางเนื้อหาในคลิปบอร์ดเป็นข้อความธรรมดาโดยไม่มีการจัดรูปแบบ</value>
+    <value>วางเป็นข้อความธรรมดาโดยไม่มีการจัดรูปแบบ</value>
   </data>
   <data name="ActionPasteAsFile" xml:space="preserve">
     <value>วางเป็นไฟล์</value>
@@ -333,7 +333,7 @@
     <value>อัปโหลดแล้ววางลิงก์</value>
   </data>
   <data name="ActionUploadImageDescription" xml:space="preserve">
-    <value>อัปโหลดรูปภาพนี้ไปยัง {0} แล้ววางลิงก์สาธารณะของรูปภาพนั้น</value>
+    <value>อัปโหลดรูปภาพนี้ไปยัง {0} แล้ววางลิงก์สาธารณะ</value>
   </data>
   <data name="ActionUploadText" xml:space="preserve">
     <value>อัปโหลดแล้ววางลิงก์</value>
