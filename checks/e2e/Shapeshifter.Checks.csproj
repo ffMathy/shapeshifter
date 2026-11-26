@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>Shapeshifter.Checks</RootNamespace>
+    <!-- A scenario that runs past its timeout fails, which is all a check needs; its steps are short. -->
+    <NoWarn>$(NoWarn);xUnit1069</NoWarn>
+    <Description>
+      The AIL end-to-end checks: each flow's scenarios, played on an X11 desktop against whichever build of
+      Shapeshifter is running, the way a person would (real keys through XTEST, the screen read back). They know
+      nothing of Shapeshifter's code. `ail adopt` builds and runs them as ail.config.json's `tests` says.
+    </Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+  </ItemGroup>
+  <!-- OnlyArea=capture builds the shared helpers and that area's checks alone, so areas can be worked on side by side. -->
+  <ItemGroup Condition="'$(OnlyArea)' != ''">
+    <Compile Remove="*/**/*.cs" />
+    <Compile Include="$(OnlyArea)/**/*.cs" Exclude="$(OnlyArea)/**/bin/**;$(OnlyArea)/**/obj/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

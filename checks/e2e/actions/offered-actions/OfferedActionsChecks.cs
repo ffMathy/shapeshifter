@@ -1,0 +1,87 @@
+// ail-derived-from: OfferedActions@22143cbd398fb9d9
+// End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
+// screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
+using System.Text;
+using static Shapeshifter.Checks.ActionsDriver;
+using static Shapeshifter.Checks.Desktop;
+
+namespace Shapeshifter.Checks;
+
+public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IClassFixture<TargetAppFixture>
+{
+    TargetApp App => target.App;
+
+    protected override async Task AfterEach() { await ReleaseAll(); await WaitForPicker(false); }
+
+    /// <summary>Opens the actions of the newest item, reads them, and cancels.</summary>
+    static async Task<string[]> ActionsOfNewest()
+    {
+        await OpenPicker();
+        await Tap("Right");
+        await Sleep(300);
+        var titles = ActionTitlesOnScreen();
+        await Tap("Escape");
+        await KeyUp("ctrl");
+        return titles;
+    }
+
+    static string B64(string s) => Convert.ToBase64String(Encoding.UTF8.GetBytes(s));
+
+    static string Files(params string[] names)
+    {
+        var dir = Directory.CreateTempSubdirectory("ail-offered-").FullName;
+        return string.Join("\n", names.Select(n => { var p = Path.Combine(dir, n); File.WriteAllText(p, n); return $"file://{p}"; })) + "\n";
+    }
+
+    [Fact(DisplayName = "plain text offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]
+    public async Task PlainText()
+    {
+        await App.Copy($"plain {Unique()}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "formatted text also offers Paste as plain text", Timeout = 30_000)]
+    public async Task FormattedText()
+    {
+        var id = Unique();
+        Assert.Equal("OK", await App.Send($"copy-html {B64($"bold {id}")} {B64($"<b>bold</b> {id}")}"));
+        await Sleep(1200);
+        Assert.Equal(["Paste", "Paste as file", "Paste as plain text", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]
+    public async Task Image()
+    {
+        await CopyAs("image/png", MakePng(31 + Random.Shared.Next(40), 23));
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a file offers Paste, Paste as compressed file and Pin", Timeout = 30_000)]
+    public async Task OneFile()
+    {
+        await CopyAs("text/uri-list", Files($"one-{Unique()}.txt"));
+        Assert.Equal(["Paste", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "several files offer the same as one file", Timeout = 30_000)]
+    public async Task SeveralFiles()
+    {
+        await CopyAs("text/uri-list", Files($"a-{Unique()}.txt", $"b-{Unique()}.txt"));
+        Assert.Equal(["Paste", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "other data offers only Paste and Pin", Timeout = 30_000)]
+    public async Task OtherData()
+    {
+        await CopyAs($"application/x-ail-{Unique()}", $"data {Unique()}");
+        Assert.Equal(["Paste", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "text with links also offers the link actions", Timeout = 30_000)]
+    public async Task TextWithLinks()
+    {
+        var id = Unique();
+        await CopyAs("UTF8_STRING", $"see https://example.com/{id}.png and https://example.org/{id}");
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Pin to clipboard"], await ActionsOfNewest());
+    }
+}
