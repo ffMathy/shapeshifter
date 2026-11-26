@@ -428,4 +428,16 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Incolla questo testo con i codici % riconvertiti in caratteri.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Incolla JSON formattato</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Incolla questo JSON rientrato, un valore per riga.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Incolla JSON compatto</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Incolla questo JSON su una riga, senza spazi.</value>
+  </data>
 </root>

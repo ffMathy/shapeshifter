@@ -428,4 +428,16 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Plakt deze tekst met de %-codes weer omgezet in tekens.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Opgemaakte JSON plakken</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Plakt deze JSON ingesprongen, één waarde per regel.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Compacte JSON plakken</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Plakt deze JSON op één regel, zonder spaties.</value>
+  </data>
 </root>

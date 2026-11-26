@@ -428,4 +428,16 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Pega este texto con sus códigos % convertidos en caracteres.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Pegar JSON con formato</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Pega este JSON con sangría, un valor por línea.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Pegar JSON compactado</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Pega este JSON en una línea, sin espacios.</value>
+  </data>
 </root>

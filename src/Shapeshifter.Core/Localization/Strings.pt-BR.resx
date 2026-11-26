@@ -428,4 +428,16 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Cola este texto com os códigos % convertidos de volta em caracteres.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Colar JSON formatado</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Cola este JSON com recuo, um valor por linha.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Colar JSON compactado</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Cola este JSON em uma linha, sem espaços.</value>
+  </data>
 </root>

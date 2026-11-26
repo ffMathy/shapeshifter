@@ -428,4 +428,16 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Bu metni % kodlarını karakterlere geri çevirerek yapıştırır.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>JSON'u biçimlendirerek yapıştır</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Bu JSON'u girintili, her satıra bir değer olarak yapıştırır.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>JSON'u sıkıştırarak yapıştır</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Bu JSON'u boşluksuz, tek satırda yapıştırır.</value>
+  </data>
 </root>

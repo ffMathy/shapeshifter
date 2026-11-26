@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>इस टेक्स्ट के %-कोड को अक्षरों में बदलकर चिपकाता है।</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>फ़ॉर्मैट किया JSON चिपकाएँ</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>इस JSON को इंडेंट करके, हर पंक्ति में एक मान रखकर चिपकाता है।</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>संक्षिप्त JSON चिपकाएँ</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>इस JSON को एक पंक्ति में, बिना खाली जगह के चिपकाता है।</value>
+  </data>
 </root>

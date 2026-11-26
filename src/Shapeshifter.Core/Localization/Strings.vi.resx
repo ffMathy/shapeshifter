@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Dán văn bản này với các mã % được chuyển lại thành ký tự.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Dán JSON đã định dạng</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Dán JSON này có thụt lề, mỗi giá trị một dòng.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Dán JSON đã thu gọn</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Dán JSON này trên một dòng, không có khoảng trắng.</value>
+  </data>
 </root>

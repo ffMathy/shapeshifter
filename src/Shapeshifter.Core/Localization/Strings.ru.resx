@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Вставляет этот текст, превращая %-коды обратно в символы.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Вставить отформатированный JSON</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Вставляет этот JSON с отступами, по одному значению в строке.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Вставить сжатый JSON</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Вставляет этот JSON в одну строку без пробелов.</value>
+  </data>
 </root>

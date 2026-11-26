@@ -428,4 +428,16 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Colle ce texte en retransformant ses codes % en caractères.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Coller le JSON mis en forme</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Colle ce JSON indenté, une valeur par ligne.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Coller le JSON compacté</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Colle ce JSON sur une ligne, sans espaces.</value>
+  </data>
 </root>

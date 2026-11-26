@@ -428,4 +428,16 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>Wkleja ten tekst z kodami % zamienionymi z powrotem na znaki.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>Wklej sformatowany JSON</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>Wkleja ten JSON z wcięciami, jedną wartość w wierszu.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>Wklej skompresowany JSON</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>Wkleja ten JSON w jednym wierszu, bez spacji.</value>
+  </data>
 </root>

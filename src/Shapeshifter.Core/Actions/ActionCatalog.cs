@@ -25,6 +25,7 @@ public sealed class ActionCatalog
         new OpenLinksAction(),
         new DecodeBase64Action(),
         new UrlDecodeAction(),
+        new ReformatJsonAction(),
         new TogglePinAction(),
     ]);
 

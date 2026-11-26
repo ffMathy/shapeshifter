@@ -428,4 +428,16 @@
   <data name="ActionUrlDecodeDescription" xml:space="preserve">
     <value>این متن را با تبدیل کدهای % به نویسه‌ها می‌چسباند.</value>
   </data>
+  <data name="ActionFormatJson" xml:space="preserve">
+    <value>چسباندن JSON قالب‌بندی‌شده</value>
+  </data>
+  <data name="ActionFormatJsonDescription" xml:space="preserve">
+    <value>این JSON را با تورفتگی، هر مقدار در یک خط، می‌چسباند.</value>
+  </data>
+  <data name="ActionMinifyJson" xml:space="preserve">
+    <value>چسباندن JSON فشرده</value>
+  </data>
+  <data name="ActionMinifyJsonDescription" xml:space="preserve">
+    <value>این JSON را در یک خط و بدون فاصله می‌چسباند.</value>
+  </data>
 </root>
