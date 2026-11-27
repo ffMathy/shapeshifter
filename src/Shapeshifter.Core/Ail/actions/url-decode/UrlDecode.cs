@@ -1,7 +1,7 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
-using System.Globalization;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Unicode;
 
@@ -18,20 +18,18 @@ public sealed class UrlDecodeAction : IClipboardAction
     public const int MaxLength = 1048576;
 
     /// <summary>
-    /// The unique id of this action.
+    /// The action's unique id.
     /// </summary>
     public string Id => "url-decode";
 
     /// <summary>
-    /// The position of this action among the actions.
+    /// Where the action stands among the actions.
     /// </summary>
     public int Order => 44;
 
     /// <summary>
-    /// Gives the title shown for this action.
+    /// Gives the action's title for the item.
     /// </summary>
-    /// <param name="item">The item the action is for.</param>
-    /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -39,10 +37,8 @@ public sealed class UrlDecodeAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gives the description shown for this action.
+    /// Gives the action's description for the item.
     /// </summary>
-    /// <param name="item">The item the action is for.</param>
-    /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -52,8 +48,6 @@ public sealed class UrlDecodeAction : IClipboardAction
     /// <summary>
     /// Tells whether the item is a text that holds %-codes decoding to readable UTF-8.
     /// </summary>
-    /// <param name="item">The item to check.</param>
-    /// <returns>True when the action can be offered for the item.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -61,30 +55,20 @@ public sealed class UrlDecodeAction : IClipboardAction
     }
 
     /// <summary>
-    /// Pastes the item's text with its %-codes decoded, without adding it to the history.
+    /// Pastes the item's text URL-decoded, without adding it to the history.
     /// </summary>
-    /// <param name="item">The item to decode and paste.</param>
-    /// <param name="context">The context the action runs in.</param>
-    /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the text has been pasted.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var decoded = TryDecode(item.Snapshot.Text);
-        if (decoded is null)
-        {
-            return Task.CompletedTask;
-        }
-
+        var decoded = TryDecode(item.Snapshot.Text)
+            ?? throw new InvalidOperationException("The item's text has nothing to URL-decode.");
         return context.WriteAndPasteAsync(new ClipboardSnapshot { Text = decoded }, cancellationToken);
     }
 
     /// <summary>
-    /// Decodes every run of %-codes in a text as UTF-8, leaving every other character as it is.
+    /// Decodes the %-codes in a text, or gives null when there is nothing readable to decode.
     /// </summary>
-    /// <param name="text">The text to decode.</param>
-    /// <returns>The decoded text, or null when there is nothing to decode or the result would not be readable.</returns>
     public static string? TryDecode(string? text)
     {
         if (text is null || text.Length > MaxLength)
@@ -98,28 +82,29 @@ public sealed class UrlDecodeAction : IClipboardAction
         var i = 0;
         while (i < text.Length)
         {
-            if (!IsCodeAt(text, i))
+            if (IsCodeAt(text, i))
+            {
+                bytes.Clear();
+                while (IsCodeAt(text, i))
+                {
+                    bytes.Add((byte)((HexValue(text[i + 1]) << 4) | HexValue(text[i + 2])));
+                    i += 3;
+                }
+
+                var span = CollectionsMarshal.AsSpan(bytes);
+                if (!Utf8.IsValid(span))
+                {
+                    return null;
+                }
+
+                builder.Append(Encoding.UTF8.GetString(span));
+                found = true;
+            }
+            else
             {
                 builder.Append(text[i]);
                 i++;
-                continue;
             }
-
-            found = true;
-            bytes.Clear();
-            while (IsCodeAt(text, i))
-            {
-                bytes.Add(byte.Parse(text.AsSpan(i + 1, 2), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture));
-                i += 3;
-            }
-
-            var run = bytes.ToArray();
-            if (!Utf8.IsValid(run))
-            {
-                return null;
-            }
-
-            builder.Append(Encoding.UTF8.GetString(run));
         }
 
         if (!found)
@@ -130,7 +115,7 @@ public sealed class UrlDecodeAction : IClipboardAction
         var result = builder.ToString();
         foreach (var c in result)
         {
-            if (char.IsControl(c) && c != '\t' && c != '\n' && c != '\r')
+            if (char.IsControl(c) && c is not ('\t' or '\n' or '\r'))
             {
                 return null;
             }
@@ -144,4 +129,7 @@ public sealed class UrlDecodeAction : IClipboardAction
         && text[index] == '%'
         && char.IsAsciiHexDigit(text[index + 1])
         && char.IsAsciiHexDigit(text[index + 2]);
+
+    private static int HexValue(char c) =>
+        c <= '9' ? c - '0' : (c | 0x20) - 'a' + 10;
 }

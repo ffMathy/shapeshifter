@@ -5,85 +5,122 @@ using Shapeshifter.Core.Localization;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that pastes the picture held in a single copied file as an image instead of as the file,
-/// for apps that take a pasted picture but not a pasted file.
+/// An action that pastes the picture held in a copied image file instead of the file itself.
 /// </summary>
 public sealed class PasteFileAsImageAction : IClipboardAction
 {
-    /// <summary>The largest file, in bytes, that is pasted as an image (25 MB).</summary>
+    /// <summary>
+    /// The largest file, in bytes, that is pasted as an image (25 MB).
+    /// </summary>
     public const int MaxBytes = 26214400;
 
-    /// <summary>The action's stable identifier.</summary>
+    private static readonly byte[] PngStart = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A];
+    private static readonly byte[] JpegStart = [0xFF, 0xD8, 0xFF];
+    private static readonly byte[] GifStart = [0x47, 0x49, 0x46, 0x38];
+    private static readonly byte[] BmpStart = [0x42, 0x4D];
+    private static readonly byte[] RiffStart = [0x52, 0x49, 0x46, 0x46];
+    private static readonly byte[] WebpMark = [0x57, 0x45, 0x42, 0x50];
+    private static readonly byte[] TiffLittleStart = [0x49, 0x49, 0x2A, 0x00];
+    private static readonly byte[] TiffBigStart = [0x4D, 0x4D, 0x00, 0x2A];
+
+    /// <summary>
+    /// The unique id of this action.
+    /// </summary>
     public string Id => "paste-file-as-image";
 
-    /// <summary>The action's position among the actions.</summary>
+    /// <summary>
+    /// The position of this action among the actions.
+    /// </summary>
     public int Order => 74;
 
-    /// <summary>Gets the action's title shown in the actions list.</summary>
-    /// <param name="item">The item the action is shown for.</param>
+    /// <summary>
+    /// Gets the title shown for this action.
+    /// </summary>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
-        ArgumentNullException.ThrowIfNull(item);
+        System.ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionPasteFileAsImage;
     }
 
-    /// <summary>Gets the action's description shown in the actions list.</summary>
-    /// <param name="item">The item the action is shown for.</param>
+    /// <summary>
+    /// Gets the description shown for this action.
+    /// </summary>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
-        ArgumentNullException.ThrowIfNull(item);
+        System.ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionPasteFileAsImageDescription;
     }
 
-    /// <summary>Tells whether the item is one file whose contents are an image that can be pasted.</summary>
+    /// <summary>
+    /// Tells whether the item is one file whose contents are an image.
+    /// </summary>
     /// <param name="item">The item to check.</param>
-    /// <returns><see langword="true"/> when the item is a single file holding an image.</returns>
+    /// <returns>True when the item is one file holding an image.</returns>
     public bool CanExecute(ClipboardItem item)
     {
-        ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.File && ReadSingleFile(item) is not null;
+        System.ArgumentNullException.ThrowIfNull(item);
+        if (item.Kind != ClipboardContentKind.File || item.Snapshot.Files.Count != 1)
+        {
+            return false;
+        }
+
+        return ReadImage(item.Snapshot.Files[0]) is not null;
     }
 
-    /// <summary>Reads the item's file again and pastes its bytes as an image, without adding to the history.</summary>
-    /// <param name="item">The item whose file is pasted.</param>
-    /// <param name="context">The context used to write the clipboard and paste.</param>
+    /// <summary>
+    /// Reads the file again and pastes its picture, without adding it to the history.
+    /// </summary>
+    /// <param name="item">The file item to paste as an image.</param>
+    /// <param name="context">The context to paste with.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the image has been pasted.</returns>
-    /// <exception cref="InvalidOperationException">The file no longer holds an image that can be pasted.</exception>
-    public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
+    /// <returns>A task that completes when the image is pasted.</returns>
+    /// <exception cref="System.InvalidOperationException">The file no longer holds an image.</exception>
+    public async System.Threading.Tasks.Task ExecuteAsync(
+        ClipboardItem item,
+        ActionContext context,
+        System.Threading.CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(item);
-        ArgumentNullException.ThrowIfNull(context);
+        System.ArgumentNullException.ThrowIfNull(item);
+        System.ArgumentNullException.ThrowIfNull(context);
 
-        var bytes = ReadSingleFile(item) ?? throw new InvalidOperationException();
-        await context.WriteAndPasteAsync(new ClipboardSnapshot { Image = bytes }, cancellationToken).ConfigureAwait(false);
+        byte[]? image = item.Snapshot.Files.Count == 1 ? ReadImage(item.Snapshot.Files[0]) : null;
+        if (image is null)
+        {
+            throw new System.InvalidOperationException();
+        }
+
+        await context.WriteAndPasteAsync(new ClipboardSnapshot { Image = image }, cancellationToken).ConfigureAwait(false);
     }
 
-    /// <summary>Reads a file's bytes when its first bytes show it is an image type the clipboard can carry.</summary>
-    /// <param name="path">The path of the file to read.</param>
-    /// <returns>The file's bytes, or <see langword="null"/> when it is a network path, not an existing file, larger than <see cref="MaxBytes"/>, or not an image.</returns>
+    /// <summary>
+    /// Reads a local file's bytes when they start as a PNG, JPEG, GIF, BMP, WebP or TIFF image and are at most <see cref="MaxBytes"/> long.
+    /// </summary>
+    /// <param name="path">The file's path.</param>
+    /// <returns>The file's bytes, or null when it is not such an image.</returns>
     public static byte[]? ReadImage(string path)
     {
-        ArgumentNullException.ThrowIfNull(path);
+        System.ArgumentNullException.ThrowIfNull(path);
 
-        if (path.StartsWith(@"\\", StringComparison.Ordinal) || path.StartsWith("//", StringComparison.Ordinal))
+        if (path.StartsWith(@"\\", System.StringComparison.Ordinal) || path.StartsWith("//", System.StringComparison.Ordinal))
         {
             return null;
         }
 
-        if (!File.Exists(path))
+        if (!System.IO.File.Exists(path))
         {
             return null;
         }
 
-        if (new FileInfo(path).Length > MaxBytes)
+        if (new System.IO.FileInfo(path).Length > MaxBytes)
         {
             return null;
         }
 
-        var bytes = File.ReadAllBytes(path);
+        byte[] bytes = System.IO.File.ReadAllBytes(path);
         if (bytes.Length > MaxBytes)
         {
             return null;
@@ -92,29 +129,32 @@ public sealed class PasteFileAsImageAction : IClipboardAction
         return IsImage(bytes) ? bytes : null;
     }
 
-    private static byte[]? ReadSingleFile(ClipboardItem item)
+    private static bool IsImage(byte[] bytes)
     {
-        var files = item.Snapshot.Files;
-        return files.Count == 1 ? ReadImage(files[0]) : null;
+        return StartsWith(bytes, PngStart, 0)
+            || StartsWith(bytes, JpegStart, 0)
+            || StartsWith(bytes, GifStart, 0)
+            || StartsWith(bytes, BmpStart, 0)
+            || (StartsWith(bytes, RiffStart, 0) && StartsWith(bytes, WebpMark, 8))
+            || StartsWith(bytes, TiffLittleStart, 0)
+            || StartsWith(bytes, TiffBigStart, 0);
     }
 
-    private static bool IsImage(ReadOnlySpan<byte> bytes)
+    private static bool StartsWith(byte[] bytes, byte[] start, int offset)
     {
-        ReadOnlySpan<byte> png = [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A];
-        ReadOnlySpan<byte> jpeg = [0xFF, 0xD8, 0xFF];
-        ReadOnlySpan<byte> gif = [0x47, 0x49, 0x46, 0x38];
-        ReadOnlySpan<byte> bmp = [0x42, 0x4D];
-        ReadOnlySpan<byte> riff = [0x52, 0x49, 0x46, 0x46];
-        ReadOnlySpan<byte> webp = [0x57, 0x45, 0x42, 0x50];
-        ReadOnlySpan<byte> tiffLittle = [0x49, 0x49, 0x2A, 0x00];
-        ReadOnlySpan<byte> tiffBig = [0x4D, 0x4D, 0x00, 0x2A];
+        if (bytes.Length < offset + start.Length)
+        {
+            return false;
+        }
 
-        return bytes.StartsWith(png)
-            || bytes.StartsWith(jpeg)
-            || bytes.StartsWith(gif)
-            || bytes.StartsWith(bmp)
-            || (bytes.Length >= 12 && bytes.StartsWith(riff) && bytes.Slice(8, 4).SequenceEqual(webp))
-            || bytes.StartsWith(tiffLittle)
-            || bytes.StartsWith(tiffBig);
+        for (int i = 0; i < start.Length; i++)
+        {
+            if (bytes[offset + i] != start[i])
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

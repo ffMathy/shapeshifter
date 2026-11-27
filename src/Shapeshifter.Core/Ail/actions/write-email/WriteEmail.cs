@@ -6,19 +6,31 @@ using System.Text;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that starts a new email to an address that was copied on its own.
+/// An action that starts a new email to an address that was copied on its own,
+/// through a mailto: link opened by the system's default email app.
 /// </summary>
 public sealed class WriteEmailAction : IClipboardAction
 {
     private const string MailtoPrefix = "mailto:";
+    private const int MaxAddressLength = 254;
+    private const int MaxLocalPartLength = 64;
 
-    /// <summary>The unique id of this action.</summary>
+    /// <summary>The action's unique id.</summary>
     public string Id => "write-email";
 
-    /// <summary>The position of this action among the actions.</summary>
+    /// <summary>Where the action is placed among the actions.</summary>
     public int Order => 210;
 
-    /// <summary>Returns the title shown for this action.</summary>
+    /// <summary>Whether the item is text that is one email address and nothing else.</summary>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>True when the item's text is an email address on its own.</returns>
+    public bool CanExecute(ClipboardItem item)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        return item.Kind == ClipboardContentKind.Text && ParseAddress(item.Snapshot.Text) is not null;
+    }
+
+    /// <summary>The action's title shown in the actions.</summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
@@ -27,35 +39,23 @@ public sealed class WriteEmailAction : IClipboardAction
         return Strings.ActionWriteEmail;
     }
 
-    /// <summary>Returns the description shown for this action, naming the address the email is to.</summary>
+    /// <summary>The action's description, naming the address the email will be written to.</summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         var address = ParseAddress(item.Snapshot.Text);
-        if (address is null)
-        {
-            return Strings.ActionWriteEmailDescription;
-        }
-
-        return Localizer.Format(Strings.ActionWriteEmailDescription, address);
+        return address is null
+            ? Strings.ActionWriteEmailDescription
+            : Localizer.Format(Strings.ActionWriteEmailDescription, address);
     }
 
-    /// <summary>Tells whether the item is text holding exactly one email address.</summary>
-    /// <param name="item">The chosen item.</param>
-    /// <returns><see langword="true"/> when the action applies to the item.</returns>
-    public bool CanExecute(ClipboardItem item)
-    {
-        ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.Text && ParseAddress(item.Snapshot.Text) is not null;
-    }
-
-    /// <summary>Opens a mailto link to the item's address with the system's default email app; pastes nothing.</summary>
+    /// <summary>Opens a new email to the item's address with the system's default email app; pastes nothing.</summary>
     /// <param name="item">The chosen item.</param>
     /// <param name="context">The context giving access to the launcher.</param>
-    /// <param name="cancellationToken">A token to cancel the action.</param>
-    /// <returns>A task that completes once the link has been handed to the system.</returns>
+    /// <param name="cancellationToken">Cancels the action.</param>
+    /// <returns>A task that completes when the link has been handed to the system.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -70,11 +70,11 @@ public sealed class WriteEmailAction : IClipboardAction
     }
 
     /// <summary>
-    /// Returns the email address the text consists of, without surrounding white space and a leading "mailto:",
-    /// or <see langword="null"/> when the text is not exactly one address.
+    /// Gives the email address the text consists of, as written, when the text is one address
+    /// on its own (ignoring surrounding white space and a leading mailto:), otherwise null.
     /// </summary>
-    /// <param name="text">The text to read.</param>
-    /// <returns>The address as written, or <see langword="null"/>.</returns>
+    /// <param name="text">The text to read, or null.</param>
+    /// <returns>The address, or null when the text is not one address.</returns>
     public static string? ParseAddress(string? text)
     {
         if (text is null)
@@ -88,7 +88,7 @@ public sealed class WriteEmailAction : IClipboardAction
             candidate = candidate[MailtoPrefix.Length..];
         }
 
-        if (CountRunes(candidate) > 254)
+        if (candidate.Length == 0 || candidate.Length > MaxAddressLength)
         {
             return null;
         }
@@ -101,34 +101,40 @@ public sealed class WriteEmailAction : IClipboardAction
 
         var local = candidate[..at];
         var domain = candidate[(at + 1)..];
-        return IsValidLocal(local) && IsValidDomain(domain) ? candidate : null;
+        return IsLocalPart(local) && IsDomain(domain) ? candidate : null;
     }
 
-    private static bool IsValidLocal(string local)
+    private static bool IsLocalPart(string local)
     {
-        var length = CountRunes(local);
-        if (length < 1 || length > 64)
+        if (local.Length < 1 || local.Length > MaxLocalPartLength)
         {
             return false;
         }
 
-        if (local.StartsWith('.') || local.EndsWith('.') || local.Contains("..", StringComparison.Ordinal))
+        if (local[0] == '.' || local[^1] == '.' || local.Contains("..", StringComparison.Ordinal))
         {
             return false;
         }
 
         foreach (var rune in local.EnumerateRunes())
         {
-            if (!IsLetterOrDigit(rune) && !IsLocalSymbol(rune))
+            if (Rune.IsLetter(rune) || IsAsciiDigit(rune))
             {
-                return false;
+                continue;
             }
+
+            if (rune.Value is '.' or '_' or '%' or '+' or '-' or '\'')
+            {
+                continue;
+            }
+
+            return false;
         }
 
         return true;
     }
 
-    private static bool IsValidDomain(string domain)
+    private static bool IsDomain(string domain)
     {
         var labels = domain.Split('.');
         if (labels.Length < 2)
@@ -145,7 +151,7 @@ public sealed class WriteEmailAction : IClipboardAction
 
             foreach (var rune in label.EnumerateRunes())
             {
-                if (!IsLetterOrDigit(rune) && rune.Value != '-')
+                if (!Rune.IsLetter(rune) && !IsAsciiDigit(rune) && rune.Value != '-')
                 {
                     return false;
                 }
@@ -153,36 +159,19 @@ public sealed class WriteEmailAction : IClipboardAction
         }
 
         var last = labels[^1];
-        if (CountRunes(last) < 2)
-        {
-            return false;
-        }
-
+        var letters = 0;
         foreach (var rune in last.EnumerateRunes())
         {
             if (!Rune.IsLetter(rune))
             {
                 return false;
             }
+
+            letters++;
         }
 
-        return true;
+        return letters >= 2;
     }
 
-    private static bool IsLetterOrDigit(Rune rune) =>
-        Rune.IsLetter(rune) || (rune.IsAscii && char.IsAsciiDigit((char)rune.Value));
-
-    private static bool IsLocalSymbol(Rune rune) =>
-        rune.Value is '.' or '_' or '%' or '+' or '-' or '\'';
-
-    private static int CountRunes(string value)
-    {
-        var count = 0;
-        foreach (var _ in value.EnumerateRunes())
-        {
-            count++;
-        }
-
-        return count;
-    }
+    private static bool IsAsciiDigit(Rune rune) => rune.Value is >= '0' and <= '9';
 }

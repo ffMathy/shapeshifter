@@ -47,6 +47,30 @@ target
   test harness ActionTestHarness, internal to the test project in namespace Shapeshifter.Core.Tests.Actions: `using var harness = new ActionTestHarness();` gives harness.Context, an ActionContext wired to fakes; harness.Handler.Respond is a function from each HTTP request to its answer, and harness.Handler.RequestedUris lists the requests made; harness.AddToHistory(snapshot) returns the ClipboardItem it added, whose CapturedAt a check may set; harness.Backend.Writes lists the snapshots written to the clipboard, harness.Paste.Calls counts simulated pastes, harness.History.Items lists the history newest first; ActionTestHarness.Ct is the cancellation token to pass
   checks.path  tests/Shapeshifter.Core.Tests/Ail/{dir}/{name}Tests.cs
   checks.run   dotnet test --project tests/Shapeshifter.Core.Tests --filter-class "Shapeshifter.Core.Ail.Tests.{name}Tests"
+  checks.path.view  tests/Shapeshifter.Desktop.Tests/Ail/{dir}/{name}Tests.cs
+  checks.run.view   dotnet test --project tests/Shapeshifter.Desktop.Tests --filter-class "Shapeshifter.Desktop.Tests.Ail.{name}Tests"
+  checks.path.flow  tests/Shapeshifter.Desktop.Tests/Ail/{dir}/{name}Tests.cs
+  checks.run.flow   dotnet test --project tests/Shapeshifter.Desktop.Tests --filter-class "Shapeshifter.Desktop.Tests.Ail.{name}Tests"
+  ui harness   views and flows are written by hand (Shapeshifter.Desktop, Avalonia), so their checks drive the real app on
+               Avalonia's headless platform, in tests/Shapeshifter.Desktop.Tests: a check is a public sealed class in the
+               file-scoped namespace Shapeshifter.Desktop.Tests.Ail, named after its file, each test
+               `public Task Name() => AppHarness.RunAsync(async app => { ... }, new AppOptions { ... });` (await
+               everything inside; the options are optional). AppOptions: Look (Look.Linux, the default; Look.Windows;
+               Look.MacOS), Dark (the Windows look in dark), Language (a culture name such as "de"), Modifier ("Ctrl", the
+               default, or "Cmd"), StoreCopy (installed from an app store). AppHarness, the real engine, history, actions,
+               picker, copy notification and settings window with fakes for the system: await app.CopyAsync(text, window)
+               (window: the name of the window it was copied in, which gets an icon, or null where none can be named),
+               CopyImageAsync(width, height), CopyFilesAsync(full paths), CopyFormattedAsync(text, html), PinAsync(text,
+               ago); HoldCtrlVAsync() (holds Ctrl, or Cmd, taps V and keeps Ctrl down until the picker appears),
+               TapAsync(GestureKey.X), DownAsync(key), UpAsync(key), ReleaseCtrlAsync() (lets go of Ctrl and waits until
+               the picker is gone), TypeSearchAsync(query) (after tapping GestureKey.Search); OpenSettings() returns the
+               settings window. GestureKey: Modifier, Trigger (V), Up, Down, Left, Right, Delete, Escape, Space, Enter,
+               Search (S), Digit1 to Digit9. What there is to see: app.Picker (the picker's window), app.PickerVisible,
+               app.Notification (the copy notification's window), app.SettingsWindow; AppHarness.Texts(window) lists
+               every text it shows, in reading order; AppHarness.Find<T>(window) its visible controls of a type.
+               What happened: app.Paste.Pasted (what each paste put into the application in front), app.Clipboard.Current
+               and .Written, app.Launcher.OpenedUrls and .OpenedFolders, app.History.Items, app.Paths. Each test ends with
+               AppHarness.SaveScreen(window, "<the file name it was given>") on the window its scenario ends on.
 ```
 
 ## Glossary

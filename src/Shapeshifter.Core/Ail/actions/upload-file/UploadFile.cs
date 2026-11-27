@@ -12,14 +12,14 @@ namespace Shapeshifter.Core.Ail;
 public sealed class UploadFileAction : IClipboardAction
 {
     /// <summary>
-    /// The content type every file is sent with, so Catbox serves each type itself.
+    /// The content type every file is sent with; Catbox serves each type itself.
     /// </summary>
     public const string MediaType = "application/octet-stream";
 
     private readonly ConcurrentDictionary<object, string> _links = new();
 
     /// <summary>
-    /// The action's stable identifier.
+    /// The action's identifier.
     /// </summary>
     public string Id => "upload-file";
 
@@ -29,9 +29,9 @@ public sealed class UploadFileAction : IClipboardAction
     public int Order => 78;
 
     /// <summary>
-    /// Gets the title shown for this action.
+    /// Gets the title shown for this action, the same as for the other uploads.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
+    /// <param name="item">The item the action is offered for.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
@@ -40,10 +40,10 @@ public sealed class UploadFileAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the description shown for this action.
+    /// Gets the description shown for this action, naming the upload service.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description naming the upload service.</returns>
+    /// <param name="item">The item the action is offered for.</param>
+    /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -51,14 +51,13 @@ public sealed class UploadFileAction : IClipboardAction
     }
 
     /// <summary>
-    /// Tells whether the item is one local, existing, non-empty file small enough for Catbox.
+    /// Tells whether the item is one local, existing, non-empty file no larger than Catbox accepts.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
-    /// <returns><see langword="true"/> when the file can be uploaded.</returns>
+    /// <param name="item">The item to check.</param>
+    /// <returns>True when the file can be uploaded.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
-
         if (item.Kind != ClipboardContentKind.File)
         {
             return false;
@@ -86,9 +85,9 @@ public sealed class UploadFileAction : IClipboardAction
     }
 
     /// <summary>
-    /// Uploads the file once per item, then pastes its link and adds the link to the history.
+    /// Uploads the file once, then pastes the link and adds it to the history as the newest item.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
+    /// <param name="item">The item holding the file.</param>
     /// <param name="context">The services the action uses.</param>
     /// <param name="cancellationToken">Cancels the upload and the paste.</param>
     /// <returns>A task that completes when the link has been pasted.</returns>

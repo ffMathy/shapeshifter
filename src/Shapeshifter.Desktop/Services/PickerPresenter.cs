@@ -85,6 +85,9 @@ internal sealed class PickerPresenter : IPickerPresenter
 
     public bool HasSearchFocus { get; private set; }
 
+    /// <summary>The picker's window, once it was first shown (for tests that look at it).</summary>
+    internal PickerWindow? Window => window;
+
     public Task ShowAsync(PickerViewState state) => Dispatcher.UIThread.InvokeAsync(() =>
     {
         var picker = window ??= CreateWindow();

@@ -5,7 +5,7 @@ using Shapeshifter.Core.Localization;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that pastes where the copied files are, as text, one path per line.
+/// An action that pastes where the copied files are as text, one full path per line.
 /// </summary>
 public sealed class PastePathsAction : IClipboardAction
 {
@@ -20,10 +20,10 @@ public sealed class PastePathsAction : IClipboardAction
     public int Order => 70;
 
     /// <summary>
-    /// Gets the action's title, which says path for one file and paths for several.
+    /// Gets the title, which says path for one file and paths for several.
     /// </summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The title shown to the user.</returns>
+    /// <returns>The title shown for the action.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -31,10 +31,10 @@ public sealed class PastePathsAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the action's description, for one file or for several.
+    /// Gets the description, which speaks of one file or of several.
     /// </summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The description shown to the user.</returns>
+    /// <returns>The description shown for the action.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -55,28 +55,28 @@ public sealed class PastePathsAction : IClipboardAction
     }
 
     /// <summary>
-    /// Pastes the item's file paths as text, without adding anything to the history.
+    /// Pastes the item's file paths as text without adding them to the history.
     /// </summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context to paste through.</param>
+    /// <param name="context">The context the action runs in.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the paste has been made.</returns>
-    public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
+    /// <returns>A task that completes when the paths are pasted.</returns>
+    public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
         var snapshot = new ClipboardSnapshot { Text = Join(item.Snapshot.Files) };
-        return context.WriteAndPasteAsync(snapshot, cancellationToken);
+        await context.WriteAndPasteAsync(snapshot, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Joins the paths as they were copied, in their order, by the system's line ending, with none after the last.
+    /// Joins paths as they were copied, in their order, by the system's line ending, with none after the last.
     /// </summary>
-    /// <param name="paths">The copied file paths.</param>
+    /// <param name="paths">The full paths of the files.</param>
     /// <returns>The paths as text, one per line.</returns>
     public static string Join(IReadOnlyList<string> paths)
     {
         ArgumentNullException.ThrowIfNull(paths);
-        return string.Join(Environment.NewLine, paths);
+        return string.Join(OperatingSystem.IsWindows() ? "\r\n" : "\n", paths);
     }
 }

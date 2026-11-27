@@ -667,6 +667,8 @@
   <Style Selector="WrapPanel.hints">
     <Setter Property="HorizontalAlignment" Value="Center" />
     <Setter Property="VerticalAlignment" Value="Center" />
+    <!-- Each line centred, a wrapped second line too (libadwaita centres the hints). -->
+    <Setter Property="ItemsAlignment" Value="Center" />
   </Style>
   <Style Selector="StackPanel.hint">
     <Setter Property="Orientation" Value="Horizontal" />
