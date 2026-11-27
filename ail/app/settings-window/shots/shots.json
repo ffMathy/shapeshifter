@@ -1,0 +1,13 @@
+{
+  "node": "SettingsWindow",
+  "shots": [
+    {
+      "test": "the settings window shows every setting with its current value",
+      "file": "01-the-settings-window-shows-every-setting-with-its-current-val.png"
+    },
+    {
+      "test": "a copy from an app store leaves out updating",
+      "file": "02-a-copy-from-an-app-store-leaves-out-updating.png"
+    }
+  ]
+}
