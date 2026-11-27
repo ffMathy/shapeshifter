@@ -27,8 +27,7 @@ public sealed class ActionsTests
         }
 
         var files = app.Clipboard.Current.Files;
-        Assert.Equal(1, files.Count);
-        var path = files[0];
+        var path = Assert.Single(files);
         Assert.Matches(new Regex(@"^Text .+ .+\.txt$"), Path.GetFileName(path));
         Assert.Equal("memo", await File.ReadAllTextAsync(path));
 
@@ -50,8 +49,8 @@ public sealed class ActionsTests
         await app.TapAsync(GestureKey.Down);
         await app.ReleaseCtrlAsync();
 
-        Assert.Equal(1, app.Paste.Pasted.Count);
-        Assert.Equal("bee", app.Paste.Pasted[0].Text);
+        var pasted = Assert.Single(app.Paste.Pasted);
+        Assert.Equal("bee", pasted.Text);
 
         AppHarness.SaveScreen(app.Picker, "left-goes-back-to-the-history.png");
     });
@@ -69,8 +68,8 @@ public sealed class ActionsTests
         await app.TapAsync(GestureKey.Trigger);
         await app.ReleaseCtrlAsync();
 
-        Assert.Equal(1, app.Paste.Pasted.Count);
-        Assert.Equal("owl", app.Paste.Pasted[0].Text);
+        var pasted = Assert.Single(app.Paste.Pasted);
+        Assert.Equal("owl", pasted.Text);
 
         AppHarness.SaveScreen(app.Picker, "choosing-another-item-starts-again-at-paste.png");
     });
@@ -88,7 +87,7 @@ public sealed class ActionsTests
         await app.TapAsync(GestureKey.Escape);
         await app.ReleaseCtrlAsync();
 
-        Assert.Equal(0, app.Paste.Pasted.Count);
+        Assert.Empty(app.Paste.Pasted);
         Assert.Equal(writesBefore, app.Clipboard.Written.Count);
         Assert.Equal("calm", app.Clipboard.Current.Text);
 
