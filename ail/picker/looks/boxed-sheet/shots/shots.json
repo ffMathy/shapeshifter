@@ -1,0 +1,13 @@
+{
+  "node": "BoxedSheet",
+  "shots": [
+    {
+      "test": "the Linux picker",
+      "file": "01-the-linux-picker.png"
+    },
+    {
+      "test": "without a compositor",
+      "file": "02-without-a-compositor.png"
+    }
+  ]
+}

@@ -347,27 +347,42 @@
   },
   "glue": {},
   "hand": {
+    "Actions": {
+      "shots": "adb0f4c4431849b6"
+    },
     "ActionsList": {
-      "shots": "9845a3dcfcd9456f"
+      "shots": "9845a3dcfcd9456f",
+      "look": "373a677c45b3467dda6158e6f66201a9a91d5f22e03da3182ce6baa6e202ef6d"
+    },
+    "BoxedSheet": {
+      "shots": "a498c56d1888ec88"
     },
     "EmptyPicker": {
-      "shots": "4acad5c12853298b"
+      "shots": "4acad5c12853298b",
+      "look": "25a94899660a7da367879c14e1765141e8b29f564b83a893a1ecd27a2b80515f"
     },
     "HistoryRow": {
-      "shots": "9b01e1d5e807caa8"
+      "shots": "9b01e1d5e807caa8",
+      "look": "06215980c119a7f44b0a0a0b99f01e0e72291024ad30773fe78476d9a4eff827"
+    },
+    "MicaSheets": {
+      "shots": "c3529f4f680c45ee",
+      "look": "cbf37a62501f56b95c126102b21707ac9361c0e65020d9094708e36b887a6b95"
     },
     "Picker": {
-      "shots": "f0aabbdff554e176"
+      "shots": "f0aabbdff554e176",
+      "look": "2b53d03af0db0a25c3dc031fe34e4b6dead6c255cb5fcc9d9af44a70c3607d76"
     },
     "PickerFooter": {
-      "shots": "c4152e526476394b"
+      "shots": "c4152e526476394b",
+      "look": "73dd0630810efcfd67846943242a0406945ae89f33bff051dd26aed3a26162b0"
     },
     "SearchBar": {
       "shots": "a9735bfd1c003f47",
       "look": "a9735bfd1c003f47"
     },
     "SettingsWindow": {
-      "shots": "4063a5d565dc3ed8"
+      "shots": "d9d6acfe1ad7379e"
     }
   }
 }

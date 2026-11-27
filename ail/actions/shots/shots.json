@@ -1,0 +1,21 @@
+{
+  "node": "Actions",
+  "shots": [
+    {
+      "test": "Right opens the actions, and letting go of Ctrl runs the chosen one",
+      "file": "01-right-opens-the-actions-and-letting-go-of-ctrl-runs-the-chos.png"
+    },
+    {
+      "test": "Left goes back to the history",
+      "file": "02-left-goes-back-to-the-history.png"
+    },
+    {
+      "test": "choosing another item starts again at Paste",
+      "file": "03-choosing-another-item-starts-again-at-paste.png"
+    },
+    {
+      "test": "Escape in the actions cancels without running anything",
+      "file": "04-escape-in-the-actions-cancels-without-running-anything.png"
+    }
+  ]
+}
