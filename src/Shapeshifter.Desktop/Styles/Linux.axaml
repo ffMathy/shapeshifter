@@ -691,6 +691,8 @@
   </Style>
   <Style Selector="Border.key > TextBlock">
     <Setter Property="FontFamily" Value="{StaticResource LinuxLookMonoFont}" />
+    <!-- Adwaita Mono's arrows fill their cells, so "←→" would touch and read as one double arrow. -->
+    <Setter Property="LetterSpacing" Value="1.5" />
     <Setter Property="FontSize" Value="11.5" />
     <Setter Property="Foreground" Value="#2E2E33" />
     <Setter Property="HorizontalAlignment" Value="Center" />

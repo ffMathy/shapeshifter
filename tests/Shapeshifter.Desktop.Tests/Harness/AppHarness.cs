@@ -42,6 +42,9 @@ public sealed record AppOptions
 
     /// <summary>Whether this copy came from an app store (the Microsoft Store), which updates it: its settings leave updating out.</summary>
     public bool StoreCopy { get; init; }
+
+    /// <summary>The height of the screen the picker opens on, in pixels at 100 %; the history may use 62 % of it.</summary>
+    public int ScreenHeight { get; init; } = 1080;
 }
 
 /// <summary>
@@ -93,7 +96,10 @@ public sealed class AppHarness : IAsyncDisposable
             Http = http,
             Logger = Logger.None,
         };
-        picker = new PickerPresenter(new NoCursor(), new PickerVisuals(new DrawnFileIcons(), Logger.None), options.Modifier, Logger.None);
+        picker = new PickerPresenter(new NoCursor(), new PickerVisuals(new DrawnFileIcons(), Logger.None), options.Modifier, Logger.None)
+        {
+            WorkingAreaHeight = options.ScreenHeight,
+        };
         notifier = new CopyNotifier(Settings);
         var coach = new CopyCoach(sourceLocator, () => options.Modifier, () => Settings.Current.CoachingTips, Time);
         Engine = new ShapeshifterEngine(History, monitor, hook, ActionCatalog.CreateDefault(), context, picker, notifier, Logger.None, Time, coach)
@@ -133,6 +139,49 @@ public sealed class AppHarness : IAsyncDisposable
     public PickerWindow Picker => picker.Window ?? throw new InvalidOperationException("The picker was never shown.");
 
     public bool PickerVisible => picker.IsVisible;
+
+    /// <summary>The rows of the history the picker lists, top first: each a ListBoxItem, IsSelected on the chosen one.</summary>
+    public IReadOnlyList<ListBoxItem> HistoryRows => Picker.GetVisualDescendants().OfType<ListBox>()
+        .Where(list => list.Name == "ItemList").SelectMany(list => list.GetVisualDescendants().OfType<ListBoxItem>())
+        .Where(row => row.IsEffectivelyVisible).ToArray();
+
+    /// <summary>The chosen row of the history, if any.</summary>
+    public ListBoxItem? ChosenRow => HistoryRows.FirstOrDefault(row => row.IsSelected);
+
+    /// <summary>The rows of the actions beside the history, top first: each a ListBoxItem, IsSelected on the chosen one.</summary>
+    public IReadOnlyList<ListBoxItem> ActionRows => Picker.GetVisualDescendants().OfType<ListBox>()
+        .Where(list => list.Classes.Contains("actions")).SelectMany(list => list.GetVisualDescendants().OfType<ListBoxItem>())
+        .Where(row => row.IsEffectivelyVisible).ToArray();
+
+    /// <summary>Whether all of <paramref name="control"/> shows: inside its window, and inside the scrolled part of any list it is in.</summary>
+    public static bool IsFullyShown(Control control)
+    {
+        ArgumentNullException.ThrowIfNull(control);
+        if (!control.IsEffectivelyVisible || TopLevel.GetTopLevel(control) is not { } top)
+        {
+            return false;
+        }
+
+        var bounds = control.TransformToVisual(top) is { } toTop ? new Rect(control.Bounds.Size).TransformToAABB(toTop) : default;
+        foreach (var viewer in control.GetVisualAncestors().OfType<ScrollViewer>())
+        {
+            var view = viewer.TransformToVisual(top) is { } viewerToTop ? new Rect(viewer.Bounds.Size).TransformToAABB(viewerToTop) : default;
+            if (!view.Contains(bounds.TopLeft) || !view.Contains(bounds.BottomRight - new Point(0.5, 0.5)))
+            {
+                return false;
+            }
+        }
+
+        return new Rect(top.Bounds.Size).Contains(bounds.TopLeft);
+    }
+
+    /// <summary>Shows a coaching tip in the copy notification, as Shapeshifter does when the history could have saved a copy.</summary>
+    public async Task ShowTipAsync(string title, string message)
+    {
+        notifier.NotifyTip(new CoachingTip(CoachingTipKind.CopiedAgain, title, message));
+        await WaitUntilAsync(() => notifier.Window?.IsVisible == true, "the tip appeared").ConfigureAwait(true);
+        await Settle().ConfigureAwait(true);
+    }
 
     /// <summary>The copy notification's window (one was shown at least once).</summary>
     public ToastWindow Notification => notifier.Window ?? throw new InvalidOperationException("No notification was ever shown.");
@@ -254,7 +303,7 @@ public sealed class AppHarness : IAsyncDisposable
             };
             settingsWindow = new SettingsWindow
             {
-                DataContext = new SettingsViewModel(Settings, new FakeAutostart(), History, Launcher, Paths, () => Options.Modifier, [], shortcutModifierNames: modifiers)
+                DataContext = new SettingsViewModel(Settings, new FakeAutostart(), History, Launcher, Paths, () => Options.Modifier, [], Updater(), modifiers)
                 {
                     ShowsUpdates = !Options.StoreCopy,
                 },
@@ -267,6 +316,20 @@ public sealed class AppHarness : IAsyncDisposable
         await Settle().ConfigureAwait(true);
         return settingsWindow;
     }
+
+    /// <summary>
+    /// The updater, as the app makes it (none in a copy from an app store): never started, so it checks nothing. This
+    /// copy runs from a build folder, which cannot update itself, and the updater says why.
+    /// </summary>
+    private Shapeshifter.Core.Updates.Updater? Updater() => Options.StoreCopy
+        ? null
+        : new Shapeshifter.Core.Updates.Updater(
+            Installation.App,
+            Shapeshifter.Core.Updates.RunningApp.Current(),
+            Installation.Layout(Paths),
+            http,
+            new Installation.UpdateLog(Logger.None),
+            () => Settings.Current.AutomaticUpdates);
 
     /// <summary>Every piece of text <paramref name="root"/> shows to the user, in reading order, as rendered.</summary>
     public static IReadOnlyList<string> Texts(Visual root)

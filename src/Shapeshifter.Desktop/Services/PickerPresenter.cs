@@ -88,6 +88,9 @@ internal sealed class PickerPresenter : IPickerPresenter
     /// <summary>The picker's window, once it was first shown (for tests that look at it).</summary>
     internal PickerWindow? Window => window;
 
+    /// <summary>The height of the screen's working area, in window units, instead of the screen's (for tests: the headless screen has one size).</summary>
+    internal double? WorkingAreaHeight { get; set; }
+
     public Task ShowAsync(PickerViewState state) => Dispatcher.UIThread.InvokeAsync(() =>
     {
         var picker = window ??= CreateWindow();
@@ -440,7 +443,7 @@ internal sealed class PickerPresenter : IPickerPresenter
 
         // Whole rows only, so the last visible row is never cut in half.
         var rowHeight = PlatformLook.Resource(Avalonia.Application.Current!, "PickerRowHeight", 64.0);
-        var available = screen.WorkingArea.Height / GetScaling(picker, screen) * HeightFraction;
+        var available = (WorkingAreaHeight ?? screen.WorkingArea.Height / GetScaling(picker, screen)) * HeightFraction;
         viewModel.MaxListHeight = Math.Max(1, Math.Floor(available / rowHeight)) * rowHeight;
     }
 
@@ -448,7 +451,9 @@ internal sealed class PickerPresenter : IPickerPresenter
     private bool FitsOnScreen(Window picker)
     {
         var screen = FindScreen(picker.Screens);
-        return screen is null || picker.Bounds.Height * GetScaling(picker, screen) <= screen.WorkingArea.Height;
+        return screen is null || (WorkingAreaHeight is { } height
+            ? picker.Bounds.Height <= height
+            : picker.Bounds.Height * GetScaling(picker, screen) <= screen.WorkingArea.Height);
     }
 
     private void Position(Window picker)

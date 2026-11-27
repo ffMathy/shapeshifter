@@ -51,13 +51,13 @@ target
   checks.run.view   dotnet test --project tests/Shapeshifter.Desktop.Tests --filter-class "Shapeshifter.Desktop.Tests.Ail.{name}Tests"
   checks.path.flow  tests/Shapeshifter.Desktop.Tests/Ail/{dir}/{name}Tests.cs
   checks.run.flow   dotnet test --project tests/Shapeshifter.Desktop.Tests --filter-class "Shapeshifter.Desktop.Tests.Ail.{name}Tests"
-  ui harness   views and flows are written by hand (Shapeshifter.Desktop, Avalonia), so their checks drive the real app on
+  checks.harness  views and flows are written by hand (Shapeshifter.Desktop, Avalonia), so their checks drive the real app on
                Avalonia's headless platform, in tests/Shapeshifter.Desktop.Tests: a check is a public sealed class in the
                file-scoped namespace Shapeshifter.Desktop.Tests.Ail, named after its file, each test
                `public Task Name() => AppHarness.RunAsync(async app => { ... }, new AppOptions { ... });` (await
                everything inside; the options are optional). AppOptions: Look (Look.Linux, the default; Look.Windows;
                Look.MacOS), Dark (the Windows look in dark), Language (a culture name such as "de"), Modifier ("Ctrl", the
-               default, or "Cmd"), StoreCopy (installed from an app store). AppHarness, the real engine, history, actions,
+               default, or "Cmd"), StoreCopy (installed from an app store), ScreenHeight (the screen's height in pixels, 1080 by default). AppHarness, the real engine, history, actions,
                picker, copy notification and settings window with fakes for the system: await app.CopyAsync(text, window)
                (window: the name of the window it was copied in, which gets an icon, or null where none can be named),
                CopyImageAsync(width, height), CopyFilesAsync(full paths), CopyFormattedAsync(text, html), PinAsync(text,
@@ -68,6 +68,12 @@ target
                Search (S), Digit1 to Digit9. What there is to see: app.Picker (the picker's window), app.PickerVisible,
                app.Notification (the copy notification's window), app.SettingsWindow; AppHarness.Texts(window) lists
                every text it shows, in reading order; AppHarness.Find<T>(window) its visible controls of a type.
+               app.HistoryRows and app.ActionRows are the rows of the history and of the actions (each a ListBoxItem, top
+               first; IsSelected on the chosen one), app.ChosenRow the chosen history row, AppHarness.IsFullyShown(control)
+               whether all of it shows (inside its window and the scrolled part of its list); await app.ShowTipAsync(title,
+               message) shows a coaching tip in the copy notification. What a scenario says about how something looks
+               (colours, rounding, sizes, where on the screen) is judged from its screenshot against the look: the check
+               asserts the texts, states and order it names, and saves the screen.
                What happened: app.Paste.Pasted (what each paste put into the application in front), app.Clipboard.Current
                and .Written, app.Launcher.OpenedUrls and .OpenedFolders, app.History.Items, app.Paths. Each test ends with
                AppHarness.SaveScreen(window, "<the file name it was given>") on the window its scenario ends on.
