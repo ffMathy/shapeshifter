@@ -226,9 +226,9 @@
       "spec": "65782d6fea7084ef1e146e1c4a12cc83977b901043c5b463ef8cbc51477db048"
     },
     "ReformatJson": {
-      "hash": "4b1f6f1c4f994efe0a027ec8fbf76c3d81124349a25cd672c8a0912ded438f86",
+      "hash": "ab38ae617608e987966e601d054e31aa3bed238a9a80697ce2fce6795b7abc98",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "a658c03fe0ed069d4f138943a6f055b573d3d067a91e85494b03c733d3fbe2ef"
+        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "3ca2bd0c679736d08afbe4dfc96d817304a97835d3ecedc0227677d0cfe71277"
       },
       "by": "claude-code"
     },
