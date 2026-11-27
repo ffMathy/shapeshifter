@@ -521,4 +521,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Pega la imagen de este archivo en lugar del archivo.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Pegar descomprimido</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Descomprime este archivo .zip y pega los archivos que contiene.</value>
+  </data>
 </root>

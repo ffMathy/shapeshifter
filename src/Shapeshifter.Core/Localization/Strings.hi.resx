@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>फ़ाइल की जगह उसके अंदर का चित्र चिपकाता है।</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>अनज़िप करके चिपकाएँ</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>इस .zip फ़ाइल को खोलकर उसके अंदर की फ़ाइलें चिपकाता है।</value>
+  </data>
 </root>

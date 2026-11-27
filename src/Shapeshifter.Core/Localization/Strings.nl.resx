@@ -521,4 +521,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Plakt de afbeelding in dit bestand in plaats van het bestand.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Uitgepakt plakken</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Pakt dit .zip-bestand uit en plakt de bestanden erin.</value>
+  </data>
 </root>

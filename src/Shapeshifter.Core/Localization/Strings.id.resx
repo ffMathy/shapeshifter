@@ -521,4 +521,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Menempelkan gambar di dalam file ini, bukan filenya.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Tempel hasil ekstrak</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Mengekstrak file .zip ini dan menempelkan file di dalamnya.</value>
+  </data>
 </root>

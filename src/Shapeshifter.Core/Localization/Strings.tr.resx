@@ -521,4 +521,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Dosya yerine içindeki görüntüyü yapıştırır.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Ayıklayarak yapıştır</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Bu .zip dosyasını açar ve içindeki dosyaları yapıştırır.</value>
+  </data>
 </root>

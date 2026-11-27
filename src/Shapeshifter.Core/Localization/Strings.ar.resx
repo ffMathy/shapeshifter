@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>يلصق الصورة الموجودة في هذا الملف بدلًا من الملف.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>لصق بعد فك الضغط</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>يفك ضغط ملف .zip هذا ويلصق الملفات التي بداخله.</value>
+  </data>
 </root>

@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>ফাইলের বদলে এর ভেতরের ছবি পেস্ট করে।</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>আনজিপ করে পেস্ট করুন</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>এই .zip ফাইলটি খুলে ভেতরের ফাইলগুলো পেস্ট করে।</value>
+  </data>
 </root>

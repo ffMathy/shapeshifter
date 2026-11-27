@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Dán hình ảnh trong tệp này thay vì chính tệp.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Dán sau khi giải nén</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Giải nén tệp .zip này và dán các tệp bên trong.</value>
+  </data>
 </root>

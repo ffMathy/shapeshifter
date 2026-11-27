@@ -521,4 +521,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Indsætter billedet i filen i stedet for selve filen.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Indsæt udpakket</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Pakker .zip-filen ud og indsætter filerne i den.</value>
+  </data>
 </root>

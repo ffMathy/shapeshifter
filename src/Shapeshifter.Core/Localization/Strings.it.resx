@@ -521,4 +521,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Incolla l'immagine di questo file al posto del file.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Incolla estratto</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Estrae questo file .zip e incolla i file che contiene.</value>
+  </data>
 </root>

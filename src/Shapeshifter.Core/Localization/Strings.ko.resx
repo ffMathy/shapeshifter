@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>파일 대신 파일 안의 이미지를 붙여넣습니다.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>압축 풀어 붙여넣기</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>이 .zip 파일의 압축을 풀고 안의 파일을 붙여넣습니다.</value>
+  </data>
 </root>

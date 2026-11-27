@@ -521,4 +521,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Cola a imagem deste arquivo em vez do arquivo.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Colar extraído</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Descompacta este arquivo .zip e cola os arquivos dentro dele.</value>
+  </data>
 </root>

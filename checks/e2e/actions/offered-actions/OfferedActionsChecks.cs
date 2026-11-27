@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@a9ce6c4c375a21c2
+// ail-derived-from: OfferedActions@ca05b78a70b3d375
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -141,6 +141,19 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         File.WriteAllBytes(path, MakePng(31 + Random.Shared.Next(40), 23));
         await CopyAs("text/uri-list", $"file://{path}\n");
         Assert.Equal(["Paste", "Paste path", "Paste as image", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a .zip file offers Paste extracted", Timeout = 30_000)]
+    public async Task ZipFile()
+    {
+        var path = Path.Combine(Directory.CreateTempSubdirectory("ail-offered-").FullName, $"archive-{Unique()}.zip");
+        using (var zip = System.IO.Compression.ZipFile.Open(path, System.IO.Compression.ZipArchiveMode.Create))
+        {
+            using var writer = new StreamWriter(zip.CreateEntry("inside.txt").Open());
+            writer.Write("inside");
+        }
+        await CopyAs("text/uri-list", $"file://{path}\n");
+        Assert.Equal(["Paste", "Paste path", "Paste as compressed file", "Paste extracted", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "several files offer the same as one file, with Paste paths", Timeout = 30_000)]
