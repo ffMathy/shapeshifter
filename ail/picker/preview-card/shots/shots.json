@@ -22,12 +22,16 @@
       "file": "05-files.png"
     },
     {
-      "test": "the path of an image",
-      "file": "06-the-path-of-an-image.png"
+      "test": "one file, on Linux",
+      "file": "06-one-file-on-linux.png"
+    },
+    {
+      "test": "the path of an image, on Linux",
+      "file": "07-the-path-of-an-image-on-linux.png"
     },
     {
       "test": "a search that finds nothing",
-      "file": "07-a-search-that-finds-nothing.png"
+      "file": "08-a-search-that-finds-nothing.png"
     }
   ]
 }
