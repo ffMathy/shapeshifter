@@ -17,7 +17,8 @@ node DecodeBase64 : fn   level: system
     DecodeBase64Action.TryDecode(text: text or nothing) -> text or nothing
       takes the text without the white space at its start and end, and without line breaks inside it
       gives nothing unless what is left is at least 8 and at most MaxLength characters long, and only uses the Base64 alphabet: A–Z, a–z, 0–9 and + and /, or - and _ in their place (the URL-safe variant), then at most two = at the end
-      decodes it, adding the = padding when it is missing, and gives nothing if the length cannot be Base64 even with padding
+      decodes it, adding the = padding when it is missing, and gives nothing if the length cannot be Base64 even with padding,
+      or if it does not decode (it never fails: CanExecute is asked of everything copied)
       gives nothing unless the bytes are valid UTF-8 and the text holds no control characters other than tab, line feed and carriage return
       else gives the decoded text
     ExecuteAsync pastes ClipboardSnapshot { Text: the decoded text } with context.WriteAndPasteAsync; nothing is added to the history
@@ -31,6 +32,7 @@ node DecodeBase64 : fn   level: system
       TryDecode("dGVzdA") => nothing; shorter than 8 characters
       TryDecode("hello world") => nothing; a space is not Base64
       TryDecode("username") => nothing; it decodes, but not to UTF-8
+      TryDecode("1795703400") => nothing; a Unix time, whose padded form is not valid Base64
       TryDecode("AAECAwQF") => nothing; bytes 0 to 5 are control characters
       TryDecode("aGVsbG8=d29y") => nothing; = only at the end
       TryDecode(nothing) => nothing
