@@ -1,0 +1,33 @@
+{
+  "node": "PreviewCard",
+  "shots": [
+    {
+      "test": "code",
+      "file": "01-code.png"
+    },
+    {
+      "test": "text of several lines",
+      "file": "02-text-of-several-lines.png"
+    },
+    {
+      "test": "a colour",
+      "file": "03-a-colour.png"
+    },
+    {
+      "test": "an image",
+      "file": "04-an-image.png"
+    },
+    {
+      "test": "files",
+      "file": "05-files.png"
+    },
+    {
+      "test": "the path of an image",
+      "file": "06-the-path-of-an-image.png"
+    },
+    {
+      "test": "a search that finds nothing",
+      "file": "07-a-search-that-finds-nothing.png"
+    }
+  ]
+}

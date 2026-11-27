@@ -1,0 +1,17 @@
+{
+  "node": "Refraction",
+  "shots": [
+    {
+      "test": "the Mac picker",
+      "file": "01-the-mac-picker.png"
+    },
+    {
+      "test": "kept open",
+      "file": "02-kept-open.png"
+    },
+    {
+      "test": "without the system's material",
+      "file": "03-without-the-system-s-material.png"
+    }
+  ]
+}
