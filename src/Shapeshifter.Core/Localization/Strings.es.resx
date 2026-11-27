@@ -509,4 +509,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Pega como texto dónde están estos archivos, uno por línea.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Pegar el contenido del archivo</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Pega el texto de este archivo en lugar del archivo.</value>
+  </data>
 </root>

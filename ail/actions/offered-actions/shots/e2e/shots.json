@@ -50,8 +50,8 @@
       "file": "an-image-offers-paste-paste-as-file-upload-and-paste-link-an.png"
     },
     {
-      "test": "a file offers Paste, Paste path, Paste as compressed file and Pin",
-      "file": "a-file-offers-paste-paste-path-paste-as-compressed-file-and-.png"
+      "test": "a text file offers Paste, Paste path, Paste file contents, Paste as compressed file and Pin",
+      "file": "a-text-file-offers-paste-paste-path-paste-file-contents-past.png"
     },
     {
       "test": "several files offer the same as one file, with Paste paths",

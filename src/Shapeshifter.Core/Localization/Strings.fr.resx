@@ -509,4 +509,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Colle l'emplacement de ces fichiers sous forme de texte, un par ligne.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Coller le contenu du fichier</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Colle le texte de ce fichier au lieu du fichier.</value>
+  </data>
 </root>

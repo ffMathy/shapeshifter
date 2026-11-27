@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Вставляє розташування цих файлів як текст, по одному в рядку.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Вставити вміст файлу</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Вставляє текст із цього файлу замість самого файлу.</value>
+  </data>
 </root>

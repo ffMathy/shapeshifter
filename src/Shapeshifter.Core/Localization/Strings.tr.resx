@@ -509,4 +509,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Bu dosyaların konumlarını metin olarak, her satıra bir tane yapıştırır.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Dosya içeriğini yapıştır</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Dosya yerine içindeki metni yapıştırır.</value>
+  </data>
 </root>

@@ -509,4 +509,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Incolla come testo la posizione di questi file, uno per riga.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Incolla il contenuto del file</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Incolla il testo di questo file al posto del file.</value>
+  </data>
 </root>

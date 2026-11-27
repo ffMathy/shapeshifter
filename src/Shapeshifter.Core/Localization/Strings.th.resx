@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>วางตำแหน่งของไฟล์เหล่านี้เป็นข้อความ บรรทัดละหนึ่งไฟล์</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>วางเนื้อหาของไฟล์</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>วางข้อความในไฟล์นี้แทนตัวไฟล์</value>
+  </data>
 </root>

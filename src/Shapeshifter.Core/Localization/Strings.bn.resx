@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>এই ফাইলগুলো কোথায় আছে তা লেখা হিসেবে, প্রতি লাইনে একটি করে পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>ফাইলের বিষয়বস্তু পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>ফাইলের বদলে এর ভেতরের লেখা পেস্ট করে।</value>
+  </data>
 </root>

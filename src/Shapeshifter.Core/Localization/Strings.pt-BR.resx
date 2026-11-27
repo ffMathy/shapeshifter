@@ -509,4 +509,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Cola como texto onde estes arquivos estão, um por linha.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Colar o conteúdo do arquivo</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Cola o texto deste arquivo em vez do arquivo.</value>
+  </data>
 </root>

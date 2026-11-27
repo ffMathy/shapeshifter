@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>يلصق مواقع هذه الملفات كنص، واحدًا في كل سطر.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>لصق محتوى الملف</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>يلصق النص الموجود داخل هذا الملف بدلًا من الملف.</value>
+  </data>
 </root>

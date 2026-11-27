@@ -509,4 +509,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>Wkleja lokalizacje tych plików jako tekst, po jednej w wierszu.</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>Wklej zawartość pliku</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>Wkleja tekst z tego pliku zamiast samego pliku.</value>
+  </data>
 </root>

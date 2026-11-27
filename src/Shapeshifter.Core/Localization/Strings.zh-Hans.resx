@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>以文本形式粘贴这些文件的位置，每行一个。</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>粘贴文件内容</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>粘贴此文件中的文本，而不是文件本身。</value>
+  </data>
 </root>

@@ -509,4 +509,10 @@
   <data name="ActionPastePathsDescription" xml:space="preserve">
     <value>ये फ़ाइलें कहाँ हैं, उसे टेक्स्ट के रूप में, हर पंक्ति में एक, चिपकाता है।</value>
   </data>
+  <data name="ActionPasteFileContents" xml:space="preserve">
+    <value>फ़ाइल की सामग्री चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteFileContentsDescription" xml:space="preserve">
+    <value>फ़ाइल की जगह उसके अंदर का टेक्स्ट चिपकाता है।</value>
+  </data>
 </root>
