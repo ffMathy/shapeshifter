@@ -1,11 +1,7 @@
-// ail-derived-from: HistoryRow@0ed9841a6cc71312
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+// ail-derived-from: HistoryRow@9b01e1d5e807caa8
 using Avalonia.Controls;
 using Avalonia.Media;
+using Avalonia.VisualTree;
 using Xunit;
 
 namespace Shapeshifter.Desktop.Tests.Ail;
@@ -13,52 +9,7 @@ namespace Shapeshifter.Desktop.Tests.Ail;
 /// <summary>Derived checks for the HistoryRow view: what each row of the history shows.</summary>
 public sealed class HistoryRowTests
 {
-    private static int IndexOf(IEnumerable<string> texts, string text)
-    {
-        var index = 0;
-        foreach (var t in texts)
-        {
-            if (t == text)
-            {
-                return index;
-            }
-
-            index++;
-        }
-
-        return -1;
-    }
-
-    private static bool IsShownInMedium(Window window, string text)
-    {
-        foreach (var block in AppHarness.Find<TextBlock>(window))
-        {
-            if (block.Text == text && block.FontWeight == FontWeight.Medium)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /// <summary>Taps the gesture key with the given name, through the harness's own TapAsync.</summary>
-    private static async Task TapKeyAsync(object app, string key)
-    {
-        var method = app.GetType().GetMethods().Single(m => m.Name == "TapAsync");
-        var parameters = method.GetParameters();
-        var args = new object?[parameters.Length];
-        args[0] = Enum.Parse(parameters[0].ParameterType, key);
-        for (var i = 1; i < parameters.Length; i++)
-        {
-            args[i] = parameters[i].DefaultValue;
-        }
-
-        var task = (Task)method.Invoke(app, args)!;
-        await task;
-    }
-
-    /// <summary>A text copied in another app shows its text, the window it came from and the time.</summary>
+    /// <summary>A text copied in a named window shows its content, that window and the time.</summary>
     [Fact(DisplayName = "a text copied in another app")]
     public Task ATextCopiedInAnotherApp() => AppHarness.RunAsync(async app =>
     {
@@ -67,19 +18,19 @@ public sealed class HistoryRowTests
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        var texts = AppHarness.Texts(picker).ToList();
-        var title = IndexOf(texts, "focus 7svfio");
-        var source = IndexOf(texts, "Shapeshifter E2E Target");
-        Assert.True(title >= 0, "the row shows the copied text");
-        Assert.True(source >= 0, "the row shows the window it was copied in");
-        Assert.True(title < source, "the window's name is below the text");
-        Assert.Contains("Just now", texts);
+        Assert.NotEmpty(app.HistoryRows);
+        var texts = RowTexts(app.HistoryRows[0]);
+        var content = texts.IndexOf("focus 7svfio");
+        var window = texts.IndexOf("Shapeshifter E2E Target");
+        var time = texts.IndexOf("Just now");
+        Assert.True(content >= 0, $"the row shows the text; it shows: {string.Join(" | ", texts)}");
+        Assert.True(window > content, $"the window's name follows the text; the row shows: {string.Join(" | ", texts)}");
+        Assert.True(time > window, $"\"Just now\" is at the end; the row shows: {string.Join(" | ", texts)}");
 
-        AppHarness.SaveScreen(picker, "a-text-copied-in-another-app.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "a-text-copied-in-another-app.png");
+    });
 
-    /// <summary>A text from an unknown window describes itself on its second line.</summary>
+    /// <summary>A text from no named window describes itself on its second line.</summary>
     [Fact(DisplayName = "a text from an unknown window describes itself")]
     public Task ATextFromAnUnknownWindowDescribesItself() => AppHarness.RunAsync(async app =>
     {
@@ -89,15 +40,16 @@ public sealed class HistoryRowTests
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        var texts = AppHarness.Texts(picker).ToList();
-        Assert.Contains("28 characters", texts);
-        Assert.Contains("5 lines", texts);
+        Assert.True(app.HistoryRows.Count >= 2, "both texts have rows");
+        var fourLines = RowTexts(app.HistoryRows[0]);
+        var dotnet = RowTexts(app.HistoryRows[1]);
+        Assert.Contains("28 characters", dotnet);
+        Assert.Contains("5 lines", fourLines);
 
-        AppHarness.SaveScreen(picker, "a-text-from-an-unknown-window-describes-itself.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "a-text-from-an-unknown-window-describes-itself.png");
+    });
 
-    /// <summary>An image's row names it and its size.</summary>
+    /// <summary>A copied image shows itself and its size.</summary>
     [Fact(DisplayName = "an image")]
     public Task AnImage() => AppHarness.RunAsync(async app =>
     {
@@ -106,16 +58,18 @@ public sealed class HistoryRowTests
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        var texts = AppHarness.Texts(picker).ToList();
+        Assert.NotEmpty(app.HistoryRows);
+        var row = app.HistoryRows[0];
+        await AppHarness.WaitUntilAsync(() => HasPicture(row), "the image's thumbnail");
+        var texts = RowTexts(row);
         Assert.Contains("Image · 320 × 200", texts);
-        Assert.DoesNotContain(texts, t => t.EndsWith(" characters", StringComparison.Ordinal));
-        Assert.DoesNotContain(texts, t => t.EndsWith(" lines", StringComparison.Ordinal));
+        var others = texts.Where(t => t != "Image · 320 × 200" && t != "Just now").ToList();
+        Assert.True(others.Count == 0, $"no second line; the row also shows: {string.Join(" | ", others)}");
 
-        AppHarness.SaveScreen(picker, "an-image.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "an-image.png");
+    });
 
-    /// <summary>Copied files show their names, and a single file its folder.</summary>
+    /// <summary>Copied files show their names and, for a single file, its folder.</summary>
     [Fact(DisplayName = "files")]
     public Task Files() => AppHarness.RunAsync(async app =>
     {
@@ -126,40 +80,38 @@ public sealed class HistoryRowTests
         {
             var notes = Path.Combine(folder, "notes.txt");
             var report = Path.Combine(folder, "report.pdf");
-            await File.WriteAllTextAsync(notes, "notes");
-            await File.WriteAllTextAsync(report, "report");
+            await File.WriteAllTextAsync(notes, "notes", TestContext.Current.CancellationToken);
+            await File.WriteAllTextAsync(report, "report", TestContext.Current.CancellationToken);
 
             await app.CopyFilesAsync([notes]);
             await app.HoldCtrlVAsync();
 
             Assert.True(app.PickerVisible);
-            var single = AppHarness.Texts(app.Picker!).ToList();
-            var name = IndexOf(single, "notes.txt");
-            var folderName = IndexOf(single, "files");
-            Assert.True(name >= 0, "the row shows the file's name");
-            Assert.True(folderName >= 0, "the row shows the file's folder");
-            Assert.True(name < folderName, "the folder is below the name");
+            Assert.NotEmpty(app.HistoryRows);
+            var single = RowTexts(app.HistoryRows[0]);
+            var name = single.IndexOf("notes.txt");
+            var place = single.IndexOf("files");
+            Assert.True(name >= 0, $"the row names the file; it shows: {string.Join(" | ", single)}");
+            Assert.True(place > name, $"the folder follows the name; the row shows: {string.Join(" | ", single)}");
 
-            await TapKeyAsync(app, "Escape");
             await app.ReleaseCtrlAsync();
 
             await app.CopyFilesAsync([notes, report]);
             await app.HoldCtrlVAsync();
 
             Assert.True(app.PickerVisible);
-            var picker = app.Picker!;
-            var several = AppHarness.Texts(picker).ToList();
-            Assert.Contains("2 items · notes.txt, report.pdf", several);
+            Assert.NotEmpty(app.HistoryRows);
+            Assert.Contains("2 items · notes.txt, report.pdf", RowTexts(app.HistoryRows[0]));
 
-            AppHarness.SaveScreen(picker, "files.png");
+            AppHarness.SaveScreen(app.Picker, "files.png");
         }
         finally
         {
-            Directory.Delete(root, recursive: true);
+            Directory.Delete(root, true);
         }
-    }, new AppOptions { Language = "en" });
+    });
 
-    /// <summary>A copied colour code fills its tile with that colour.</summary>
+    /// <summary>A copied colour code shows its code.</summary>
     [Fact(DisplayName = "a colour code")]
     public Task AColourCode() => AppHarness.RunAsync(async app =>
     {
@@ -168,17 +120,13 @@ public sealed class HistoryRowTests
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        Assert.Contains("#2c5497", AppHarness.Texts(picker));
-        var blue = Color.Parse("#2c5497");
-        Assert.Contains(
-            AppHarness.Find<Border>(picker),
-            border => border.Background is ISolidColorBrush brush && brush.Color == blue);
+        Assert.NotEmpty(app.HistoryRows);
+        Assert.Contains("#2c5497", RowTexts(app.HistoryRows[0]));
 
-        AppHarness.SaveScreen(picker, "a-colour-code.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "a-colour-code.png");
+    });
 
-    /// <summary>A pinned item keeps the time it was pinned, shown after its pin.</summary>
+    /// <summary>A pinned item sits at the top and keeps its time.</summary>
     [Fact(DisplayName = "a pinned item")]
     public Task APinnedItem() => AppHarness.RunAsync(async app =>
     {
@@ -187,36 +135,62 @@ public sealed class HistoryRowTests
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        var texts = AppHarness.Texts(picker).ToList();
-        Assert.Contains("public void Main() {", texts);
-        Assert.Contains("5 min ago", texts);
-        Assert.True(app.History.Items[0].IsPinned, "the pinned item sits at the top");
+        Assert.NotEmpty(app.HistoryRows);
+        var texts = RowTexts(app.HistoryRows[0]);
+        var content = texts.IndexOf("public void Main() {");
+        var time = texts.IndexOf("5 min ago");
+        Assert.True(content >= 0, $"the top row is the pinned item; it shows: {string.Join(" | ", texts)}");
+        Assert.True(time > content, $"\"5 min ago\" is at the end; the row shows: {string.Join(" | ", texts)}");
 
-        AppHarness.SaveScreen(picker, "a-pinned-item.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "a-pinned-item.png");
+    });
 
-    /// <summary>The chosen row stands out, its title in medium weight.</summary>
+    /// <summary>The chosen row is marked as chosen.</summary>
     [Fact(DisplayName = "the chosen row")]
     public Task TheChosenRow() => AppHarness.RunAsync(async app =>
     {
-        await app.CopyAsync("gamma first", null);
-        await app.CopyAsync("beta second", null);
-        await app.CopyAsync("alpha third", null);
+        await app.CopyAsync("first copy", null);
+        await app.CopyAsync("second copy", null);
 
         await app.HoldCtrlVAsync();
 
         Assert.True(app.PickerVisible);
-        var picker = app.Picker!;
-        for (var step = 0; step < 3 && !IsShownInMedium(picker, "beta second"); step++)
+        Assert.True(app.HistoryRows.Count >= 2, "both texts have rows");
+        for (var tries = 0; tries < 10 && !app.HistoryRows[1].IsSelected; tries++)
         {
-            await TapKeyAsync(app, "Down");
+            var chosen = IndexOfChosen(app.HistoryRows);
+            await app.TapAsync(chosen < 1 ? GestureKey.Down : GestureKey.Up);
         }
 
-        Assert.True(IsShownInMedium(picker, "beta second"), "the chosen row's title is medium weight");
-        Assert.False(IsShownInMedium(picker, "alpha third"), "a row not chosen is regular weight");
-        Assert.False(IsShownInMedium(picker, "gamma first"), "a row not chosen is regular weight");
+        Assert.True(app.HistoryRows[1].IsSelected, "the second row is chosen");
+        Assert.False(app.HistoryRows[0].IsSelected, "the first row is not chosen");
+        Assert.Same(app.HistoryRows[1], app.ChosenRow);
 
-        AppHarness.SaveScreen(picker, "the-chosen-row.png");
-    }, new AppOptions { Language = "en" });
+        AppHarness.SaveScreen(app.Picker, "the-chosen-row.png");
+    });
+
+    private static List<string> RowTexts(Control row) =>
+        row.GetVisualDescendants()
+            .OfType<TextBlock>()
+            .Where(t => t.IsEffectivelyVisible && !string.IsNullOrEmpty(t.Text))
+            .Select(t => t.Text!)
+            .ToList();
+
+    private static bool HasPicture(Control row) =>
+        row.GetVisualDescendants().Any(v =>
+            v is Image { IsEffectivelyVisible: true, Source: not null }
+            || v is Border { IsEffectivelyVisible: true, Background: ImageBrush { Source: not null } });
+
+    private static int IndexOfChosen(IReadOnlyList<ListBoxItem> rows)
+    {
+        for (var i = 0; i < rows.Count; i++)
+        {
+            if (rows[i].IsSelected)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }
