@@ -1,0 +1,17 @@
+{
+  "node": "ActionsList",
+  "shots": [
+    {
+      "test": "the actions of a text",
+      "file": "01-the-actions-of-a-text.png"
+    },
+    {
+      "test": "moving into the actions",
+      "file": "02-moving-into-the-actions.png"
+    },
+    {
+      "test": "the heading in the Windows look",
+      "file": "03-the-heading-in-the-windows-look.png"
+    }
+  ]
+}

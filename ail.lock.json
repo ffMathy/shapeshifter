@@ -347,8 +347,17 @@
   },
   "glue": {},
   "hand": {
+    "ActionsList": {
+      "shots": "9845a3dcfcd9456f"
+    },
+    "EmptyPicker": {
+      "shots": "4acad5c12853298b"
+    },
     "HistoryRow": {
-      "shots": "0ed9841a6cc71312"
+      "shots": "9b01e1d5e807caa8"
+    },
+    "Picker": {
+      "shots": "f0aabbdff554e176"
     },
     "PickerFooter": {
       "shots": "c4152e526476394b"

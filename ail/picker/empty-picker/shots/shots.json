@@ -1,0 +1,13 @@
+{
+  "node": "EmptyPicker",
+  "shots": [
+    {
+      "test": "nothing copied yet",
+      "file": "01-nothing-copied-yet.png"
+    },
+    {
+      "test": "in German",
+      "file": "02-in-german.png"
+    }
+  ]
+}
