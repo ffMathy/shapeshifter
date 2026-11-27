@@ -205,6 +205,9 @@ public sealed class AppHarness : IAsyncDisposable
             var culture = options.Language is null ? CultureInfo.GetCultureInfo("en") : CultureInfo.GetCultureInfo(options.Language);
             CultureInfo.CurrentUICulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+            // Every text Shapeshifter looks up comes in this language, on whichever thread or task the app builds it.
+            Strings.Culture = culture;
             var application = Application.Current!;
             PlatformLook.Apply(application, options.Look, options.Dark ? ThemeVariant.Dark : ThemeVariant.Light);
             AccentPalette.Apply(application, Color.Parse(PlatformLook.Resource(application, "LookDefaultAccent", "#3584E4")));

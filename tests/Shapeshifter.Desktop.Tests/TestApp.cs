@@ -42,6 +42,7 @@ internal static class TestApp
             {
                 CultureInfo.CurrentUICulture = culture;
                 CultureInfo.DefaultThreadCurrentUICulture = null;
+                Shapeshifter.Core.Localization.Strings.Culture = null;
             });
             OneAtATime.Release();
         }
