@@ -99,7 +99,9 @@ The Store API can only update an app whose first submission exists, so make that
    `runFullTrust` restricted capability: "Shapeshifter is a desktop app (packaged Win32/.NET) and needs full trust to watch the clipboard, recognise its paste gesture with a low-level keyboard hook and paste into other apps."
 3. **Submit to the Store**.
 4. When it is published, delete `STORE_DRAFT_ONLY` (or set it to `false`). With the API secrets, every later release is
-   submitted and published without you; without them, upload the releases you want from their **microsoft-store**
+   submitted and published without you, with its GitHub release notes as the Store's "What's new in this version"
+   (in every listing language; `packaging/store/release_notes.py` turns GitHub's list of changes into the
+   plain text of at most 1,500 characters the Store takes); without them, upload the releases you want from their **microsoft-store**
    artifacts the same way (you don't have to upload every one).
 
 ### The Store listing
@@ -176,7 +178,7 @@ provisioning profile is per app.
    2560×1600 or 2880×1800). In **App Review Information**, explain what the app does and which permissions it asks for
    (Input Monitoring and Accessibility, to show the picker while ⌘V is held and paste the chosen item; uploads to catbox.moe happen only when the user picks that action).
 3. Select the uploaded build and **Add for Review**. After the first approval, set `STORE_DRAFT_ONLY` to `false`: every
-   later release is uploaded, given release notes that link to its GitHub release, submitted, and released when approved.
+   later release is uploaded, given its GitHub release notes, submitted, and released when approved.
 
 ## Charging for the app
 
