@@ -290,6 +290,8 @@
 
     setUpTabs(desktop ? basic.os : 'windows');
     useModifierName(basic.os);
+    // The Microsoft Store copy only runs on Windows.
+    document.getElementById('store').hidden = basic.os !== 'windows';
     if (desktop) {
       showLook(basic.os);
       showBuild(chooseBuild(basic));
