@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>ファイルの代わりに、中の画像を貼り付けます。</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>展開して貼り付け</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>この .zip ファイルを展開し、中のファイルを貼り付けます。</value>
+  </data>
 </root>

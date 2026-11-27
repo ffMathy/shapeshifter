@@ -40,6 +40,7 @@ public sealed class ActionCatalog
         new PastePathsAction(),
         new PasteFileContentsAction(),
         new PasteFileAsImageAction(),
+        new ExtractZipAction(),
         new TogglePinAction(),
     ]);
 

@@ -690,4 +690,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes the picture in this file instead of the file.</value>
     <comment>Action description for 'Paste as image'.</comment>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Paste extracted</value>
+    <comment>Action title for a copied .zip file: unpack it and paste the files inside it.</comment>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Unpacks this .zip file and pastes the files inside it.</value>
+    <comment>Action description for 'Paste extracted'.</comment>
+  </data>
 </root>

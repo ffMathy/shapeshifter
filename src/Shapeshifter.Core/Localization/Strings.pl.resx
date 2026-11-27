@@ -521,4 +521,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Wkleja obraz z tego pliku zamiast samego pliku.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Wklej rozpakowane</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Rozpakowuje ten plik .zip i wkleja pliki z jego wnętrza.</value>
+  </data>
 </root>

@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>به‌جای فایل، تصویر درون آن را می‌چسباند.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>چسباندن پس از استخراج</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>این فایل .zip را باز می‌کند و فایل‌های درون آن را می‌چسباند.</value>
+  </data>
 </root>

@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>粘贴此文件中的图像，而不是文件本身。</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>解压后粘贴</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>解压此 .zip 文件并粘贴其中的文件。</value>
+  </data>
 </root>

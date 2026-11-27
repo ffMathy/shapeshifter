@@ -521,4 +521,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Fügt das Bild in dieser Datei statt der Datei ein.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Entpackt einfügen</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Entpackt diese .zip-Datei und fügt die Dateien darin ein.</value>
+  </data>
 </root>

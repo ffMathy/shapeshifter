@@ -49,6 +49,9 @@ public static class Glyphs
     /// <summary>A folder with a line of text leaving it: Paste path.</summary>
     public static Geometry Path { get; } = Geometry.Parse("M2.5,5 C2.5,4.2 3.1,3.5 4,3.5 H7.5 L9.5,5.5 H16 C16.8,5.5 17.5,6.2 17.5,7 V15 C17.5,15.8 16.8,16.5 16,16.5 H4 C3.1,16.5 2.5,15.8 2.5,15 Z M6,12.5 H14 M12,10.5 L14,12.5 L12,14.5");
 
+    /// <summary>An archive box with an arrow out: Paste extracted.</summary>
+    public static Geometry Extract { get; } = Geometry.Parse("M3,4 H17 V7.5 H3 Z M4,7.5 V16.5 H16 V7.5 M10,9.5 V14.5 M8,12.5 L10,14.5 L12,12.5");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -115,6 +118,7 @@ public static class Glyphs
             "paste-paths" => Path,
             "paste-file-contents" => Text,
             "paste-file-as-image" => Image,
+            "extract-zip" => Extract,
             _ => Clipboard,
         };
     }

@@ -521,4 +521,10 @@
   <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
     <value>Вставляет изображение из этого файла вместо самого файла.</value>
   </data>
+  <data name="ActionExtractZip" xml:space="preserve">
+    <value>Вставить распакованное</value>
+  </data>
+  <data name="ActionExtractZipDescription" xml:space="preserve">
+    <value>Распаковывает этот файл .zip и вставляет файлы из него.</value>
+  </data>
 </root>
