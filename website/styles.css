@@ -333,6 +333,9 @@ kbd {
 }
 .cta-meta a { font-weight: 600; }
 
+.store-badge { margin: 20px 0 0; }
+.store-badge img { display: block; height: auto; }
+
 .version-pill {
   display: inline-flex;
   align-items: center;
