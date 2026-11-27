@@ -96,7 +96,8 @@ public sealed class AppHarness : IAsyncDisposable
             Http = http,
             Logger = Logger.None,
         };
-        picker = new PickerPresenter(new NoCursor(), new PickerVisuals(new DrawnFileIcons(), Logger.None), options.Modifier, Logger.None)
+        // As the app: the picker loads the picture behind a copied path or link with a LinkedImageLoader.
+        picker = new PickerPresenter(new NoCursor(), new PickerVisuals(new DrawnFileIcons(), Logger.None), options.Modifier, Logger.None, null, new Shapeshifter.Core.Previews.LinkedImageLoader(http, Logger.None))
         {
             WorkingAreaHeight = options.ScreenHeight,
         };

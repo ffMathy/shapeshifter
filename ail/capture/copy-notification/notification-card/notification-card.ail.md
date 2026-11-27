@@ -25,7 +25,7 @@ node NotificationCard : view   level: experience
     right to left   the card mirrors for Arabic and Persian
   copy
     app     "Shapeshifter"            next to the icon, where the look shows it
-    title   "Copied · {count} items in your history"   or a tip's title
+    title   "Copied · 1 item in your history" for one item, else "Copied · {count} items in your history"; or a tip's title
     preview the copied item's one-line preview: its text, "Image", the file's name or "{count} files"
   sources
     src/Shapeshifter.Desktop/Views/ToastWindow.axaml
