@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>ফাইলের বদলে এর ভেতরের লেখা পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>ছবি হিসেবে পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>ফাইলের বদলে এর ভেতরের ছবি পেস্ট করে।</value>
+  </data>
 </root>

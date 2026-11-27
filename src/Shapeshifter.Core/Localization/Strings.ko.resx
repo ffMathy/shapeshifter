@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>파일 대신 파일 안의 텍스트를 붙여넣습니다.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>이미지로 붙여넣기</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>파일 대신 파일 안의 이미지를 붙여넣습니다.</value>
+  </data>
 </root>

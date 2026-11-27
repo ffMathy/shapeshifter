@@ -515,4 +515,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Menempelkan teks di dalam file ini, bukan filenya.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Tempel sebagai gambar</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Menempelkan gambar di dalam file ini, bukan filenya.</value>
+  </data>
 </root>

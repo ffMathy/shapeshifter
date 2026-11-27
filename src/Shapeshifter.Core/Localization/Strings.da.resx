@@ -515,4 +515,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Indsætter teksten i filen i stedet for selve filen.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Indsæt som billede</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Indsætter billedet i filen i stedet for selve filen.</value>
+  </data>
 </root>

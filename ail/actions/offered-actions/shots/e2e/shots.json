@@ -54,6 +54,10 @@
       "file": "a-text-file-offers-paste-paste-path-paste-file-contents-past.png"
     },
     {
+      "test": "an image file offers Paste as image",
+      "file": "an-image-file-offers-paste-as-image.png"
+    },
+    {
       "test": "several files offer the same as one file, with Paste paths",
       "file": "several-files-offer-the-same-as-one-file-with-paste-paths.png"
     },

@@ -682,4 +682,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes the text inside this file instead of the file.</value>
     <comment>Action description for 'Paste file contents'.</comment>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Paste as image</value>
+    <comment>Action title: paste the picture inside the copied image file, instead of the file itself.</comment>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Pastes the picture in this file instead of the file.</value>
+    <comment>Action description for 'Paste as image'.</comment>
+  </data>
 </root>

@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "23b036c482f65af5b46b42a76a4487975b01127df2c12c0b0f8b2f95e2f6fdec",
-      "spec": "dae7101cfb382688b6c7ec2175fe80bf92535cdd5288e784d535484c8b304679",
+      "hash": "db5669d9e84a00091c1d60ed86fb962b8491448c910dd164a47e913597d4bef3",
+      "spec": "c541933f2e56b05406f3d561684358d138143c6fa82d53028aa3311a7dd6640d",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -124,6 +124,13 @@
       "hash": "a2dc87bd9c6c9ac38868d4b8769b98277f294e67e49b7641df36c178fa3bd194",
       "files": {
         "src/Shapeshifter.Core/Ail/actions/paste-as-markdown/PasteAsMarkdown.cs": "d0bd912f156537fb61606ac3121060af3626705356f03fb36a7e181ba71f1a77"
+      },
+      "by": "claude-code"
+    },
+    "PasteFileAsImage": {
+      "hash": "f8900cf5995e85f46f9b68ac74428da47e69ad66f0e15fd87d579e4ad94394af",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/paste-file-as-image/PasteFileAsImage.cs": "791c6b0ec55593456a3013d8e760ccbeb2e5977c652a2cfe93fba3d44a711bc9"
       },
       "by": "claude-code"
     },

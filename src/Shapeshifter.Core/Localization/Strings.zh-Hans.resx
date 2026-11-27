@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>粘贴此文件中的文本，而不是文件本身。</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>以图像粘贴</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>粘贴此文件中的图像，而不是文件本身。</value>
+  </data>
 </root>

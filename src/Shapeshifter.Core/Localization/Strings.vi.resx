@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Dán văn bản bên trong tệp này thay vì chính tệp.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Dán dưới dạng hình ảnh</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Dán hình ảnh trong tệp này thay vì chính tệp.</value>
+  </data>
 </root>

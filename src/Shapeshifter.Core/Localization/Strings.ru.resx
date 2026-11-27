@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Вставляет текст из этого файла вместо самого файла.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Вставить как изображение</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Вставляет изображение из этого файла вместо самого файла.</value>
+  </data>
 </root>
