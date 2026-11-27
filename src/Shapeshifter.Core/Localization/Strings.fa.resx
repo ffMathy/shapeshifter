@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>این تصویر را کوچک‌شده به {0} × {1} پیکسل می‌چسباند.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>چسباندن بدون موقعیت</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>این عکس را بدون محل گرفتن آن و دیگر فراداده‌ها می‌چسباند.</value>
+  </data>
 </root>

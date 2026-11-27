@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>এই ছবিটি {0} × {1} পিক্সেলে ছোট করে পেস্ট করে।</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>অবস্থান ছাড়া পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>ছবিটি কোথায় তোলা হয়েছে আর অন্যান্য মেটাডেটা ছাড়া পেস্ট করে।</value>
+  </data>
 </root>

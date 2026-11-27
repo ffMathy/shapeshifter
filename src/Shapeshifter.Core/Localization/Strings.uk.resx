@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Вставляє зображення, зменшене до {0} × {1} пікселів.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Вставити без місцезнаходження</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Вставляє фото без місця зйомки та інших метаданих.</value>
+  </data>
 </root>

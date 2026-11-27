@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>इस चित्र को {0} × {1} पिक्सेल तक छोटा करके चिपकाता है।</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>स्थान के बिना चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>इस फ़ोटो को बिना उसके खींचे जाने की जगह और अन्य मेटाडेटा के चिपकाता है।</value>
+  </data>
 </root>

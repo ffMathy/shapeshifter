@@ -542,4 +542,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Cola esta imagem reduzida para {0} × {1} pixels.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Colar sem localização</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Cola esta foto sem o local onde foi tirada e seus outros metadados.</value>
+  </data>
 </root>

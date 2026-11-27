@@ -542,4 +542,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Pega esta imagen reducida a {0} × {1} píxeles.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Pegar sin ubicación</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Pega esta foto sin el lugar donde se tomó ni sus otros metadatos.</value>
+  </data>
 </root>

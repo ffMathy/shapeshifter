@@ -10,6 +10,10 @@
     <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
   </ItemGroup>
   <ItemGroup>
+    <!-- Test images, such as a photo with a GPS position, copied next to the tests as Fixtures/<name>. -->
+    <None Include="Fixtures\**" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Shapeshifter.Core\Shapeshifter.Core.csproj" />
   </ItemGroup>
 </Project>

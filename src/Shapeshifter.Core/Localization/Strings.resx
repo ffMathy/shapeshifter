@@ -718,4 +718,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this image scaled down to {0} × {1} pixels.</value>
     <comment>Action description for 'Paste smaller image'; {0} and {1} are the new width and height in pixels.</comment>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Paste without location</value>
+    <comment>Action title: paste the copied photo without the GPS position (where it was taken) and its other metadata.</comment>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Pastes this photo without the place it was taken and its other metadata.</value>
+    <comment>Action description for 'Paste without location'.</comment>
+  </data>
 </root>

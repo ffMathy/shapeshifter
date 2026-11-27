@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>วางรูปภาพนี้โดยย่อเหลือ {0} × {1} พิกเซล</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>วางโดยไม่มีตำแหน่ง</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>วางรูปนี้โดยไม่มีสถานที่ถ่ายและข้อมูลเมตาอื่น</value>
+  </data>
 </root>

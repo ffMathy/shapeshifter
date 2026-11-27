@@ -542,4 +542,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Indsætter billedet skaleret ned til {0} × {1} pixel.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Indsæt uden placering</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Indsætter billedet uden stedet, det er taget, og dets andre metadata.</value>
+  </data>
 </root>

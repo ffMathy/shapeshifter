@@ -542,4 +542,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Incolla questa immagine ridotta a {0} √ó {1} pixel.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Incolla senza posizione</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Incolla questa foto senza il luogo dello scatto e gli altri metadati.</value>
+  </data>
 </root>

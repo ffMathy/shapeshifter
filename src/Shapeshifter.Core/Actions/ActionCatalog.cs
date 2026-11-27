@@ -44,6 +44,7 @@ public sealed class ActionCatalog
         new UploadFileAction(),
         new ShowInFileManagerAction(),
         new PasteSmallerImageAction(),
+        new PasteWithoutLocationAction(),
         new TogglePinAction(),
     ]);
 

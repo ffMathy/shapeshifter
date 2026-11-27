@@ -542,4 +542,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Menempelkan gambar ini diperkecil menjadi {0} × {1} piksel.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Tempel tanpa lokasi</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Menempelkan foto ini tanpa lokasi pengambilan dan metadata lainnya.</value>
+  </data>
 </root>

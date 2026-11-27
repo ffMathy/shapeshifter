@@ -542,4 +542,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Wkleja ten obraz zmniejszony do {0} × {1} pikseli.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Wklej bez lokalizacji</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Wkleja to zdjęcie bez miejsca wykonania i innych metadanych.</value>
+  </data>
 </root>
