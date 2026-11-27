@@ -45,6 +45,7 @@ public sealed class ActionCatalog
         new ShowInFileManagerAction(),
         new PasteSmallerImageAction(),
         new PasteWithoutLocationAction(),
+        new OpenQrLinkAction(),
         new TogglePinAction(),
     ]);
 

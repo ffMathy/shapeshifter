@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Вставляет фото без места съёмки и других метаданных.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Открыть ссылку из QR-кода</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Открывает {0}</value>
+  </data>
 </root>

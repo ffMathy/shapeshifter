@@ -58,6 +58,9 @@ public static class Glyphs
     /// <summary>A crossed-out map pin: Paste without location.</summary>
     public static Geometry NoLocation { get; } = Geometry.Parse("M10,17.5 C10,17.5 4.5,12 4.5,8 C4.5,5 7,2.5 10,2.5 C13,2.5 15.5,5 15.5,8 C15.5,12 10,17.5 10,17.5 Z M3,3 L17,17");
 
+    /// <summary>A QR code: Open link from QR code.</summary>
+    public static Geometry QrCode { get; } = Geometry.Parse("M3,3 H8 V8 H3 Z M12,3 H17 V8 H12 Z M3,12 H8 V17 H3 Z M5,5 H6 V6 H5 Z M14,5 H15 V6 H14 Z M5,14 H6 V15 H5 Z M12,12 H13.5 M15.5,12 H17 V13.5 M12,14.5 V17 H14 M16,15.5 V17");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -129,6 +132,7 @@ public static class Glyphs
             "show-in-file-manager" => Reveal,
             "paste-smaller-image" => Shrink,
             "paste-without-location" => NoLocation,
+            "open-qr-link" => QrCode,
             _ => Clipboard,
         };
     }

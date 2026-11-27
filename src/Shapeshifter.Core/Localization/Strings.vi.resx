@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Dán ảnh này không kèm nơi chụp và siêu dữ liệu khác.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Mở liên kết từ mã QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Mở {0}</value>
+  </data>
 </root>

@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>촬영 장소와 기타 메타데이터 없이 이 사진을 붙여넣습니다.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>QR 코드의 링크 열기</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>{0} 열기</value>
+  </data>
 </root>

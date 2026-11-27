@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>วางรูปนี้โดยไม่มีสถานที่ถ่ายและข้อมูลเมตาอื่น</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>เปิดลิงก์จากคิวอาร์โค้ด</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>เปิด {0}</value>
+  </data>
 </root>

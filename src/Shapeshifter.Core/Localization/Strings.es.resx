@@ -548,4 +548,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Pega esta foto sin el lugar donde se tomó ni sus otros metadatos.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Abrir enlace del código QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Abre {0}</value>
+  </data>
 </root>

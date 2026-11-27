@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "cbde303c5dbcac9afd27a692ec86aebc9b7a7838806e26df979353b3ac36b749",
-      "spec": "8c15014da642711694ab64868a983a2262b8efe6a6f0664da7e3f8294eacc358",
+      "hash": "907062282678c21aa93a1e05e52ec518eb2ccbc9ffa4293b56a0de8ec00a6d7a",
+      "spec": "b294e2923c4ece7ee0e7648b47662adf4a8f7911e45e9872c2c594c035f57562",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -126,6 +126,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "214c9abddf62a259f0bdec1f39d4a501c31cf878607956089728a7831d30cd98"
+    },
+    "OpenQrLink": {
+      "hash": "0dbe95f214dfd5d8de52082fd86db0dd93231633ea1ff1e700f8b64ed5ce1290",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/open-qr-link/OpenQrLink.cs": "b6e228ee3b27ee4d21b37d1caf622c9df0bfcde7cb9b9e9255ab0d72d1c9c6fc"
+      },
+      "by": "claude-code"
     },
     "PasteAsMarkdown": {
       "hash": "a2dc87bd9c6c9ac38868d4b8769b98277f294e67e49b7641df36c178fa3bd194",

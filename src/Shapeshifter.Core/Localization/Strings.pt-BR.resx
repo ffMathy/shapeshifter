@@ -548,4 +548,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Cola esta foto sem o local onde foi tirada e seus outros metadados.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Abrir link do código QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Abre {0}</value>
+  </data>
 </root>

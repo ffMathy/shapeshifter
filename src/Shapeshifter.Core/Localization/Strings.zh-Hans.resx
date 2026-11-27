@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>粘贴此照片，不含拍摄地点和其他元数据。</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>打开二维码中的链接</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>打开 {0}</value>
+  </data>
 </root>
