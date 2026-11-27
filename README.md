@@ -12,6 +12,9 @@
 
 <p align="center"><a href="https://shapeshifter.app"><b>shapeshifter.app</b></a> · <a href="https://github.com/ffMathy/Shapeshifter/releases">Download</a></p>
 
+<p align="center"><a href="https://apps.microsoft.com/detail/9NZGB7WC85MN?mode=direct"><img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200" alt="Get it from Microsoft"></a></p>
+<p align="center"><b>Free</b> from <a href="https://github.com/ffMathy/Shapeshifter/releases">GitHub</a>. The Microsoft Store copy is paid: buying it supports the project.</p>
+
 ## Hold <kbd>Ctrl</kbd>+<kbd>V</kbd>
 
 Tap it and it pastes as always, even while you keep <kbd>Ctrl</kbd> held to paste again. Keep holding both and your history appears. Then, with <kbd>Ctrl</kbd> still held, press <kbd>V</kbd> to move and release to paste.
