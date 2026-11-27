@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>इस फ़ोटो को बिना उसके खींचे जाने की जगह और अन्य मेटाडेटा के चिपकाता है।</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>QR कोड का लिंक खोलें</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>{0} खोलता है</value>
+  </data>
 </root>

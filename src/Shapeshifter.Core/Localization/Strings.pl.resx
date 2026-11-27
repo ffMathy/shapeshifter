@@ -548,4 +548,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Wkleja to zdjęcie bez miejsca wykonania i innych metadanych.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Otwórz link z kodu QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Otwiera {0}</value>
+  </data>
 </root>

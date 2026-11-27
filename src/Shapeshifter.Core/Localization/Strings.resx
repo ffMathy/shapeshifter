@@ -726,4 +726,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Pastes this photo without the place it was taken and its other metadata.</value>
     <comment>Action description for 'Paste without location'.</comment>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Open link from QR code</value>
+    <comment>Action title: the copied image shows a QR code holding a web link; open that link in the browser. Keep 'QR'.</comment>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Opens {0}</value>
+    <comment>Action description for 'Open link from QR code'; {0} is the link the QR code holds (shortened with … when long). No period at the end, since {0} is a link.</comment>
+  </data>
 </root>

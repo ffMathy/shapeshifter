@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>撮影場所やその他のメタデータを除いてこの写真を貼り付けます。</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>QR コードのリンクを開く</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>{0} を開きます</value>
+  </data>
 </root>

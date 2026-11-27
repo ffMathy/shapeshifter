@@ -548,4 +548,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Indsætter billedet uden stedet, det er taget, og dets andre metadata.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Åbn link fra QR-kode</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Åbner {0}</value>
+  </data>
 </root>

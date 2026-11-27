@@ -548,4 +548,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Incolla questa foto senza il luogo dello scatto e gli altri metadati.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Apri link dal codice QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Apre {0}</value>
+  </data>
 </root>

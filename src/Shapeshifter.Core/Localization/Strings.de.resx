@@ -548,4 +548,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Fügt dieses Foto ohne Aufnahmeort und andere Metadaten ein.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Link aus QR-Code öffnen</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Öffnet {0}</value>
+  </data>
 </root>

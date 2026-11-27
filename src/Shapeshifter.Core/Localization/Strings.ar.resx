@@ -548,4 +548,10 @@
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>يلصق هذه الصورة بدون مكان التقاطها وبياناتها الوصفية الأخرى.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>فتح الرابط من رمز QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>يفتح {0}</value>
+  </data>
 </root>

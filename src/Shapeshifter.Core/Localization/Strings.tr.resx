@@ -548,4 +548,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Bu fotoğrafı çekildiği yer ve diğer meta veriler olmadan yapıştırır.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>QR koddaki bağlantıyı aç</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>{0} adresini açar</value>
+  </data>
 </root>

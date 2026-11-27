@@ -548,4 +548,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Plakt deze foto zonder de plek waar hij is gemaakt en andere metadata.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Link uit QR-code openen</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Opent {0}</value>
+  </data>
 </root>

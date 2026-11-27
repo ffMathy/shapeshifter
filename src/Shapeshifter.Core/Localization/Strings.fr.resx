@@ -548,4 +548,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
     <value>Colle cette photo sans le lieu de prise de vue ni ses autres métadonnées.</value>
   </data>
+  <data name="ActionOpenQrLink" xml:space="preserve">
+    <value>Ouvrir le lien du code QR</value>
+  </data>
+  <data name="ActionOpenQrLinkDescription" xml:space="preserve">
+    <value>Ouvre {0}</value>
+  </data>
 </root>
