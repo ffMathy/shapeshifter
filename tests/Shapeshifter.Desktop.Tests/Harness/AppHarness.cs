@@ -190,10 +190,27 @@ public sealed class AppHarness : IAsyncDisposable
     public SettingsWindow? SettingsWindow => settingsWindow;
 
     /// <summary>Starts the app as <paramref name="options"/> say and runs <paramref name="test"/> against it, on the UI thread.</summary>
-    public static Task RunAsync(Func<AppHarness, Task> test, AppOptions? options = null)
+    public static async Task RunAsync(Func<AppHarness, Task> test, AppOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(test);
-        return TestApp.RunAsync(async () =>
+
+        // The look, the theme and the display language belong to the one headless application: test classes run in
+        // parallel, so one app at a time, or a check would see another's look or language half-way through.
+        await OneAtATime.WaitAsync().ConfigureAwait(false);
+        try
+        {
+            await RunAloneAsync(test, options).ConfigureAwait(false);
+        }
+        finally
+        {
+            OneAtATime.Release();
+        }
+    }
+
+    private static readonly SemaphoreSlim OneAtATime = new(1, 1);
+
+    private static Task RunAloneAsync(Func<AppHarness, Task> test, AppOptions? options) =>
+        TestApp.RunAsync(async () =>
         {
             options ??= new AppOptions();
             var culture = options.Language is null ? CultureInfo.GetCultureInfo("en") : CultureInfo.GetCultureInfo(options.Language);
@@ -206,7 +223,6 @@ public sealed class AppHarness : IAsyncDisposable
             await app.Engine.StartAsync().ConfigureAwait(true);
             await test(app).ConfigureAwait(true);
         });
-    }
 
     /// <summary>Copies <paramref name="text"/>, in the window <paramref name="window"/> (with an icon) or where none can be named.</summary>
     public Task CopyAsync(string text, string? window = null) => CopyAsync(new ClipboardSnapshot { Text = text }, window);
