@@ -11,7 +11,7 @@ public sealed class SettingsWindowTests
     [Fact(DisplayName = "the settings window shows every setting with its current value")]
     public Task TheSettingsWindowShowsEverySettingWithItsCurrentValue() => AppHarness.RunAsync(async app =>
     {
-        var window = app.OpenSettings();
+        var window = await app.OpenSettings();
         await AppHarness.WaitUntilAsync(() => app.SettingsWindow is { IsVisible: true }, "the settings window to open");
 
         var texts = AppHarness.Texts(window);
@@ -45,7 +45,7 @@ public sealed class SettingsWindowTests
     [Fact(DisplayName = "a copy from an app store leaves out updating")]
     public Task ACopyFromAnAppStoreLeavesOutUpdating() => AppHarness.RunAsync(async app =>
     {
-        var window = app.OpenSettings();
+        var window = await app.OpenSettings();
         await AppHarness.WaitUntilAsync(() => app.SettingsWindow is { IsVisible: true }, "the settings window to open");
 
         var texts = AppHarness.Texts(window);
