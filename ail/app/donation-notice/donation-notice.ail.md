@@ -86,9 +86,8 @@ node DonationNotice : flow   level: experience
   uses      DonationRules
   children  DonationCard, DonationRules
   sources
-    asked by the owner, 2026-11-27: integrate Sponsorkit; at start, a notification asking to donate, saying it is optional,
-      that it supports the project and keeps it running, and that it removes the message on startup; a monthly donation
-      is needed; not in a copy bought from the Microsoft Store
+    asked by the owner, 2026-11-27: at start, ask to donate, optional, supports and keeps the project running, removes
+      the message; a monthly donation is needed; not in a copy bought from the Microsoft Store
     the owner's answers, 2026-11-27: every store copy; GitHub and Open Collective; any active monthly amount
     .github/FUNDING.yml, its GitHub Sponsors and Open Collective accounts
     Sponsorkit .NET SDK 0.1.0: SponsorkitClient.GetFinancialContributionAsync, OpenCheckoutAsync, SignInAsync, IsDisabled, SPONSORKIT_MOCK
