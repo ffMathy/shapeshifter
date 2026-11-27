@@ -25,7 +25,7 @@ node SettingsWindow : view   level: experience
       Then there is no "Automatic updates" row and no "Check for updates" button
       And start at login, clear history and open log folder are shown as in any copy
   look
-    window      titled with the "title" copy, 540 wide, as tall as its content, not resizable, centred on the screen
+    window      titled with the "title" copy, 540 wide (660 in the Windows look), as tall as its content, not resizable, centred on the screen
     hero        the app icon, the app's name in bold and under it the version with three links: copy version,
                 report a problem, project page
     usage       the usage text in dim text: centred in the Linux look, from the start edge in the Windows and Mac looks

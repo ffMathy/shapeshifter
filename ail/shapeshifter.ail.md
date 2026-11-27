@@ -63,18 +63,21 @@ target
                CopyImageAsync(width, height), CopyFilesAsync(full paths), CopyFormattedAsync(text, html), PinAsync(text,
                ago); HoldCtrlVAsync() (holds Ctrl, or Cmd, taps V and keeps Ctrl down until the picker appears),
                TapAsync(GestureKey.X), DownAsync(key), UpAsync(key), ReleaseCtrlAsync() (lets go of Ctrl and waits until
-               the picker is gone), TypeSearchAsync(query) (after tapping GestureKey.Search); OpenSettings() returns the
+               the picker is gone), TypeSearchAsync(query) (taps S first when the search has not begun); OpenSettings() returns the
                settings window. GestureKey: Modifier, Trigger (V), Up, Down, Left, Right, Delete, Escape, Space, Enter,
                Search (S), Digit1 to Digit9. What there is to see: app.Picker (the picker's window), app.PickerVisible,
                app.Notification (the copy notification's window), app.SettingsWindow; AppHarness.Texts(window) lists
                every text it shows, in reading order; AppHarness.Find<T>(window) its visible controls of a type.
-               app.HistoryRows and app.ActionRows are the rows of the history and of the actions (each a ListBoxItem, top
-               first; IsSelected on the chosen one), app.ChosenRow the chosen history row, AppHarness.IsFullyShown(control)
+               app.HistoryRows and app.ActionRows are the rows of the history and of the actions that the list has made
+               (each a ListBoxItem, top first; IsSelected on the chosen one; a long list only makes the rows near what
+               shows, so count the history's items with app.History.Items), app.ChosenRow the chosen history row, AppHarness.IsFullyShown(control)
                whether all of it shows (inside its window and the scrolled part of its list); await app.ShowTipAsync(title,
                message) shows a coaching tip in the copy notification. What a scenario says about how something looks
                (colours, rounding, sizes, where on the screen) is judged from its screenshot against the look: the check
                asserts the texts, states and order it names, and saves the screen.
-               What happened: app.Paste.Pasted (what each paste put into the application in front), app.Clipboard.Current
+               Pictures and previews load in the background: wait for them with await AppHarness.WaitUntilAsync(() =>
+               condition, "what"). What happened: app.Paste.Pasted (what each paste put into the application in front, a
+               file as much as a text: "nothing is typed" means no paste holds a text), app.Clipboard.Current
                and .Written, app.Launcher.OpenedUrls and .OpenedFolders, app.History.Items, app.Paths. Each test ends with
                AppHarness.SaveScreen(window, "<the file name it was given>") on the window its scenario ends on.
 ```

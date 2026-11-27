@@ -285,11 +285,16 @@ public sealed class AppHarness : IAsyncDisposable
         await Settle().ConfigureAwait(true);
     }
 
-    /// <summary>Types <paramref name="query"/> into the picker's search box (start searching with <see cref="GestureKey.Search"/>).</summary>
+    /// <summary>Types <paramref name="query"/> into the picker's search box, tapping S first when the search has not begun.</summary>
     public async Task TypeSearchAsync(string query)
     {
-        var box = Find<TextBox>(Picker)
-            .FirstOrDefault(textBox => textBox.IsEffectivelyVisible) ?? throw new InvalidOperationException("The picker shows no search box.");
+        if (Find<TextBox>(Picker).Count == 0)
+        {
+            await TapAsync(GestureKey.Search).ConfigureAwait(true);
+            await WaitUntilAsync(() => Find<TextBox>(Picker).Count > 0, "the search box appeared").ConfigureAwait(true);
+        }
+
+        var box = Find<TextBox>(Picker)[0];
         box.Text = query;
         await Task.Delay(50).ConfigureAwait(true);
         await Settle().ConfigureAwait(true);

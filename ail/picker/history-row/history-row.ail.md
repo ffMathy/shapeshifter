@@ -49,7 +49,8 @@ node HistoryRow : view   level: experience
   look
     row         64 high in the Linux look, its tile 40 × 40 with rounded corners, then 12 of space, then the content; the end column holds the pin and the time
     title       one line, regular weight, the body text colour; medium weight on the chosen row
-    second      smaller, dim text after a 12 × 12 app icon, or a globe or folder line icon; at most 250 wide in the Linux look
+    second      smaller, dim text after a 12 × 12 icon: the app's, or for files their folder's own icon from the system; a
+                globe or folder line icon when there is none; at most 250 wide in the Linux look
     time        small dim text; a 13 × 13 pin before it in the accent colour, darker on the chosen row
     chosen      Linux: accent tint and a 2-pixel accent ring inset by 2 with rounded corners; Windows: a subtle fill and a 3 × 16 accent pill at the start edge; macOS: a capsule filled with the accent, white text and a chevron toward the actions
     hairlines   Linux rows are split by hairlines inside a white card with rounded corners
