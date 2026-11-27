@@ -39,6 +39,7 @@ node ActionCatalog : fn   level: system
               paste-file-as-image    74     File kind: one PNG, JPEG, GIF, BMP, WebP or TIFF file, at most 25 MB (PasteFileAsImage)
               paste-as-zip           75     File or FileCollection kind
               extract-zip            76     File kind: one .zip archive (ExtractZip)
+              upload-file            78     File kind: one file, not a folder, of 1 byte to 200 MB (UploadFile)
               copy-image-from-link   100    Text kind whose text holds a link to an image
               copy-file-at-path      110    Text kind whose text is the absolute path of an existing local file or folder (FilePath)
               open-links             200    Text kind whose text holds at least one link; opens at most 10
@@ -47,7 +48,7 @@ node ActionCatalog : fn   level: system
               show-path-in-file-manager 230    Text kind whose text is the absolute path of an existing local file or folder (FilePath)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, upload-file, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, search-web, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, search-web, toggle-pin]

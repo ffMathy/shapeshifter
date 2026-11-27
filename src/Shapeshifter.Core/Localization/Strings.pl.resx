@@ -527,4 +527,7 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Rozpakowuje ten plik .zip i wkleja pliki z jego wnętrza.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Przesyła ten plik do {0} i wkleja publiczny link.</value>
+  </data>
 </root>

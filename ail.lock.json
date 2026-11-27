@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "9afa61c6f4173e2940a3c7d7df0d03d65e838a95da136acb78bea30348ea993a",
-      "spec": "288051f49e99ca8d8d1d153deb5807c1fc07da1bac7065114d0f21b52624f89a",
+      "hash": "da3510185fa1658de82ddb1012a19bd098ddfef14ea448a539ae976d511f5bae",
+      "spec": "6c8970321522d80e392d700dde52c186c7aadc043d2bc9c318d0170a6d1ee8b9",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -280,6 +280,13 @@
       "by": "adopted",
       "adopted": true,
       "spec": "2c9d8fbb25cc7aba951a24fc83c7de3d4f2ec8bcc0e4436c7bc4e44132c788c4"
+    },
+    "UploadFile": {
+      "hash": "e61a8276fcc130cda93b2b9a0415690e1f6e965aeec9a18d9584fc9886f46094",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/upload-file/UploadFile.cs": "db2f7c08e71031092ec21463e9f3bacc689b97c89323f912c3c9b08b0bea29e0"
+      },
+      "by": "claude-code"
     },
     "UploadImage": {
       "hash": "96382cc5bca67b0f28d98434c6cab0f082c6a67b465315ed03b664736f1e4d88",

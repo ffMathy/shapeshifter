@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>แตกไฟล์ .zip นี้และวางไฟล์ที่อยู่ข้างใน</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>อัปโหลดไฟล์นี้ไปยัง {0} และวางลิงก์สาธารณะ</value>
+  </data>
 </root>

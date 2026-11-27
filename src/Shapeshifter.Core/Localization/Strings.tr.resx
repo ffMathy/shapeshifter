@@ -527,4 +527,7 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Bu .zip dosyasını açar ve içindeki dosyaları yapıştırır.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Bu dosyayı {0}'a yükler ve herkese açık bağlantısını yapıştırır.</value>
+  </data>
 </root>

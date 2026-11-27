@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>এই .zip ফাইলটি খুলে ভেতরের ফাইলগুলো পেস্ট করে।</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>এই ফাইলটি {0}-এ আপলোড করে এর একটি সর্বজনীন লিংক পেস্ট করে।</value>
+  </data>
 </root>

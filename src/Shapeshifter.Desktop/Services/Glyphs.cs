@@ -119,6 +119,7 @@ public static class Glyphs
             "paste-file-contents" => Text,
             "paste-file-as-image" => Image,
             "extract-zip" => Extract,
+            "upload-file" => Upload,
             _ => Clipboard,
         };
     }

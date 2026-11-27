@@ -527,4 +527,7 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Descomprime este archivo .zip y pega los archivos que contiene.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Sube este archivo a {0} y pega un enlace público.</value>
+  </data>
 </root>

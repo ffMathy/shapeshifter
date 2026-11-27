@@ -527,4 +527,7 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Estrae questo file .zip e incolla i file che contiene.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Carica questo file su {0} e incolla un link pubblico.</value>
+  </data>
 </root>
