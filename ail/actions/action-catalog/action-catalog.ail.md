@@ -34,6 +34,7 @@ node ActionCatalog : fn   level: system
               paste-as-date          49     Text kind whose text is a Unix time: 10 digits of seconds or 13 of milliseconds (ConvertTimestamp)
               paste-as-unix-time     50     Text kind whose text is an ISO 8601 date and time (ConvertTimestamp)
               paste-result           52     Text kind whose text is a calculation of numbers, + - * / % ^ and parentheses (PasteResult)
+              paste-smaller-image    60     Image kind whose longest side is more than 1920 pixels (PasteSmallerImage)
               paste-paths            70     File or FileCollection kind; titled Paste path for one file (PastePaths)
               paste-file-contents    72     File kind: one file of UTF-8 or UTF-16 text, at most 1 MB (PasteFileContents)
               paste-file-as-image    74     File kind: one PNG, JPEG, GIF, BMP, WebP or TIFF file, at most 25 MB (PasteFileAsImage)
@@ -49,7 +50,7 @@ node ActionCatalog : fn   level: system
               show-in-file-manager   232    File or FileCollection kind whose first file still exists, not on a network share (ShowInFileManager)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, upload-file, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, show-in-file-manager, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-smaller-image, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, upload-file, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, show-in-file-manager, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, search-web, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, search-web, toggle-pin]

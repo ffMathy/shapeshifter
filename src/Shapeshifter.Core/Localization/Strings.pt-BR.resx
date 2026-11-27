@@ -536,4 +536,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Abre a pasta destes arquivos, com eles selecionados.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Colar imagem menor</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Cola esta imagem reduzida para {0} × {1} pixels.</value>
+  </data>
 </root>

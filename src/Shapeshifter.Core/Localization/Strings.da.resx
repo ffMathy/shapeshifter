@@ -536,4 +536,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Åbner mappen, filerne ligger i, med dem markeret.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Indsæt mindre billede</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Indsætter billedet skaleret ned til {0} × {1} pixel.</value>
+  </data>
 </root>

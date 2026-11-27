@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>پوشه‌ای را که این فایل‌ها در آن هستند، با انتخاب آن‌ها باز می‌کند.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>چسباندن تصویر کوچک‌تر</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>این تصویر را کوچک‌شده به {0} × {1} پیکسل می‌چسباند.</value>
+  </data>
 </root>

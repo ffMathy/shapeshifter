@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>これらのファイルがあるフォルダーを、選択した状態で開きます。</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>縮小した画像を貼り付け</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>この画像を {0} × {1} ピクセルに縮小して貼り付けます。</value>
+  </data>
 </root>

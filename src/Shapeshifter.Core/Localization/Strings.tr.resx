@@ -536,4 +536,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Bu dosyaların bulunduğu klasörü, dosyalar seçili olarak açar.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Daha küçük görüntü yapıştır</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Bu görüntüyü {0} × {1} piksele küçülterek yapıştırır.</value>
+  </data>
 </root>

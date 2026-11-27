@@ -536,4 +536,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Öffnet den Ordner dieser Dateien und markiert sie.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Kleineres Bild einfügen</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Fügt dieses Bild verkleinert auf {0} × {1} Pixel ein.</value>
+  </data>
 </root>

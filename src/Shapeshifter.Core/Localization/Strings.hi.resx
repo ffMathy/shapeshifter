@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>वह फ़ोल्डर खोलता है जिसमें ये फ़ाइलें हैं, उन्हें चुना हुआ रखकर।</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>छोटा चित्र चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>इस चित्र को {0} × {1} पिक्सेल तक छोटा करके चिपकाता है।</value>
+  </data>
 </root>

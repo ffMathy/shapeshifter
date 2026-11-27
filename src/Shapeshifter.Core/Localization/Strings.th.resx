@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>เปิดโฟลเดอร์ที่มีไฟล์เหล่านี้ และเลือกไว้ให้</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>วางรูปภาพขนาดเล็กลง</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>วางรูปภาพนี้โดยย่อเหลือ {0} × {1} พิกเซล</value>
+  </data>
 </root>

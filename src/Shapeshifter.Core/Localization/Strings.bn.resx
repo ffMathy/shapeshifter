@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>এই ফাইলগুলো যে ফোল্ডারে আছে তা খোলে, সেগুলো বেছে রেখে।</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>ছোট ছবি পেস্ট করুন</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>এই ছবিটি {0} × {1} পিক্সেলে ছোট করে পেস্ট করে।</value>
+  </data>
 </root>

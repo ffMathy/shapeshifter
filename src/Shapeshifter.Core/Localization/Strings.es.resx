@@ -536,4 +536,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Abre la carpeta de estos archivos, con ellos seleccionados.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Pegar imagen más pequeña</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Pega esta imagen reducida a {0} × {1} píxeles.</value>
+  </data>
 </root>

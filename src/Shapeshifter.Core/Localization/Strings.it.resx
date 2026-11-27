@@ -536,4 +536,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch�
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Apre la cartella di questi file, con i file selezionati.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Incolla immagine più piccola</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Incolla questa immagine ridotta a {0} × {1} pixel.</value>
+  </data>
 </root>
