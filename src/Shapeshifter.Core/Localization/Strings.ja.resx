@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>この .zip ファイルを展開し、中のファイルを貼り付けます。</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>このファイルを {0} にアップロードし、公開リンクを貼り付けます。</value>
+  </data>
 </root>

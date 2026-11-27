@@ -527,4 +527,7 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Pakker .zip-filen ud og indsætter filerne i den.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Uploader filen til {0} og indsætter et offentligt link til den.</value>
+  </data>
 </root>

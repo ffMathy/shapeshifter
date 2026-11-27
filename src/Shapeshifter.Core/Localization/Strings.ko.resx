@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>이 .zip 파일의 압축을 풀고 안의 파일을 붙여넣습니다.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>이 파일을 {0}에 올리고 공개 링크를 붙여넣습니다.</value>
+  </data>
 </root>

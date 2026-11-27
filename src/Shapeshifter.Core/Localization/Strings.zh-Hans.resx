@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>解压此 .zip 文件并粘贴其中的文件。</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>将此文件上传到 {0} 并粘贴公开链接。</value>
+  </data>
 </root>

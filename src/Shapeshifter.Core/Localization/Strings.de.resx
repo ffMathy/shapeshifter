@@ -527,4 +527,7 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Entpackt diese .zip-Datei und fügt die Dateien darin ein.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Lädt diese Datei zu {0} hoch und fügt einen öffentlichen Link ein.</value>
+  </data>
 </root>

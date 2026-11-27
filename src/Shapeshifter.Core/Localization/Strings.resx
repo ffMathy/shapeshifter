@@ -698,4 +698,8 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Unpacks this .zip file and pastes the files inside it.</value>
     <comment>Action description for 'Paste extracted'.</comment>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Uploads this file to {0} and pastes a public link to it.</value>
+    <comment>Action description for 'Upload and paste link' on a copied file; {0} is the name of the file host (Catbox).</comment>
+  </data>
 </root>

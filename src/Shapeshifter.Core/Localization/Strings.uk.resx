@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Розпаковує цей файл .zip і вставляє файли з нього.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Завантажує цей файл на {0} і вставляє публічне посилання.</value>
+  </data>
 </root>

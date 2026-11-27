@@ -62,15 +62,15 @@ node OfferedActions : flow   level: experience
     Scenario: a text file offers Paste, Paste path, Paste file contents, Paste as compressed file and Pin
       Given one text file was copied in a file manager
       When the user opens its actions
-      Then they are "Paste", "Paste path", "Paste file contents", "Paste as compressed file", "Pin to clipboard"
+      Then they are "Paste", "Paste path", "Paste file contents", "Paste as compressed file", "Upload and paste link", "Pin to clipboard"
     Scenario: an image file offers Paste as image
       Given one PNG file was copied in a file manager
       When the user opens its actions
-      Then they are "Paste", "Paste path", "Paste as image", "Paste as compressed file", "Pin to clipboard"
+      Then they are "Paste", "Paste path", "Paste as image", "Paste as compressed file", "Upload and paste link", "Pin to clipboard"
     Scenario: a .zip file offers Paste extracted
       Given one .zip file was copied in a file manager
       When the user opens its actions
-      Then they are "Paste", "Paste path", "Paste as compressed file", "Paste extracted", "Pin to clipboard"
+      Then they are "Paste", "Paste path", "Paste as compressed file", "Paste extracted", "Upload and paste link", "Pin to clipboard"
     Scenario: several files offer the same as one file, with Paste paths
       Given two files were copied together
       When the user opens their actions
@@ -84,7 +84,7 @@ node OfferedActions : flow   level: experience
       When the user opens its actions
       Then they are "Paste", "Paste as file", "Upload and paste link", "Copy image from link", "Open links", "Search the web", "Pin to clipboard"
   how
-    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as hex colour, Paste as RGB colour, Paste as HSL colour, Paste as date and time, Paste as Unix time, Paste result, Paste path or Paste paths, Paste file contents, Paste as image, Paste as compressed file, Paste extracted, Copy image from link, Copy file at this path, Open link or Open links, Write email, Search the web, Show in file manager, then Pin or Unpin
+    decide one fixed order for every kind: Paste, Paste as file, Paste as plain text, Paste as Markdown, Paste trimmed, Upload and paste link, Paste formatted JSON or Paste minified JSON, Paste decoded Base64, Paste URL-decoded, Paste as hex colour, Paste as RGB colour, Paste as HSL colour, Paste as date and time, Paste as Unix time, Paste result, Paste path or Paste paths, Paste file contents, Paste as image, Paste as compressed file, Paste extracted, Upload and paste link, Copy image from link, Copy file at this path, Open link or Open links, Write email, Search the web, Show in file manager, then Pin or Unpin
       because Paste is the default and comes first; "unknown, confirm with the owner: why this order for the rest"
     decide a pinned item offers "Unpin from clipboard" in place of "Pin to clipboard", in the same place
       because "unknown, confirm with the owner"
@@ -125,6 +125,7 @@ node OfferedActions : flow   level: experience
     action.fileContents     "Paste file contents"            "Pastes the text inside this file instead of the file."
     action.fileAsImage      "Paste as image"                 "Pastes the picture in this file instead of the file."
     action.extract          "Paste extracted"                "Unpacks this .zip file and pastes the files inside it."
+    action.uploadFile       "Upload and paste link"          "Uploads this file to {0} and pastes a public link to it."
     heading                 "Actions"   with "→ to choose" beside it in the Linux look; the Windows and macOS looks head the list "Actions for this text", "Actions for this image", "Actions for this file" or "Actions for these files" (other data, too, reads "Actions for this text")
     default                 "Default"   the badge on Paste in the Windows and macOS looks; a tick in the Linux look
   uses      ActionCatalog

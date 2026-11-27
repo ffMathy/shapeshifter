@@ -527,4 +527,7 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Descompacta este arquivo .zip e cola os arquivos dentro dele.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Envia este arquivo para o {0} e cola um link público para ele.</value>
+  </data>
 </root>

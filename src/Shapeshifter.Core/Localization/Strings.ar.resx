@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>يفك ضغط ملف .zip هذا ويلصق الملفات التي بداخله.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>يرفع هذا الملف إلى {0} ويلصق رابطًا عامًا إليه.</value>
+  </data>
 </root>

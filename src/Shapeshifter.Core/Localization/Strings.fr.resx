@@ -527,4 +527,7 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Décompresse ce fichier .zip et colle les fichiers qu'il contient.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Envoie ce fichier sur {0} et colle un lien public vers lui.</value>
+  </data>
 </root>

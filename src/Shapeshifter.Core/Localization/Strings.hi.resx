@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>इस .zip फ़ाइल को खोलकर उसके अंदर की फ़ाइलें चिपकाता है।</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>इस फ़ाइल को {0} पर अपलोड करके उसका सार्वजनिक लिंक चिपकाता है।</value>
+  </data>
 </root>

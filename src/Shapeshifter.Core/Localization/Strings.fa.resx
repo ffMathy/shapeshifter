@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>این فایل .zip را باز می‌کند و فایل‌های درون آن را می‌چسباند.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>این فایل را در {0} بارگذاری می‌کند و پیوند عمومی آن را می‌چسباند.</value>
+  </data>
 </root>

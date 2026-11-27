@@ -527,4 +527,7 @@
   <data name="ActionExtractZipDescription" xml:space="preserve">
     <value>Giải nén tệp .zip này và dán các tệp bên trong.</value>
   </data>
+  <data name="ActionUploadFileDescription" xml:space="preserve">
+    <value>Tải tệp này lên {0} và dán liên kết công khai.</value>
+  </data>
 </root>
