@@ -6,7 +6,7 @@ using Shapeshifter.Core.Text;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// The action that pastes formatted text as Markdown, keeping headings, lists, links and emphasis.
+/// An action that pastes formatted text as Markdown, keeping its headings, lists, links and emphasis.
 /// </summary>
 public sealed class PasteAsMarkdownAction : IClipboardAction
 {
@@ -16,12 +16,12 @@ public sealed class PasteAsMarkdownAction : IClipboardAction
     public string Id => "paste-as-markdown";
 
     /// <summary>
-    /// Where the action stands among the actions.
+    /// Where the action is placed among the actions.
     /// </summary>
     public int Order => 22;
 
     /// <summary>
-    /// The action's title, as shown in the actions.
+    /// Gets the title shown for the action.
     /// </summary>
     /// <param name="item">The item the action is for.</param>
     /// <returns>The localized title.</returns>
@@ -32,7 +32,7 @@ public sealed class PasteAsMarkdownAction : IClipboardAction
     }
 
     /// <summary>
-    /// The action's description, as shown in the actions.
+    /// Gets the description shown for the action.
     /// </summary>
     /// <param name="item">The item the action is for.</param>
     /// <returns>The localized description.</returns>
@@ -43,10 +43,10 @@ public sealed class PasteAsMarkdownAction : IClipboardAction
     }
 
     /// <summary>
-    /// Whether the action is offered for an item: text with an HTML format whose Markdown holds something other than white space.
+    /// Tells whether the item is text with an HTML format whose Markdown holds something other than white space.
     /// </summary>
     /// <param name="item">The item to check.</param>
-    /// <returns>True when the item can be pasted as Markdown.</returns>
+    /// <returns>True when the action can be offered for the item.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -70,18 +70,12 @@ public sealed class PasteAsMarkdownAction : IClipboardAction
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var html = FindHtml(item);
-        if (html is null)
-        {
-            return Task.CompletedTask;
-        }
-
-        var snapshot = new ClipboardSnapshot { Text = Convert(html) };
-        return context.WriteAndPasteAsync(snapshot, cancellationToken);
+        var markdown = Convert(FindHtml(item) ?? string.Empty);
+        return context.WriteAndPasteAsync(new ClipboardSnapshot { Text = markdown }, cancellationToken);
     }
 
     /// <summary>
-    /// Converts HTML to GitHub-flavoured Markdown whose lines end in a line feed, without white space at its start and end.
+    /// Converts HTML to GitHub-flavoured Markdown whose lines end in a line feed, trimmed of white space at its start and end.
     /// </summary>
     /// <param name="html">The HTML to convert.</param>
     /// <returns>The Markdown.</returns>

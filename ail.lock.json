@@ -86,9 +86,9 @@
       "adopted": true
     },
     "DecodeBase64": {
-      "hash": "f1a4b3a89cebb4a11e3c7952268d5ddf93cb4a22fb6cbe2324b77469b6f1e79e",
+      "hash": "01cdda5a62bc0e594134dd4685cbdcafa86c7bb6272ed9885dd1107fb4614ef3",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/decode-base64/DecodeBase64.cs": "9c9b98b9b0e7973c327190b5c0d745b5b05bf2f6164d791bd9200888fd920cd2"
+        "src/Shapeshifter.Core/Ail/actions/decode-base64/DecodeBase64.cs": "4bfd8b47bd8e9eb7e2e7446582c43ddf22bb58ea4d90295e39dc38bfa9cffb6b"
       },
       "by": "claude-code"
     },
@@ -135,9 +135,9 @@
       "by": "claude-code"
     },
     "PasteAsMarkdown": {
-      "hash": "92f004d32f1ec392642862595f8014ae7df19cca7b60a021d210b7ff21cb7d84",
+      "hash": "752d060163897f703f6e6fea8d818af66c66f0069a05dac2ace4b55ab2a64058",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-as-markdown/PasteAsMarkdown.cs": "850a675388b8f0e750df450af4eb33a12a16a71e81c30b6996ab95d74e5f3ce9"
+        "src/Shapeshifter.Core/Ail/actions/paste-as-markdown/PasteAsMarkdown.cs": "e9c468bb560765992250c3b6cb69726c3f26206832a54f8d81c4c03bcebca987"
       },
       "by": "claude-code"
     },
@@ -226,9 +226,9 @@
       "spec": "65782d6fea7084ef1e146e1c4a12cc83977b901043c5b463ef8cbc51477db048"
     },
     "ReformatJson": {
-      "hash": "ab38ae617608e987966e601d054e31aa3bed238a9a80697ce2fce6795b7abc98",
+      "hash": "f6c8f4b373c1aa1611bde05a7cbb435ad2cf1cb9d1c0ca630074bb7f5fb34878",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "3ca2bd0c679736d08afbe4dfc96d817304a97835d3ecedc0227677d0cfe71277"
+        "src/Shapeshifter.Core/Ail/actions/reformat-json/ReformatJson.cs": "3a42b9fd87f7c3c2ffa1aa6a3eed09b24a79a6fb3c0360e579386fcfc8b9c01c"
       },
       "by": "claude-code"
     },
