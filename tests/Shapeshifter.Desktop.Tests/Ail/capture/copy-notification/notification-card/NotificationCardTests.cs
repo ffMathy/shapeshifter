@@ -1,17 +1,19 @@
-// ail-derived-from: NotificationCard@1a2e2643af033ddc
+// ail-derived-from: NotificationCard@4258d2fd339e9550
 using Xunit;
 
 namespace Shapeshifter.Desktop.Tests.Ail;
 
-/// <summary>Derived checks for NotificationCard: the copy notification and its tip, in the Linux look.</summary>
+/// <summary>
+/// Derived checks for NotificationCard: the copy notification and the tip it can show,
+/// driven through the real app on Avalonia's headless platform.
+/// </summary>
 public sealed class NotificationCardTests
 {
     /// <summary>Scenario: a copy on Linux.</summary>
     [Fact(DisplayName = "a copy on Linux")]
     public Task ACopyOnLinux() => AppHarness.RunAsync(async app =>
     {
-        // When something new is copied
-        await app.CopyAsync("Meeting moved to 3 pm", "Notes");
+        await app.CopyAsync("Meeting notes for Thursday", null);
 
         await AppHarness.WaitUntilAsync(
             () => app.Notification is { IsVisible: true },
@@ -20,16 +22,15 @@ public sealed class NotificationCardTests
         var notification = app.Notification;
         Assert.NotNull(notification);
 
-        // Then a pill with one line of text appears: only the title, with no icon,
-        // no app name and no preview of the item on Linux.
-        var expectedTitle = $"Copied · {app.History.Items.Count} items in your history";
-        var texts = AppHarness.Texts(notification);
-        var only = Assert.Single(texts);
-        Assert.Equal(expectedTitle, only);
-        Assert.DoesNotContain("Shapeshifter", texts);
-        Assert.DoesNotContain("Meeting moved to 3 pm", texts);
+        var count = app.History.Items.Count;
+        var expectedTitle = count == 1
+            ? "Copied · 1 item in your history"
+            : $"Copied · {count} items in your history";
 
-        // Colour, rounding and its place at the bottom centre are judged from the screenshot.
+        // One line of text: the title alone, with no app name and no preview on Linux.
+        var texts = AppHarness.Texts(notification);
+        Assert.Equal(new[] { expectedTitle }, texts);
+
         AppHarness.SaveScreen(notification, "a-copy-on-linux.png");
     }, new AppOptions { Look = Look.Linux });
 
@@ -41,7 +42,6 @@ public sealed class NotificationCardTests
         const string message =
             "You copied this a moment ago. Hold Ctrl+V to choose it from your history instead of copying it again.";
 
-        // When a tip is shown
         await app.ShowTipAsync(title, message);
 
         await AppHarness.WaitUntilAsync(
@@ -51,11 +51,10 @@ public sealed class NotificationCardTests
         var notification = app.Notification;
         Assert.NotNull(notification);
 
-        // Then the same pill shows a title over a sentence, in that order, and nothing else.
+        // A title over a sentence, in that order.
         var texts = AppHarness.Texts(notification);
         Assert.Equal(new[] { title, message }, texts);
 
-        // Bold title, wrapping and the 420-point width are judged from the screenshot.
         AppHarness.SaveScreen(notification, "a-tip-on-linux.png");
     }, new AppOptions { Look = Look.Linux });
 }
