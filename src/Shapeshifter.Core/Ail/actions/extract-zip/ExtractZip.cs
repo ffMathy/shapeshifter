@@ -1,19 +1,14 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
-using System;
-using System.Collections.Generic;
-using System.IO;
+
 using System.IO.Compression;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// The action that unpacks a copied .zip file and pastes the files inside it.
+/// The action that unpacks a copied .zip file into Shapeshifter's temporary folder and pastes the files inside it.
 /// </summary>
 public sealed class ExtractZipAction : IClipboardAction
 {
@@ -23,19 +18,19 @@ public sealed class ExtractZipAction : IClipboardAction
     public const long MaxUnpackedBytes = 2147483648;
 
     /// <summary>
-    /// The action's stable identifier.
+    /// The action's unique id.
     /// </summary>
     public string Id => "extract-zip";
 
     /// <summary>
-    /// The action's position among the actions.
+    /// Where the action is placed among the actions.
     /// </summary>
     public int Order => 76;
 
     /// <summary>
-    /// Gives the action's title for the item.
+    /// Gives the action's title.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
@@ -44,9 +39,9 @@ public sealed class ExtractZipAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gives the action's description for the item.
+    /// Gives the action's description.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
@@ -55,35 +50,28 @@ public sealed class ExtractZipAction : IClipboardAction
     }
 
     /// <summary>
-    /// Tells whether the item is a single .zip file this action can unpack.
+    /// Tells whether the item is a single .zip file that can be unpacked.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
+    /// <param name="item">The item to check.</param>
     /// <returns>True when the item is one .zip file.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.File
-            && item.Snapshot.Files is [var path]
-            && IsZip(path);
+        return item.Kind == ClipboardContentKind.File && IsZip(item.Snapshot.Files[0]);
     }
 
     /// <summary>
-    /// Unpacks the item's archive into the temporary folder and pastes its top-level entries.
+    /// Unpacks the item's archive and pastes its top-level entries, without adding them to the history.
     /// </summary>
-    /// <param name="item">The chosen item.</param>
-    /// <param name="context">The action's context.</param>
+    /// <param name="item">The item holding the archive.</param>
+    /// <param name="context">The context to paste with.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the paste is done.</returns>
+    /// <returns>A task that completes when the files are pasted.</returns>
     public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        if (item.Snapshot.Files is not [var path])
-        {
-            return;
-        }
-
-        var files = Extract(path, context.Paths.TempDirectory);
+        IReadOnlyList<string> files = Extract(item.Snapshot.Files[0], context.Paths.TempDirectory);
         if (files.Count == 0)
         {
             return;
@@ -93,9 +81,9 @@ public sealed class ExtractZipAction : IClipboardAction
     }
 
     /// <summary>
-    /// Tells whether the path names an existing local .zip archive, by its name and its first bytes.
+    /// Tells whether a path names an existing local .zip file whose contents start like a zip archive.
     /// </summary>
-    /// <param name="path">The file's path.</param>
+    /// <param name="path">The path to check.</param>
     /// <returns>True when the path is a local .zip archive.</returns>
     public static bool IsZip(string path)
     {
@@ -110,18 +98,14 @@ public sealed class ExtractZipAction : IClipboardAction
             return false;
         }
 
+        byte[] header = new byte[4];
         try
         {
-            var header = new byte[4];
-            using var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using FileStream stream = File.OpenRead(path);
             if (stream.ReadAtLeast(header, 4, throwOnEndOfStream: false) < 4)
             {
                 return false;
             }
-
-            return header[0] == 0x50
-                && header[1] == 0x4B
-                && ((header[2] == 0x03 && header[3] == 0x04) || (header[2] == 0x05 && header[3] == 0x06));
         }
         catch (IOException)
         {
@@ -131,48 +115,61 @@ public sealed class ExtractZipAction : IClipboardAction
         {
             return false;
         }
+
+        return header[0] == 0x50 && header[1] == 0x4B
+            && ((header[2] == 0x03 && header[3] == 0x04) || (header[2] == 0x05 && header[3] == 0x06));
     }
 
     /// <summary>
-    /// Unpacks the archive into a new folder in the temporary folder and gives its top-level entries.
+    /// Unpacks an archive into a new folder under the temporary folder and gives its top-level entries.
     /// </summary>
-    /// <param name="zip">The archive's path.</param>
-    /// <param name="temp">The temporary folder.</param>
-    /// <returns>The full paths of the entries directly in the new folder, ordered by name.</returns>
-    /// <exception cref="InvalidDataException">The archive is unreadable, unsafe or too large.</exception>
+    /// <param name="zip">The path of the archive.</param>
+    /// <param name="temp">Shapeshifter's temporary folder.</param>
+    /// <returns>The full paths of the entries directly in the new folder, ordered by name ignoring case.</returns>
+    /// <exception cref="InvalidDataException">The archive cannot be read, has an unsafe entry path, or unpacks to more than <see cref="MaxUnpackedBytes"/>.</exception>
     public static IReadOnlyList<string> Extract(string zip, string temp)
     {
         ArgumentNullException.ThrowIfNull(zip);
         ArgumentNullException.ThrowIfNull(temp);
 
-        var name = Path.GetFileNameWithoutExtension(zip);
-        var random = Convert.ToHexStringLower(RandomNumberGenerator.GetBytes(4));
-        var destination = Path.GetFullPath(Path.Combine(temp, "Extracted files", random, name));
-        var prefix = destination.EndsWith(Path.DirectorySeparatorChar)
-            ? destination
-            : destination + Path.DirectorySeparatorChar;
+        string name = Path.GetFileName(zip);
+        if (name.EndsWith(".zip", StringComparison.OrdinalIgnoreCase))
+        {
+            name = name[..^4];
+        }
 
-        using var archive = ZipFile.OpenRead(zip);
+        string root = Path.GetFullPath(Path.Combine(temp, "Extracted files", RandomNumberGenerator.GetHexString(8, lowercase: true), name));
+        string rootPrefix = root.EndsWith(Path.DirectorySeparatorChar) ? root : root + Path.DirectorySeparatorChar;
+
+        using ZipArchive archive = ZipFile.OpenRead(zip);
 
         long total = 0;
-        foreach (var entry in archive.Entries)
+        foreach (ZipArchiveEntry entry in archive.Entries)
         {
-            var target = Path.GetFullPath(Path.Combine(destination, entry.FullName));
-            if (!target.StartsWith(prefix, StringComparison.Ordinal) && target != destination)
+            if (Path.IsPathRooted(entry.FullName))
             {
-                throw new InvalidDataException("The archive has an entry outside its folder.");
+                throw new InvalidDataException();
+            }
+
+            string destination = Path.GetFullPath(Path.Combine(root, entry.FullName));
+            if (!string.Equals(destination, root, StringComparison.Ordinal)
+                && !destination.StartsWith(rootPrefix, StringComparison.Ordinal))
+            {
+                throw new InvalidDataException();
             }
 
             total += entry.Length;
             if (total > MaxUnpackedBytes)
             {
-                throw new InvalidDataException("The archive unpacks to more than the allowed size.");
+                throw new InvalidDataException();
             }
         }
 
-        Directory.CreateDirectory(destination);
-        archive.ExtractToDirectory(destination);
+        Directory.CreateDirectory(root);
+        archive.ExtractToDirectory(root);
 
-        return [.. Directory.EnumerateFileSystemEntries(destination).OrderBy(path => path, StringComparer.OrdinalIgnoreCase)];
+        string[] entries = Directory.GetFileSystemEntries(root);
+        Array.Sort(entries, StringComparer.OrdinalIgnoreCase);
+        return entries;
     }
 }

@@ -6,31 +6,25 @@ using System.Text;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that starts a new email to an address that was copied on its own,
-/// through a mailto: link opened by the system's default email app.
+/// An action that starts a new email to the address the item holds, in the user's chosen mail app.
 /// </summary>
 public sealed class WriteEmailAction : IClipboardAction
 {
     private const string MailtoPrefix = "mailto:";
-    private const int MaxAddressLength = 254;
-    private const int MaxLocalPartLength = 64;
 
-    /// <summary>The action's unique id.</summary>
+    /// <summary>
+    /// The action's unique id.
+    /// </summary>
     public string Id => "write-email";
 
-    /// <summary>Where the action is placed among the actions.</summary>
+    /// <summary>
+    /// Where the action is placed among the actions.
+    /// </summary>
     public int Order => 210;
 
-    /// <summary>Whether the item is text that is one email address and nothing else.</summary>
-    /// <param name="item">The chosen item.</param>
-    /// <returns>True when the item's text is an email address on its own.</returns>
-    public bool CanExecute(ClipboardItem item)
-    {
-        ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.Text && ParseAddress(item.Snapshot.Text) is not null;
-    }
-
-    /// <summary>The action's title shown in the actions.</summary>
+    /// <summary>
+    /// Gets the action's title shown in the actions.
+    /// </summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
@@ -39,7 +33,9 @@ public sealed class WriteEmailAction : IClipboardAction
         return Strings.ActionWriteEmail;
     }
 
-    /// <summary>The action's description, naming the address the email will be written to.</summary>
+    /// <summary>
+    /// Gets the action's description, naming the address the email will be written to.
+    /// </summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
@@ -51,11 +47,24 @@ public sealed class WriteEmailAction : IClipboardAction
             : Localizer.Format(Strings.ActionWriteEmailDescription, address);
     }
 
-    /// <summary>Opens a new email to the item's address with the system's default email app; pastes nothing.</summary>
+    /// <summary>
+    /// Tells whether the item is text holding a single email address on its own.
+    /// </summary>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>True when the action can write an email to the item's address.</returns>
+    public bool CanExecute(ClipboardItem item)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        return item.Kind == ClipboardContentKind.Text && ParseAddress(item.Snapshot.Text) is not null;
+    }
+
+    /// <summary>
+    /// Opens a mailto link to the item's address with the system's default mail app; pastes nothing.
+    /// </summary>
     /// <param name="item">The chosen item.</param>
     /// <param name="context">The context giving access to the launcher.</param>
     /// <param name="cancellationToken">Cancels the action.</param>
-    /// <returns>A task that completes when the link has been handed to the system.</returns>
+    /// <returns>A task that completes once the link has been handed to the system.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -63,18 +72,17 @@ public sealed class WriteEmailAction : IClipboardAction
         var address = ParseAddress(item.Snapshot.Text);
         if (address is not null)
         {
-            context.Launcher.OpenUrl(new Uri(MailtoPrefix + address, UriKind.Absolute));
+            context.Launcher.OpenUrl(new Uri(MailtoPrefix + address));
         }
 
         return Task.CompletedTask;
     }
 
     /// <summary>
-    /// Gives the email address the text consists of, as written, when the text is one address
-    /// on its own (ignoring surrounding white space and a leading mailto:), otherwise null.
+    /// Reads a single email address from text that holds it and nothing else, optionally as a mailto link.
     /// </summary>
-    /// <param name="text">The text to read, or null.</param>
-    /// <returns>The address, or null when the text is not one address.</returns>
+    /// <param name="text">The text to read.</param>
+    /// <returns>The address as written, or null when the text is not exactly one address.</returns>
     public static string? ParseAddress(string? text)
     {
         if (text is null)
@@ -88,7 +96,7 @@ public sealed class WriteEmailAction : IClipboardAction
             candidate = candidate[MailtoPrefix.Length..];
         }
 
-        if (candidate.Length == 0 || candidate.Length > MaxAddressLength)
+        if (candidate.Length == 0 || candidate.Length > 254)
         {
             return null;
         }
@@ -106,7 +114,7 @@ public sealed class WriteEmailAction : IClipboardAction
 
     private static bool IsLocalPart(string local)
     {
-        if (local.Length < 1 || local.Length > MaxLocalPartLength)
+        if (local.Length < 1 || local.Length > 64)
         {
             return false;
         }
@@ -118,21 +126,17 @@ public sealed class WriteEmailAction : IClipboardAction
 
         foreach (var rune in local.EnumerateRunes())
         {
-            if (Rune.IsLetter(rune) || IsAsciiDigit(rune))
+            if (!IsLetterOrDigit(rune) && !IsLocalSymbol(rune))
             {
-                continue;
+                return false;
             }
-
-            if (rune.Value is '.' or '_' or '%' or '+' or '-' or '\'')
-            {
-                continue;
-            }
-
-            return false;
         }
 
         return true;
     }
+
+    private static bool IsLocalSymbol(Rune rune) =>
+        rune.Value is '.' or '_' or '%' or '+' or '-' or '\'';
 
     private static bool IsDomain(string domain)
     {
@@ -151,7 +155,7 @@ public sealed class WriteEmailAction : IClipboardAction
 
             foreach (var rune in label.EnumerateRunes())
             {
-                if (!Rune.IsLetter(rune) && !IsAsciiDigit(rune) && rune.Value != '-')
+                if (!IsLetterOrDigit(rune) && rune.Value != '-')
                 {
                     return false;
                 }
@@ -173,5 +177,6 @@ public sealed class WriteEmailAction : IClipboardAction
         return letters >= 2;
     }
 
-    private static bool IsAsciiDigit(Rune rune) => rune.Value is >= '0' and <= '9';
+    private static bool IsLetterOrDigit(Rune rune) =>
+        Rune.IsLetter(rune) || (rune.IsAscii && char.IsAsciiDigit((char)rune.Value));
 }

@@ -5,7 +5,7 @@ using Shapeshifter.Core.Localization;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// Works out whether copied text names a file or folder on this computer.
+/// Recognises copied text that names an existing file or folder on this computer.
 /// </summary>
 public static class FilePath
 {
@@ -16,7 +16,7 @@ public static class FilePath
     /// Gives the full path of the existing local file or folder the text names, or null when it names none.
     /// </summary>
     /// <param name="text">The copied text, or null.</param>
-    /// <returns>The full path, as the system writes it, or null.</returns>
+    /// <returns>The full path as the system writes it, or null.</returns>
     public static string? Resolve(string? text)
     {
         if (text is null)
@@ -39,6 +39,7 @@ public static class FilePath
             return null;
         }
 
+        string path;
         if (candidate.StartsWith(FileScheme, StringComparison.OrdinalIgnoreCase))
         {
             var rest = candidate[FileScheme.Length..];
@@ -47,72 +48,76 @@ public static class FilePath
                 return null;
             }
 
-            candidate = Uri.UnescapeDataString(rest);
-            if (OperatingSystem.IsWindows() && candidate.Length >= 3 && IsDrive(candidate, 1))
+            path = Uri.UnescapeDataString(rest);
+            if (OperatingSystem.IsWindows()
+                && path.Length >= 3
+                && char.IsAsciiLetter(path[1])
+                && path[2] == ':')
             {
-                candidate = candidate[1..];
+                path = path[1..];
             }
         }
-
-        if (candidate == "~")
+        else if (candidate == "~")
         {
-            candidate = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         }
         else if (candidate.StartsWith("~/", StringComparison.Ordinal)
             || candidate.StartsWith("~\\", StringComparison.Ordinal))
         {
-            var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            candidate = home + Path.DirectorySeparatorChar + candidate[2..];
+            path = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + candidate[1..];
+        }
+        else
+        {
+            path = candidate;
         }
 
-        if (candidate.StartsWith("\\\\", StringComparison.Ordinal)
-            || candidate.StartsWith("//", StringComparison.Ordinal))
+        if (path.StartsWith("\\\\", StringComparison.Ordinal)
+            || path.StartsWith("//", StringComparison.Ordinal))
         {
             return null;
         }
 
-        var isAbsolute = OperatingSystem.IsWindows()
-            ? candidate.Length >= 3 && IsDrive(candidate, 0)
-            : candidate.StartsWith('/');
-        if (!isAbsolute)
+        if (!IsAbsolute(path))
         {
             return null;
         }
 
-        string fullPath;
-        try
-        {
-            fullPath = Path.GetFullPath(candidate);
-        }
-        catch (Exception exception) when (exception is ArgumentException or NotSupportedException or PathTooLongException)
+        if (!File.Exists(path) && !Directory.Exists(path))
         {
             return null;
         }
 
-        return File.Exists(fullPath) || Directory.Exists(fullPath) ? fullPath : null;
+        return Path.GetFullPath(path);
     }
 
-    private static bool IsDrive(string value, int start) =>
-        value.Length >= start + 3
-        && char.IsAsciiLetter(value[start])
-        && value[start + 1] == ':'
-        && (value[start + 2] == '\\' || value[start + 2] == '/');
+    private static bool IsAbsolute(string path)
+    {
+        if (OperatingSystem.IsWindows())
+        {
+            return path.Length >= 3
+                && char.IsAsciiLetter(path[0])
+                && path[1] == ':'
+                && (path[2] == '\\' || path[2] == '/');
+        }
+
+        return path.StartsWith('/');
+    }
 }
 
 /// <summary>
-/// Copies the file or folder a copied path names, so it can be pasted in a file manager or an email.
+/// The action that puts the file or folder a copied path names on the clipboard, and in the history.
 /// </summary>
 public sealed class CopyFileAtPathAction : IClipboardAction
 {
-    /// <summary>The action's unique id.</summary>
+    /// <summary>The action's stable id.</summary>
     public string Id => "copy-file-at-path";
 
-    /// <summary>Where the action is placed among the actions.</summary>
+    /// <summary>Where the action sits among the actions.</summary>
     public int Order => 110;
 
     /// <summary>Gives the action's title.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized title.</returns>
+    /// <returns>The title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -121,7 +126,7 @@ public sealed class CopyFileAtPathAction : IClipboardAction
 
     /// <summary>Gives the action's description.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description.</returns>
+    /// <returns>The description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -137,34 +142,39 @@ public sealed class CopyFileAtPathAction : IClipboardAction
         return item.Kind == ClipboardContentKind.Text && FilePath.Resolve(item.Snapshot.Text) is not null;
     }
 
-    /// <summary>Puts the named file or folder on the clipboard and adds it to the history.</summary>
+    /// <summary>Puts the file or folder on the clipboard and adds it to the history, without pasting.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context the action runs in.</param>
+    /// <param name="context">What the action may use.</param>
     /// <param name="cancellationToken">Cancels the copy.</param>
-    /// <returns>A task that completes once the file is copied.</returns>
+    /// <returns>A task that completes when the file is copied.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var path = FilePath.Resolve(item.Snapshot.Text) ?? throw new InvalidOperationException();
+        var path = FilePath.Resolve(item.Snapshot.Text);
+        if (path is null)
+        {
+            return Task.CompletedTask;
+        }
+
         return context.CopyNewContentAsync(new ClipboardSnapshot { Files = [path] }, cancellationToken);
     }
 }
 
 /// <summary>
-/// Opens the folder holding the file or folder a copied path names, with it selected.
+/// The action that opens the folder holding the file or folder a copied path names, with it selected.
 /// </summary>
 public sealed class ShowPathInFileManagerAction : IClipboardAction
 {
-    /// <summary>The action's unique id.</summary>
+    /// <summary>The action's stable id.</summary>
     public string Id => "show-path-in-file-manager";
 
-    /// <summary>Where the action is placed among the actions.</summary>
+    /// <summary>Where the action sits among the actions.</summary>
     public int Order => 230;
 
     /// <summary>Gives the action's title.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized title.</returns>
+    /// <returns>The title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -173,7 +183,7 @@ public sealed class ShowPathInFileManagerAction : IClipboardAction
 
     /// <summary>Gives the action's description.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description.</returns>
+    /// <returns>The description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -189,17 +199,21 @@ public sealed class ShowPathInFileManagerAction : IClipboardAction
         return item.Kind == ClipboardContentKind.Text && FilePath.Resolve(item.Snapshot.Text) is not null;
     }
 
-    /// <summary>Reveals the named file or folder in the system's file manager.</summary>
+    /// <summary>Reveals the file or folder in the system's file manager; the clipboard and history stay as they are.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context the action runs in.</param>
-    /// <param name="cancellationToken">Not used; revealing does not wait.</param>
+    /// <param name="context">What the action may use.</param>
+    /// <param name="cancellationToken">Not used; revealing is immediate.</param>
     /// <returns>A completed task.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var path = FilePath.Resolve(item.Snapshot.Text) ?? throw new InvalidOperationException();
-        context.Launcher.RevealInFileManager(path);
+        var path = FilePath.Resolve(item.Snapshot.Text);
+        if (path is not null)
+        {
+            context.Launcher.RevealInFileManager(path);
+        }
+
         return Task.CompletedTask;
     }
 }

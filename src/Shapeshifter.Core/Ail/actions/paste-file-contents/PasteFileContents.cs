@@ -1,13 +1,12 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
-
 using System.Text;
 
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// The action that pastes the text inside a single copied file instead of the file itself.
+/// Pastes the text held in one copied text file, instead of the file itself.
 /// </summary>
 public sealed class PasteFileContentsAction : IClipboardAction
 {
@@ -55,16 +54,16 @@ public sealed class PasteFileContentsAction : IClipboardAction
     }
 
     /// <summary>
-    /// Tells whether the item is one file whose contents can be read as text.
+    /// Tells whether the item is a single file whose contents can be read as text.
     /// </summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>True when the file's contents can be pasted as text.</returns>
+    /// <returns>True when the file's contents can be pasted.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return item.Kind == ClipboardContentKind.File
-            && item.Snapshot.Files.Count == 1
-            && ReadText(item.Snapshot.Files[0]) is not null;
+            && item.Snapshot.Files is [var path]
+            && ReadText(path) is not null;
     }
 
     /// <summary>
@@ -74,25 +73,25 @@ public sealed class PasteFileContentsAction : IClipboardAction
     /// <param name="context">The context the action runs in.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
     /// <returns>A task that completes when the text has been pasted.</returns>
-    /// <exception cref="InvalidOperationException">The file can no longer be read as text.</exception>
+    /// <exception cref="InvalidOperationException">The file no longer holds readable text.</exception>
     public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        string? text = item.Snapshot.Files.Count == 1 ? ReadText(item.Snapshot.Files[0]) : null;
+        var text = item.Snapshot.Files is [var path] ? ReadText(path) : null;
         if (text is null)
         {
-            throw new InvalidOperationException("The file can no longer be read as text.");
+            throw new InvalidOperationException("The file no longer holds text that can be pasted.");
         }
 
         await context.WriteAndPasteAsync(new ClipboardSnapshot { Text = text }, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>
-    /// Reads a local file of at most <see cref="MaxBytes"/> bytes as UTF-8, or as UTF-16 with a byte order mark.
+    /// Reads a local file of at most MaxBytes as UTF-8, or as UTF-16 when it starts with a byte order mark.
     /// </summary>
     /// <param name="path">The file's path.</param>
-    /// <returns>The file's text, unchanged, or null when it is not a readable, non-empty text file.</returns>
+    /// <returns>The file's text, unchanged, or null when it is not a readable text file.</returns>
     public static string? ReadText(string path)
     {
         ArgumentNullException.ThrowIfNull(path);
@@ -101,15 +100,11 @@ public sealed class PasteFileContentsAction : IClipboardAction
             return null;
         }
 
-        if (!File.Exists(path))
-        {
-            return null;
-        }
-
         byte[] bytes;
         try
         {
-            if (new FileInfo(path).Length > MaxBytes)
+            var info = new FileInfo(path);
+            if (!info.Exists || info.Length > MaxBytes)
             {
                 return null;
             }
@@ -160,7 +155,7 @@ public sealed class PasteFileContentsAction : IClipboardAction
             return null;
         }
 
-        foreach (char c in text)
+        foreach (var c in text)
         {
             if (c < '\u0020' && c != '\t' && c != '\n' && c != '\r' && c != '\f')
             {

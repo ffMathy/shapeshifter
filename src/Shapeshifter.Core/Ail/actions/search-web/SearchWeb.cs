@@ -5,37 +5,28 @@ using Shapeshifter.Core.Localization;
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that looks up a copied text with a web search in the user's browser.
+/// An action that searches the web for a copied text in the user's browser, so a word, a name,
+/// an error message or a product number can be looked up in one step.
 /// </summary>
 public sealed class SearchWebAction : IClipboardAction
 {
-    /// <summary>
-    /// The name of the search engine the text is sent to.
-    /// </summary>
+    /// <summary>The name of the search engine the text is sent to.</summary>
     public const string EngineName = "DuckDuckGo";
 
-    /// <summary>
-    /// The longest text, in characters, that is offered for a web search.
-    /// </summary>
+    /// <summary>The longest text, in characters after trimming, that is offered for a search.</summary>
     public const int MaxLength = 200;
 
     private const string SearchPrefix = "https://duckduckgo.com/?q=";
 
-    /// <summary>
-    /// The unique id of this action.
-    /// </summary>
+    /// <summary>The action's stable identifier.</summary>
     public string Id => "search-web";
 
-    /// <summary>
-    /// The position of this action among the actions.
-    /// </summary>
+    /// <summary>The action's position among the actions.</summary>
     public int Order => 220;
 
-    /// <summary>
-    /// Gives the link that searches the web for the text, or null when the text is not suited to a search.
-    /// </summary>
-    /// <param name="text">The text to search for.</param>
-    /// <returns>The search link, or null.</returns>
+    /// <summary>Gives the link that searches for the text, or null when the text is not suited to a search.</summary>
+    /// <param name="text">The copied text, or null.</param>
+    /// <returns>The absolute search link, or null.</returns>
     public static Uri? SearchUrl(string? text)
     {
         if (text is null)
@@ -54,12 +45,29 @@ public sealed class SearchWebAction : IClipboardAction
             return null;
         }
 
-        if (!trimmed.Any(char.IsLetterOrDigit))
+        var hasLetterOrDigit = false;
+        var hasWhiteSpace = false;
+        foreach (var c in trimmed)
+        {
+            if (char.IsLetterOrDigit(c))
+            {
+                hasLetterOrDigit = true;
+            }
+
+            if (char.IsWhiteSpace(c))
+            {
+                hasWhiteSpace = true;
+            }
+        }
+
+        if (!hasLetterOrDigit)
         {
             return null;
         }
 
-        if (IsLinkOnItsOwn(trimmed))
+        var isLink = trimmed.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+            || trimmed.StartsWith("https://", StringComparison.OrdinalIgnoreCase);
+        if (isLink && !hasWhiteSpace)
         {
             return null;
         }
@@ -67,45 +75,37 @@ public sealed class SearchWebAction : IClipboardAction
         return new Uri(SearchPrefix + Uri.EscapeDataString(trimmed), UriKind.Absolute);
     }
 
-    /// <summary>
-    /// Gives the title shown for this action.
-    /// </summary>
+    /// <summary>Gives the action's title.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The title.</returns>
+    /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionSearchWeb;
     }
 
-    /// <summary>
-    /// Gives the description shown for this action, naming the search engine.
-    /// </summary>
+    /// <summary>Gives the action's description, which names the search engine the text goes to.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The description.</returns>
+    /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return Localizer.Format(Strings.ActionSearchWebDescription, EngineName);
     }
 
-    /// <summary>
-    /// Tells whether the item is a text that can be searched on the web.
-    /// </summary>
+    /// <summary>Tells whether the item is a text that can be searched for.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>True when the item can be searched.</returns>
+    /// <returns>True when the item is text that gives a search link.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return item.Kind == ClipboardContentKind.Text && SearchUrl(item.Snapshot.Text) is not null;
     }
 
-    /// <summary>
-    /// Opens the web search for the item's text in the browser, without pasting anything.
-    /// </summary>
+    /// <summary>Opens the search for the item's text in the browser, and pastes nothing.</summary>
     /// <param name="item">The chosen item.</param>
     /// <param name="context">The context the action runs in.</param>
-    /// <param name="cancellationToken">Cancels the action.</param>
+    /// <param name="cancellationToken">The token that cancels the action.</param>
     /// <returns>A task that completes when the search has been opened.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
@@ -119,16 +119,5 @@ public sealed class SearchWebAction : IClipboardAction
         }
 
         return Task.CompletedTask;
-    }
-
-    private static bool IsLinkOnItsOwn(string text)
-    {
-        var rest = text.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
-            ? text["http://".Length..]
-            : text.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
-                ? text["https://".Length..]
-                : null;
-
-        return rest is not null && !rest.Any(char.IsWhiteSpace);
     }
 }

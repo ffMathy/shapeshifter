@@ -58,16 +58,16 @@
       "spec": "97a1d49b52e060cc2db98012a6bdd55e315b21501885dad322c1dbabeefc59c5"
     },
     "ConvertColor": {
-      "hash": "9f14beb4563dd80947d36ba2391e23de45f4567e6b988a81b62067f93aa75bfa",
+      "hash": "09cac53b3d046fc4426138a36078879fe6abd9394be09e3b9dff7f917373fd23",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/convert-color/ConvertColor.cs": "9ba84d51446796c18e4e9f69b309a7c72bdea1c5bb187ab3509b4be1ac53fe74"
+        "src/Shapeshifter.Core/Ail/actions/convert-color/ConvertColor.cs": "c533ff1c654ffca85f5adcaa0a10c7560cc556c47d6fee9572b7829b26cab961"
       },
       "by": "claude-code"
     },
     "ConvertTimestamp": {
-      "hash": "287a90972aaac17d1febca6f5dcb038476a12133b700cf69ae64f148f722b31d",
+      "hash": "e9c0afa56093b1b29d02e56479ff751a4b449f7129c2d4f1a3531d67741a2037",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/convert-timestamp/ConvertTimestamp.cs": "bc5b5001a41934aaaab6e1f7b5c0ead8b9fe55efcbb5b36dd439a07a32d7088c"
+        "src/Shapeshifter.Core/Ail/actions/convert-timestamp/ConvertTimestamp.cs": "f867f2b846e21a3a3a18fe8d48cba915f15185b5fde1b7f521b405698a0ebf3e"
       },
       "by": "claude-code"
     },
@@ -93,16 +93,16 @@
       "by": "claude-code"
     },
     "ExtractZip": {
-      "hash": "2a88377d78300f916638e476d04ea42fcfb91c95e2022e8a705c8a41a1555e7a",
+      "hash": "e759c82764c5d749ee54301aeaff54d88560a82caf3c08576c9f29a67c095e48",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/extract-zip/ExtractZip.cs": "d330c4ccd8289500c309c9ac9cb4624ce7032041b4e8cd50d47ac55c3f39fc51"
+        "src/Shapeshifter.Core/Ail/actions/extract-zip/ExtractZip.cs": "974850f110af949ff478dcb97cbe9ae8d4bf96fa40e0927e913eb4e7d2d8bdde"
       },
       "by": "claude-code"
     },
     "FilePath": {
-      "hash": "125cbc29d7b20ecf10f6665f4865ef1949a791a62dcbd8940d3209cb42f11077",
+      "hash": "76631fe6a9d4bc999645008bcb56884b25ea194cd7c773622179334b6b4db9a1",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/file-path/FilePath.cs": "cb623f0c4d24e18c404b5d03afd8a9e2d4f90652f847a34a39895f53f75bdd46"
+        "src/Shapeshifter.Core/Ail/actions/file-path/FilePath.cs": "9492bfb584cdd48ef82e35724c1af017acb889842babec055256d12b3a1f6b65"
       },
       "by": "claude-code"
     },
@@ -142,30 +142,30 @@
       "by": "claude-code"
     },
     "PasteFileAsImage": {
-      "hash": "8d60d2b5464bb01a4396390cd6fb3bf9c8ab5d326dfae8c8c6c8b90af0e2df33",
+      "hash": "7414f04588fe792679fd6977f55c95d2a49eedea4598e78f3b8645d666bdc81b",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-file-as-image/PasteFileAsImage.cs": "6cb496768f7c0dbab4789444c5dc16f7d905d41755ce49a4533a90671e508675"
+        "src/Shapeshifter.Core/Ail/actions/paste-file-as-image/PasteFileAsImage.cs": "c4e35d07410fe6214c24890fc32e922cb4edd0ff9950b137c0806e5429f730d9"
       },
       "by": "claude-code"
     },
     "PasteFileContents": {
-      "hash": "28a32f8a830136aa8cc35ff26317e666c64facdb0b69ade3984bc8d1f3e2b4d5",
+      "hash": "1c35f3dc0345114a54e797235b4170ac94e3d3510c234a8a72291fbea298e45c",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-file-contents/PasteFileContents.cs": "32811f9cd6c97fb696ca08522a66c7022ac2e823da5aedabbd7c77bfe1842d03"
+        "src/Shapeshifter.Core/Ail/actions/paste-file-contents/PasteFileContents.cs": "206309c501cd2520469328c4d8eab1f4efacc3e03ebf1fa9218f65c29067f76f"
       },
       "by": "claude-code"
     },
     "PastePaths": {
-      "hash": "0e89b98cb3ed6ad164d0fae0cf3cc281e44092c7f6f2899e37f8d2e4b7be0502",
+      "hash": "dfd6147ef18ccb54764e9a1ffd5fc8c608dfc6b1b44c4650f22260be395d4681",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-paths/PastePaths.cs": "906f3700bd61fbc661f58070962a69573b98c96aa4b83f66bf18cd1ddcaa935a"
+        "src/Shapeshifter.Core/Ail/actions/paste-paths/PastePaths.cs": "54a701fc2382f4c27d42a49ab8d4605a49feaa7e10e64e9253279be756083722"
       },
       "by": "claude-code"
     },
     "PasteResult": {
-      "hash": "4e2140c5aa1df3ded5fabfd722badda7e1b000db0f663e1b94e8ed48adc0bdf2",
+      "hash": "94d44a9c717421f4bed0ff59c85a61ef29294b4b1977a08c25fba3063a1dae43",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-result/PasteResult.cs": "0d0fd883564395a6c6d81091afe8e489cf70057a6902323ea462594fe9347a08"
+        "src/Shapeshifter.Core/Ail/actions/paste-result/PasteResult.cs": "f1bb261066fe2cabdc6a4f2dcff70c71590a03c933e8fdc477636950e2d7f0b6"
       },
       "by": "claude-code"
     },
@@ -268,9 +268,9 @@
       "spec": "c5f1541dfdc06885fb1de5a4ea3ade37fed6ff7b3ef80f0a68ff30d8907956e9"
     },
     "SearchWeb": {
-      "hash": "0f01791e1a68ffb98d76d7627dcdf7d6a2fda842def8c39e10f89ce293072036",
+      "hash": "c07629737e68ef826483ff4a1910a08b334d9af3b3b24b0f43946d9a9cd54d64",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/search-web/SearchWeb.cs": "825b34420b6f5e03a342115667c9fd57aee4cfd93a24f79c8855b571fa1ff26f"
+        "src/Shapeshifter.Core/Ail/actions/search-web/SearchWeb.cs": "7b306637500be9607009cb7a2e0ad9fd6a761fee58e2121a3cdabde24a4bfae9"
       },
       "by": "claude-code"
     },
@@ -289,9 +289,9 @@
       "spec": "f28b6cb8c6dc8589b3ee54ca5b5c4fd9383115095ea4a335a88d85fdf5b6f4b0"
     },
     "ShowInFileManager": {
-      "hash": "7ca0e2fc5bb557e1efe2935351e7d23058d43c438edc10d9ced0f28b9cbebb64",
+      "hash": "92f4f57c0a2e9684ec1670cf4941727a12240150a39b63aa3d9a99a0f32b1dc6",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/show-in-file-manager/ShowInFileManager.cs": "5ae4d87ecd299ea665d1088a1fda4e5c85dd8ba9c7aa5bfd42fecb86b628c4d7"
+        "src/Shapeshifter.Core/Ail/actions/show-in-file-manager/ShowInFileManager.cs": "66b223fdeae9474cbd4c466409e9479a802bcd1a080842c340d14d072272ddaa"
       },
       "by": "claude-code"
     },
@@ -338,9 +338,9 @@
       "by": "claude-code"
     },
     "WriteEmail": {
-      "hash": "cd922c2368d5b4047b3152edf66537dcd1ad1916f45617bb5d5d941aada98323",
+      "hash": "945b0009fde28a20d9845450d9173f2d8ef0a12243287c3e77e3bf2de4857b18",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/write-email/WriteEmail.cs": "cc92500785d9f63868afb66d5babc8e4b2a9df86443e7e2ba8bd57936b1f4876"
+        "src/Shapeshifter.Core/Ail/actions/write-email/WriteEmail.cs": "3c64c4946647994053ef071747cf7820afc1cc486d7c9fb37a2d77ca5c826d9a"
       },
       "by": "claude-code"
     }

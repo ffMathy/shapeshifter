@@ -10,19 +10,19 @@ namespace Shapeshifter.Core.Ail;
 public sealed class ShowInFileManagerAction : IClipboardAction
 {
     /// <summary>
-    /// The action's stable identifier.
+    /// The unique id of this action.
     /// </summary>
     public string Id => "show-in-file-manager";
 
     /// <summary>
-    /// The position of this action in the list of actions.
+    /// Where this action sorts among the actions.
     /// </summary>
     public int Order => 232;
 
     /// <summary>
     /// Gets the title shown for this action.
     /// </summary>
-    /// <param name="item">The item the action would apply to.</param>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
@@ -31,9 +31,9 @@ public sealed class ShowInFileManagerAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the description shown for this action, worded for one file or several.
+    /// Gets the description shown for this action, worded for one file or for several.
     /// </summary>
-    /// <param name="item">The item the action would apply to.</param>
+    /// <param name="item">The item the action is for.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
@@ -44,10 +44,10 @@ public sealed class ShowInFileManagerAction : IClipboardAction
     }
 
     /// <summary>
-    /// Tells whether the item holds files whose first path is a local, existing file or folder.
+    /// Tells whether the item holds files whose first path is local and still exists.
     /// </summary>
     /// <param name="item">The item to check.</param>
-    /// <returns><see langword="true"/> when the first file can be shown in the file manager.</returns>
+    /// <returns>True when the first file can be shown in the file manager.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -68,16 +68,16 @@ public sealed class ShowInFileManagerAction : IClipboardAction
             return false;
         }
 
-        return File.Exists(path) || Directory.Exists(path);
+        return System.IO.File.Exists(path) || System.IO.Directory.Exists(path);
     }
 
     /// <summary>
-    /// Reveals the item's first file in the system's file manager; nothing is pasted and the clipboard and history are unchanged.
+    /// Reveals the item's first file in the system's file manager; nothing is pasted.
     /// </summary>
-    /// <param name="item">The item whose first file to reveal.</param>
+    /// <param name="item">The item whose first file is shown.</param>
     /// <param name="context">The context giving access to the launcher.</param>
     /// <param name="cancellationToken">A token to cancel the action.</param>
-    /// <returns>A task that completes when the file has been revealed.</returns>
+    /// <returns>A task that completes when the file manager has been asked to open.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);

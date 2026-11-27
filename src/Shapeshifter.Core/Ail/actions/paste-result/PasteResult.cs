@@ -1,13 +1,13 @@
-using System.Globalization;
-using System.Text.RegularExpressions;
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that calculates a copied sum, such as 12*7+3, and pastes its result.
+/// An action that calculates a copied sum, such as "12*7+3", and pastes its result instead of the text.
 /// </summary>
 public sealed partial class PasteResultAction : IClipboardAction
 {
@@ -17,20 +17,20 @@ public sealed partial class PasteResultAction : IClipboardAction
     public const int MaxLength = 200;
 
     /// <summary>
-    /// The unique id of this action.
+    /// The action's unique id.
     /// </summary>
     public string Id => "paste-result";
 
     /// <summary>
-    /// The position of this action among the actions.
+    /// Where the action is placed among the actions.
     /// </summary>
     public int Order => 52;
 
     /// <summary>
-    /// Gets the title shown for this action.
+    /// Gets the title shown for the action.
     /// </summary>
-    /// <param name="item">The item the action is shown for.</param>
-    /// <returns>The localized title.</returns>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>The action's title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -38,14 +38,14 @@ public sealed partial class PasteResultAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the description shown for this action, with the result that will be pasted.
+    /// Gets the description shown for the action, which tells the result that will be pasted.
     /// </summary>
-    /// <param name="item">The item the action is shown for.</param>
-    /// <returns>The localized description.</returns>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>The action's description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
-        var result = Calculate(item.Snapshot.Text);
+        string? result = Calculate(item.Snapshot.Text);
         return result is null
             ? Strings.ActionPasteResultDescription
             : Localizer.Format(Strings.ActionPasteResultDescription, result);
@@ -54,8 +54,8 @@ public sealed partial class PasteResultAction : IClipboardAction
     /// <summary>
     /// Tells whether the item is a text that can be calculated.
     /// </summary>
-    /// <param name="item">The item to check.</param>
-    /// <returns>True when the item is a text with a result.</returns>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>True when the item is text with a result.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -63,29 +63,23 @@ public sealed partial class PasteResultAction : IClipboardAction
     }
 
     /// <summary>
-    /// Pastes the result of the item's calculation without adding it to the history.
+    /// Pastes the item's result without adding it to the history.
     /// </summary>
-    /// <param name="item">The item to calculate.</param>
-    /// <param name="context">The context the action runs in.</param>
+    /// <param name="item">The chosen item.</param>
+    /// <param name="context">The services the action may use.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the result is pasted.</returns>
-    public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
+    /// <returns>A task that completes once the result is pasted.</returns>
+    public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var result = Calculate(item.Snapshot.Text);
-        if (result is null)
-        {
-            return;
-        }
-
-        await context.WriteAndPasteAsync(new ClipboardSnapshot { Text = result }, cancellationToken).ConfigureAwait(false);
+        return context.WriteAndPasteAsync(new ClipboardSnapshot { Text = Calculate(item.Snapshot.Text) }, cancellationToken);
     }
 
     /// <summary>
-    /// Calculates a text made of numbers, operators and parentheses.
+    /// Calculates a text that holds only numbers, + - * / % ^ × ÷ and parentheses.
     /// </summary>
-    /// <param name="text">The text to calculate.</param>
+    /// <param name="text">The text to calculate, or null.</param>
     /// <returns>The result written with the invariant culture, or null when the text is not a calculation.</returns>
     public static string? Calculate(string? text)
     {
@@ -94,42 +88,31 @@ public sealed partial class PasteResultAction : IClipboardAction
             return null;
         }
 
-        var trimmed = text.Trim();
-        if (trimmed.Length == 0 || trimmed.Length > MaxLength)
+        string trimmed = text.Trim();
+        if (trimmed.Length > MaxLength)
         {
             return null;
         }
 
-        var hasBinaryOperator = false;
-        var last = '\0';
-        foreach (var c in trimmed)
+        foreach (char c in trimmed)
         {
-            if (c == ' ')
-            {
-                continue;
-            }
-
-            if (IsOperator(c))
-            {
-                if (char.IsAsciiDigit(last) || last == '.' || last == ')')
-                {
-                    hasBinaryOperator = true;
-                }
-            }
-            else if (!char.IsAsciiDigit(c) && c != '.' && c != '(' && c != ')')
+            if (!char.IsAsciiDigit(c) && c != ' ' && c != '.' && c != '(' && c != ')' && !IsOperator(c))
             {
                 return null;
             }
-
-            last = c;
         }
 
-        if (!hasBinaryOperator || JoinedDigitGroups().IsMatch(trimmed))
+        if (!HoldsBinaryOperator(trimmed))
         {
             return null;
         }
 
-        var expression = trimmed
+        if (JoinedDigitGroups().IsMatch(trimmed))
+        {
+            return null;
+        }
+
+        string expression = trimmed
             .Replace('×', '*')
             .Replace('÷', '/')
             .Replace("^", "**", StringComparison.Ordinal);
@@ -149,39 +132,42 @@ public sealed partial class PasteResultAction : IClipboardAction
             return null;
         }
 
-        string? result;
-        switch (value)
+        string? result = value switch
         {
-            case int i:
-                result = i.ToString(CultureInfo.InvariantCulture);
-                break;
-            case long l:
-                result = l.ToString(CultureInfo.InvariantCulture);
-                break;
-            case double d:
-                if (!double.IsFinite(d))
-                {
-                    return null;
-                }
+            int number => number.ToString(CultureInfo.InvariantCulture),
+            long number => number.ToString(CultureInfo.InvariantCulture),
+            double number when double.IsFinite(number) =>
+                Math.Round(number, 10, MidpointRounding.AwayFromZero).ToString("0.##########", CultureInfo.InvariantCulture),
+            _ => null,
+        };
 
-                var rounded = Math.Round(d, 10, MidpointRounding.AwayFromZero);
-                if (rounded == 0)
-                {
-                    rounded = 0;
-                }
-
-                result = rounded.ToString("F10", CultureInfo.InvariantCulture).TrimEnd('0').TrimEnd('.');
-                break;
-            default:
-                return null;
-        }
-
-        return string.Equals(result, trimmed, StringComparison.Ordinal) ? null : result;
+        return result is null || string.Equals(result, trimmed, StringComparison.Ordinal) ? null : result;
     }
 
     private static bool IsOperator(char c) =>
         c is '+' or '-' or '*' or '/' or '%' or '^' or '×' or '÷';
 
-    [GeneratedRegex(@"^\d+([-/.])\d+(?:\1\d+)*$", RegexOptions.CultureInvariant)]
+    private static bool HoldsBinaryOperator(string text)
+    {
+        char previous = '\0';
+        foreach (char c in text)
+        {
+            if (c == ' ')
+            {
+                continue;
+            }
+
+            if (IsOperator(c) && (char.IsAsciiDigit(previous) || previous == '.' || previous == ')'))
+            {
+                return true;
+            }
+
+            previous = c;
+        }
+
+        return false;
+    }
+
+    [GeneratedRegex(@"^[0-9]+([-/.])[0-9]+(?:\1[0-9]+)*$", RegexOptions.CultureInvariant)]
     private static partial Regex JoinedDigitGroups();
 }
