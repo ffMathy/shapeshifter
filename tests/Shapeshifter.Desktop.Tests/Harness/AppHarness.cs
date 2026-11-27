@@ -190,24 +190,13 @@ public sealed class AppHarness : IAsyncDisposable
     public SettingsWindow? SettingsWindow => settingsWindow;
 
     /// <summary>Starts the app as <paramref name="options"/> say and runs <paramref name="test"/> against it, on the UI thread.</summary>
-    public static async Task RunAsync(Func<AppHarness, Task> test, AppOptions? options = null)
+    public static Task RunAsync(Func<AppHarness, Task> test, AppOptions? options = null)
     {
         ArgumentNullException.ThrowIfNull(test);
 
-        // The look, the theme and the display language belong to the one headless application: test classes run in
-        // parallel, so one app at a time, or a check would see another's look or language half-way through.
-        await OneAtATime.WaitAsync().ConfigureAwait(false);
-        try
-        {
-            await RunAloneAsync(test, options).ConfigureAwait(false);
-        }
-        finally
-        {
-            OneAtATime.Release();
-        }
+        // TestApp runs one test at a time: the look, the theme and the display language belong to the one application.
+        return RunAloneAsync(test, options);
     }
-
-    private static readonly SemaphoreSlim OneAtATime = new(1, 1);
 
     private static Task RunAloneAsync(Func<AppHarness, Task> test, AppOptions? options) =>
         TestApp.RunAsync(async () =>

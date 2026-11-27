@@ -1,3 +1,4 @@
+using System.Globalization;
 using Avalonia;
 using Avalonia.Headless;
 using Avalonia.Threading;
@@ -13,16 +14,37 @@ internal static class TestApp
 {
     private static readonly Task<Dispatcher> Started = Start();
 
-    public static async Task RunAsync(Action test)
+    /// <summary>
+    /// One test at a time: the look, the theme and the display language belong to the one application, and test classes
+    /// run in parallel, so a test would otherwise see another's look or language half-way through.
+    /// </summary>
+    private static readonly SemaphoreSlim OneAtATime = new(1, 1);
+
+    public static Task RunAsync(Action test) => RunAsync(() =>
     {
-        var dispatcher = await Started.ConfigureAwait(false);
-        await dispatcher.InvokeAsync(test);
-    }
+        test();
+        return Task.CompletedTask;
+    });
 
     public static async Task RunAsync(Func<Task> test)
     {
         var dispatcher = await Started.ConfigureAwait(false);
-        await dispatcher.InvokeAsync(test);
+        await OneAtATime.WaitAsync().ConfigureAwait(false);
+        var culture = CultureInfo.CurrentUICulture;
+        try
+        {
+            await dispatcher.InvokeAsync(test);
+        }
+        finally
+        {
+            // Back to the language the run started in, whatever the test chose.
+            await dispatcher.InvokeAsync(() =>
+            {
+                CultureInfo.CurrentUICulture = culture;
+                CultureInfo.DefaultThreadCurrentUICulture = null;
+            });
+            OneAtATime.Release();
+        }
     }
 
     private static Task<Dispatcher> Start()
