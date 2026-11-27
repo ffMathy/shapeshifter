@@ -217,44 +217,52 @@ public sealed class PreviewCardTests
     });
 
     [Fact(DisplayName = "one file, on Linux")]
-    public Task OneFileOnLinux() => AppHarness.RunAsync(async app =>
+    public Task OneFileOnLinux()
     {
-        Directory.CreateDirectory("/tmp/files");
-        await File.WriteAllTextAsync("/tmp/files/notes.txt", "notes");
-        await app.CopyFilesAsync(["/tmp/files/notes.txt"]);
+        Assert.SkipUnless(OperatingSystem.IsLinux(), "This scenario applies on Linux only.");
+        return AppHarness.RunAsync(async app =>
+        {
+            Directory.CreateDirectory("/tmp/files");
+            await File.WriteAllTextAsync("/tmp/files/notes.txt", "notes");
+            await app.CopyFilesAsync(["/tmp/files/notes.txt"]);
 
-        await app.HoldCtrlVAsync();
+            await app.HoldCtrlVAsync();
 
-        Assert.True(app.PickerVisible);
-        await AppHarness.WaitUntilAsync(
-            () => AppHarness.Texts(app.Picker).Contains("/tmp/files"), "the strip's folder");
-        var texts = AppHarness.Texts(app.Picker);
-        Assert.Contains("notes.txt", texts);
-        Assert.Contains("/tmp/files", texts);
+            Assert.True(app.PickerVisible);
+            await AppHarness.WaitUntilAsync(
+                () => AppHarness.Texts(app.Picker).Contains("/tmp/files"), "the strip's folder");
+            var texts = AppHarness.Texts(app.Picker);
+            Assert.Contains("notes.txt", texts);
+            Assert.Contains("/tmp/files", texts);
 
-        AppHarness.SaveScreen(app.Picker, "one-file-on-linux.png");
-    }, new AppOptions { Look = Look.Linux });
+            AppHarness.SaveScreen(app.Picker, "one-file-on-linux.png");
+        }, new AppOptions { Look = Look.Linux });
+    }
 
     [Fact(DisplayName = "the path of an image, on Linux")]
-    public Task ThePathOfAnImageOnLinux() => AppHarness.RunAsync(async app =>
+    public Task ThePathOfAnImageOnLinux()
     {
-        Directory.CreateDirectory("/tmp/pictures");
-        WritePng("/tmp/pictures/sunset.png");
-        await app.CopyAsync("/tmp/pictures/sunset.png", null);
+        Assert.SkipUnless(OperatingSystem.IsLinux(), "This scenario applies on Linux only.");
+        return AppHarness.RunAsync(async app =>
+        {
+            Directory.CreateDirectory("/tmp/pictures");
+            WritePng("/tmp/pictures/sunset.png");
+            await app.CopyAsync("/tmp/pictures/sunset.png", null);
 
-        await app.HoldCtrlVAsync();
+            await app.HoldCtrlVAsync();
 
-        Assert.True(app.PickerVisible);
-        Assert.True(app.HistoryRows[0].IsSelected);
-        await AppHarness.WaitUntilAsync(() => ShowsLargeImage(app.Picker), "the card's picture");
-        await AppHarness.WaitUntilAsync(
-            () => AppHarness.Texts(app.Picker).Contains("/tmp/pictures"), "the strip's folder");
-        var texts = AppHarness.Texts(app.Picker);
-        Assert.Contains("/tmp/pictures/sunset.png", texts);
-        Assert.Contains("/tmp/pictures", texts);
+            Assert.True(app.PickerVisible);
+            Assert.True(app.HistoryRows[0].IsSelected);
+            await AppHarness.WaitUntilAsync(() => ShowsLargeImage(app.Picker), "the card's picture");
+            await AppHarness.WaitUntilAsync(
+                () => AppHarness.Texts(app.Picker).Contains("/tmp/pictures"), "the strip's folder");
+            var texts = AppHarness.Texts(app.Picker);
+            Assert.Contains("/tmp/pictures/sunset.png", texts);
+            Assert.Contains("/tmp/pictures", texts);
 
-        AppHarness.SaveScreen(app.Picker, "the-path-of-an-image-on-linux.png");
-    }, new AppOptions { Look = Look.Linux });
+            AppHarness.SaveScreen(app.Picker, "the-path-of-an-image-on-linux.png");
+        }, new AppOptions { Look = Look.Linux });
+    }
 
     [Fact(DisplayName = "a search that finds nothing")]
     public Task ASearchThatFindsNothing() => AppHarness.RunAsync(async app =>
