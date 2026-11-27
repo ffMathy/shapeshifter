@@ -974,6 +974,36 @@
     <Setter Property="MaxLines" Value="4" />
   </Style>
 
+  <!-- ============================================================== Donation notice: a Windows notification with buttons -->
+
+  <!-- The donation notice (DonationWindow): the tip's card with the three buttons of a Windows notification under it. -->
+  <Style Selector="Border.toastChrome.donation TextBlock.toastPreview">
+    <Setter Property="MaxLines" Value="5" />
+  </Style>
+  <Style Selector="UniformGrid.donationButtons">
+    <Setter Property="Margin" Value="0,12,0,0" />
+    <Setter Property="ColumnSpacing" Value="4" />
+  </Style>
+  <Style Selector="Button.donationButton">
+    <Setter Property="MinHeight" Value="32" />
+    <Setter Property="Padding" Value="8,0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="FontSize" Value="13" />
+  </Style>
+  <Style Selector="Button.donationButton.primary">
+    <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource MicaTextOnAccentBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+  <Style Selector="Button.donationButton.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource MicaTextOnAccentBrush}" />
+    <Setter Property="Opacity" Value="0.9" />
+  </Style>
+
   <!-- ============================================================================================================
        On the system's material (NativeMaterial, Windows 11): the window is the flyout, with Mica behind it (Acrylic
        where Mica cannot be had) and DWM's rounded corners (8, as the flyout) and shadow, so the flyout loses its margin

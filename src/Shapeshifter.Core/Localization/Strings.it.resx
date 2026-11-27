@@ -554,4 +554,19 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch�
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Apre {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Sostieni Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter è gratuito e donare è facoltativo. Una donazione mensile sostiene il progetto, lo mantiene attivo e rimuove questo messaggio all'avvio di Shapeshifter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Dona ogni mese</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Dono già</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Non ora</value>
+  </data>
 </root>

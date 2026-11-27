@@ -554,4 +554,19 @@
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>{0} 열기</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Shapeshifter 후원하기</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter는 무료이며 후원은 선택 사항입니다. 매월 후원하면 프로젝트를 지원하고 계속 운영할 수 있으며, Shapeshifter를 시작할 때 이 메시지가 더 이상 나타나지 않습니다.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>매월 후원하기</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>이미 후원하고 있어요</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>나중에</value>
+  </data>
 </root>

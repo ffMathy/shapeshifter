@@ -44,6 +44,14 @@ fi
 # Links and folders the app opens are written to .ail/browser/<display>.txt instead of opening a browser.
 export PATH="$PWD/checks/e2e/app/bin:$PATH"
 
+# Sponsorkit's donation notice stays out of every check but its own: that one passes SPONSORKIT_DISABLE= (empty) and a
+# SPONSORKIT_MOCK preset, so it never reaches the network either.
+if [[ -z "${SPONSORKIT_DISABLE+set}" ]]; then
+  export SPONSORKIT_DISABLE=1
+elif [[ -z "$SPONSORKIT_DISABLE" ]]; then
+  unset SPONSORKIT_DISABLE
+fi
+
 SHAPESHIFTER_HOME="$(cd "$state" && pwd)/home" SHAPESHIFTER_NO_UPDATE=1 SHAPESHIFTER_NO_INSTALL=1 SHAPESHIFTER_LOOK=linux \
   dotnet src/Shapeshifter.Desktop/bin/Release/net11.0/Shapeshifter.dll --no-install >"$state/shapeshifter.log" 2>&1 &
 pids+=($!)

@@ -554,4 +554,19 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>{0} adresini açar</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Shapeshifter'ı destekleyin</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter ücretsizdir ve bağış yapmak isteğe bağlıdır. Aylık bağış projeyi destekler, sürmesini sağlar ve Shapeshifter başladığında bu mesajı kaldırır.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Aylık bağış yap</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Zaten bağış yapıyorum</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Şimdi değil</value>
+  </data>
 </root>

@@ -554,4 +554,19 @@
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>{0} खोलता है</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Shapeshifter का समर्थन करें</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter मुफ़्त है, और दान करना वैकल्पिक है। मासिक दान परियोजना का समर्थन करता है, उसे चालू रखता है, और Shapeshifter शुरू होने पर यह संदेश हटा देता है।</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>हर महीने दान करें</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>मैं पहले से दान करता हूँ</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>अभी नहीं</value>
+  </data>
 </root>

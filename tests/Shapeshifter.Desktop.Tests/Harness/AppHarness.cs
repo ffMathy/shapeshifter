@@ -48,6 +48,12 @@ public sealed record AppOptions
 
     /// <summary>A desktop without a compositor (a bare X server): no window can be see-through, so the looks draw opaque.</summary>
     public bool NoCompositor { get; init; }
+
+    /// <summary>
+    /// The Sponsorkit mock preset the donation notice sees: "none" (signed in, no donations; the default), "signed-out",
+    /// "active-monthly", "one-time" or "cancelled". Nothing reaches the network.
+    /// </summary>
+    public string Sponsorkit { get; init; } = "none";
 }
 
 /// <summary>
@@ -73,6 +79,7 @@ public sealed class AppHarness : IAsyncDisposable
     private readonly PickerPresenter picker;
     private readonly CopyNotifier notifier;
     private readonly ClipboardMonitor monitor;
+    private readonly DonationNotifier donations;
     private SettingsWindow? settingsWindow;
 
     private AppHarness(AppOptions options)
@@ -106,6 +113,7 @@ public sealed class AppHarness : IAsyncDisposable
             NoCompositor = options.NoCompositor,
         };
         notifier = new CopyNotifier(Settings);
+        donations = new DonationNotifier(() => DonationNotifier.CreateClient(options.Sponsorkit), options.StoreCopy, Logger.None);
         var coach = new CopyCoach(sourceLocator, () => options.Modifier, () => Settings.Current.CoachingTips, Time);
         Engine = new ShapeshifterEngine(History, monitor, hook, ActionCatalog.CreateDefault(), context, picker, notifier, Logger.None, Time, coach)
         {
@@ -190,6 +198,34 @@ public sealed class AppHarness : IAsyncDisposable
 
     /// <summary>The copy notification's window (one was shown at least once).</summary>
     public ToastWindow Notification => notifier.Window ?? throw new InvalidOperationException("No notification was ever shown.");
+
+    /// <summary>
+    /// Runs the check the app makes at start for the donation notice, at once rather than a few seconds after start,
+    /// with <see cref="AppOptions.Sponsorkit"/>'s mock; returns whether the notice showed.
+    /// </summary>
+    public async Task<bool> ShowDonationNoticeAsync()
+    {
+        var shown = await donations.RunAsync(TimeSpan.Zero).ConfigureAwait(true);
+        await Settle().ConfigureAwait(true);
+        return shown;
+    }
+
+    /// <summary>The donation notice's window, or null when it never showed.</summary>
+    public DonationWindow? DonationNotice => donations.Window;
+
+    /// <summary>Whether the donation notice is on screen.</summary>
+    public bool DonationNoticeVisible => donations.IsVisible;
+
+    /// <summary>Clicks <paramref name="button"/> as the user does, and lets the app finish what the click started.</summary>
+    public static async Task ClickAsync(Button button)
+    {
+        ArgumentNullException.ThrowIfNull(button);
+        button.RaiseEvent(new Avalonia.Interactivity.RoutedEventArgs(Button.ClickEvent));
+        for (var i = 0; i < 5; i++)
+        {
+            await Settle().ConfigureAwait(true);
+        }
+    }
 
     /// <summary>The settings window, once <see cref="OpenSettings"/> opened it.</summary>
     public SettingsWindow? SettingsWindow => settingsWindow;
@@ -433,6 +469,7 @@ public sealed class AppHarness : IAsyncDisposable
         await Engine.DisposeAsync().ConfigureAwait(true);
         await picker.HideAsync().ConfigureAwait(true);
         notifier.Window?.Hide();
+        donations.Close();
         settingsWindow?.Close();
         monitor.Dispose();
         http.Dispose();

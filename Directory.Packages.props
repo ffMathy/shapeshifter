@@ -24,6 +24,8 @@
     <PackageVersion Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageVersion Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageVersion Include="SharpHook" Version="8.0.3" />
+    <!-- Asks for an optional monthly donation (GitHub Sponsors, Open Collective) -->
+    <PackageVersion Include="Sponsorkit" Version="0.1.0" />
     <!-- Tests -->
     <PackageVersion Include="Microsoft.Extensions.TimeProvider.Testing" Version="11.0.0" />
     <PackageVersion Include="NSubstitute" Version="6.2.0" />

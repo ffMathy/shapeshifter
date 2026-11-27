@@ -554,4 +554,19 @@
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Mở {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Ủng hộ Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter miễn phí và việc quyên góp là tùy chọn. Quyên góp hằng tháng giúp ủng hộ dự án, duy trì hoạt động của nó và ẩn thông báo này khi Shapeshifter khởi động.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Quyên góp hằng tháng</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Tôi đã quyên góp</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Để sau</value>
+  </data>
 </root>

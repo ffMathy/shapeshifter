@@ -554,4 +554,19 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Ouvre {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Soutenir Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter est gratuit, et faire un don est facultatif. Un don mensuel soutient le projet, le fait vivre et supprime ce message au démarrage de Shapeshifter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Faire un don mensuel</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Je donne déjà</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Pas maintenant</value>
+  </data>
 </root>

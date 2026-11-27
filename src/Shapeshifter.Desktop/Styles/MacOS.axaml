@@ -1034,4 +1034,45 @@
   <Style Selector="Border.chrome.empty Border.countPill">
     <Setter Property="IsVisible" Value="False" />
   </Style>
+  <!-- ============================================================================================================
+       Donation notice: the banner, with its buttons under the message
+       ============================================================================================================ -->
+  <Style Selector="Border.toastChrome.donation TextBlock.toastPreview">
+    <Setter Property="MaxLines" Value="6" />
+  </Style>
+  <Style Selector="Border.toastChrome.donation Image.toastIcon">
+    <Setter Property="Grid.RowSpan" Value="3" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+  </Style>
+  <Style Selector="UniformGrid.donationButtons">
+    <Setter Property="Margin" Value="0,10,0,0" />
+    <Setter Property="ColumnSpacing" Value="6" />
+    <Setter Property="HorizontalAlignment" Value="Right" />
+  </Style>
+  <Style Selector="Button.donationButton">
+    <Setter Property="MinHeight" Value="26" />
+    <Setter Property="Padding" Value="10,0" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="CornerRadius" Value="13" />
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="FontWeight" Value="Medium" />
+    <Setter Property="Foreground" Value="#1D1D1F" />
+    <Setter Property="Background" Value="#0F000000" />
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+  <Style Selector="Button.donationButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="#1A000000" />
+    <Setter Property="Foreground" Value="#1D1D1F" />
+  </Style>
+  <Style Selector="Button.donationButton.primary">
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <Setter Property="Background" Value="{DynamicResource AccentTextBrush}" />
+  </Style>
+  <Style Selector="Button.donationButton.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource AccentTextBrush}" />
+    <Setter Property="Foreground" Value="#FFFFFF" />
+    <Setter Property="Opacity" Value="0.9" />
+  </Style>
 </Styles>

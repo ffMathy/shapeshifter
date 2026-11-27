@@ -554,4 +554,19 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Abre {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Apoie o Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>O Shapeshifter é gratuito, e doar é opcional. Uma doação mensal apoia o projeto, mantém ele funcionando e remove esta mensagem quando o Shapeshifter inicia.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Doar mensalmente</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Já faço doações</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Agora não</value>
+  </data>
 </root>

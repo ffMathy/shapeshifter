@@ -734,4 +734,24 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Opens {0}</value>
     <comment>Action description for 'Open link from QR code'; {0} is the link the QR code holds (shortened with … when long). No period at the end, since {0} is a link.</comment>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Support Shapeshifter</value>
+    <comment>Title of the donation notice shown when Shapeshifter starts. Shapeshifter is the product name: do not translate it.</comment>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter is free, and donating is optional. A monthly donation supports the project, keeps it running, and removes this message when Shapeshifter starts.</value>
+    <comment>Message of the donation notice. It must say that donating is optional, that a monthly donation supports the project and keeps it running, and that it removes this message at start.</comment>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Donate monthly</value>
+    <comment>Button of the donation notice: opens the checkout for a monthly donation.</comment>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>I already donate</value>
+    <comment>Button of the donation notice: signs in to find an existing monthly donation.</comment>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Not now</value>
+    <comment>Button of the donation notice: closes it until the next start.</comment>
+  </data>
 </root>

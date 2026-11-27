@@ -14,7 +14,7 @@ capture/                                                     Capture: what joins
 picker/                                                      Picker: the window, rows, preview, footer, looks, languages
 actions/                                                     Actions: paste variants, delete, pin, remember the history
 search/                                                      SearchHistory: S to search the history
-app/                                                         App: tray, settings, single instance, install, updates
+app/                                                         App: tray, settings, single instance, install, updates, donations
 foundation/                                                  Foundation: hand-written code that generated code builds on
 ```
 
@@ -71,6 +71,13 @@ target
                Search (S), Digit1 to Digit9. What there is to see: app.Picker (the picker's window), app.PickerVisible,
                app.Notification (the copy notification's window), app.SettingsWindow; AppHarness.Texts(window) lists
                every text it shows, in reading order; AppHarness.Find<T>(window) its visible controls of a type.
+               The donation notice: AppOptions.Sponsorkit is the Sponsorkit mock preset the app sees ("none", the
+               default: signed in without donations; "signed-out"; "active-monthly"; "one-time"; "cancelled"), and
+               StoreCopy makes it a store copy; await app.ShowDonationNoticeAsync() runs the check the app makes at
+               start, at once, and returns whether the notice showed; app.DonationNotice is its window (null when it
+               never showed), app.DonationNoticeVisible whether it is up; await app.ClickAsync(button) clicks a button
+               (AppHarness.Find<Button>(window), each with the text it shows as its Content) and lets the app finish
+               what the click started.
                app.HistoryRows and app.ActionRows are the rows of the history and of the actions that the list has made
                (each a ListBoxItem, top first; IsSelected on the chosen one; a long list only makes the rows near what
                shows, so count the history's items with app.History.Items), app.ChosenRow the chosen history row, AppHarness.IsFullyShown(control)
@@ -161,6 +168,7 @@ node Shapeshifter : system   level: product
     13. Typing a few words finds anything copied earlier, and Enter pastes it into the app the user came from.   refined-by: SearchHistory
     14. Shapeshifter waits in the system tray; every setting takes effect at once.   refined-by: TrayMenu, ChangeSettings
     15. It installs itself for the user without administrator rights, starts at login and keeps itself up to date.   refined-by: SelfInstall, AutoUpdate
+    16. A free copy asks at each start for an optional monthly donation, which removes the ask; a copy bought from an app store never asks.   refined-by: DonationNotice
   entry     PasteGesture
   children  PasteGesture, Capture, Picker, Actions, SearchHistory, App, Foundation
   sources

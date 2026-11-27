@@ -554,4 +554,19 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Otwiera {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Wesprzyj Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter jest darmowy, a darowizna jest dobrowolna. Comiesięczna darowizna wspiera projekt, pozwala go rozwijać i usuwa ten komunikat przy uruchamianiu Shapeshifter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Wpłacaj co miesiąc</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Już wpłacam</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Nie teraz</value>
+  </data>
 </root>

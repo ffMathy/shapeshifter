@@ -554,4 +554,19 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Membuka {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Dukung Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter gratis, dan berdonasi bersifat opsional. Donasi bulanan mendukung proyek ini, membuatnya tetap berjalan, dan menghilangkan pesan ini saat Shapeshifter dimulai.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Donasi bulanan</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Saya sudah berdonasi</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Nanti saja</value>
+  </data>
 </root>

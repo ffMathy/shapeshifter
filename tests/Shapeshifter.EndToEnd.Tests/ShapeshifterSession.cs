@@ -59,6 +59,8 @@ public sealed class ShapeshifterSession : IAsyncLifetime
         var environment = new Dictionary<string, string>
         {
             ["SHAPESHIFTER_HOME"] = home,
+            // No donation notice over the windows these tests drive, and no request to Sponsorkit.
+            ["SPONSORKIT_DISABLE"] = "1",
             ["SHAPESHIFTER_STATE_FILE"] = StateFile,
         };
 

@@ -1,0 +1,13 @@
+{
+  "node": "DonationCard",
+  "shots": [
+    {
+      "test": "the notice on Linux",
+      "file": "01-the-notice-on-linux.png"
+    },
+    {
+      "test": "the notice in German",
+      "file": "04-the-notice-in-german.png"
+    }
+  ]
+}

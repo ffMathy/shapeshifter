@@ -46,6 +46,8 @@ public partial class App : Application
     private HttpClient? updateHttp;
     private Updater? updater;
     private DispatcherTimer? restartTimer;
+    private DonationNotifier? donations;
+    private readonly CancellationTokenSource stopping = new();
 
     /// <summary>Set by <see cref="Program"/> before Avalonia starts.</summary>
     internal static AppPaths Paths { get; set; } = AppPaths.CreateDefault();
@@ -169,6 +171,10 @@ public partial class App : Application
             {
                 ShowSettings();
             }
+
+            // The donation notice, a few seconds after start; never in a copy from an app store.
+            donations = new DonationNotifier(() => DonationNotifier.CreateClient(), StoreInstall.IsActive, logger);
+            _ = donations.RunAsync(DonationNotifier.StartDelay, stopping.Token);
         }
         catch (Exception exception)
         {
@@ -455,6 +461,8 @@ public partial class App : Application
         logger.Information("Shutting down");
         try
         {
+            stopping.Cancel();
+            donations?.Close();
             engine?.DisposeAsync().AsTask().Wait(TimeSpan.FromSeconds(3));
             savedHistory?.Stop();
             savedHistory?.FlushAsync().Wait(TimeSpan.FromSeconds(3));
@@ -464,6 +472,7 @@ public partial class App : Application
             http?.Dispose();
             updater?.Dispose();
             updateHttp?.Dispose();
+            stopping.Dispose();
         }
         catch (Exception exception)
         {

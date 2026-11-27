@@ -554,4 +554,19 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Öffnet {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Shapeshifter unterstützen</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter ist kostenlos, und Spenden ist freiwillig. Eine monatliche Spende unterstützt das Projekt, hält es am Laufen und entfernt diese Meldung beim Start von Shapeshifter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Monatlich spenden</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Ich spende bereits</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Nicht jetzt</value>
+  </data>
 </root>

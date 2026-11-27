@@ -554,4 +554,19 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Åbner {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Støt Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter er gratis, og det er frivilligt at donere. En månedlig donation støtter projektet, holder det kørende og fjerner denne besked, når Shapeshifter starter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Donér månedligt</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Jeg donerer allerede</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Ikke nu</value>
+  </data>
 </root>

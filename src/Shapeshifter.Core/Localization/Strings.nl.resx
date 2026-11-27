@@ -554,4 +554,19 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Opent {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Steun Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter is gratis en doneren is vrijwillig. Een maandelijkse donatie steunt het project, houdt het draaiende en haalt dit bericht weg wanneer Shapeshifter start.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Maandelijks doneren</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Ik doneer al</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Niet nu</value>
+  </data>
 </root>

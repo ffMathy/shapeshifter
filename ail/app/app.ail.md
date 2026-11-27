@@ -2,7 +2,7 @@
 
 Everything that is not the paste gesture itself: the tray icon and its menu,
 the settings window, starting once per user, installing and updating itself,
-what each platform needs, and where the data lives.
+what each platform needs, where the data lives, and the donation notice.
 
 ```
 app.ail.md                                                   App (this file)
@@ -18,6 +18,7 @@ self-install/start-at-login/start-at-login.ail.md            StartAtLogin: the a
 auto-update/auto-update.ail.md                               AutoUpdate: new releases from GitHub
 platform-requirements/platform-requirements.ail.md           PlatformRequirements: Accessibility, X11 and Wayland
 data-locations/data-locations.ail.md                         DataLocations: where settings, items and logs live
+donation-notice/donation-notice.ail.md                       DonationNotice: the optional monthly donation, asked at start
 ```
 
 ```ail
@@ -38,6 +39,8 @@ node App : flow   level: experience
       opens by itself and says so.                                                  refined-by: PlatformRequirements
     Settings, pinned items, the saved history and logs stay on the user's computer, in each platform's usual
       places.                                                                        refined-by: DataLocations
+    A copy that was not bought from an app store asks at each start for an optional monthly donation; a monthly
+      donor is never asked.                                                          refined-by: DonationNotice
   how
     decide the tray icon is the app's only door: no Dock icon on a Mac, no taskbar button
       because "unknown, confirm with the owner: why no window or Dock icon at all"
@@ -47,7 +50,7 @@ node App : flow   level: experience
     error.title     "Shapeshifter could not start"
     error.details   "Details were written to {log folder}."
     error.quit      "Quit"
-  children  TrayMenu, SettingsWindow, SingleInstance, SelfInstall, AutoUpdate, PlatformRequirements, DataLocations
+  children  TrayMenu, SettingsWindow, SingleInstance, SelfInstall, AutoUpdate, PlatformRequirements, DataLocations, DonationNotice
   sources
     README.md, "Good to know" and the two details sections
     issues #48 "Tray icon", #283 "Auto update tweaks", #586 "Be proud: add an About"

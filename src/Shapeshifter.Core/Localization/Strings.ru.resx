@@ -554,4 +554,19 @@
   <data name="ActionOpenQrLinkDescription" xml:space="preserve">
     <value>Открывает {0}</value>
   </data>
+  <data name="DonationTitle" xml:space="preserve">
+    <value>Поддержите Shapeshifter</value>
+  </data>
+  <data name="DonationMessage" xml:space="preserve">
+    <value>Shapeshifter бесплатен, а пожертвование — по желанию. Ежемесячное пожертвование поддерживает проект, помогает ему жить и убирает это сообщение при запуске Shapeshifter.</value>
+  </data>
+  <data name="DonationDonateMonthly" xml:space="preserve">
+    <value>Жертвовать ежемесячно</value>
+  </data>
+  <data name="DonationAlreadyDonate" xml:space="preserve">
+    <value>Я уже жертвую</value>
+  </data>
+  <data name="DonationNotNow" xml:space="preserve">
+    <value>Не сейчас</value>
+  </data>
 </root>

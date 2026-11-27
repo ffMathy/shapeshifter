@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:services="using:Shapeshifter.Desktop.Services"
+        x:Class="Shapeshifter.Desktop.Views.DonationWindow"
+        Classes="toast donation"
+        Title="Support Shapeshifter"
+        WindowDecorations="None"
+        ShowActivated="False"
+        ShowInTaskbar="False"
+        Topmost="True"
+        CanResize="False"
+        SizeToContent="WidthAndHeight"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+  <!--
+    The donation notice (ail/app/donation-notice): the copy notification's card in its tip form, a title over a
+    sentence, with three buttons under it. Unlike the copy notification it stays until a button closes it.
+    Styles/<Look>.axaml styles it with the toast styles and the "donation" ones.
+  -->
+  <Border x:Name="Chrome" Classes="toastChrome tip donation">
+    <Grid Classes="toastBody" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+      <Image Grid.Row="0" Grid.Column="0" Classes="toastIcon" Source="{x:Static services:PlatformLook.ApplicationIcon}" />
+      <TextBlock Grid.Row="0" Grid.Column="1" Classes="toastApp" Text="Shapeshifter" />
+      <TextBlock x:Name="TitleText" Grid.Row="1" Grid.Column="1" Classes="toastTitle" HorizontalAlignment="Left" />
+      <TextBlock x:Name="MessageText" Grid.Row="2" Grid.Column="1" Classes="toastPreview donationMessage" HorizontalAlignment="Left" />
+      <UniformGrid x:Name="Buttons" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Classes="donationButtons" Rows="1">
+        <Button x:Name="DonateButton" Classes="donationButton primary" />
+        <Button x:Name="AlreadyButton" Classes="donationButton" />
+        <Button x:Name="LaterButton" Classes="donationButton" />
+      </UniformGrid>
+    </Grid>
+  </Border>
+</Window>

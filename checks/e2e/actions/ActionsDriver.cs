@@ -279,6 +279,7 @@ public sealed partial class PrivateDesktop
         info.Environment["SHAPESHIFTER_NO_UPDATE"] = "1";
         info.Environment["SHAPESHIFTER_NO_INSTALL"] = "1";
         info.Environment["SHAPESHIFTER_LOOK"] = "linux";
+        info.Environment["SPONSORKIT_DISABLE"] = "1"; // no donation notice over the windows the check drives
         var ready = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
         var started = Process.Start(info)!;
         app = started;

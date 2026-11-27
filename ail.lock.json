@@ -92,6 +92,13 @@
       },
       "by": "claude-code"
     },
+    "DonationRules": {
+      "hash": "384b34d22c59c6df61cf75a889d077732a22c88c3e6fe35313eea988f2a81f59",
+      "files": {
+        "src/Shapeshifter.Core/Ail/app/donation-notice/donation-rules/DonationRules.cs": "d8c37e22e958c1ccef1c89f5741ba5bfdc0b6e0b4f229c79056f9423da4d5c16"
+      },
+      "by": "claude-code"
+    },
     "ExtractZip": {
       "hash": "e759c82764c5d749ee54301aeaff54d88560a82caf3c08576c9f29a67c095e48",
       "files": {
@@ -358,6 +365,10 @@
     "BoxedSheet": {
       "shots": "a498c56d1888ec88",
       "look": "38238c020c955b84b8c463d6ff9e9b8424dbc4fd0a9ecc03d03dc96b65690403"
+    },
+    "DonationCard": {
+      "shots": "22bffbf5341a61db",
+      "look": "b71c955728bc503526eff23dd163b3a451a7d7fd011ab9d018ace9cf073d3971"
     },
     "EmptyPicker": {
       "shots": "4acad5c12853298b",
