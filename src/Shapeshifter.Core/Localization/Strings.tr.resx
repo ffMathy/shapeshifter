@@ -542,4 +542,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Bu görüntüyü {0} × {1} piksele küçülterek yapıştırır.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Konum olmadan yapıştır</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Bu fotoğrafı çekildiği yer ve diğer meta veriler olmadan yapıştırır.</value>
+  </data>
 </root>

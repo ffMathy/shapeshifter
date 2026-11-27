@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Dán ảnh này thu nhỏ còn {0} × {1} điểm ảnh.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Dán không kèm vị trí</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Dán ảnh này không kèm nơi chụp và siêu dữ liệu khác.</value>
+  </data>
 </root>

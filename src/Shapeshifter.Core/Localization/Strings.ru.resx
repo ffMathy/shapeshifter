@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Вставляет изображение, уменьшенное до {0} × {1} пикселей.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Вставить без местоположения</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Вставляет фото без места съёмки и других метаданных.</value>
+  </data>
 </root>

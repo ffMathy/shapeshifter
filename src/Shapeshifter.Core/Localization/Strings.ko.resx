@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>이 이미지를 {0} × {1} 픽셀로 줄여 붙여넣습니다.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>위치 정보 없이 붙여넣기</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>촬영 장소와 기타 메타데이터 없이 이 사진을 붙여넣습니다.</value>
+  </data>
 </root>

@@ -542,4 +542,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Fügt dieses Bild verkleinert auf {0} × {1} Pixel ein.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Ohne Standort einfügen</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Fügt dieses Foto ohne Aufnahmeort und andere Metadaten ein.</value>
+  </data>
 </root>

@@ -542,4 +542,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>Colle cette image réduite à {0} × {1} pixels.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>Coller sans la position</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>Colle cette photo sans le lieu de prise de vue ni ses autres métadonnées.</value>
+  </data>
 </root>

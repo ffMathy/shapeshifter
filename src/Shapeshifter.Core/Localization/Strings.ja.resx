@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>この画像を {0} × {1} ピクセルに縮小して貼り付けます。</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>位置情報なしで貼り付け</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>撮影場所やその他のメタデータを除いてこの写真を貼り付けます。</value>
+  </data>
 </root>

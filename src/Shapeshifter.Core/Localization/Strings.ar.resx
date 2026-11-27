@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>يلصق هذه الصورة بعد تصغيرها إلى {0} × {1} بكسل.</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>لصق بدون الموقع</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>يلصق هذه الصورة بدون مكان التقاطها وبياناتها الوصفية الأخرى.</value>
+  </data>
 </root>

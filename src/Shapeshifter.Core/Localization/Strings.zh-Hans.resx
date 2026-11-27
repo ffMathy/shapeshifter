@@ -542,4 +542,10 @@
   <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
     <value>将此图像缩小到 {0} × {1} 像素后粘贴。</value>
   </data>
+  <data name="ActionPasteWithoutLocation" xml:space="preserve">
+    <value>去除位置信息后粘贴</value>
+  </data>
+  <data name="ActionPasteWithoutLocationDescription" xml:space="preserve">
+    <value>粘贴此照片，不含拍摄地点和其他元数据。</value>
+  </data>
 </root>
