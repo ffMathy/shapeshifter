@@ -35,8 +35,9 @@ public sealed class SearchHistoryChecks(TargetAppFixture target) : Scenario, ICl
         await KeyUp("ctrl");
         Assert.True(await WaitForPicker(true));
         Assert.True(await WaitForFocus("Shapeshifter"));
-        var words = await WaitForPickerWords(["search everything you copied"]);
-        Assert.Contains("search everything you copied", words, StringComparison.Ordinal);
+        // The caret stands on the placeholder's S, which OCR reads as another letter while the caret shows.
+        var words = await WaitForPickerWords(["earch everything you copied"]);
+        Assert.Contains("earch everything you copied", words, StringComparison.Ordinal);
         Assert.Equal("", await App.Text());
     }
 
@@ -151,7 +152,7 @@ public sealed class SearchHistoryChecks(TargetAppFixture target) : Scenario, ICl
         await KeyUp("ctrl");
         await Sleep(500);
         Assert.Equal("Shapeshifter", FocusedWindowName());
-        Assert.Contains("search everything you copied", await WaitForPickerWords(["search everything you copied"]), StringComparison.Ordinal);
+        Assert.Contains("earch everything you copied", await WaitForPickerWords(["earch everything you copied"]), StringComparison.Ordinal);
         await Tap("Escape");
         await Sleep(500);
         Assert.Equal("", await App.Text());

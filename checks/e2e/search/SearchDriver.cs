@@ -74,9 +74,10 @@ public static partial class SearchDriver
         var shot = Path.Combine(Scratch, "picker.png");
         var big = Path.Combine(Scratch, "picker-big.png");
         Exec("import", "-window", id, shot);
-        // Twice: once as it is, once in black and white, which also catches the pale placeholder.
+        // Three times: as it is, in black and white, and with the contrast raised, which each catch the pale placeholder
+        // in some places on the screen and not in others.
         var words = "";
-        foreach (var extra in new[] { Array.Empty<string>(), ["-threshold", "90%"] })
+        foreach (var extra in new[] { Array.Empty<string>(), ["-threshold", "90%"], ["-level", "60%,95%"] })
         {
             Exec("convert", [shot, "-resize", "200%", "-colorspace", "Gray", .. extra, big]);
             words += " " + Exec("tesseract", big, "stdout");
