@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>อัปโหลดไฟล์นี้ไปยัง {0} และวางลิงก์สาธารณะ</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>เปิดโฟลเดอร์ที่มีไฟล์นี้ และเลือกไฟล์ไว้ให้</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>เปิดโฟลเดอร์ที่มีไฟล์เหล่านี้ และเลือกไว้ให้</value>
+  </data>
 </root>

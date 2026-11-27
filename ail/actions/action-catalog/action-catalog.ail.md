@@ -46,9 +46,10 @@ node ActionCatalog : fn   level: system
               write-email            210    Text kind whose text is one e-mail address, maybe after mailto: (WriteEmail)
               search-web             220    Text kind whose text is one line of at most 200 characters with a letter or digit, and not a link on its own (SearchWeb)
               show-path-in-file-manager 230    Text kind whose text is the absolute path of an existing local file or folder (FilePath)
+              show-in-file-manager   232    File or FileCollection kind whose first file still exists, not on a network share (ShowInFileManager)
               toggle-pin             255    always; titled "Unpin from clipboard" when the item is pinned
     examples
-      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, upload-file, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, toggle-pin]
+      the ids of CreateDefault().All, in order => [paste, paste-as-file, paste-plain-text, paste-as-markdown, paste-trimmed, upload-image, upload-text, reformat-json, decode-base64, url-decode, paste-color-hex, paste-color-rgb, paste-color-hsl, paste-as-date, paste-as-unix-time, paste-result, paste-paths, paste-file-contents, paste-file-as-image, paste-as-zip, extract-zip, upload-file, copy-image-from-link, copy-file-at-path, open-links, write-email, search-web, show-path-in-file-manager, show-in-file-manager, toggle-pin]
       GetAvailable(text "hello") => [paste, paste-as-file, upload-text, search-web, toggle-pin]
       GetAvailable(text "   ") => [paste, paste-as-file, toggle-pin]
       GetAvailable(text "  hello\n") => [paste, paste-as-file, paste-trimmed, upload-text, search-web, toggle-pin]

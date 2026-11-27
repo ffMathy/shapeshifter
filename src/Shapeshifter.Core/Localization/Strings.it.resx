@@ -530,4 +530,10 @@ Per incollare qualcosa che hai copiato in precedenza, tieni premuti {0}+V finch√
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Carica questo file su {0} e incolla un link pubblico.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Apre la cartella di questo file, con il file selezionato.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Apre la cartella di questi file, con i file selezionati.</value>
+  </data>
 </root>

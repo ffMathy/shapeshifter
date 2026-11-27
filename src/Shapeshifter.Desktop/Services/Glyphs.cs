@@ -120,6 +120,7 @@ public static class Glyphs
             "paste-file-as-image" => Image,
             "extract-zip" => Extract,
             "upload-file" => Upload,
+            "show-in-file-manager" => Reveal,
             _ => Clipboard,
         };
     }

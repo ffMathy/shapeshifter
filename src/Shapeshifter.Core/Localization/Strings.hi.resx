@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>इस फ़ाइल को {0} पर अपलोड करके उसका सार्वजनिक लिंक चिपकाता है।</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>वह फ़ोल्डर खोलता है जिसमें यह फ़ाइल है, उसे चुना हुआ रखकर।</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>वह फ़ोल्डर खोलता है जिसमें ये फ़ाइलें हैं, उन्हें चुना हुआ रखकर।</value>
+  </data>
 </root>

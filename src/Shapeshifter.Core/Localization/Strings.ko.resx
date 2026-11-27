@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>이 파일을 {0}에 올리고 공개 링크를 붙여넣습니다.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>이 파일이 있는 폴더를 열고 파일을 선택합니다.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>이 파일들이 있는 폴더를 열고 파일을 선택합니다.</value>
+  </data>
 </root>

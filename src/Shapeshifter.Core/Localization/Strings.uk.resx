@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Завантажує цей файл на {0} і вставляє публічне посилання.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Відкриває теку з цим файлом і виділяє його.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Відкриває теку з цими файлами і виділяє їх.</value>
+  </data>
 </root>

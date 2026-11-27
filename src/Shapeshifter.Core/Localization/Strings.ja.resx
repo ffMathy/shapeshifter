@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>このファイルを {0} にアップロードし、公開リンクを貼り付けます。</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>このファイルがあるフォルダーを、選択した状態で開きます。</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>これらのファイルがあるフォルダーを、選択した状態で開きます。</value>
+  </data>
 </root>

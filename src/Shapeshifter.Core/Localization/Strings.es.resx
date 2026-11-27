@@ -530,4 +530,10 @@ Para pegar algo que copiaste antes, mantén pulsadas {0}+V hasta que aparezca el
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Sube este archivo a {0} y pega un enlace público.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Abre la carpeta de este archivo, con él seleccionado.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Abre la carpeta de estos archivos, con ellos seleccionados.</value>
+  </data>
 </root>

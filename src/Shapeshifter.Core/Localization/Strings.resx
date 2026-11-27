@@ -702,4 +702,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Uploads this file to {0} and pastes a public link to it.</value>
     <comment>Action description for 'Upload and paste link' on a copied file; {0} is the name of the file host (Catbox).</comment>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Opens the folder this file is in, with it selected.</value>
+    <comment>Action description for 'Show in file manager' on one copied file.</comment>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Opens the folder these files are in, with them selected.</value>
+    <comment>Action description for 'Show in file manager' on several copied files.</comment>
+  </data>
 </root>

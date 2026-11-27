@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>يرفع هذا الملف إلى {0} ويلصق رابطًا عامًا إليه.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>يفتح المجلد الذي يوجد فيه هذا الملف مع تحديده.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>يفتح المجلد الذي توجد فيه هذه الملفات مع تحديدها.</value>
+  </data>
 </root>

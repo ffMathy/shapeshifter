@@ -530,4 +530,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Uploadt dit bestand naar {0} en plakt een openbare link ernaar.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Opent de map van dit bestand, met het bestand geselecteerd.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Opent de map van deze bestanden, met ze geselecteerd.</value>
+  </data>
 </root>

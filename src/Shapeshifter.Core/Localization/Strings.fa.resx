@@ -530,4 +530,10 @@
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>این فایل را در {0} بارگذاری می‌کند و پیوند عمومی آن را می‌چسباند.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>پوشه‌ای را که این فایل در آن است، با انتخاب آن باز می‌کند.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>پوشه‌ای را که این فایل‌ها در آن هستند، با انتخاب آن‌ها باز می‌کند.</value>
+  </data>
 </root>

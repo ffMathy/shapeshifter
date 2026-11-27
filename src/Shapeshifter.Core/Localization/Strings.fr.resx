@@ -530,4 +530,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Envoie ce fichier sur {0} et colle un lien public vers lui.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Ouvre le dossier de ce fichier, avec le fichier sélectionné.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Ouvre le dossier de ces fichiers, avec eux sélectionnés.</value>
+  </data>
 </root>
