@@ -2,7 +2,7 @@
 # Starts the existing Shapeshifter on a virtual X11 desktop, for the AIL end-to-end checks (ail.config.json run.legacy).
 # Needs: the .NET SDK from global.json, xvfb, openbox, x11-utils, xdotool, and for the tray icon xfce4-panel.
 #   sudo apt-get install -y xvfb openbox x11-utils xdotool xfce4-panel
-# The desktop is $AIL_DISPLAY (default :97); settings, history and logs live in a fresh $AIL_STATE (default .ail/legacy).
+# The desktop is $AIL_DISPLAY (default :97; ail.config.json uses :98); settings, history and logs live in a fresh $AIL_STATE (default .ail/legacy).
 # Several copies can run side by side, each with its own AIL_DISPLAY and AIL_STATE. AIL_SKIP_BUILD=1 skips the build.
 set -euo pipefail
 cd "$(dirname "$0")/../.."

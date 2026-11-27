@@ -9,7 +9,7 @@
       "ready": "pgrep -f '[S]hapeshifter.dll --no-install' >/dev/null && grep -q SHAPESHIFTER_READY .ail/legacy/shapeshifter.log",
       "timeout": 240,
       "env": {
-        "DISPLAY": ":97",
+        "DISPLAY": ":98", "AIL_DISPLAY": ":98",
         "AIL_TARGET_APP": "tests/Shapeshifter.EndToEnd.TargetApp/bin/Release/net11.0/Shapeshifter.EndToEnd.TargetApp.dll"
       }
     },
@@ -19,7 +19,7 @@
       "ready": "pgrep -f '[S]hapeshifter.dll --no-install' >/dev/null && grep -q SHAPESHIFTER_READY .ail/legacy/shapeshifter.log",
       "timeout": 240,
       "env": {
-        "DISPLAY": ":97",
+        "DISPLAY": ":98", "AIL_DISPLAY": ":98",
         "AIL_TARGET_APP": "tests/Shapeshifter.EndToEnd.TargetApp/bin/Release/net11.0/Shapeshifter.EndToEnd.TargetApp.dll"
       }
     }
