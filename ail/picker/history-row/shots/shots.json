@@ -1,0 +1,33 @@
+{
+  "node": "HistoryRow",
+  "shots": [
+    {
+      "test": "a text copied in another app",
+      "file": "01-a-text-copied-in-another-app.png"
+    },
+    {
+      "test": "a text from an unknown window describes itself",
+      "file": "02-a-text-from-an-unknown-window-describes-itself.png"
+    },
+    {
+      "test": "an image",
+      "file": "03-an-image.png"
+    },
+    {
+      "test": "files",
+      "file": "04-files.png"
+    },
+    {
+      "test": "a colour code",
+      "file": "05-a-colour-code.png"
+    },
+    {
+      "test": "a pinned item",
+      "file": "06-a-pinned-item.png"
+    },
+    {
+      "test": "the chosen row",
+      "file": "07-the-chosen-row.png"
+    }
+  ]
+}

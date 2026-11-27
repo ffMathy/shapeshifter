@@ -1,17 +1,15 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using SkiaSharp;
+using ZXing;
+using ZXing.Common;
+using ZXing.QrCode;
 
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// Opens the web link held by a QR code in a copied image, so the user does not need a phone to follow it.
+/// The action that opens the web link held by a QR code in a copied image.
 /// </summary>
 public sealed class OpenQrLinkAction : IClipboardAction
 {
@@ -20,20 +18,23 @@ public sealed class OpenQrLinkAction : IClipboardAction
     /// </summary>
     public const int MaxSide = 4096;
 
-    private readonly ConcurrentDictionary<object, Uri?> _links = new();
+    private const int MaxDescriptionLinkLength = 60;
+
+    private readonly Lock _gate = new();
+    private readonly Dictionary<object, Uri?> _links = [];
 
     /// <summary>
-    /// The action's stable identifier.
+    /// The action's identifier.
     /// </summary>
     public string Id => "open-qr-link";
 
     /// <summary>
-    /// The action's position among the actions.
+    /// Where the action sorts among the actions.
     /// </summary>
     public int Order => 205;
 
     /// <summary>
-    /// Gets the action's title.
+    /// Gives the action's title.
     /// </summary>
     /// <param name="item">The item the action is for.</param>
     /// <returns>The localized title.</returns>
@@ -44,14 +45,14 @@ public sealed class OpenQrLinkAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the action's description, which shows the link that will be opened.
+    /// Gives the action's description, naming the link it opens.
     /// </summary>
     /// <param name="item">The item the action is for.</param>
-    /// <returns>The localized description naming the link.</returns>
+    /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
-        var link = LinkOf(item) ?? throw new InvalidOperationException("The item holds no QR code with a web link.");
+        var link = LinkFor(item) ?? throw new InvalidOperationException("The item holds no QR code link.");
         return Localizer.Format(Strings.ActionOpenQrLinkDescription, Shorten(link));
     }
 
@@ -63,27 +64,27 @@ public sealed class OpenQrLinkAction : IClipboardAction
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.Image && LinkOf(item) is not null;
+        return item.Kind == ClipboardContentKind.Image && LinkFor(item) is not null;
     }
 
     /// <summary>
-    /// Opens the item's QR code link with the system's default app; nothing is pasted.
+    /// Opens the link from the item's QR code, pasting nothing.
     /// </summary>
-    /// <param name="item">The item whose link to open.</param>
-    /// <param name="context">The context giving access to the launcher.</param>
-    /// <param name="cancellationToken">Cancels the action.</param>
-    /// <returns>A task that completes when the link has been handed to the system.</returns>
+    /// <param name="item">The item whose link is opened.</param>
+    /// <param name="context">The context giving the launcher.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task that completes when the link has been handed to the launcher.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-        var link = LinkOf(item) ?? throw new InvalidOperationException("The item holds no QR code with a web link.");
+        var link = LinkFor(item) ?? throw new InvalidOperationException("The item holds no QR code link.");
         context.Launcher.OpenUrl(link);
         return Task.CompletedTask;
     }
 
     /// <summary>
-    /// Finds the http or https link held by the single QR code in an image.
+    /// Finds the absolute http or https link held by the one QR code in an image.
     /// </summary>
     /// <param name="image">The encoded image, or null.</param>
     /// <returns>The link, or null when there is none.</returns>
@@ -113,26 +114,31 @@ public sealed class OpenQrLinkAction : IClipboardAction
             return null;
         }
 
-        var info = new SKImageInfo(width, height, SKColorType.Bgra8888, codec.Info.AlphaType);
+        var info = new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul);
         using var bitmap = SKBitmap.Decode(codec, info);
         if (bitmap is null)
         {
             return null;
         }
 
-        var source = new ZXing.RGBLuminanceSource(bitmap.Bytes, bitmap.Width, bitmap.Height, ZXing.RGBLuminanceSource.BitmapFormat.BGRA32);
-        var binary = new ZXing.BinaryBitmap(new ZXing.Common.HybridBinarizer(source));
-        var hints = new Dictionary<ZXing.DecodeHintType, object> { [ZXing.DecodeHintType.TRY_HARDER] = true };
-        var result = new ZXing.QrCode.QRCodeReader().decode(binary, hints);
+        var source = new RGBLuminanceSource(bitmap.Bytes, bitmap.Width, bitmap.Height, RGBLuminanceSource.BitmapFormat.BGRA32);
+        var binaryBitmap = new BinaryBitmap(new HybridBinarizer(source));
+        var hints = new Dictionary<DecodeHintType, object> { [DecodeHintType.TRY_HARDER] = true };
+        var result = new QRCodeReader().decode(binaryBitmap, hints);
         if (result?.Text is null)
         {
             return null;
         }
 
         var text = result.Text.Trim();
-        foreach (var c in text)
+        if (text.Length == 0)
         {
-            if (char.IsWhiteSpace(c))
+            return null;
+        }
+
+        foreach (var character in text)
+        {
+            if (char.IsWhiteSpace(character))
             {
                 return null;
             }
@@ -147,17 +153,31 @@ public sealed class OpenQrLinkAction : IClipboardAction
     }
 
     /// <summary>
-    /// Shortens a link to at most 60 characters for display.
+    /// Shortens a link for showing in the description.
     /// </summary>
     /// <param name="link">The link to shorten.</param>
-    /// <returns>The link as written, or its first 59 characters followed by an ellipsis.</returns>
+    /// <returns>The link as written, or its first 59 characters and an ellipsis when it is longer than 60 characters.</returns>
     public static string Shorten(Uri link)
     {
         ArgumentNullException.ThrowIfNull(link);
-        var written = link.OriginalString;
-        return written.Length > 60 ? string.Concat(written.AsSpan(0, 59), "…") : written;
+        var text = link.OriginalString;
+        return text.Length > MaxDescriptionLinkLength
+            ? string.Concat(text.AsSpan(0, MaxDescriptionLinkLength - 1), "…")
+            : text;
     }
 
-    private Uri? LinkOf(ClipboardItem item) =>
-        _links.GetOrAdd(item.Id, static (_, image) => FindLink(image), item.Snapshot.Image);
+    private Uri? LinkFor(ClipboardItem item)
+    {
+        lock (_gate)
+        {
+            if (_links.TryGetValue(item.Id, out var known))
+            {
+                return known;
+            }
+
+            var link = FindLink(item.Snapshot.Image);
+            _links[item.Id] = link;
+            return link;
+        }
+    }
 }

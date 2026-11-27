@@ -128,9 +128,9 @@
       "spec": "214c9abddf62a259f0bdec1f39d4a501c31cf878607956089728a7831d30cd98"
     },
     "OpenQrLink": {
-      "hash": "7a1672676ff49600bdd4168416dc6b890d819b57c8800a3e7af1f0c1eeba4767",
+      "hash": "031c3faba355adc1fb9fc4778e7ff49621f45f097734a544f64888b0ca9dff1a",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/open-qr-link/OpenQrLink.cs": "cc27e2fe1dc02bb49ef8dce517ad06bebe43e1df94a988e73a36629ff20746b3"
+        "src/Shapeshifter.Core/Ail/actions/open-qr-link/OpenQrLink.cs": "5cc8d39f2773df75f79079b2381d40b1de347ce89bbf44fd2232e2c6b54b2729"
       },
       "by": "claude-code"
     },
@@ -170,9 +170,9 @@
       "by": "claude-code"
     },
     "PasteSmallerImage": {
-      "hash": "1e2d6e05766c3a8854724eeda4f6650854b6cb43baaaa8d6fea67195fe314ab5",
+      "hash": "5fc9a9b2a00e4494ebb4d8f95aa3e4b1ab3f96594992cef2aa99444058e641d6",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-smaller-image/PasteSmallerImage.cs": "4139a5735ce3349bbc26d391893d0d6f5aecfafc3c86c9d2f9d4a1800cb590dd"
+        "src/Shapeshifter.Core/Ail/actions/paste-smaller-image/PasteSmallerImage.cs": "3240ecdcc122cc6c7bf3ab18f30aaf275fddaea5ed9bf2c742ae559b0b5c12b7"
       },
       "by": "claude-code"
     },
@@ -184,9 +184,9 @@
       "by": "claude-code"
     },
     "PasteWithoutLocation": {
-      "hash": "360715c07fc0e088be394c4ee885479adb152819ff450bc646a04bc25ac739a6",
+      "hash": "e42ae4a99fd907cd3099442d37211ed8880b29ee66b3cc2bca5fabfdaad79a0e",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/paste-without-location/PasteWithoutLocation.cs": "2ddcf93d467e9e7839ed73373b8dfe3e0f12da49395b7325a3d6c1ec90096306"
+        "src/Shapeshifter.Core/Ail/actions/paste-without-location/PasteWithoutLocation.cs": "746a96a822e692cfa9d1bfd55bddc631ab8b899fb4f3ad5439de4b55949db35b"
       },
       "by": "claude-code"
     },
@@ -310,23 +310,23 @@
       "spec": "2c9d8fbb25cc7aba951a24fc83c7de3d4f2ec8bcc0e4436c7bc4e44132c788c4"
     },
     "UploadFile": {
-      "hash": "f630f418befaea979c22bebcecce97b1e9d2b182ad9f2a9364609fec5bdac838",
+      "hash": "867a6c050a78ebe0c6cc03d2460fb5b8737612d8ebb9e5c3553714a37092d639",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/upload-file/UploadFile.cs": "edfca93a3914ca50f0887af53dac2171ad00d22e3d6cb78a81a91962181d8133"
+        "src/Shapeshifter.Core/Ail/actions/upload-file/UploadFile.cs": "0ac68b1fec76f4ca78d50c19247ba6ab6859782d317db51c2dd56e8a61f4ae2c"
       },
       "by": "claude-code"
     },
     "UploadImage": {
-      "hash": "46af303dc2c2180f153159303afde2b0c5dbcfdd5cee910e9904d1b81e9c0781",
+      "hash": "3a9c6934c9086755fbe8e301286a3cd06689331bc134a2b7acb68f700657d86b",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/upload-image/UploadImage.cs": "c0fdc4a03394694704c915ae2bae6cc5fd733b3b4360897eb1b2b60a0aec2725"
+        "src/Shapeshifter.Core/Ail/actions/upload-image/UploadImage.cs": "c463fedec7ddb7473c4222c79ac031b7e4fe459726cb67974c16aaf962c55c73"
       },
       "by": "claude-code"
     },
     "UploadText": {
-      "hash": "b3e0ccbd0d6fd448bdb6de11163ae71391178ba78556c6820e141c29fa130f41",
+      "hash": "d5e178e8fe6cca3708ba77c8d4af958a7c4d3475c4edac1b102ea2b404444761",
       "files": {
-        "src/Shapeshifter.Core/Ail/actions/upload-text/UploadText.cs": "80b3bde31a22fd622fa492bffc97c348833b16b8521f826a2895c44ff3f83a6a"
+        "src/Shapeshifter.Core/Ail/actions/upload-text/UploadText.cs": "869d4d7b41e4713fb997c2044ac801b3e6d5f4735e0189fc68ae41645568aecd"
       },
       "by": "claude-code"
     },
@@ -347,6 +347,9 @@
   },
   "glue": {},
   "hand": {
+    "HistoryRow": {
+      "shots": "0ed9841a6cc71312"
+    },
     "PickerFooter": {
       "shots": "c4152e526476394b"
     },
