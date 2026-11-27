@@ -530,4 +530,10 @@ Hvis du vil indsætte noget, du har kopieret tidligere, skal du holde {0}+V nede
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Uploader filen til {0} og indsætter et offentligt link til den.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Åbner mappen, filen ligger i, med den markeret.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Åbner mappen, filerne ligger i, med dem markeret.</value>
+  </data>
 </root>

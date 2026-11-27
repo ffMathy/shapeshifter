@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@c39b5bec1bcb9932
+// ail-derived-from: OfferedActions@392544a0fec330bb
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -131,7 +131,7 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     public async Task OneFile()
     {
         await CopyAs("text/uri-list", Files($"one-{Unique()}.txt"));
-        Assert.Equal(["Paste", "Paste path", "Paste file contents", "Paste as compressed file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste path", "Paste file contents", "Paste as compressed file", "Upload and paste link", "Show in file manager", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image file offers Paste as image", Timeout = 30_000)]
@@ -140,7 +140,7 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         var path = Path.Combine(Directory.CreateTempSubdirectory("ail-offered-").FullName, $"picture-{Unique()}.png");
         File.WriteAllBytes(path, MakePng(31 + Random.Shared.Next(40), 23));
         await CopyAs("text/uri-list", $"file://{path}\n");
-        Assert.Equal(["Paste", "Paste path", "Paste as image", "Paste as compressed file", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste path", "Paste as image", "Paste as compressed file", "Upload and paste link", "Show in file manager", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "a .zip file offers Paste extracted", Timeout = 30_000)]
@@ -153,14 +153,14 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
             writer.Write("inside");
         }
         await CopyAs("text/uri-list", $"file://{path}\n");
-        Assert.Equal(["Paste", "Paste path", "Paste as compressed file", "Paste extracted", "Upload and paste link", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste path", "Paste as compressed file", "Paste extracted", "Upload and paste link", "Show in file manager", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "several files offer the same as one file, with Paste paths", Timeout = 30_000)]
     public async Task SeveralFiles()
     {
         await CopyAs("text/uri-list", Files($"a-{Unique()}.txt", $"b-{Unique()}.txt"));
-        Assert.Equal(["Paste", "Paste paths", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
+        Assert.Equal(["Paste", "Paste paths", "Paste as compressed file", "Show in file manager", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "other data offers only Paste and Pin", Timeout = 30_000)]

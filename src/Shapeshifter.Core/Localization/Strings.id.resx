@@ -530,4 +530,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Mengunggah file ini ke {0} dan menempelkan tautan publiknya.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Membuka folder tempat file ini berada, dengan file itu dipilih.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Membuka folder tempat file-file ini berada, dengan file dipilih.</value>
+  </data>
 </root>

@@ -530,4 +530,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Przesyła ten plik do {0} i wkleja publiczny link.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Otwiera folder z tym plikiem i zaznacza go.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Otwiera folder z tymi plikami i zaznacza je.</value>
+  </data>
 </root>

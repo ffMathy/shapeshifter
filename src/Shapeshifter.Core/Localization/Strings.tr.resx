@@ -530,4 +530,10 @@ Daha önce kopyaladığınız bir şeyi yapıştırmak için geçmiş görünene
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Bu dosyayı {0}'a yükler ve herkese açık bağlantısını yapıştırır.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Bu dosyanın bulunduğu klasörü, dosya seçili olarak açar.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Bu dosyaların bulunduğu klasörü, dosyalar seçili olarak açar.</value>
+  </data>
 </root>

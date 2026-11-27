@@ -530,4 +530,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionUploadFileDescription" xml:space="preserve">
     <value>Lädt diese Datei zu {0} hoch und fügt einen öffentlichen Link ein.</value>
   </data>
+  <data name="ActionShowFileInFileManagerDescription" xml:space="preserve">
+    <value>Öffnet den Ordner dieser Datei und markiert sie.</value>
+  </data>
+  <data name="ActionShowInFileManagerDescription" xml:space="preserve">
+    <value>Öffnet den Ordner dieser Dateien und markiert sie.</value>
+  </data>
 </root>
