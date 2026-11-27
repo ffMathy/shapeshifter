@@ -45,6 +45,9 @@ public sealed record AppOptions
 
     /// <summary>The height of the screen the picker opens on, in pixels at 100 %; the history may use 62 % of it.</summary>
     public int ScreenHeight { get; init; } = 1080;
+
+    /// <summary>A desktop without a compositor (a bare X server): no window can be see-through, so the looks draw opaque.</summary>
+    public bool NoCompositor { get; init; }
 }
 
 /// <summary>
@@ -100,6 +103,7 @@ public sealed class AppHarness : IAsyncDisposable
         picker = new PickerPresenter(new NoCursor(), new PickerVisuals(new DrawnFileIcons(), Logger.None), options.Modifier, Logger.None, null, new Shapeshifter.Core.Previews.LinkedImageLoader(http, Logger.None))
         {
             WorkingAreaHeight = options.ScreenHeight,
+            NoCompositor = options.NoCompositor,
         };
         notifier = new CopyNotifier(Settings);
         var coach = new CopyCoach(sourceLocator, () => options.Modifier, () => Settings.Current.CoachingTips, Time);

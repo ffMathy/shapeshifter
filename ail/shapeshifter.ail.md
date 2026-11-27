@@ -57,7 +57,8 @@ target
                `public Task Name() => AppHarness.RunAsync(async app => { ... }, new AppOptions { ... });` (await
                everything inside; the options are optional). AppOptions: Look (Look.Linux, the default; Look.Windows;
                Look.MacOS), Dark (the Windows look in dark), Language (a culture name such as "de"), Modifier ("Ctrl", the
-               default, or "Cmd"), StoreCopy (installed from an app store), ScreenHeight (the screen's height in pixels, 1080 by default). AppHarness, the real engine, history, actions,
+               default, or "Cmd"), StoreCopy (installed from an app store), ScreenHeight (the screen's height in pixels, 1080 by default), NoCompositor (a desktop without a compositor, such as a
+               bare X server: no window can be see-through; by default there is one). AppHarness, the real engine, history, actions,
                picker, copy notification and settings window with fakes for the system: await app.CopyAsync(text, window)
                (window: the name of the window it was copied in, which gets an icon, or null where none can be named),
                CopyImageAsync(width, height), CopyFilesAsync(full paths), CopyFormattedAsync(text, html), PinAsync(text,

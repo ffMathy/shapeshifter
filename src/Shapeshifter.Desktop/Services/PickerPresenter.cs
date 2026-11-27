@@ -88,6 +88,9 @@ internal sealed class PickerPresenter : IPickerPresenter
     /// <summary>The picker's window, once it was first shown (for tests that look at it).</summary>
     internal PickerWindow? Window => window;
 
+    /// <summary>Acts as on a desktop without a compositor, where no window can be see-through (for tests: the headless one has one).</summary>
+    internal bool NoCompositor { get; set; }
+
     /// <summary>The height of the screen's working area, in window units, instead of the screen's (for tests: the headless screen has one size).</summary>
     internal double? WorkingAreaHeight { get; set; }
 
@@ -108,7 +111,7 @@ internal sealed class PickerPresenter : IPickerPresenter
         picker.Show();
 
         // Only known once the window exists; without a compositor the window cannot be see-through.
-        viewModel.IsOpaque = picker.ActualTransparencyLevel == WindowTransparencyLevel.None;
+        viewModel.IsOpaque = NoCompositor || picker.ActualTransparencyLevel == WindowTransparencyLevel.None;
 
         // The window sizes itself to its content, so it is placed once its size is known.
         picker.UpdateLayout();
