@@ -356,7 +356,8 @@
       "look": "373a677c45b3467dda6158e6f66201a9a91d5f22e03da3182ce6baa6e202ef6d"
     },
     "BoxedSheet": {
-      "shots": "a498c56d1888ec88"
+      "shots": "a498c56d1888ec88",
+      "look": "38238c020c955b84b8c463d6ff9e9b8424dbc4fd0a9ecc03d03dc96b65690403"
     },
     "EmptyPicker": {
       "shots": "4acad5c12853298b",
@@ -371,7 +372,8 @@
       "look": "cbf37a62501f56b95c126102b21707ac9361c0e65020d9094708e36b887a6b95"
     },
     "NotificationCard": {
-      "shots": "4258d2fd339e9550"
+      "shots": "4258d2fd339e9550",
+      "look": "3f315100e7aa22d5696380410f83533d4b43e62e030549012fc38558951af14a"
     },
     "Picker": {
       "shots": "f0aabbdff554e176",
