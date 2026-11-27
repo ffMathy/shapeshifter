@@ -129,13 +129,13 @@ public sealed class AppHarness : IAsyncDisposable
     /// <summary>The URLs and folders Shapeshifter opened.</summary>
     public FakeLauncher Launcher { get; } = new();
 
-    /// <summary>The picker's window, once it was first shown; <see cref="PickerVisible"/> says whether it is up.</summary>
-    public PickerWindow? Picker => picker.Window;
+    /// <summary>The picker's window (it was shown at least once); <see cref="PickerVisible"/> says whether it is up.</summary>
+    public PickerWindow Picker => picker.Window ?? throw new InvalidOperationException("The picker was never shown.");
 
     public bool PickerVisible => picker.IsVisible;
 
-    /// <summary>The copy notification's window, once one was first shown.</summary>
-    public ToastWindow? Notification => notifier.Window;
+    /// <summary>The copy notification's window (one was shown at least once).</summary>
+    public ToastWindow Notification => notifier.Window ?? throw new InvalidOperationException("No notification was ever shown.");
 
     /// <summary>The settings window, once <see cref="OpenSettings"/> opened it.</summary>
     public SettingsWindow? SettingsWindow => settingsWindow;
@@ -231,7 +231,7 @@ public sealed class AppHarness : IAsyncDisposable
     /// <summary>Types <paramref name="query"/> into the picker's search box (start searching with <see cref="GestureKey.Search"/>).</summary>
     public async Task TypeSearchAsync(string query)
     {
-        var box = Find<TextBox>(Picker ?? throw new InvalidOperationException("The picker was never shown."))
+        var box = Find<TextBox>(Picker)
             .FirstOrDefault(textBox => textBox.IsEffectivelyVisible) ?? throw new InvalidOperationException("The picker shows no search box.");
         box.Text = query;
         await Task.Delay(50).ConfigureAwait(true);
