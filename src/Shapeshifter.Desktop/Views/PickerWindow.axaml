@@ -177,7 +177,7 @@
                                    FontSize="13" Foreground="White" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis" />
                       </Grid>
 
-                      <Grid Classes="previewColor" ColumnDefinitions="Auto,*" IsVisible="{Binding HasColorSwatch}">
+                      <Grid Classes="previewColor" ColumnDefinitions="Auto,*" IsVisible="{Binding HasColorSwatch, FallbackValue=False}">
                         <Border Grid.Column="0" Classes="previewSwatch" Background="{Binding ColorSwatch}" />
                         <TextBlock Grid.Column="1" Classes="previewColorCode" Text="{Binding ColorHex}" />
                       </Grid>

@@ -1,6 +1,7 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
+using System.Buffers;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -9,7 +10,7 @@ namespace Shapeshifter.Core.Ail;
 /// <summary>The notation a colour is written in.</summary>
 public enum ColorNotation
 {
-    /// <summary>A hexadecimal colour such as #3584e4.</summary>
+    /// <summary>A hexadecimal colour, such as #3584e4.</summary>
     Hex,
 
     /// <summary>An rgb() or rgba() colour.</summary>
@@ -27,11 +28,27 @@ public enum ColorNotation
 /// <param name="Notation">The notation the colour was written in.</param>
 public sealed record ParsedColor(int Red, int Green, int Blue, double Alpha, ColorNotation Notation);
 
-/// <summary>Reads a colour on its own from text and writes it in another notation.</summary>
-public static partial class ConvertColor
+/// <summary>Reads colours written as hex, rgb() or hsl() and writes them in any of those notations.</summary>
+public static class ConvertColor
 {
-    /// <summary>Reads the text, without surrounding white space, as exactly one colour; nothing when it is not one.</summary>
-    /// <param name="text">The text to read.</param>
+    private static readonly Regex HexPattern = new(
+        "^#([0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$",
+        RegexOptions.CultureInvariant);
+
+    private static readonly Regex NumberPattern = new(
+        "^([0-9]+(\\.[0-9]+)?|\\.[0-9]+)$",
+        RegexOptions.CultureInvariant);
+
+    private static readonly Regex HuePattern = new(
+        "^(-?([0-9]+(\\.[0-9]+)?|\\.[0-9]+))(deg)?$",
+        RegexOptions.CultureInvariant);
+
+    private static readonly char[] Spaces = [' ', '\t', '\n', '\r', '\f', '\v'];
+
+    private static readonly SearchValues<char> SpaceValues = SearchValues.Create(" \t\n\r\f\v");
+
+    /// <summary>Reads text that is exactly one colour, or gives null when it is none.</summary>
+    /// <param name="text">The text to read; may be null.</param>
     /// <returns>The colour, or null when the text is not exactly one valid colour.</returns>
     public static ParsedColor? Parse(string? text)
     {
@@ -43,13 +60,23 @@ public static partial class ConvertColor
         var value = text.Trim().ToLowerInvariant();
         if (value.StartsWith('#'))
         {
-            return ParseHex(value[1..]);
+            return ParseHex(value);
         }
 
-        return ParseFunction(value);
+        if (TryFunction(value, "rgba(", out var inner) || TryFunction(value, "rgb(", out inner))
+        {
+            return ParseRgb(inner);
+        }
+
+        if (TryFunction(value, "hsla(", out inner) || TryFunction(value, "hsl(", out inner))
+        {
+            return ParseHsl(inner);
+        }
+
+        return null;
     }
 
-    /// <summary>Writes the colour in the given notation.</summary>
+    /// <summary>Writes a colour in the given notation.</summary>
     /// <param name="color">The colour to write.</param>
     /// <param name="notation">The notation to write it in.</param>
     /// <returns>The colour as text.</returns>
@@ -61,7 +88,9 @@ public static partial class ConvertColor
         switch (notation)
         {
             case ColorNotation.Hex:
-                var hex = string.Create(CultureInfo.InvariantCulture, $"#{color.Red:x2}{color.Green:x2}{color.Blue:x2}");
+                var hex = string.Create(
+                    CultureInfo.InvariantCulture,
+                    $"#{color.Red:x2}{color.Green:x2}{color.Blue:x2}");
                 return hasAlpha
                     ? hex + RoundHalfUp(color.Alpha * 255).ToString("x2", CultureInfo.InvariantCulture)
                     : hex;
@@ -69,62 +98,25 @@ public static partial class ConvertColor
                 return hasAlpha
                     ? string.Create(CultureInfo.InvariantCulture, $"rgba({color.Red}, {color.Green}, {color.Blue}, {FormatAlpha(color.Alpha)})")
                     : string.Create(CultureInfo.InvariantCulture, $"rgb({color.Red}, {color.Green}, {color.Blue})");
-            case ColorNotation.Hsl:
-                ToHsl(color, out var hue, out var saturation, out var lightness);
+            default:
+                var (hue, saturation, lightness) = ToHsl(color);
                 return hasAlpha
                     ? string.Create(CultureInfo.InvariantCulture, $"hsla({hue}, {saturation}%, {lightness}%, {FormatAlpha(color.Alpha)})")
                     : string.Create(CultureInfo.InvariantCulture, $"hsl({hue}, {saturation}%, {lightness}%)");
-            default:
-                throw new ArgumentOutOfRangeException(nameof(notation));
         }
     }
 
-    internal static bool CanExecute(ClipboardItem item, ColorNotation notation)
+    private static ParsedColor? ParseHex(string value)
     {
-        ArgumentNullException.ThrowIfNull(item);
-        return item.Kind == ClipboardContentKind.Text
-            && Parse(item.Snapshot.Text) is { } color
-            && color.Notation != notation;
-    }
-
-    internal static string Describe(ClipboardItem item, ColorNotation notation)
-    {
-        ArgumentNullException.ThrowIfNull(item);
-        return Parse(item.Snapshot.Text) is { } color
-            ? Localizer.Format(Strings.ActionColorDescription, Format(color, notation))
-            : Strings.ActionColorDescription;
-    }
-
-    internal static Task PasteAsync(ClipboardItem item, ActionContext context, ColorNotation notation, CancellationToken cancellationToken)
-    {
-        ArgumentNullException.ThrowIfNull(item);
-        ArgumentNullException.ThrowIfNull(context);
-        if (Parse(item.Snapshot.Text) is not { } color)
-        {
-            return Task.CompletedTask;
-        }
-
-        return context.WriteAndPasteAsync(new ClipboardSnapshot { Text = Format(color, notation) }, cancellationToken);
-    }
-
-    private static ParsedColor? ParseHex(string digits)
-    {
-        if (digits.Length is not (3 or 4 or 6 or 8))
+        if (!HexPattern.IsMatch(value))
         {
             return null;
         }
 
-        foreach (var c in digits)
+        var digits = value[1..];
+        if (digits.Length <= 4)
         {
-            if (!char.IsAsciiHexDigit(c))
-            {
-                return null;
-            }
-        }
-
-        if (digits.Length is 3 or 4)
-        {
-            digits = string.Concat(digits.Select(c => new string(c, 2)));
+            digits = string.Concat(digits.Select(digit => new string(digit, 2)));
         }
 
         var red = int.Parse(digits[0..2], NumberStyles.HexNumber, CultureInfo.InvariantCulture);
@@ -136,62 +128,97 @@ public static partial class ConvertColor
         return new ParsedColor(red, green, blue, alpha, ColorNotation.Hex);
     }
 
-    private static ParsedColor? ParseFunction(string text)
+    private static ParsedColor? ParseRgb(string inner)
     {
-        ColorNotation notation;
-        string inner;
-        if (TryStrip(text, "rgb(", out inner) || TryStrip(text, "rgba(", out inner))
-        {
-            notation = ColorNotation.Rgb;
-        }
-        else if (TryStrip(text, "hsl(", out inner) || TryStrip(text, "hsla(", out inner))
-        {
-            notation = ColorNotation.Hsl;
-        }
-        else
+        if (!TrySplit(inner, out var values, out var alphaText))
         {
             return null;
         }
 
-        var values = SplitValues(inner);
-        if (values is null)
+        var channels = new int[3];
+        for (var index = 0; index < 3; index++)
         {
-            return null;
-        }
-
-        var alpha = 1.0;
-        if (values.Length == 4 && !TryParseAlpha(values[3], out alpha))
-        {
-            return null;
-        }
-
-        if (notation == ColorNotation.Rgb)
-        {
-            if (!TryParseChannel(values[0], out var red)
-                || !TryParseChannel(values[1], out var green)
-                || !TryParseChannel(values[2], out var blue))
+            var part = values[index];
+            if (part.EndsWith('%'))
             {
-                return null;
-            }
+                if (!TryNumber(part[..^1], out var percent) || percent > 100)
+                {
+                    return null;
+                }
 
-            return new ParsedColor(red, green, blue, alpha, ColorNotation.Rgb);
+                channels[index] = RoundHalfUp(percent * 255 / 100);
+            }
+            else
+            {
+                if (!TryNumber(part, out var number) || number > 255)
+                {
+                    return null;
+                }
+
+                channels[index] = RoundHalfUp(number);
+            }
         }
 
-        if (!TryParseHue(values[0], out var hue)
-            || !TryParsePercentage(values[1], out var saturation)
-            || !TryParsePercentage(values[2], out var lightness))
+        if (!TryAlpha(alphaText, out var alpha))
         {
             return null;
         }
 
-        return FromHsl(hue, saturation, lightness, alpha);
+        return new ParsedColor(channels[0], channels[1], channels[2], alpha, ColorNotation.Rgb);
     }
 
-    private static bool TryStrip(string text, string prefix, out string inner)
+    private static ParsedColor? ParseHsl(string inner)
     {
-        if (text.StartsWith(prefix, StringComparison.Ordinal) && text.EndsWith(')'))
+        if (!TrySplit(inner, out var values, out var alphaText))
         {
-            inner = text[prefix.Length..^1];
+            return null;
+        }
+
+        var hueMatch = HuePattern.Match(values[0]);
+        if (!hueMatch.Success)
+        {
+            return null;
+        }
+
+        var hue = double.Parse(hueMatch.Groups[1].Value, NumberStyles.Float, CultureInfo.InvariantCulture);
+        if (!TryPercent(values[1], out var saturation) || !TryPercent(values[2], out var lightness))
+        {
+            return null;
+        }
+
+        if (!TryAlpha(alphaText, out var alpha))
+        {
+            return null;
+        }
+
+        hue %= 360;
+        if (hue < 0)
+        {
+            hue += 360;
+        }
+
+        var s = saturation / 100;
+        var l = lightness / 100;
+        var a = s * Math.Min(l, 1 - l);
+        double Channel(double n)
+        {
+            var k = (n + (hue / 30)) % 12;
+            return l - (a * Math.Max(-1, Math.Min(Math.Min(k - 3, 9 - k), 1)));
+        }
+
+        return new ParsedColor(
+            RoundHalfUp(Channel(0) * 255),
+            RoundHalfUp(Channel(8) * 255),
+            RoundHalfUp(Channel(4) * 255),
+            alpha,
+            ColorNotation.Hsl);
+    }
+
+    private static bool TryFunction(string value, string prefix, out string inner)
+    {
+        if (value.StartsWith(prefix, StringComparison.Ordinal) && value.EndsWith(')'))
+        {
+            inner = value[prefix.Length..^1];
             return true;
         }
 
@@ -199,284 +226,290 @@ public static partial class ConvertColor
         return false;
     }
 
-    private static string[]? SplitValues(string inner)
+    private static bool HasSpace(string text) => text.AsSpan().ContainsAny(SpaceValues);
+
+    private static bool TrySplit(string inner, out string[] values, out string? alphaText)
     {
+        values = [];
+        alphaText = null;
+
         if (inner.Contains(','))
         {
-            var parts = inner.Split(',');
-            if (parts.Length is not (3 or 4))
+            if (inner.Contains('/'))
             {
-                return null;
+                return false;
             }
 
-            for (var i = 0; i < parts.Length; i++)
+            var parts = inner.Split(',').Select(part => part.Trim()).ToArray();
+            if (parts.Length is not (3 or 4) || parts.Any(part => part.Length == 0 || HasSpace(part)))
             {
-                parts[i] = parts[i].Trim();
+                return false;
             }
 
-            return parts;
+            values = parts[..3];
+            alphaText = parts.Length == 4 ? parts[3] : null;
+            return true;
         }
 
         var halves = inner.Split('/');
         if (halves.Length > 2)
         {
-            return null;
-        }
-
-        var values = halves[0].Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries);
-        if (values.Length != 3)
-        {
-            return null;
-        }
-
-        if (halves.Length == 1)
-        {
-            return values;
-        }
-
-        return [.. values, halves[1].Trim()];
-    }
-
-    private static bool TryParseNumber(string text, out double value)
-    {
-        if (!NumberPattern().IsMatch(text))
-        {
-            value = 0;
             return false;
         }
 
-        value = double.Parse(text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture);
-        return true;
-    }
-
-    private static bool TryParsePercentage(string text, out double value)
-    {
-        value = 0;
-        return text.EndsWith('%') && TryParseNumber(text[..^1], out value) && value <= 100;
-    }
-
-    private static bool TryParseChannel(string text, out int value)
-    {
-        value = 0;
-        if (text.EndsWith('%'))
-        {
-            if (!TryParsePercentage(text, out var percentage))
-            {
-                return false;
-            }
-
-            value = RoundHalfUp(percentage * 255 / 100);
-            return true;
-        }
-
-        if (!TryParseNumber(text, out var number) || number > 255)
+        var spaced = halves[0].Split(Spaces, StringSplitOptions.RemoveEmptyEntries);
+        if (spaced.Length != 3)
         {
             return false;
         }
 
-        value = RoundHalfUp(number);
-        return true;
-    }
-
-    private static bool TryParseHue(string text, out double value)
-    {
-        if (text.EndsWith("deg", StringComparison.Ordinal))
+        if (halves.Length == 2)
         {
-            text = text[..^3];
-        }
-
-        return TryParseNumber(text, out value);
-    }
-
-    private static bool TryParseAlpha(string text, out double value)
-    {
-        if (text.EndsWith('%'))
-        {
-            if (!TryParsePercentage(text, out var percentage))
+            var alpha = halves[1].Trim();
+            if (alpha.Length == 0 || HasSpace(alpha))
             {
-                value = 0;
                 return false;
             }
 
-            value = percentage / 100;
+            alphaText = alpha;
+        }
+
+        values = spaced;
+        return true;
+    }
+
+    private static bool TryNumber(string text, out double number)
+    {
+        number = 0;
+        return NumberPattern.IsMatch(text)
+            && double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out number);
+    }
+
+    private static bool TryPercent(string text, out double percent)
+    {
+        percent = 0;
+        return text.EndsWith('%') && TryNumber(text[..^1], out percent) && percent <= 100;
+    }
+
+    private static bool TryAlpha(string? text, out double alpha)
+    {
+        alpha = 1;
+        if (text is null)
+        {
             return true;
         }
 
-        return TryParseNumber(text, out value) && value <= 1;
-    }
-
-    private static ParsedColor FromHsl(double hue, double saturation, double lightness, double alpha)
-    {
-        hue %= 360;
-        var s = saturation / 100;
-        var l = lightness / 100;
-        var a = s * Math.Min(l, 1 - l);
-
-        int Channel(double n)
+        if (text.EndsWith('%'))
         {
-            var k = (n + hue / 30) % 12;
-            var value = l - a * Math.Max(-1, Math.Min(Math.Min(k - 3, 9 - k), 1));
-            return RoundHalfUp(value * 255);
+            if (!TryPercent(text, out var percent))
+            {
+                return false;
+            }
+
+            alpha = percent / 100;
+            return true;
         }
 
-        return new ParsedColor(Channel(0), Channel(8), Channel(4), alpha, ColorNotation.Hsl);
+        return TryNumber(text, out alpha) && alpha <= 1;
     }
 
-    private static void ToHsl(ParsedColor color, out int hue, out int saturation, out int lightness)
+    private static (int Hue, int Saturation, int Lightness) ToHsl(ParsedColor color)
     {
         var r = color.Red / 255.0;
         var g = color.Green / 255.0;
         var b = color.Blue / 255.0;
         var max = Math.Max(r, Math.Max(g, b));
         var min = Math.Min(r, Math.Min(g, b));
-        var l = (max + min) / 2;
-        double h = 0;
-        double s = 0;
-        if (max != min)
-        {
-            var d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-            if (max == r)
-            {
-                h = (g - b) / d;
-                if (h < 0)
-                {
-                    h += 6;
-                }
-            }
-            else if (max == g)
-            {
-                h = (b - r) / d + 2;
-            }
-            else
-            {
-                h = (r - g) / d + 4;
-            }
+        var delta = max - min;
+        var lightness = (max + min) / 2;
+        var saturation = delta == 0 ? 0 : delta / (1 - Math.Abs((2 * lightness) - 1));
 
-            h *= 60;
+        double hue;
+        if (delta == 0)
+        {
+            hue = 0;
+        }
+        else if (max == r)
+        {
+            hue = 60 * (((g - b) / delta) % 6);
+        }
+        else if (max == g)
+        {
+            hue = 60 * (((b - r) / delta) + 2);
+        }
+        else
+        {
+            hue = 60 * (((r - g) / delta) + 4);
         }
 
-        hue = RoundHalfUp(h) % 360;
-        saturation = RoundHalfUp(s * 100);
-        lightness = RoundHalfUp(l * 100);
+        if (hue < 0)
+        {
+            hue += 360;
+        }
+
+        var roundedHue = RoundHalfUp(hue);
+        if (roundedHue == 360)
+        {
+            roundedHue = 0;
+        }
+
+        return (roundedHue, RoundHalfUp(saturation * 100), RoundHalfUp(lightness * 100));
     }
 
     private static string FormatAlpha(double alpha) =>
         Math.Round(alpha, 2, MidpointRounding.AwayFromZero).ToString("0.##", CultureInfo.InvariantCulture);
 
-    private static int RoundHalfUp(double value) => (int)Math.Round(value, MidpointRounding.AwayFromZero);
-
-    [GeneratedRegex(@"^(?:\d+(?:\.\d+)?|\.\d+)\z")]
-    private static partial Regex NumberPattern();
+    private static int RoundHalfUp(double value) =>
+        (int)Math.Round(value, MidpointRounding.AwayFromZero);
 }
 
-/// <summary>The action that pastes a copied colour as a hex colour.</summary>
+/// <summary>Shared behaviour of the actions that paste a copied colour in another notation.</summary>
+internal static class ColorActions
+{
+    public static bool CanExecute(ClipboardItem item, ColorNotation notation)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        return item.Kind == ClipboardContentKind.Text
+            && ConvertColor.Parse(item.Snapshot.Text) is { } color
+            && color.Notation != notation;
+    }
+
+    public static string GetDescription(ClipboardItem item, ColorNotation notation)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        var color = ConvertColor.Parse(item.Snapshot.Text);
+        return color is null
+            ? Strings.ActionColorDescription
+            : Localizer.Format(Strings.ActionColorDescription, ConvertColor.Format(color, notation));
+    }
+
+    public static async Task ExecuteAsync(
+        ClipboardItem item,
+        ActionContext context,
+        ColorNotation notation,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        ArgumentNullException.ThrowIfNull(context);
+        var color = ConvertColor.Parse(item.Snapshot.Text);
+        if (color is null)
+        {
+            return;
+        }
+
+        await context.WriteAndPasteAsync(
+            new ClipboardSnapshot { Text = ConvertColor.Format(color, notation) },
+            cancellationToken).ConfigureAwait(false);
+    }
+}
+
+/// <summary>Pastes a copied rgb() or hsl() colour as a hex colour.</summary>
 public sealed class PasteAsHexColorAction : IClipboardAction
 {
-    /// <summary>The action's unique id.</summary>
+    /// <summary>The action's stable id.</summary>
     public string Id => "paste-color-hex";
 
     /// <summary>Where the action is listed among the actions.</summary>
     public int Order => 46;
 
-    /// <summary>Gets the action's title.</summary>
+    /// <summary>Gives the action's title for the item.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized title.</returns>
+    /// <returns>The title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionColorHex;
     }
 
-    /// <summary>Gets the description, showing the colour that will be pasted.</summary>
+    /// <summary>Gives the action's description for the item, showing the colour it will paste.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description.</returns>
-    public string GetDescription(ClipboardItem item) => ConvertColor.Describe(item, ColorNotation.Hex);
+    /// <returns>The description.</returns>
+    public string GetDescription(ClipboardItem item) => ColorActions.GetDescription(item, ColorNotation.Hex);
 
-    /// <summary>Tells whether the item is a colour on its own that is not already hex.</summary>
+    /// <summary>Tells whether the item is a colour not already written in hex.</summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>True when the action applies.</returns>
-    public bool CanExecute(ClipboardItem item) => ConvertColor.CanExecute(item, ColorNotation.Hex);
+    public bool CanExecute(ClipboardItem item) => ColorActions.CanExecute(item, ColorNotation.Hex);
 
-    /// <summary>Pastes the colour as a hex colour, without adding it to the history.</summary>
+    /// <summary>Pastes the item's colour as a hex colour.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context to paste with.</param>
+    /// <param name="context">The services the action uses.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the colour has been pasted.</returns>
+    /// <returns>A task that completes when the colour is pasted.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default) =>
-        ConvertColor.PasteAsync(item, context, ColorNotation.Hex, cancellationToken);
+        ColorActions.ExecuteAsync(item, context, ColorNotation.Hex, cancellationToken);
 }
 
-/// <summary>The action that pastes a copied colour as an RGB colour.</summary>
+/// <summary>Pastes a copied hex or hsl() colour as an rgb() colour.</summary>
 public sealed class PasteAsRgbColorAction : IClipboardAction
 {
-    /// <summary>The action's unique id.</summary>
+    /// <summary>The action's stable id.</summary>
     public string Id => "paste-color-rgb";
 
     /// <summary>Where the action is listed among the actions.</summary>
     public int Order => 47;
 
-    /// <summary>Gets the action's title.</summary>
+    /// <summary>Gives the action's title for the item.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized title.</returns>
+    /// <returns>The title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionColorRgb;
     }
 
-    /// <summary>Gets the description, showing the colour that will be pasted.</summary>
+    /// <summary>Gives the action's description for the item, showing the colour it will paste.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description.</returns>
-    public string GetDescription(ClipboardItem item) => ConvertColor.Describe(item, ColorNotation.Rgb);
+    /// <returns>The description.</returns>
+    public string GetDescription(ClipboardItem item) => ColorActions.GetDescription(item, ColorNotation.Rgb);
 
-    /// <summary>Tells whether the item is a colour on its own that is not already RGB.</summary>
+    /// <summary>Tells whether the item is a colour not already written as rgb().</summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>True when the action applies.</returns>
-    public bool CanExecute(ClipboardItem item) => ConvertColor.CanExecute(item, ColorNotation.Rgb);
+    public bool CanExecute(ClipboardItem item) => ColorActions.CanExecute(item, ColorNotation.Rgb);
 
-    /// <summary>Pastes the colour as an RGB colour, without adding it to the history.</summary>
+    /// <summary>Pastes the item's colour as an rgb() colour.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context to paste with.</param>
+    /// <param name="context">The services the action uses.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the colour has been pasted.</returns>
+    /// <returns>A task that completes when the colour is pasted.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default) =>
-        ConvertColor.PasteAsync(item, context, ColorNotation.Rgb, cancellationToken);
+        ColorActions.ExecuteAsync(item, context, ColorNotation.Rgb, cancellationToken);
 }
 
-/// <summary>The action that pastes a copied colour as an HSL colour.</summary>
+/// <summary>Pastes a copied hex or rgb() colour as an hsl() colour.</summary>
 public sealed class PasteAsHslColorAction : IClipboardAction
 {
-    /// <summary>The action's unique id.</summary>
+    /// <summary>The action's stable id.</summary>
     public string Id => "paste-color-hsl";
 
     /// <summary>Where the action is listed among the actions.</summary>
     public int Order => 48;
 
-    /// <summary>Gets the action's title.</summary>
+    /// <summary>Gives the action's title for the item.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized title.</returns>
+    /// <returns>The title.</returns>
     public string GetTitle(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return Strings.ActionColorHsl;
     }
 
-    /// <summary>Gets the description, showing the colour that will be pasted.</summary>
+    /// <summary>Gives the action's description for the item, showing the colour it will paste.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <returns>The localized description.</returns>
-    public string GetDescription(ClipboardItem item) => ConvertColor.Describe(item, ColorNotation.Hsl);
+    /// <returns>The description.</returns>
+    public string GetDescription(ClipboardItem item) => ColorActions.GetDescription(item, ColorNotation.Hsl);
 
-    /// <summary>Tells whether the item is a colour on its own that is not already HSL.</summary>
+    /// <summary>Tells whether the item is a colour not already written as hsl().</summary>
     /// <param name="item">The chosen item.</param>
     /// <returns>True when the action applies.</returns>
-    public bool CanExecute(ClipboardItem item) => ConvertColor.CanExecute(item, ColorNotation.Hsl);
+    public bool CanExecute(ClipboardItem item) => ColorActions.CanExecute(item, ColorNotation.Hsl);
 
-    /// <summary>Pastes the colour as an HSL colour, without adding it to the history.</summary>
+    /// <summary>Pastes the item's colour as an hsl() colour.</summary>
     /// <param name="item">The chosen item.</param>
-    /// <param name="context">The context to paste with.</param>
+    /// <param name="context">The services the action uses.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes when the colour has been pasted.</returns>
+    /// <returns>A task that completes when the colour is pasted.</returns>
     public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default) =>
-        ConvertColor.PasteAsync(item, context, ColorNotation.Hsl, cancellationToken);
+        ColorActions.ExecuteAsync(item, context, ColorNotation.Hsl, cancellationToken);
 }

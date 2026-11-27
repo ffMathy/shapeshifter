@@ -1,0 +1,17 @@
+{
+  "node": "SearchBar",
+  "shots": [
+    {
+      "test": "the search begins",
+      "file": "01-the-search-begins.png"
+    },
+    {
+      "test": "the results",
+      "file": "02-the-results.png"
+    },
+    {
+      "test": "nothing matches",
+      "file": "03-nothing-matches.png"
+    }
+  ]
+}

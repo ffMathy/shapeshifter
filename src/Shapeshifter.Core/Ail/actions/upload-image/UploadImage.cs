@@ -11,7 +11,7 @@ namespace Shapeshifter.Core.Ail;
 /// </summary>
 public sealed class UploadImageAction : IClipboardAction
 {
-    private readonly ConcurrentDictionary<object, string> _links = new();
+    private readonly ConcurrentDictionary<object, string> links = new();
 
     /// <summary>
     /// The action's stable identifier.
@@ -19,14 +19,14 @@ public sealed class UploadImageAction : IClipboardAction
     public string Id => "upload-image";
 
     /// <summary>
-    /// The action's position among the actions.
+    /// Where the action is placed among the actions.
     /// </summary>
     public int Order => 30;
 
     /// <summary>
-    /// Gets the action's title, shown in the actions list.
+    /// Gets the action's title for the given item.
     /// </summary>
-    /// <param name="item">The item the action would apply to.</param>
+    /// <param name="item">The chosen item.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
     {
@@ -35,10 +35,10 @@ public sealed class UploadImageAction : IClipboardAction
     }
 
     /// <summary>
-    /// Gets the action's description, naming the service the image is uploaded to.
+    /// Gets the action's description for the given item.
     /// </summary>
-    /// <param name="item">The item the action would apply to.</param>
-    /// <returns>The localized description.</returns>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>The localized description naming the upload service.</returns>
     public string GetDescription(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -48,8 +48,8 @@ public sealed class UploadImageAction : IClipboardAction
     /// <summary>
     /// Tells whether the item is an image that can be uploaded.
     /// </summary>
-    /// <param name="item">The item to check.</param>
-    /// <returns><see langword="true"/> when the item is a non-empty image.</returns>
+    /// <param name="item">The chosen item.</param>
+    /// <returns>True when the item is a non-empty image.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
@@ -57,25 +57,24 @@ public sealed class UploadImageAction : IClipboardAction
     }
 
     /// <summary>
-    /// Uploads the item's image to Catbox once, pastes the public link, and adds the link to the history.
+    /// Uploads the item's image once, pastes the public link and adds it to the history.
     /// </summary>
     /// <param name="item">The image item to upload.</param>
     /// <param name="context">The services the action uses.</param>
     /// <param name="cancellationToken">Cancels the upload and the paste.</param>
-    /// <returns>A task that completes when the link has been pasted and added to the history.</returns>
+    /// <returns>A task that completes when the link has been pasted and added.</returns>
     public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
 
-        if (!_links.TryGetValue(item.Id, out var link))
+        if (!links.TryGetValue(item.Id, out var link))
         {
-            var image = item.Snapshot.Image!;
+            var image = item.Snapshot.Image ?? [];
             var time = item.CapturedAt.ToLocalTime().ToString("yyyy-MM-dd HH.mm.ss", CultureInfo.InvariantCulture);
             var fileName = $"Image {time}.{ImageFormat.GetExtension(image)}";
-            link = await Catbox.UploadAsync(context.Http, image, fileName, ImageFormat.GetMediaType(image), cancellationToken)
-                .ConfigureAwait(false);
-            _links[item.Id] = link;
+            link = await Catbox.UploadAsync(context.Http, image, fileName, ImageFormat.GetMediaType(image), cancellationToken).ConfigureAwait(false);
+            links[item.Id] = link;
             context.Logger.Information("Uploaded an image to {Service}", Catbox.Name);
         }
 

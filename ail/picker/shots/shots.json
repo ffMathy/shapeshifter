@@ -1,0 +1,17 @@
+{
+  "node": "Picker",
+  "shots": [
+    {
+      "test": "the parts of the picker",
+      "file": "01-the-parts-of-the-picker.png"
+    },
+    {
+      "test": "one item is counted as such",
+      "file": "02-one-item-is-counted-as-such.png"
+    },
+    {
+      "test": "a long history scrolls",
+      "file": "03-a-long-history-scrolls.png"
+    }
+  ]
+}

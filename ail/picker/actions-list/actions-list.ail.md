@@ -17,7 +17,7 @@ node ActionsList : view   level: experience
     the heading names the kind of item in the Windows and Mac looks
     Scenario: the actions of a text
       Given "dotnet run --project src/App" is chosen
-      Then the actions are "Paste" with "Pastes clipboard contents as-is.", "Paste as file" with "Saves this text to a .txt file and pastes the file.", and "Pin to clipboard" with its description
+      Then the actions are, in this order, "Paste" with "Pastes clipboard contents as-is.", "Paste as file" with "Saves this text to a .txt file and pastes the file.", "Upload and paste link", "Search the web" and "Pin to clipboard", each with its description
       And "Paste" is marked as the default with a check mark, its title and icon in the accent colour
     Scenario: moving into the actions
       Given the picker is up with an image chosen

@@ -23,7 +23,7 @@ node ReformatJson : fn   level: system
     ReformatJsonAction.Minify(text: text) -> text
       the same values with no white space between them
     both keep the members in their order, repeated names included, and every number exactly as it was written
-    both write strings with only the escapes JSON requires: \" and \\, and \n, \r, \t or \u00XX for control characters; every other character, such as æ, é, < and &, is written as itself
+    both write strings with only the escapes JSON requires: \" and \\, and \n, \r, \t or \u00XX for control characters, its hex digits in upper case (U+001B as \u001B); every other character, such as æ, é, < and &, is written as itself
     ExecuteAsync pastes ClipboardSnapshot { Text: Format(the text) } when the title is "Paste formatted JSON", else ClipboardSnapshot { Text: Minify(the text) }, with context.WriteAndPasteAsync; nothing is added to the history
     examples
       Format("{\"a\":1,\"b\":[true,null,\"x\"]}") => "{\n  \"a\": 1,\n  \"b\": [\n    true,\n    null,\n    \"x\"\n  ]\n}"

@@ -1,37 +1,29 @@
 using Shapeshifter.Core.Actions;
 using Shapeshifter.Core.Clipboard;
 using Shapeshifter.Core.Localization;
+using System.Text;
+using System.Text.Unicode;
 
 namespace Shapeshifter.Core.Ail;
 
 /// <summary>
-/// An action that decodes a copied Base64 text and pastes the text it holds,
-/// without handing it to a website or a terminal first.
+/// An action that decodes a copied Base64 text, in the standard or the URL-safe alphabet,
+/// and pastes the text it holds without adding it to the history.
 /// </summary>
 public sealed class DecodeBase64Action : IClipboardAction
 {
-    /// <summary>
-    /// The longest text, in characters, that is looked at; longer texts are never decoded.
-    /// </summary>
+    /// <summary>The longest text, in characters, that is looked at; longer texts are not decoded.</summary>
     public const int MaxLength = 1048576;
 
     private const int MinLength = 8;
 
-    private static readonly System.Text.UTF8Encoding StrictUtf8 = new(false, true);
-
-    /// <summary>
-    /// The stable id of this action.
-    /// </summary>
+    /// <summary>The action's unique id.</summary>
     public string Id => "decode-base64";
 
-    /// <summary>
-    /// Where this action appears among the actions.
-    /// </summary>
+    /// <summary>Where the action is placed among the actions.</summary>
     public int Order => 42;
 
-    /// <summary>
-    /// Gets the title shown for this action.
-    /// </summary>
+    /// <summary>Gets the action's title shown for the item.</summary>
     /// <param name="item">The item the action is shown for.</param>
     /// <returns>The localized title.</returns>
     public string GetTitle(ClipboardItem item)
@@ -40,9 +32,7 @@ public sealed class DecodeBase64Action : IClipboardAction
         return Strings.ActionDecodeBase64;
     }
 
-    /// <summary>
-    /// Gets the description shown for this action.
-    /// </summary>
+    /// <summary>Gets the action's description shown for the item.</summary>
     /// <param name="item">The item the action is shown for.</param>
     /// <returns>The localized description.</returns>
     public string GetDescription(ClipboardItem item)
@@ -51,43 +41,39 @@ public sealed class DecodeBase64Action : IClipboardAction
         return Strings.ActionDecodeBase64Description;
     }
 
-    /// <summary>
-    /// Tells whether the item is text that decodes from Base64 to readable text.
-    /// </summary>
+    /// <summary>Tells whether the item is a text that decodes from Base64 to readable text.</summary>
     /// <param name="item">The item to check.</param>
-    /// <returns><see langword="true"/> when the action can be used on the item.</returns>
+    /// <returns>True when the action can be offered for the item.</returns>
     public bool CanExecute(ClipboardItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
         return item.Kind == ClipboardContentKind.Text && TryDecode(item.Snapshot.Text) is not null;
     }
 
-    /// <summary>
-    /// Pastes the decoded text; nothing is added to the history.
-    /// </summary>
-    /// <param name="item">The item whose text is decoded.</param>
+    /// <summary>Pastes the text the item's Base64 holds; nothing is added to the history.</summary>
+    /// <param name="item">The item to decode.</param>
     /// <param name="context">The context the action runs in.</param>
     /// <param name="cancellationToken">Cancels the paste.</param>
-    /// <returns>A task that completes once the text has been pasted.</returns>
-    public async Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
+    /// <returns>A task that completes when the decoded text was pasted.</returns>
+    public Task ExecuteAsync(ClipboardItem item, ActionContext context, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(item);
         ArgumentNullException.ThrowIfNull(context);
-
         var decoded = TryDecode(item.Snapshot.Text);
         if (decoded is null)
         {
-            return;
+            return Task.CompletedTask;
         }
 
-        await context.WriteAndPasteAsync(new ClipboardSnapshot { Text = decoded }, cancellationToken).ConfigureAwait(false);
+        return context.WriteAndPasteAsync(new ClipboardSnapshot { Text = decoded }, cancellationToken);
     }
 
     /// <summary>
-    /// Decodes a standard or URL-safe Base64 text, with or without padding, to readable UTF-8 text.
+    /// Decodes a Base64 text, standard or URL-safe, with or without padding, into readable UTF-8 text.
+    /// Never throws.
     /// </summary>
-    /// <param name="text">The text to decode.</param>
-    /// <returns>The decoded text, or <see langword="null"/> when the text is not Base64 of readable text.</returns>
+    /// <param name="text">The text to decode, or null.</param>
+    /// <returns>The decoded text, or null when the text is not Base64 of readable text.</returns>
     public static string? TryDecode(string? text)
     {
         if (text is null)
@@ -95,49 +81,62 @@ public sealed class DecodeBase64Action : IClipboardAction
             return null;
         }
 
-        var trimmed = text.Trim();
-        var builder = new System.Text.StringBuilder(trimmed.Length);
-        foreach (var c in trimmed)
+        var compact = text.Trim()
+            .Replace("\r", string.Empty, StringComparison.Ordinal)
+            .Replace("\n", string.Empty, StringComparison.Ordinal);
+        if (compact.Length < MinLength || compact.Length > MaxLength)
         {
-            if (c != '\r' && c != '\n')
+            return null;
+        }
+
+        var padding = 0;
+        while (padding < compact.Length && compact[compact.Length - 1 - padding] == '=')
+        {
+            padding++;
+        }
+
+        if (padding > 2)
+        {
+            return null;
+        }
+
+        var bodyLength = compact.Length - padding;
+        int totalLength;
+        if (padding == 0)
+        {
+            var remainder = bodyLength % 4;
+            if (remainder == 1)
             {
-                builder.Append(c);
+                return null;
             }
-        }
 
-        var left = builder.ToString();
-        if (left.Length < MinLength || left.Length > MaxLength)
+            totalLength = remainder == 0 ? bodyLength : bodyLength + (4 - remainder);
+        }
+        else
         {
-            return null;
+            if (compact.Length % 4 != 0)
+            {
+                return null;
+            }
+
+            totalLength = compact.Length;
         }
 
-        var paddingGiven = 0;
-        while (paddingGiven < left.Length && left[left.Length - 1 - paddingGiven] == '=')
-        {
-            paddingGiven++;
-        }
-
-        if (paddingGiven > 2)
-        {
-            return null;
-        }
-
-        var bodyLength = left.Length - paddingGiven;
-        var body = new char[bodyLength];
+        var chars = new char[totalLength];
         for (var i = 0; i < bodyLength; i++)
         {
-            var c = left[i];
+            var c = compact[i];
             if (c is (>= 'A' and <= 'Z') or (>= 'a' and <= 'z') or (>= '0' and <= '9') or '+' or '/')
             {
-                body[i] = c;
+                chars[i] = c;
             }
             else if (c == '-')
             {
-                body[i] = '+';
+                chars[i] = '+';
             }
             else if (c == '_')
             {
-                body[i] = '/';
+                chars[i] = '/';
             }
             else
             {
@@ -145,38 +144,27 @@ public sealed class DecodeBase64Action : IClipboardAction
             }
         }
 
-        var remainder = bodyLength % 4;
-        if (remainder == 1)
+        for (var i = bodyLength; i < totalLength; i++)
+        {
+            chars[i] = '=';
+        }
+
+        var bytes = new byte[totalLength / 4 * 3];
+        if (!Convert.TryFromBase64Chars(chars, bytes, out var written))
         {
             return null;
         }
 
-        var paddingNeeded = (4 - remainder) % 4;
-        if (paddingGiven > paddingNeeded)
+        var decodedBytes = bytes.AsSpan(0, written);
+        if (!Utf8.IsValid(decodedBytes))
         {
             return null;
         }
 
-        var padded = new string(body) + new string('=', paddingNeeded);
-        var bytes = new byte[padded.Length / 4 * 3];
-        if (!Convert.TryFromBase64String(padded, bytes, out var written))
-        {
-            return null;
-        }
-
-        string decoded;
-        try
-        {
-            decoded = StrictUtf8.GetString(bytes, 0, written);
-        }
-        catch (System.Text.DecoderFallbackException)
-        {
-            return null;
-        }
-
+        var decoded = Encoding.UTF8.GetString(decodedBytes);
         foreach (var c in decoded)
         {
-            if (char.IsControl(c) && c != '\t' && c != '\n' && c != '\r')
+            if (char.IsControl(c) && c is not ('\t' or '\n' or '\r'))
             {
                 return null;
             }

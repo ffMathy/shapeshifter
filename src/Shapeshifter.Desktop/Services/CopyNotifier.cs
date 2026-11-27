@@ -25,6 +25,9 @@ internal sealed class CopyNotifier(SettingsStore settings) : ICopyNotifier
     private ToastWindow? window;
     private IDisposable? hideTimer;
 
+    /// <summary>The notification's window, once it was first shown (for tests that look at it).</summary>
+    internal ToastWindow? Window => window;
+
     public void NotifyCopied(ClipboardItem item, int historyCount)
     {
         if (settings.Current.QuietMode)

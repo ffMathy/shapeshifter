@@ -25,15 +25,16 @@ node SettingsWindow : view   level: experience
       Then there is no "Automatic updates" row and no "Check for updates" button
       And start at login, clear history and open log folder are shown as in any copy
   look
-    window      titled with the "title" copy, 540 wide, as tall as its content, not resizable, centred on the screen
+    window      titled with the "title" copy, 540 wide (660 in the Windows look), as tall as its content, not resizable, centred on the screen
     hero        the app icon, the app's name in bold and under it the version with three links: copy version,
                 report a problem, project page
-    usage       the usage text, centred, in dim text
+    usage       the usage text in dim text: centred in the Linux look, from the start edge in the Windows and Mac looks
     warning     only when the platform limits the app: a yellow card with each limit, a blank line between them
     groups      a "History" heading over a card of rows: Shortcut (Windows and Mac only), the delay, items to remember,
                 remember history; a "Behaviour" heading over: copy notifications, tips, start at login, automatic updates
-    row         a title, a smaller dim description under it, and its control on the right: a number box with − and +
-                buttons, a switch or a drop-down; rows are split by hairlines
+    row         a title, a smaller dim description under it, and its control on the right: a number box (with − and +
+                buttons in the Linux look, the platform's up and down arrows in the Windows and Mac looks), a switch or a
+                drop-down; rows are split by hairlines
     buttons     a wrapping row of rounded buttons with an icon: clear history, check for updates, open log folder
     disabled    the start-at-login switch is greyed when the platform has none; the updates switch is greyed, still showing
                 its saved state, when this copy cannot update itself, and its description then says why

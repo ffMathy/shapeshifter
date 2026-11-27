@@ -1,0 +1,13 @@
+{
+  "node": "NotificationCard",
+  "shots": [
+    {
+      "test": "a copy on Linux",
+      "file": "01-a-copy-on-linux.png"
+    },
+    {
+      "test": "a tip on Linux",
+      "file": "02-a-tip-on-linux.png"
+    }
+  ]
+}

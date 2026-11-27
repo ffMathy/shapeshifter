@@ -1,0 +1,21 @@
+{
+  "node": "PickerFooter",
+  "shots": [
+    {
+      "test": "while Ctrl is held",
+      "file": "01-while-ctrl-is-held.png"
+    },
+    {
+      "test": "while it is kept open",
+      "file": "02-while-it-is-kept-open.png"
+    },
+    {
+      "test": "while searching",
+      "file": "03-while-searching.png"
+    },
+    {
+      "test": "the Mac look",
+      "file": "04-the-mac-look.png"
+    }
+  ]
+}

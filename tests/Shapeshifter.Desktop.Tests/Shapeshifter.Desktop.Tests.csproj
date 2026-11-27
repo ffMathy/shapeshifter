@@ -9,6 +9,11 @@
     <PackageReference Include="Avalonia.Headless" />
     <PackageReference Include="Avalonia.Skia" />
     <PackageReference Include="Avalonia.Fonts.Inter" />
+    <PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The same drawn artwork as the screenshots: copied pictures, window and file icons. -->
+    <Compile Include="..\..\tools\Shapeshifter.ScreenshotGenerator\SampleArt.cs" Link="Harness\SampleArt.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Shapeshifter.Desktop\Shapeshifter.Desktop.csproj" />

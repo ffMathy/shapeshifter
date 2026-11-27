@@ -1,0 +1,13 @@
+{
+  "node": "MicaSheets",
+  "shots": [
+    {
+      "test": "light",
+      "file": "01-light.png"
+    },
+    {
+      "test": "dark",
+      "file": "02-dark.png"
+    }
+  ]
+}

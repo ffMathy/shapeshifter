@@ -3,11 +3,19 @@
 The one thing of Shapeshifter that is always on screen: an icon in the system
 tray, with a menu.
 
+The system draws the icon and the menu, not Shapeshifter, so they have no
+screen of their own to picture: what they show is under `what`, and the
+end-to-end check proves it on the desktop.
+
 ```ail
 node TrayMenu : flow   level: experience
   why   With no main window, people need a visible sign that Shapeshifter runs, a way
         into its settings, and a quick way to report a problem.   <- App
   what
+    the menu is the platform's own, in this order: Settings…, Open log folder, Clear history, Check for
+    updates…, a separator, Report a problem…, About Shapeshifter, a separator, Quit Shapeshifter
+    (a copy from an app store has no "Check for updates…")
+    the icon is a clipboard; on Linux a symbolic glyph in the panel's tone, on a Mac a template image in the menu bar
     Scenario: clicking the tray icon opens the settings
       Given Shapeshifter runs and its icon is in the tray
       When the user clicks the icon
@@ -73,11 +81,6 @@ node TrayMenu : flow   level: experience
     tray.about        "About Shapeshifter {version}"     e.g. "About Shapeshifter 7.1.0"
     tray.quit         "Quit Shapeshifter"
     tray.tooltip      "Shapeshifter {version}"
-  look
-    menu        the platform's own menu, in this order: Settings…, Open log folder, Clear history, Check for
-                updates…, a separator, Report a problem…, About Shapeshifter, a separator, Quit Shapeshifter
-                (a copy from an app store has no "Check for updates…")
-    icon        a clipboard; on Linux a symbolic glyph in the panel's tone, on a Mac a template image in the menu bar
   uses      ProblemReport, ChangeSettings
   children  ProblemReport
   sources

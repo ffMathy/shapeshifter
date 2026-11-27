@@ -667,6 +667,8 @@
   <Style Selector="WrapPanel.hints">
     <Setter Property="HorizontalAlignment" Value="Center" />
     <Setter Property="VerticalAlignment" Value="Center" />
+    <!-- Each line centred, a wrapped second line too (libadwaita centres the hints). -->
+    <Setter Property="ItemsAlignment" Value="Center" />
   </Style>
   <Style Selector="StackPanel.hint">
     <Setter Property="Orientation" Value="Horizontal" />
@@ -689,6 +691,8 @@
   </Style>
   <Style Selector="Border.key > TextBlock">
     <Setter Property="FontFamily" Value="{StaticResource LinuxLookMonoFont}" />
+    <!-- Adwaita Mono's arrows fill their cells, so "←→" would touch and read as one double arrow. -->
+    <Setter Property="LetterSpacing" Value="1.5" />
     <Setter Property="FontSize" Value="11.5" />
     <Setter Property="Foreground" Value="#2E2E33" />
     <Setter Property="HorizontalAlignment" Value="Center" />
