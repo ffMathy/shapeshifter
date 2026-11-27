@@ -515,4 +515,10 @@ Aby wkleić coś skopiowanego wcześniej, przytrzymaj {0}+V, aż pojawi się his
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Wkleja tekst z tego pliku zamiast samego pliku.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Wklej jako obraz</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Wkleja obraz z tego pliku zamiast samego pliku.</value>
+  </data>
 </root>

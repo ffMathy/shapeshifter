@@ -515,4 +515,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Colle le texte de ce fichier au lieu du fichier.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Coller en tant qu'image</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Colle l'image de ce fichier au lieu du fichier.</value>
+  </data>
 </root>

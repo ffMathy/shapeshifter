@@ -114,6 +114,7 @@ public static class Glyphs
             "show-path-in-file-manager" => Reveal,
             "paste-paths" => Path,
             "paste-file-contents" => Text,
+            "paste-file-as-image" => Image,
             _ => Clipboard,
         };
     }

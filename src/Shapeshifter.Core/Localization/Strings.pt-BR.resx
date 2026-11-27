@@ -515,4 +515,10 @@ Para colar algo que você copiou antes, mantenha {0}+V pressionadas até o hist�
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Cola o texto deste arquivo em vez do arquivo.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Colar como imagem</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Cola a imagem deste arquivo em vez do arquivo.</value>
+  </data>
 </root>

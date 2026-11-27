@@ -515,4 +515,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Plakt de tekst in dit bestand in plaats van het bestand.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Plakken als afbeelding</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Plakt de afbeelding in dit bestand in plaats van het bestand.</value>
+  </data>
 </root>

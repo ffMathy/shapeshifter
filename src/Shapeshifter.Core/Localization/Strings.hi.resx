@@ -515,4 +515,10 @@
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>फ़ाइल की जगह उसके अंदर का टेक्स्ट चिपकाता है।</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>चित्र के रूप में चिपकाएँ</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>फ़ाइल की जगह उसके अंदर का चित्र चिपकाता है।</value>
+  </data>
 </root>

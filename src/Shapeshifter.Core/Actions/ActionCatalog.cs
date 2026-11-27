@@ -39,6 +39,7 @@ public sealed class ActionCatalog
         new ShowPathInFileManagerAction(),
         new PastePathsAction(),
         new PasteFileContentsAction(),
+        new PasteFileAsImageAction(),
         new TogglePinAction(),
     ]);
 

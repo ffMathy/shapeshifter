@@ -515,4 +515,10 @@ Um etwas einzufügen, das früher kopiert wurde, {0}+V gedrückt halten, bis der
   <data name="ActionPasteFileContentsDescription" xml:space="preserve">
     <value>Fügt den Text in dieser Datei statt der Datei ein.</value>
   </data>
+  <data name="ActionPasteFileAsImage" xml:space="preserve">
+    <value>Als Bild einfügen</value>
+  </data>
+  <data name="ActionPasteFileAsImageDescription" xml:space="preserve">
+    <value>Fügt das Bild in dieser Datei statt der Datei ein.</value>
+  </data>
 </root>

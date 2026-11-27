@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@2423e9c161ce3fbe
+// ail-derived-from: OfferedActions@a9ce6c4c375a21c2
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -132,6 +132,15 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
     {
         await CopyAs("text/uri-list", Files($"one-{Unique()}.txt"));
         Assert.Equal(["Paste", "Paste path", "Paste file contents", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "an image file offers Paste as image", Timeout = 30_000)]
+    public async Task ImageFile()
+    {
+        var path = Path.Combine(Directory.CreateTempSubdirectory("ail-offered-").FullName, $"picture-{Unique()}.png");
+        File.WriteAllBytes(path, MakePng(31 + Random.Shared.Next(40), 23));
+        await CopyAs("text/uri-list", $"file://{path}\n");
+        Assert.Equal(["Paste", "Paste path", "Paste as image", "Paste as compressed file", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "several files offer the same as one file, with Paste paths", Timeout = 30_000)]
