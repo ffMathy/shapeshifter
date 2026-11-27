@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>打开这些文件所在的文件夹并选中它们。</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>粘贴缩小的图像</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>将此图像缩小到 {0} × {1} 像素后粘贴。</value>
+  </data>
 </root>

@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Відкриває теку з цими файлами і виділяє їх.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Вставити менше зображення</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Вставляє зображення, зменшене до {0} × {1} пікселів.</value>
+  </data>
 </root>

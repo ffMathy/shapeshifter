@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>يفتح المجلد الذي توجد فيه هذه الملفات مع تحديدها.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>لصق صورة أصغر</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>يلصق هذه الصورة بعد تصغيرها إلى {0} × {1} بكسل.</value>
+  </data>
 </root>

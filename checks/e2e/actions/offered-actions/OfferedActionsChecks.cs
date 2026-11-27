@@ -1,4 +1,4 @@
-// ail-derived-from: OfferedActions@392544a0fec330bb
+// ail-derived-from: OfferedActions@ecc022ef82a30f11
 // End-to-end check for OfferedActions: which actions each kind of item offers, in which order, as read from the
 // screen (OCR of the picker's actions column). Content is put on the clipboard with xclip, as another app would.
 using System.Text;
@@ -118,6 +118,13 @@ public sealed class OfferedActionsChecks(TargetAppFixture target) : Scenario, IC
         File.WriteAllText(path, "report");
         await CopyAs("UTF8_STRING", path);
         Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Copy file at this path", "Search the web", "Show in file manager", "Pin to clipboard"], await ActionsOfNewest());
+    }
+
+    [Fact(DisplayName = "a large image also offers Paste smaller image", Timeout = 30_000)]
+    public async Task LargeImage()
+    {
+        await CopyAs("image/png", MakePng(2400 + Random.Shared.Next(40), 1300));
+        Assert.Equal(["Paste", "Paste as file", "Upload and paste link", "Paste smaller image", "Pin to clipboard"], await ActionsOfNewest());
     }
 
     [Fact(DisplayName = "an image offers Paste, Paste as file, Upload and paste link, and Pin", Timeout = 30_000)]

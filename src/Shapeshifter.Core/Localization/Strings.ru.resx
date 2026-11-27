@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Открывает папку с этими файлами и выделяет их.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Вставить уменьшенное изображение</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Вставляет изображение, уменьшенное до {0} × {1} пикселей.</value>
+  </data>
 </root>

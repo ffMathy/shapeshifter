@@ -536,4 +536,10 @@ Pour coller quelque chose que vous avez copié auparavant, maintenez {0}+V enfon
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Ouvre le dossier de ces fichiers, avec eux sélectionnés.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Coller une image plus petite</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Colle cette image réduite à {0} × {1} pixels.</value>
+  </data>
 </root>

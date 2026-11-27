@@ -43,6 +43,7 @@ public sealed class ActionCatalog
         new ExtractZipAction(),
         new UploadFileAction(),
         new ShowInFileManagerAction(),
+        new PasteSmallerImageAction(),
         new TogglePinAction(),
     ]);
 

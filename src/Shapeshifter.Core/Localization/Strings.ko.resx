@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>이 파일들이 있는 폴더를 열고 파일을 선택합니다.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>더 작은 이미지 붙여넣기</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>이 이미지를 {0} × {1} 픽셀로 줄여 붙여넣습니다.</value>
+  </data>
 </root>

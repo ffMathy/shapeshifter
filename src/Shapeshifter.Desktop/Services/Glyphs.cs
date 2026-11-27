@@ -52,6 +52,9 @@ public static class Glyphs
     /// <summary>An archive box with an arrow out: Paste extracted.</summary>
     public static Geometry Extract { get; } = Geometry.Parse("M3,4 H17 V7.5 H3 Z M4,7.5 V16.5 H16 V7.5 M10,9.5 V14.5 M8,12.5 L10,14.5 L12,12.5");
 
+    /// <summary>A picture with an arrow pointing into its corner: Paste smaller image.</summary>
+    public static Geometry Shrink { get; } = Geometry.Parse("M3,4 H17 V16 H3 Z M14.5,6.5 L10.5,10.5 M10.5,7.5 V10.5 H13.5 M5.5,13.5 H9 V10");
+
     public static Geometry Pin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17");
 
     public static Geometry Unpin { get; } = Geometry.Parse("M12.5,2.5 L17.5,7.5 L14.5,9 L11.5,12 L11,15.5 L4.5,9 L8,8.5 L11,5.5 Z M7.75,12.25 L3,17 M3,3 L17,17");
@@ -121,6 +124,7 @@ public static class Glyphs
             "extract-zip" => Extract,
             "upload-file" => Upload,
             "show-in-file-manager" => Reveal,
+            "paste-smaller-image" => Shrink,
             _ => Clipboard,
         };
     }

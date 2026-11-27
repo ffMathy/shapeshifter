@@ -536,4 +536,10 @@ Om iets te plakken dat je eerder hebt gekopieerd, houd je {0}+V ingedrukt tot de
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Opent de map van deze bestanden, met ze geselecteerd.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Kleinere afbeelding plakken</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Plakt deze afbeelding verkleind tot {0} × {1} pixels.</value>
+  </data>
 </root>

@@ -9,8 +9,8 @@
       "spec": "e2141e9afe7979ecc218d977b333c2dd0d533f5120debd1a144f9d1e36cee25a"
     },
     "ActionCatalog": {
-      "hash": "d4a653d59bbd8f80c7407298e4a3c238c7d3f5f008397c630d8a71b70f9d58c9",
-      "spec": "d0a40eb006ae48f174c002abd772c5e960f4d950dd6962d466f784be48455a76",
+      "hash": "4ae1e9606318cc1132ba0419d2b82be4d5785b7decc37dec42e863e18e514a42",
+      "spec": "ddb8acc9acaabe3b724bc7b5691256a9de7d2603445addf5b9b5a062d45edff4",
       "files": {},
       "by": "adopted",
       "adopted": true
@@ -159,6 +159,13 @@
       "hash": "644aa6761b35aaeee59269346383f575e0d805af4c23c9222a0a2dc0fe622ca5",
       "files": {
         "src/Shapeshifter.Core/Ail/actions/paste-result/PasteResult.cs": "0786c386f5a12c906d061e8a708b2ddcb685fb812f063e840480dd989e66a164"
+      },
+      "by": "claude-code"
+    },
+    "PasteSmallerImage": {
+      "hash": "6292bef7e2bc97a158da96ed9911f972a0f569612def7e99d0ea68281a8f8f56",
+      "files": {
+        "src/Shapeshifter.Core/Ail/actions/paste-smaller-image/PasteSmallerImage.cs": "a59e58ee67a2f4880d10b141c40451b6e8eeb88b14873e45e53814c22a6bbcd0"
       },
       "by": "claude-code"
     },

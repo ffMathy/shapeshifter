@@ -536,4 +536,10 @@ Untuk menempelkan sesuatu yang Anda salin sebelumnya, tahan {0}+V sampai riwayat
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Membuka folder tempat file-file ini berada, dengan file dipilih.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Tempel gambar lebih kecil</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Menempelkan gambar ini diperkecil menjadi {0} × {1} piksel.</value>
+  </data>
 </root>

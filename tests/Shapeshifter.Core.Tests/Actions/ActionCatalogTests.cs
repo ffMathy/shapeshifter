@@ -8,7 +8,7 @@ public sealed class ActionCatalogTests
 {
     private static readonly string[] DefaultOrder =
     [
-        "paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-color-hex", "paste-color-rgb", "paste-color-hsl", "paste-as-date", "paste-as-unix-time", "paste-result", "paste-paths", "paste-file-contents", "paste-file-as-image", "paste-as-zip", "extract-zip", "upload-file", "copy-image-from-link", "copy-file-at-path", "open-links", "write-email", "search-web", "show-path-in-file-manager", "show-in-file-manager", "toggle-pin",
+        "paste", "paste-as-file", "paste-plain-text", "paste-as-markdown", "paste-trimmed", "upload-image", "upload-text", "reformat-json", "decode-base64", "url-decode", "paste-color-hex", "paste-color-rgb", "paste-color-hsl", "paste-as-date", "paste-as-unix-time", "paste-result", "paste-smaller-image", "paste-paths", "paste-file-contents", "paste-file-as-image", "paste-as-zip", "extract-zip", "upload-file", "copy-image-from-link", "copy-file-at-path", "open-links", "write-email", "search-web", "show-path-in-file-manager", "show-in-file-manager", "toggle-pin",
     ];
 
     [Fact]
@@ -17,7 +17,7 @@ public sealed class ActionCatalogTests
         var catalog = ActionCatalog.CreateDefault();
 
         Assert.Equal(DefaultOrder, catalog.All.Select(action => action.Id));
-        Assert.Equal([0, 10, 20, 22, 24, 30, 35, 40, 42, 44, 46, 47, 48, 49, 50, 52, 70, 72, 74, 75, 76, 78, 100, 110, 200, 210, 220, 230, 232, 255], catalog.All.Select(action => action.Order));
+        Assert.Equal([0, 10, 20, 22, 24, 30, 35, 40, 42, 44, 46, 47, 48, 49, 50, 52, 60, 70, 72, 74, 75, 76, 78, 100, 110, 200, 210, 220, 230, 232, 255], catalog.All.Select(action => action.Order));
     }
 
     [Fact]
@@ -140,7 +140,7 @@ public sealed class ActionCatalogTests
         IClipboardAction[] actions =
         [
             new PasteAsPlainTextAction(), new PasteAsFileAction(), new PasteAsZipAction(), new CopyImageFromLinkAction(),
-            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new ShowInFileManagerAction(), new UploadFileAction(), new ExtractZipAction(), new PasteFileAsImageAction(), new PasteFileContentsAction(), new PastePathsAction(), new ShowPathInFileManagerAction(), new CopyFileAtPathAction(), new SearchWebAction(), new WriteEmailAction(), new PasteResultAction(), new PasteAsUnixTimeAction(), new PasteAsDateAction(), new PasteAsHslColorAction(), new PasteAsRgbColorAction(), new PasteAsHexColorAction(), new PasteAsMarkdownAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
+            new OpenLinksAction(), new UploadImageAction(), new UploadTextAction(), new PasteSmallerImageAction(), new ShowInFileManagerAction(), new UploadFileAction(), new ExtractZipAction(), new PasteFileAsImageAction(), new PasteFileContentsAction(), new PastePathsAction(), new ShowPathInFileManagerAction(), new CopyFileAtPathAction(), new SearchWebAction(), new WriteEmailAction(), new PasteResultAction(), new PasteAsUnixTimeAction(), new PasteAsDateAction(), new PasteAsHslColorAction(), new PasteAsRgbColorAction(), new PasteAsHexColorAction(), new PasteAsMarkdownAction(), new ReformatJsonAction(), new UrlDecodeAction(), new DecodeBase64Action(), new PasteTrimmedAction(),
         ];
 
         Assert.All(actions, action => Assert.Throws<ArgumentNullException>(() => action.CanExecute(null!)));

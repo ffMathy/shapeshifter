@@ -5,6 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" />
+    <PackageReference Include="SkiaSharp" />
     <PackageReference Include="NCalcSync" />
     <PackageReference Include="ReverseMarkdown" />
     <PackageReference Include="Serilog" />

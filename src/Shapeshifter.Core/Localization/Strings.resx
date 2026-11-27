@@ -710,4 +710,12 @@ To paste something you copied earlier, hold {0}+V until the history appears. Kee
     <value>Opens the folder these files are in, with them selected.</value>
     <comment>Action description for 'Show in file manager' on several copied files.</comment>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Paste smaller image</value>
+    <comment>Action title: paste the copied (large) image scaled down.</comment>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Pastes this image scaled down to {0} × {1} pixels.</value>
+    <comment>Action description for 'Paste smaller image'; {0} and {1} are the new width and height in pixels.</comment>
+  </data>
 </root>

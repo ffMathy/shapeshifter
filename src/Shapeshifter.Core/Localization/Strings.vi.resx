@@ -536,4 +536,10 @@
   <data name="ActionShowInFileManagerDescription" xml:space="preserve">
     <value>Mở thư mục chứa các tệp này và chọn sẵn chúng.</value>
   </data>
+  <data name="ActionPasteSmallerImage" xml:space="preserve">
+    <value>Dán ảnh nhỏ hơn</value>
+  </data>
+  <data name="ActionPasteSmallerImageDescription" xml:space="preserve">
+    <value>Dán ảnh này thu nhỏ còn {0} × {1} điểm ảnh.</value>
+  </data>
 </root>
