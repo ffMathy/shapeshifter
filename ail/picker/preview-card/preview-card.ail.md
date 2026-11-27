@@ -35,9 +35,10 @@ node PreviewCard : view   level: experience
     Scenario: files
       Given "notes.txt" and "report.pdf" were copied together
       Then the card lists "notes.txt" and "report.pdf" with their icons, and the strip says "2 files"
+    Scenario: one file, on Linux
       Given only "notes.txt" was copied, from the folder "/tmp/files"
       Then the card shows its icon and "notes.txt", and the strip shows a folder icon and "/tmp/files"
-    Scenario: the path of an image
+    Scenario: the path of an image, on Linux
       Given the text "/tmp/pictures/sunset.png" was copied and that file exists
       When the user moves the choice to it
       Then the card shows that image, with a text icon and the path over its darkened bottom, and the strip shows a folder icon and "/tmp/pictures"
