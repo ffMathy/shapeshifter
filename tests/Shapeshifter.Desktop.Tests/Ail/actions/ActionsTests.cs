@@ -13,6 +13,67 @@ public sealed partial class ActionsTests
     [GeneratedRegex(@"^Text \S.* \S.*\.txt$")]
     private static partial Regex TextFileName();
 
+    /// <summary>Taps the gesture key with the given name, as app.TapAsync(GestureKey.Name) does.</summary>
+    private static Task TapAsync(object app, string key)
+    {
+        var method = app.GetType()
+            .GetMethods(BindingFlags.Public | BindingFlags.Instance)
+            .Single(m => m.Name == "TapAsync" && m.GetParameters().Length == 1);
+        var keyValue = Enum.Parse(method.GetParameters()[0].ParameterType, key);
+        object? result;
+        try
+        {
+            result = method.Invoke(app, [keyValue]);
+        }
+        catch (TargetInvocationException e) when (e.InnerException is not null)
+        {
+            throw e.InnerException;
+        }
+
+        return result switch
+        {
+            Task task => task,
+            ValueTask valueTask => valueTask.AsTask(),
+            _ => Task.CompletedTask,
+        };
+    }
+
+    /// <summary>Reads the plain text a pasted snapshot carries.</summary>
+    private static string? TextOf(object? snapshot)
+    {
+        if (snapshot is null)
+        {
+            return null;
+        }
+
+        if (snapshot is string s)
+        {
+            return s;
+        }
+
+        var properties = snapshot.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance)
+            .Where(p => p.GetIndexParameters().Length == 0 && p.PropertyType == typeof(string))
+            .ToList();
+        foreach (var name in new[] { "Text", "PlainText" })
+        {
+            var named = properties.FirstOrDefault(p => p.Name == name);
+            if (named is not null)
+            {
+                return (string?)named.GetValue(snapshot);
+            }
+        }
+
+        foreach (var property in properties)
+        {
+            if (property.GetValue(snapshot) is string value)
+            {
+                return value;
+            }
+        }
+
+        return null;
+    }
+
     /// <summary>Collects every existing file path the given clipboard contents carry.</summary>
     private static List<string> FilePathsIn(object? contents)
     {
@@ -73,8 +134,8 @@ public sealed partial class ActionsTests
         await app.CopyAsync("memo", null);
 
         await app.HoldCtrlVAsync();
-        await app.TapAsync(GestureKey.Right);
-        await app.TapAsync(GestureKey.Down);
+        await TapAsync(app, "Right");
+        await TapAsync(app, "Down");
         await app.ReleaseCtrlAsync();
 
         Assert.False(app.PickerVisible);
@@ -86,7 +147,9 @@ public sealed partial class ActionsTests
         Assert.Matches(TextFileName(), Path.GetFileName(file));
         Assert.Equal("memo", await File.ReadAllTextAsync(file, TestContext.Current.CancellationToken));
 
-        AppHarness.SaveScreen(app.Picker, "right-opens-the-actions-and-letting-go-of-ctrl-runs-the-chos.png");
+        var picker = app.Picker;
+        Assert.NotNull(picker);
+        AppHarness.SaveScreen(picker, "right-opens-the-actions-and-letting-go-of-ctrl-runs-the-chos.png");
     });
 
     /// <summary>Scenario: Left goes back to the history.</summary>
@@ -98,15 +161,19 @@ public sealed partial class ActionsTests
         await app.CopyAsync("cat", null);
 
         await app.HoldCtrlVAsync();
-        await app.TapAsync(GestureKey.Right);
-        await app.TapAsync(GestureKey.Down);
-        await app.TapAsync(GestureKey.Left);
-        await app.TapAsync(GestureKey.Down);
+        await TapAsync(app, "Right");
+        await TapAsync(app, "Down");
+        await TapAsync(app, "Left");
+        await TapAsync(app, "Down");
         await app.ReleaseCtrlAsync();
 
-        Assert.Equal(["bee"], app.Paste.Pasted);
+        var pasted = app.Paste.Pasted;
+        Assert.Single(pasted);
+        Assert.Equal("bee", TextOf(pasted[0]));
 
-        AppHarness.SaveScreen(app.Picker, "left-goes-back-to-the-history.png");
+        var picker = app.Picker;
+        Assert.NotNull(picker);
+        AppHarness.SaveScreen(picker, "left-goes-back-to-the-history.png");
     });
 
     /// <summary>Scenario: choosing another item starts again at Paste.</summary>
@@ -117,14 +184,18 @@ public sealed partial class ActionsTests
         await app.CopyAsync("fox", null);
 
         await app.HoldCtrlVAsync();
-        await app.TapAsync(GestureKey.Right);
-        await app.TapAsync(GestureKey.Down);
-        await app.TapAsync(GestureKey.Trigger);
+        await TapAsync(app, "Right");
+        await TapAsync(app, "Down");
+        await TapAsync(app, "Trigger");
         await app.ReleaseCtrlAsync();
 
-        Assert.Equal(["owl"], app.Paste.Pasted);
+        var pasted = app.Paste.Pasted;
+        Assert.Single(pasted);
+        Assert.Equal("owl", TextOf(pasted[0]));
 
-        AppHarness.SaveScreen(app.Picker, "choosing-another-item-starts-again-at-paste.png");
+        var picker = app.Picker;
+        Assert.NotNull(picker);
+        AppHarness.SaveScreen(picker, "choosing-another-item-starts-again-at-paste.png");
     });
 
     /// <summary>Scenario: Escape in the actions cancels without running anything.</summary>
@@ -137,15 +208,17 @@ public sealed partial class ActionsTests
         var writesBefore = app.Clipboard.Written.Count;
 
         await app.HoldCtrlVAsync();
-        await app.TapAsync(GestureKey.Right);
-        await app.TapAsync(GestureKey.Down);
-        await app.TapAsync(GestureKey.Escape);
+        await TapAsync(app, "Right");
+        await TapAsync(app, "Down");
+        await TapAsync(app, "Escape");
         await app.ReleaseCtrlAsync();
 
         Assert.Empty(app.Paste.Pasted);
         Assert.Equal(writesBefore, app.Clipboard.Written.Count);
         Assert.Equal(clipboardBefore, app.Clipboard.Current);
 
-        AppHarness.SaveScreen(app.Picker, "escape-in-the-actions-cancels-without-running-anything.png");
+        var picker = app.Picker;
+        Assert.NotNull(picker);
+        AppHarness.SaveScreen(picker, "escape-in-the-actions-cancels-without-running-anything.png");
     });
 }
